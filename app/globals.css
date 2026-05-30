@@ -1,26 +1,100 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary-dark: #050B14;
+  --color-primary-navy: #0B132B;
+  --color-primary-blue: #1C2541;
+  
+  --color-brand-teal: #00A8C6;
+  --color-brand-teal-hover: #0090AA;
+  --color-brand-gold: #C5A880;
+  --color-brand-gold-hover: #B3956D;
+  
+  /* Dynamic colors mapping to CSS variables */
+  --color-app-bg: var(--background);
+  --color-app-fg: var(--foreground);
+  --color-app-card: var(--card-bg);
+  --color-app-border: var(--card-border);
+  --color-app-muted: var(--text-muted);
+  --color-app-secondary: var(--secondary-bg);
+  
+  --font-sans: var(--font-inter), sans-serif;
+  --font-heading: var(--font-outfit), sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Light Theme - Architectural Warm Paper & Slate */
+  --background: #FCFCF9;
+  --foreground: #1E293B;
+  --card-bg: #FFFFFF;
+  --card-border: #E8E8E2;
+  --text-muted: #576F84;
+  --secondary-bg: #F5F5ED;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  /* Dark Theme - Premium Deep Slate */
+  --background: #090D16;
+  --foreground: #F1F5F9;
+  --card-bg: #121A2A;
+  --card-border: #1E2D4A;
+  --text-muted: #94A3B8;
+  --secondary-bg: #1B263E;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+/* Glassmorphism panel utilizing dynamic borders */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+}
+
+.glass-panel-hover:hover {
+  border-color: var(--color-brand-teal);
+  box-shadow: 0 10px 30px -10px rgba(0, 168, 198, 0.08);
+}
+
+/* Offset borders for architectural sketch framing */
+.offset-border-frame {
+  position: relative;
+}
+.offset-border-frame::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: -12px;
+  bottom: -12px;
+  border: 2px solid var(--card-border);
+  z-index: -1;
+  pointer-events: none;
+  transition: border-color 0.3s ease;
+}
+.offset-border-frame:hover::after {
+  border-color: var(--color-brand-teal);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: #00A8C6;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0090AA;
+}
+
+
+
