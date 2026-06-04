@@ -50,7 +50,6 @@ interface ServiceDetail {
 
 export default function HomeClient() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
-  const [activeTestimonial, setActiveTestimonial] = useState<number>(0);
 
   const testimonials = [
     {
@@ -532,7 +531,7 @@ export default function HomeClient() {
             {/* Hero Right: Spline 3D Showcase */}
             <div className="lg:col-span-5 relative mt-6 lg:mt-0 w-full flex justify-center lg:justify-end">
               <div className="w-full max-w-[440px]">
-                <SplineShowcase />
+                {/* <SplineShowcase /> */}
               </div>
             </div>
 
@@ -611,7 +610,7 @@ export default function HomeClient() {
             {/* Hero Right: R3F Programmatic Showcase */}
             <div className="lg:col-span-5 relative mt-6 lg:mt-0 w-full flex justify-center lg:justify-end">
               <div className="w-full max-w-[440px]">
-                <R3FShowcase />
+                {/* <R3FShowcase /> */}
               </div>
             </div>
 
@@ -1359,83 +1358,51 @@ export default function HomeClient() {
         </div>
       </section>
 
-      {/* TESTIMONIALS SECTION */}
+{/* TESTIMONIALS SECTION */}
       <section className="py-24 relative border-t border-app-border bg-app-secondary">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 space-y-3">
             <span className="text-brand-gold text-xs font-bold uppercase tracking-widest font-mono">Testimonials</span>
             <h2 className="text-3xl font-heading font-extrabold tracking-tight text-white">What Our B2B Partners Say</h2>
             <div className="w-16 h-0.5 bg-brand-teal mx-auto mt-2"></div>
-          </div>
+          </div>      
 
-          {/* Testimonial slider card */}
-          <div className="bg-app-card border border-app-border rounded-2xl p-8 sm:p-10 shadow-2xl relative">
-            <span className="absolute top-4 left-6 text-brand-gold text-5xl font-serif opacity-30 select-none">“</span>
-            
-            <div className="space-y-6 relative z-10 text-left">
-              {/* Quote text */}
-              <p className="text-app-fg text-sm sm:text-base md:text-lg leading-relaxed font-light italic">
-                {testimonials[activeTestimonial].quote}
-              </p>
+          {/* Testimonials responsive grid layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {testimonials.map((t, idx) => (
+              <div 
+                key={idx} 
+                className="bg-app-card border border-app-border rounded-2xl p-8 sm:p-10 shadow-2xl relative flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-teal/50 h-full group"
+              >
+                <span className="absolute top-4 left-6 text-brand-gold text-5xl font-serif opacity-30 select-none">“</span>
+                
+                <div className="space-y-6 relative z-10 text-left flex flex-col h-full justify-between">
+                  {/* Quote text */}
+                  <p className="text-app-fg text-sm sm:text-base leading-relaxed font-light italic flex-grow">
+                    {t.quote}
+                  </p>
 
-              {/* Client Info */}
-              <div className="flex items-center space-x-4 border-t border-app-border/60 pt-6">
-                {/* Initial Avatar */}
-                <div className="w-12 h-12 rounded-full bg-brand-teal/15 border border-brand-teal/30 flex items-center justify-center text-brand-teal font-mono font-bold text-sm">
-                  {testimonials[activeTestimonial].avatar}
+                  {/* Client Info */}
+                  <div className="flex items-center space-x-4 border-t border-app-border/60 pt-6 mt-auto">
+                    {/* Initial Avatar */}
+                    <div className="w-12 h-12 rounded-full bg-brand-teal/15 border border-brand-teal/30 flex items-center justify-center text-brand-teal font-mono font-bold text-sm shrink-0">
+                      {t.avatar}
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-bold text-white leading-none">
+                        {t.author}
+                      </h4>
+                      <span className="text-[10px] text-brand-gold block font-mono mt-1 font-semibold uppercase">
+                        {t.role}
+                      </span>
+                      <span className="text-[9px] text-app-muted block font-sans mt-0.5">
+                        Project Ref: {t.project}
+                      </span>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="text-sm font-bold text-white leading-none">
-                    {testimonials[activeTestimonial].author}
-                  </h4>
-                  <span className="text-[10px] text-brand-gold block font-mono mt-1 font-semibold uppercase">
-                    {testimonials[activeTestimonial].role}
-                  </span>
-                  <span className="text-[9px] text-app-muted block font-sans mt-0.5">
-                    Project Ref: {testimonials[activeTestimonial].project}
-                  </span>
-                </div>
               </div>
-            </div>
-
-            {/* Slider controls */}
-            <div className="mt-8 flex justify-between items-center relative z-20">
-              {/* Indicator dots */}
-              <div className="flex space-x-2">
-                {testimonials.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setActiveTestimonial(idx)}
-                    className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                      activeTestimonial === idx ? 'bg-brand-teal w-6' : 'bg-app-secondary border border-app-border hover:bg-app-secondary/80'
-                    }`}
-                    aria-label={`Go to slide ${idx + 1}`}
-                  ></button>
-                ))}
-              </div>
-
-              {/* Navigation chevrons */}
-              <div className="flex space-x-3">
-                <button
-                  onClick={() => setActiveTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
-                  className="w-10 h-10 rounded-full border border-app-border bg-app-secondary/40 hover:bg-app-secondary hover:border-brand-teal/40 flex items-center justify-center text-white transition-all focus:outline-none"
-                  aria-label="Previous testimonial"
-                >
-                  <svg className="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
-                  </svg>
-                </button>
-                <button
-                  onClick={() => setActiveTestimonial((prev) => (prev + 1) % testimonials.length)}
-                  className="w-10 h-10 rounded-full border border-app-border bg-app-secondary/40 hover:bg-app-secondary hover:border-brand-teal/40 flex items-center justify-center text-white transition-all focus:outline-none"
-                  aria-label="Next testimonial"
-                >
-                  <svg className="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>

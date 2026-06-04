@@ -5,6 +5,11 @@ import JsonLd from '@/components/SEO/JsonLd';
 
 import Breadcrumbs from '@/components/SEO/Breadcrumbs';
 import SmartFmDashboard from '@/components/SmartFmDashboard';
+import HorizontalFilmstrip from '@/components/showcases/HorizontalFilmstrip';
+import SplitActiveShowcase from '@/components/showcases/SplitActiveShowcase';
+import BuildTimelineShowcase from '@/components/showcases/BuildTimelineShowcase';
+import FactsheetGrid from '@/components/showcases/FactsheetGrid';
+import CinematicSpecGrid from '@/components/showcases/CinematicSpecGrid';
 
 export const metadata: Metadata = {
   title: 'Facility Management Services Abu Dhabi & UAE | ArrowHead',
@@ -173,6 +178,18 @@ export default function FacilityManagementPage() {
         </div>
       </section>
 
+      <section className="py-24 border-b border-app-border relative bg-app-bg">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="space-y-6 mb-24">
+                  <div className="flex items-center gap-4 border-b border-app-border pb-4">
+                    <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE I</span>
+                    <h3 className="text-lg font-heading font-extrabold tracking-tight">Tabular Factsheet Grid Row Hover</h3>
+                  </div>
+                  <FactsheetGrid />
+                </div>
+                </div>
+                </section>
+
       {/* 2. SERVICES METHODOLOGY */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -225,6 +242,42 @@ export default function FacilityManagementPage() {
         </div>
       </section>
 
+      <section className="py-24 border-b border-app-border relative bg-app-bg">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="space-y-6 mb-24">
+                  <div className="flex items-center gap-4 border-b border-app-border pb-4">
+                    <span className="text-xs font-mono font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded">STYLE J</span>
+                    <h3 className="text-lg font-heading font-extrabold tracking-tight">Cinematic Spec Card Grid</h3>
+                  </div>
+                  <CinematicSpecGrid />
+                </div>
+                </div>
+                </section>
+
+      <section className="py-24 border-b border-app-border relative bg-app-bg">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+             <div className="space-y-6 mb-24">
+                  <div className="flex items-center gap-4 border-b border-app-border pb-4">
+                    <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE B</span>
+                    <h3 className="text-lg font-heading font-extrabold tracking-tight">Smooth Horizontal Filmstrip Carousel</h3>
+                  </div>
+                  <HorizontalFilmstrip />
+                </div>
+                </div>
+                </section>
+
+                <section className="py-24 border-b border-app-border relative bg-app-bg">
+                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                       <div className="space-y-6 mb-24">
+                            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+                              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE H</span>
+                              <h3 className="text-lg font-heading font-extrabold tracking-tight">Progressive Build Timeline Phase Switcher</h3>
+                            </div>
+                            <BuildTimelineShowcase />
+                          </div>
+                          </div>
+                          </section>
+
       {/* 2.5 INTERACTIVE OPERATIONS COMMAND CENTER */}
       <section className="py-20 bg-app-bg border-t border-app-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -242,6 +295,18 @@ export default function FacilityManagementPage() {
           </div>
         </div>
       </section>
+
+      <section className="py-24 border-b border-app-border relative bg-app-bg">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="space-y-6 mb-24">
+                  <div className="flex items-center gap-4 border-b border-app-border pb-4">
+                    <span className="text-xs font-mono font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded">STYLE C</span>
+                    <h3 className="text-lg font-heading font-extrabold tracking-tight">Split Screen Category Hover Active Tabs</h3>
+                  </div>
+                  <SplitActiveShowcase />
+                </div>
+              </div>
+            </section>
 
       {/* 3. ANNUAL CONTRACT PACKAGES */}
       <section className="py-20 bg-app-secondary border-y border-app-border">

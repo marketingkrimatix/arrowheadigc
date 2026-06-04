@@ -4,6 +4,10 @@ import Link from 'next/link';
 import JsonLd from '@/components/SEO/JsonLd';
 
 import Breadcrumbs from '@/components/SEO/Breadcrumbs';
+import CinematicSlider from '@/components/showcases/CinematicSlider';
+import BuildTimelineShowcase from '@/components/showcases/BuildTimelineShowcase';
+import CinematicSpecGrid from '@/components/showcases/CinematicSpecGrid';
+import CollageBoxShowcase from '@/components/showcases/CollageBoxShowcase';
 
 export const metadata: Metadata = {
   title: 'Marine & Port Infrastructure Contracting Abu Dhabi | ArrowHead',
@@ -111,6 +115,18 @@ export default function MarinePortsSectorPage() {
         </div>
       </section>
 
+      <section className="py-24 border-b border-app-border relative bg-app-bg">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+             <div className="space-y-6 mb-24">
+                  <div className="flex items-center gap-4 border-b border-app-border pb-4">
+                    <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE H</span>
+                    <h3 className="text-lg font-heading font-extrabold tracking-tight">Progressive Build Timeline Phase Switcher</h3>
+                  </div>
+                  <BuildTimelineShowcase />
+                </div>
+                </div>
+                </section>
+
       {/* 2. DETAILED SECTOR COPY */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -149,6 +165,43 @@ export default function MarinePortsSectorPage() {
           </div>
         </div>
       </section>
+
+<section className="py-24 border-b border-app-border relative bg-app-bg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="space-y-6">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE E</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Cinematic Widescreen Progress Bar Slideshow</h3>
+            </div>
+            <CinematicSlider />
+          </div>
+          </div>
+          </section>
+
+          <section className="py-24 border-b border-app-border relative bg-app-bg">
+                              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                       <div className="space-y-6 mb-24">
+                            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+                              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE L</span>
+                              <h3 className="text-lg font-heading font-extrabold tracking-tight">Asymmetric Random-Sized Collage Grid</h3>
+                            </div>
+                            <CollageBoxShowcase />
+                          </div>
+                          </div>
+                          </section>
+          
+
+          <section className="py-24 border-b border-app-border relative bg-app-bg">
+                  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="space-y-6 mb-24">
+                      <div className="flex items-center gap-4 border-b border-app-border pb-4">
+                        <span className="text-xs font-mono font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded">STYLE J</span>
+                        <h3 className="text-lg font-heading font-extrabold tracking-tight">Cinematic Spec Card Grid</h3>
+                      </div>
+                      <CinematicSpecGrid />
+                    </div>
+                    </div>
+                    </section>
 
       {/* 3. REGIONAL SILO & KNOWLEDGE MATRIX */}
       <section className="py-16 bg-app-secondary border-t border-app-border">

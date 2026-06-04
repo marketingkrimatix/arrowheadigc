@@ -1,8 +1,31 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function WhatsAppWidget() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const toggleVisibility = () => {
+      // Show button after scrolling past 400px (standard Hero section height)
+      if (window.scrollY > 400) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener('scroll', toggleVisibility);
+    return () => window.removeEventListener('scroll', toggleVisibility);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <div
       id="floating-communication-widget"
@@ -11,14 +34,14 @@ export default function WhatsAppWidget() {
       {/* Phone Floating Button */}
       <a
         href="tel:+97125545230"
-        className="pointer-events-auto flex items-center justify-center w-12 h-12 rounded-full bg-app-card border border-brand-teal/40 text-brand-teal shadow-2xl hover:bg-brand-teal hover:text-white hover:scale-110 active:scale-95 transition-all duration-300 group"
+        className="pointer-events-auto flex items-center justify-center w-12 h-12 rounded-full bg-brand-teal text-white shadow-[0_8px_30px_rgba(197,168,128,0.25)] hover:bg-brand-teal hover:text-white hover:scale-110 active:scale-95 transition-all duration-300 group relative"
         aria-label="Call ArrowHead Office"
         title="Call ArrowHead Office"
       >
         <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-          <path d="M6.62 10.79a15.15 15.15 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27 11.72 11.72 0 00.59 3.7 1 1 0 01-.27 1.11z" />
+          <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-2.2 2.2a15.045 15.045 0 0 1-6.59-6.59l2.2-2.2c.28-.27.36-.67.25-1.02A11.36 11.36 0 0 1 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z" />
         </svg>
-        <span className="absolute right-14 bg-app-card border border-app-border text-app-fg text-xs px-2.5 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-xl pointer-events-none whitespace-nowrap">
+        <span className="absolute right-14 bg-brand-teal border border-brand-teal text-white text-[10px] font-mono font-bold tracking-wider px-2.5 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-2xl pointer-events-none whitespace-nowrap">
           Call Office: +971 2 554 5230
         </span>
       </a>
@@ -28,7 +51,7 @@ export default function WhatsAppWidget() {
         href="https://wa.me/97125545230?text=Hello%20ArrowHead,%20I%20would%20like%20to%20inquire%20about%20your%20services."
         target="_blank"
         rel="noopener noreferrer"
-        className="pointer-events-auto flex items-center justify-center w-12 h-12 rounded-full bg-green-600 text-white shadow-2xl hover:bg-green-500 hover:scale-110 active:scale-95 transition-all duration-300 group"
+        className="pointer-events-auto flex items-center justify-center w-12 h-12 rounded-full bg-green-600 text-white shadow-2xl hover:bg-green-600 hover:scale-110 active:scale-95 transition-all duration-300 group relative"
         aria-label="Chat on WhatsApp"
         title="Chat on WhatsApp"
       >
@@ -39,6 +62,35 @@ export default function WhatsAppWidget() {
           WhatsApp Chat
         </span>
       </a>
+
+      {/* Scroll-to-Top Button */}
+      <div
+        style={{
+          height: isVisible ? '48px' : '0px',
+          marginTop: isVisible ? '0px' : '0px',
+          opacity: isVisible ? 1 : 0,
+          transform: isVisible ? 'scale(1)' : 'scale(0.75)',
+        }}
+        className={`pointer-events-none flex items-center justify-center transition-all duration-500 ease-in-out ${isVisible ? 'overflow-visible' : 'overflow-hidden'}`}
+      >
+        <button
+          onClick={scrollToTop}
+          type="button"
+          aria-label="Scroll to top of page"
+          title="Scroll to top of page"
+          className="pointer-events-auto flex items-center justify-center w-12 h-12 rounded-full bg-app-card/90 backdrop-blur-md text-brand-teal hover:scale-110 active:scale-95 cursor-pointer transition-all duration-300"
+        >
+          <svg
+            className="w-5 h-5 stroke-current"
+            fill="none"
+            strokeWidth="2.5"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18" />
+          </svg>
+        </button>
+      </div>
     </div>
   );
 }

@@ -11,7 +11,7 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-app-border">
-          
+
           {/* Column 1: Brand Info */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center space-x-3 group">
@@ -95,7 +95,7 @@ export default function Footer() {
           {/* Column 4: Contact Info */}
           <div className="space-y-4">
             <h3 className="text-brand-teal font-heading font-bold text-xs uppercase tracking-widest">Head Office</h3>
-            
+
             {/* Google Maps Embed */}
             <div className="w-full h-28 rounded-lg overflow-hidden border border-app-border bg-app-card shadow-sm">
               <iframe
@@ -130,7 +130,15 @@ export default function Footer() {
 
         {/* Bottom Section */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-[11px] text-app-muted/80 font-medium">
-          <p>&copy; {currentYear} ArrowHead International General Contracting LLC. All rights reserved.</p>
+          <div className="flex flex-col space-y-2 md:space-y-0 md:flex-row md:items-center md:space-x-4 text-center md:text-left">
+            <p>&copy; {currentYear} ArrowHead International General Contracting LLC. All rights reserved.</p>
+            <span className="hidden md:inline text-app-border/60">|</span>
+            <div className="flex justify-center space-x-3">
+              <Link href="/privacy-policy" className="hover:text-brand-teal transition-colors">Privacy Policy</Link>
+              <span className="text-app-muted/40">&middot;</span>
+              <Link href="/terms-conditions" className="hover:text-brand-teal transition-colors">Terms &amp; Conditions</Link>
+            </div>
+          </div>
           <div className="mt-4 md:mt-0 flex space-x-6">
             <span className="hover:text-brand-teal transition-colors">ADSSC Approved</span>
             <span className="hover:text-gray-400 transition-colors">ADDC Standards Compliant</span>
