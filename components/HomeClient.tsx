@@ -536,7 +536,7 @@ export default function HomeClient() {
       </section>
       
       {/* 1C-E. HERO SECTION - OPTION E: Three Business Verticals Overlay Hero */}
-      <section className="relative min-h-screen lg:h-screen flex flex-col justify-between overflow-visible bg-primary-dark pb-16 border-b border-app-border">
+      <section className="relative min-h-screen flex flex-col justify-between overflow-visible bg-primary-dark pb-16 border-b border-app-border">
         {/* Background Image Container */}
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1920&q=80')` }}>
           {/* Dark Architectural Brochure Overlay */}
@@ -649,7 +649,7 @@ export default function HomeClient() {
       </section>
 
       {/* 2. STATS & CLIENT TICKER ROW */}
-      <section className="pt-24 pb-12 md:pt-32 md:pb-12 bg-app-secondary border-y border-app-border">
+      <section className="pt-12 pb-12 md:pt-16 lg:pt-12 md:pb-12 bg-app-secondary border-y border-app-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             {stats.map((stat, idx) => (
