@@ -5,6 +5,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WhatsAppWidget from '@/components/WhatsAppWidget';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import LogoIntro from '@/components/LogoIntro';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -69,6 +70,9 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${outfit.variable} scroll-smooth`} suppressHydrationWarning>
       <body className="font-sans antialiased bg-app-bg text-app-fg selection:bg-brand-teal selection:text-primary-dark transition-colors duration-200">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {/* First Load Logo Animation Loader */}
+          <LogoIntro />
+
           {/* Navigation Bar */}
           <Header />
 

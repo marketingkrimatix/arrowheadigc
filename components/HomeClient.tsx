@@ -4,10 +4,8 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 
-const Isometric3DShowcase = dynamic(() => import('@/components/Isometric3DShowcase'), { ssr: false });
 const LiveIsometric3DShowcase = dynamic(() => import('@/components/LiveIsometric3DShowcase'), { ssr: false });
-const SplineShowcase = dynamic(() => import('@/components/SplineShowcase'), { ssr: false });
-const R3FShowcase = dynamic(() => import('@/components/R3FShowcase'), { ssr: false });
+
 
 const EditorialMasonry = dynamic(() => import('@/components/showcases/EditorialMasonry'), { ssr: false });
 const HorizontalFilmstrip = dynamic(() => import('@/components/showcases/HorizontalFilmstrip'), { ssr: false });
@@ -50,6 +48,7 @@ interface ServiceDetail {
 
 export default function HomeClient() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
+  const [activeTestimonial, setActiveTestimonial] = useState<number>(0);
 
   const testimonials = [
     {
@@ -248,119 +247,18 @@ export default function HomeClient() {
   return (
     <div id="home-page-container" className="bg-app-bg text-app-fg transition-colors duration-200">
 
-      {/* 1A. HERO SECTION - OPTION A: CSS 3D Isometric Parallax */}
-      <section className="relative min-h-[92vh] flex items-center overflow-hidden pt-24 pb-20 sm:pb-28 border-b border-app-border bg-app-bg">
-        {/* Version Badge */}
-        <div className="absolute top-6 left-1/2 -translate-x-1/2 z-20 bg-brand-teal/10 border border-brand-teal/30 px-4 py-1.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-widest text-brand-teal flex items-center gap-1.5 shadow-sm">
-          <span className="w-1.5 h-1.5 rounded-full bg-brand-teal animate-ping"></span>
-          Hero Option A: CSS 3D Isometric Parallax Stack (Lightweight)
-        </div>
-
-        {/* Soft Depth Gradients */}
-        <div className="absolute top-1/4 right-0 w-[45%] h-[55%] bg-brand-teal/5 rounded-full blur-3xl pointer-events-none"></div>
-        <div className="absolute bottom-10 left-10 w-[30%] h-[30%] bg-brand-gold/5 rounded-full blur-3xl pointer-events-none"></div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
-
-            {/* Hero Left: Text & Action */}
-            <div className="lg:col-span-7 space-y-8">
-              <div className="space-y-4">
-                <span className="inline-flex items-center px-3.5 py-1 text-[10px] font-bold uppercase tracking-widest text-brand-gold bg-brand-gold/10 border border-brand-gold/20 rounded">
-                  DED License: CN-4998977 • Abu Dhabi
-                </span>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight leading-[1.15]">
-                  Engineering Value &<br />
-                  <span className="text-brand-teal">Prestige Structures</span><br />
-                  <span className="font-light italic text-brand-gold">in Abu Dhabi</span>
-                </h1>
-              </div>
-
-              <p className="text-app-muted text-sm sm:text-base leading-relaxed font-sans font-light max-w-xl">
-                ArrowHead International General Contracting LLC delivers technical pipeline infrastructure, custom luxury villas, complex MEP configurations, and integrated facilities management built to ADSSC &amp; ADDC standards.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 pt-2">
-                <Link
-                  href="/contact?rfq=true"
-                  className="inline-flex items-center justify-center px-8 py-4 rounded bg-brand-teal hover:bg-brand-teal-hover text-primary-dark font-bold text-xs uppercase tracking-wider shadow-lg shadow-brand-teal/20 transition-all duration-300 cursor-pointer"
-                >
-                  Request a Proposal
-                </Link>
-                <Link
-                  href="/projects"
-                  className="inline-flex items-center justify-center px-8 py-4 rounded bg-app-card border border-app-border text-app-fg font-bold text-xs uppercase tracking-wider hover:border-brand-teal/50 hover:bg-app-secondary transition-all duration-300 cursor-pointer"
-                >
-                  Explore Case Studies
-                </Link>
-              </div>
-
-              {/* Structural engineering bullet highlights */}
-              <div className="pt-6 grid grid-cols-2 gap-4 border-t border-app-border max-w-lg">
-                <div className="flex items-center space-x-2.5">
-                  <span className="text-brand-teal text-base font-bold">✓</span>
-                  <span className="text-xs font-semibold text-app-fg/90">ADSSC / ADDC Compliant</span>
-                </div>
-                <div className="flex items-center space-x-2.5">
-                  <span className="text-brand-teal text-base font-bold">✓</span>
-                  <span className="text-xs font-semibold text-app-fg/90">Estidama Aligned Builds</span>
-                </div>
-                <div className="flex items-center space-x-2.5">
-                  <span className="text-brand-teal text-base font-bold">✓</span>
-                  <span className="text-xs font-semibold text-app-fg/90">In-house Welding Crews</span>
-                </div>
-                <div className="flex items-center space-x-2.5">
-                  <span className="text-brand-teal text-base font-bold">✓</span>
-                  <span className="text-xs font-semibold text-app-fg/90">Civil Defense Approved</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Hero Right: 3D Interactive Isometric Showcase */}
-            <div className="lg:col-span-5 relative mt-6 lg:mt-0 flex justify-center lg:justify-end">
-              {/* <div className="relative w-full max-w-[420px] aspect-[4/5] sm:aspect-[3/4]"> */}
-              {/* Underlay Offset Border */}
-              {/* <div className="absolute inset-0 border-2 border-brand-gold/30 translate-x-6 translate-y-6 rounded-lg pointer-events-none"></div> */}
-
-              {/* Main Large Image */}
-              {/* <div className="absolute inset-0 rounded-lg overflow-hidden border border-app-border shadow-2xl bg-app-secondary">
-                  <img
-                    src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80"
-                    alt="AHIGC Civil Project"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                </div> */}
-
-              {/* Overlapping Small Architectural Frame */}
-              {/* <div className="absolute -bottom-8 -left-8 w-[180px] sm:w-[220px] aspect-square rounded-lg overflow-hidden border-4 border-app-card shadow-2xl offset-border-frame">
-                  <img
-                    src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=400&q=80"
-                    alt="Luxury Residential Build"
-                    className="w-full h-full object-cover"
-                  />
-                </div> */}
-
-              {/* Bottom Label Badge */}
-              {/* <div className="absolute bottom-4 right-4 bg-app-card/95 backdrop-blur-xs border border-app-border rounded p-3 text-[10px] uppercase font-mono tracking-wider shadow-md">
-                  <span className="text-brand-gold font-bold">Authorized Contractor</span>
-                  <span className="block text-app-fg font-light mt-0.5">Mussafah, Abu Dhabi</span>
-                </div>
-              </div> */}
-              <Isometric3DShowcase />
-            </div>
-
-          </div>
-        </div>
+      {/* 1C-D. HERO SECTION - OPTION D: Cinematic Video/Image Hero Carousel */}
+      <section className="relative min-h-screen flex flex-col justify-between overflow-hidden border-b border-app-border bg-primary-dark -mt-20">
+        <CinematicHeroCarousel />
       </section>
 
       {/* 1A. HERO SECTION - OPTION A: CSS 3D Isometric Parallax */}
-      <section className="relative min-h-[92vh] flex items-center overflow-hidden pt-24 pb-20 sm:pb-28 border-b border-app-border bg-app-bg">
+      <section className="relative min-h-[100vh] flex items-center overflow-hidden pt-24 pb-20 sm:pb-28 border-b border-app-border bg-app-bg">
         {/* Version Badge */}
-        <div className="absolute top-6 left-1/2 -translate-x-1/2 z-20 bg-brand-teal/10 border border-brand-teal/30 px-4 py-1.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-widest text-brand-teal flex items-center gap-1.5 shadow-sm">
+        {/* <div className="absolute top-6 left-1/2 -translate-x-1/2 z-20 bg-brand-teal/10 border border-brand-teal/30 px-4 py-1.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-widest text-brand-teal flex items-center gap-1.5 shadow-sm">
           <span className="w-1.5 h-1.5 rounded-full bg-brand-teal animate-ping"></span>
           Hero Option A: CSS 3D Isometric Parallax Stack (Lightweight)
-        </div>
+        </div> */}
 
         {/* Soft Depth Gradients */}
         <div className="absolute top-1/4 right-0 w-[45%] h-[55%] bg-brand-teal/5 rounded-full blur-3xl pointer-events-none"></div>
@@ -460,115 +358,35 @@ export default function HomeClient() {
         </div>
       </section>
 
-      {/* 1B. HERO SECTION - OPTION B: Spline 3D WebGL */}
-      <section className="relative min-h-[92vh] flex items-center overflow-hidden pt-24 pb-20 sm:pb-28 border-b border-app-border bg-app-secondary/10">
-        {/* Version Badge */}
-        <div className="absolute top-6 left-1/2 -translate-x-1/2 z-20 bg-brand-gold/10 border border-brand-gold/30 px-4 py-1.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-widest text-brand-gold flex items-center gap-1.5 shadow-sm">
-          <span className="w-1.5 h-1.5 rounded-full bg-brand-gold animate-ping"></span>
-          Hero Option B: Spline 3D Interactive WebGL Scene (High Fidelity)
-        </div>
-
-        {/* Soft Depth Gradients */}
-        <div className="absolute top-1/4 left-0 w-[45%] h-[55%] bg-brand-gold/5 rounded-full blur-3xl pointer-events-none"></div>
-        <div className="absolute bottom-10 right-10 w-[30%] h-[30%] bg-brand-teal/5 rounded-full blur-3xl pointer-events-none"></div>
+      {/* 1A (Reversed). HERO SECTION - OPTION A: CSS 3D Isometric Parallax (Reversed Layout) */}
+      <section className="relative min-h-[100vh] flex items-center overflow-hidden pt-24 pb-20 sm:pb-28 border-b border-app-border bg-app-bg">
+        {/* Soft Depth Gradients (Reversed) */}
+        <div className="absolute top-1/4 left-0 w-[45%] h-[55%] bg-brand-teal/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute bottom-10 right-10 w-[30%] h-[30%] bg-brand-gold/5 rounded-full blur-3xl pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
 
-            {/* Hero Left: Text & Action */}
-            <div className="lg:col-span-7 space-y-8">
-              <div className="space-y-4">
-                <span className="inline-flex items-center px-3.5 py-1 text-[10px] font-bold uppercase tracking-widest text-brand-teal bg-brand-teal/10 border border-brand-teal/20 rounded">
-                  DED License: CN-4998977 • Abu Dhabi
-                </span>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight leading-[1.15]">
-                  Constructing the Future,<br />
-                  <span className="text-brand-gold">Designing Excellence</span><br />
-                  <span className="font-light italic text-brand-teal">in Abu Dhabi</span>
-                </h1>
-              </div>
-
-              <p className="text-app-muted text-sm sm:text-base leading-relaxed font-sans font-light max-w-xl">
-                Experience high-fidelity interactive WebGL renders. Pan, zoom, and rotate detailed architectural plans, showing structural handovers and HDPE pressure pipe assemblies.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 pt-2">
-                <Link
-                  href="/contact?rfq=true"
-                  className="inline-flex items-center justify-center px-8 py-4 rounded bg-brand-gold hover:bg-brand-gold-hover text-primary-dark font-bold text-xs uppercase tracking-wider shadow-lg shadow-brand-gold/20 transition-all duration-300 cursor-pointer"
-                >
-                  Request a Proposal
-                </Link>
-                <Link
-                  href="/projects"
-                  className="inline-flex items-center justify-center px-8 py-4 rounded bg-app-card border border-app-border text-app-fg font-bold text-xs uppercase tracking-wider hover:border-brand-gold/50 hover:bg-app-secondary transition-all duration-300 cursor-pointer"
-                >
-                  Explore Case Studies
-                </Link>
-              </div>
-
-              {/* Structural highlights */}
-              <div className="pt-6 grid grid-cols-2 gap-4 border-t border-app-border max-w-lg">
-                <div className="flex items-center space-x-2.5">
-                  <span className="text-brand-gold text-base font-bold">✓</span>
-                  <span className="text-xs font-semibold text-app-fg/90">Interactive Orbit Controls</span>
-                </div>
-                <div className="flex items-center space-x-2.5">
-                  <span className="text-brand-gold text-base font-bold">✓</span>
-                  <span className="text-xs font-semibold text-app-fg/90">Material Shader Depth</span>
-                </div>
-                <div className="flex items-center space-x-2.5">
-                  <span className="text-brand-gold text-base font-bold">✓</span>
-                  <span className="text-xs font-semibold text-app-fg/90">Real-time Lighting Shadows</span>
-                </div>
-                <div className="flex items-center space-x-2.5">
-                  <span className="text-brand-gold text-base font-bold">✓</span>
-                  <span className="text-xs font-semibold text-app-fg/90">Cross-Platform Compliant</span>
-                </div>
-              </div>
+            {/* Hero Left: 3D Interactive Isometric Showcase (Reversed Position) */}
+            <div className="lg:col-span-5 order-2 lg:order-1 relative mt-6 lg:mt-0 flex justify-center lg:justify-start">
+              <LiveIsometric3DShowcase facing="right" />
             </div>
 
-            {/* Hero Right: Spline 3D Showcase */}
-            <div className="lg:col-span-5 relative mt-6 lg:mt-0 w-full flex justify-center lg:justify-end">
-              <div className="w-full max-w-[440px]">
-                {/* <SplineShowcase /> */}
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* 1C. HERO SECTION - OPTION C: React Three Fiber (R3F) */}
-      <section className="relative min-h-[92vh] flex items-center overflow-hidden pt-24 pb-20 sm:pb-28 border-b border-app-border bg-app-bg">
-        {/* Version Badge */}
-        <div className="absolute top-6 left-1/2 -translate-x-1/2 z-20 bg-purple-500/10 border border-purple-500/30 px-4 py-1.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-widest text-purple-400 flex items-center gap-1.5 shadow-sm">
-          <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-ping"></span>
-          Hero Option C: R3F Programmatic 3D Canvas (Zero External Downloads)
-        </div>
-
-        {/* Soft Depth Gradients */}
-        <div className="absolute top-1/4 right-0 w-[45%] h-[55%] bg-purple-500/5 rounded-full blur-3xl pointer-events-none"></div>
-        <div className="absolute bottom-10 left-10 w-[30%] h-[30%] bg-brand-teal/5 rounded-full blur-3xl pointer-events-none"></div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
-
-            {/* Hero Left: Text & Action */}
-            <div className="lg:col-span-7 space-y-8">
-              <div className="space-y-4">
+            {/* Hero Right: Text & Action (Reversed Position) */}
+            <div className="lg:col-span-7 order-1 lg:order-2 space-y-8 lg:pl-8 lg:flex lg:flex-col lg:items-end text-right">
+              <div className="space-y-4 lg:flex lg:flex-col lg:items-end">
                 <span className="inline-flex items-center px-3.5 py-1 text-[10px] font-bold uppercase tracking-widest text-brand-gold bg-brand-gold/10 border border-brand-gold/20 rounded">
                   DED License: CN-4998977 • Abu Dhabi
                 </span>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight leading-[1.15]">
-                  Structural Integrity &<br />
-                  <span className="text-brand-teal">MEP System Integrity</span><br />
+                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight leading-[1.15]">
+                  Engineering Value &<br />
+                  <span className="text-brand-teal">Prestige Structures</span><br />
                   <span className="font-light italic text-brand-gold">in Abu Dhabi</span>
-                </h1>
+                </h2>
               </div>
 
               <p className="text-app-muted text-sm sm:text-base leading-relaxed font-sans font-light max-w-xl">
-                Experience programmatically generated Three.js vectors. Features a rotating concrete platform, transparent structural gold columns (Civil), glowing blue pressure pipes (HDPE), and active chiller fans (MEP).
+                ArrowHead International General Contracting LLC delivers technical pipeline infrastructure, custom luxury villas, complex MEP configurations, and integrated facilities management built to ADSSC &amp; ADDC standards.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-2">
@@ -586,31 +404,24 @@ export default function HomeClient() {
                 </Link>
               </div>
 
-              {/* Structural highlights */}
-              <div className="pt-6 grid grid-cols-2 gap-4 border-t border-app-border max-w-lg">
-                <div className="flex items-center space-x-2.5">
+              {/* Structural engineering bullet highlights */}
+              <div className="pt-6 grid grid-cols-2 gap-4 border-t border-app-border max-w-lg w-full">
+                <div className="flex items-center space-x-2.5 lg:justify-end">
                   <span className="text-brand-teal text-base font-bold">✓</span>
-                  <span className="text-xs font-semibold text-app-fg/90">Programmatic Geometry Meshes</span>
+                  <span className="text-xs font-semibold text-app-fg/90">ADSSC / ADDC Compliant</span>
                 </div>
-                <div className="flex items-center space-x-2.5">
+                <div className="flex items-center space-x-2.5 lg:justify-end">
                   <span className="text-brand-teal text-base font-bold">✓</span>
-                  <span className="text-xs font-semibold text-app-fg/90">Emissive Neon Tube Glows</span>
+                  <span className="text-xs font-semibold text-app-fg/90">Estidama Aligned Builds</span>
                 </div>
-                <div className="flex items-center space-x-2.5">
+                <div className="flex items-center space-x-2.5 lg:justify-end">
                   <span className="text-brand-teal text-base font-bold">✓</span>
-                  <span className="text-xs font-semibold text-app-fg/90">Active Rotating Chiller Fans</span>
+                  <span className="text-xs font-semibold text-app-fg/90">In-house Welding Crews</span>
                 </div>
-                <div className="flex items-center space-x-2.5">
+                <div className="flex items-center space-x-2.5 lg:justify-end">
                   <span className="text-brand-teal text-base font-bold">✓</span>
-                  <span className="text-xs font-semibold text-app-fg/90">Zero Load Wait Times</span>
+                  <span className="text-xs font-semibold text-app-fg/90">Civil Defense Approved</span>
                 </div>
-              </div>
-            </div>
-
-            {/* Hero Right: R3F Programmatic Showcase */}
-            <div className="lg:col-span-5 relative mt-6 lg:mt-0 w-full flex justify-center lg:justify-end">
-              <div className="w-full max-w-[440px]">
-                {/* <R3FShowcase /> */}
               </div>
             </div>
 
@@ -618,24 +429,114 @@ export default function HomeClient() {
         </div>
       </section>
 
-      {/* 1C-D. HERO SECTION - OPTION D: Cinematic Video/Image Hero Carousel */}
-      <section className="relative min-h-[92vh] flex flex-col justify-between overflow-hidden border-b border-app-border bg-primary-dark">
+{/* 1A. HERO SECTION - OPTION A: CSS 3D Isometric Parallax */}
+      <section className="relative min-h-[100vh] flex items-center overflow-hidden pt-24 pb-20 sm:pb-28 border-b border-app-border bg-app-bg">
         {/* Version Badge */}
-        <div className="absolute top-6 left-1/2 -translate-x-1/2 z-20 bg-brand-gold/10 border border-brand-gold/30 px-4 py-1.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-widest text-brand-gold flex items-center gap-1.5 shadow-sm">
-          <span className="w-1.5 h-1.5 rounded-full bg-brand-gold animate-ping"></span>
-          Hero Option D: Cinematic Widescreen Video/Image Carousel
-        </div>
-        <CinematicHeroCarousel />
-      </section>
-
-      {/* 1C-E. HERO SECTION - OPTION E: Three Business Verticals Overlay Hero */}
-      <section className="relative min-h-[95vh] flex flex-col justify-between overflow-visible bg-primary-dark pb-16 border-b border-app-border">
-        {/* Version Badge */}
-        <div className="absolute top-6 left-1/2 -translate-x-1/2 z-20 bg-brand-teal/10 border border-brand-teal/30 px-4 py-1.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-widest text-brand-teal flex items-center gap-1.5 shadow-sm">
+        {/* <div className="absolute top-6 left-1/2 -translate-x-1/2 z-20 bg-brand-teal/10 border border-brand-teal/30 px-4 py-1.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-widest text-brand-teal flex items-center gap-1.5 shadow-sm">
           <span className="w-1.5 h-1.5 rounded-full bg-brand-teal animate-ping"></span>
-          Hero Option E: Three Business Verticals Overlay Hero
-        </div>
+          Hero Option A: CSS 3D Isometric Parallax Stack (Lightweight)
+        </div> */}
 
+        {/* Soft Depth Gradients */}
+        <div className="absolute top-1/4 right-0 w-[45%] h-[55%] bg-brand-teal/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute bottom-10 left-10 w-[30%] h-[30%] bg-brand-gold/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
+
+            {/* Hero Left: Text & Action */}
+            <div className="lg:col-span-7 space-y-8">
+              <div className="space-y-4">
+                <span className="inline-flex items-center px-3.5 py-1 text-[10px] font-bold uppercase tracking-widest text-brand-gold bg-brand-gold/10 border border-brand-gold/20 rounded">
+                  DED License: CN-4998977 • Abu Dhabi
+                </span>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight leading-[1.15]">
+                  Engineering Value &<br />
+                  <span className="text-brand-teal">Prestige Structures</span><br />
+                  <span className="font-light italic text-brand-gold">in Abu Dhabi</span>
+                </h1>
+              </div>
+
+              <p className="text-app-muted text-sm sm:text-base leading-relaxed font-sans font-light max-w-xl">
+                ArrowHead International General Contracting LLC delivers technical pipeline infrastructure, custom luxury villas, complex MEP configurations, and integrated facilities management built to ADSSC &amp; ADDC standards.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 pt-2">
+                <Link
+                  href="/contact?rfq=true"
+                  className="inline-flex items-center justify-center px-8 py-4 rounded bg-brand-teal hover:bg-brand-teal-hover text-primary-dark font-bold text-xs uppercase tracking-wider shadow-lg shadow-brand-teal/20 transition-all duration-300 cursor-pointer"
+                >
+                  Request a Proposal
+                </Link>
+                <Link
+                  href="/projects"
+                  className="inline-flex items-center justify-center px-8 py-4 rounded bg-app-card border border-app-border text-app-fg font-bold text-xs uppercase tracking-wider hover:border-brand-teal/50 hover:bg-app-secondary transition-all duration-300 cursor-pointer"
+                >
+                  Explore Case Studies
+                </Link>
+              </div>
+
+              {/* Structural engineering bullet highlights */}
+              <div className="pt-6 grid grid-cols-2 gap-4 border-t border-app-border max-w-lg">
+                <div className="flex items-center space-x-2.5">
+                  <span className="text-brand-teal text-base font-bold">✓</span>
+                  <span className="text-xs font-semibold text-app-fg/90">ADSSC / ADDC Compliant</span>
+                </div>
+                <div className="flex items-center space-x-2.5">
+                  <span className="text-brand-teal text-base font-bold">✓</span>
+                  <span className="text-xs font-semibold text-app-fg/90">Estidama Aligned Builds</span>
+                </div>
+                <div className="flex items-center space-x-2.5">
+                  <span className="text-brand-teal text-base font-bold">✓</span>
+                  <span className="text-xs font-semibold text-app-fg/90">In-house Welding Crews</span>
+                </div>
+                <div className="flex items-center space-x-2.5">
+                  <span className="text-brand-teal text-base font-bold">✓</span>
+                  <span className="text-xs font-semibold text-app-fg/90">Civil Defense Approved</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Hero Right: 3D Interactive Isometric Showcase */}
+            <div className="lg:col-span-5 relative mt-6 lg:mt-0 flex justify-center lg:justify-end">
+              {/* <div className="relative w-full max-w-[420px] aspect-[4/5] sm:aspect-[3/4]"> */}
+              {/* Underlay Offset Border */}
+              {/* <div className="absolute inset-0 border-2 border-brand-gold/30 translate-x-6 translate-y-6 rounded-lg pointer-events-none"></div> */}
+
+              {/* Main Large Image */}
+              {/* <div className="absolute inset-0 rounded-lg overflow-hidden border border-app-border shadow-2xl bg-app-secondary">
+                  <img
+                    src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80"
+                    alt="AHIGC Civil Project"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                </div> */}
+
+              {/* Overlapping Small Architectural Frame */}
+              {/* <div className="absolute -bottom-8 -left-8 w-[180px] sm:w-[220px] aspect-square rounded-lg overflow-hidden border-4 border-app-card shadow-2xl offset-border-frame">
+                  <img
+                    src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=400&q=80"
+                    alt="Luxury Residential Build"
+                    className="w-full h-full object-cover"
+                  />
+                </div> */}
+
+              {/* Bottom Label Badge */}
+              {/* <div className="absolute bottom-4 right-4 bg-app-card/95 backdrop-blur-xs border border-app-border rounded p-3 text-[10px] uppercase font-mono tracking-wider shadow-md">
+                  <span className="text-brand-gold font-bold">Authorized Contractor</span>
+                  <span className="block text-app-fg font-light mt-0.5">Mussafah, Abu Dhabi</span>
+                </div>
+              </div> */}
+              <LiveIsometric3DShowcase />
+            </div>
+
+          </div>
+        </div>
+      </section>
+      
+      {/* 1C-E. HERO SECTION - OPTION E: Three Business Verticals Overlay Hero */}
+      <section className="relative min-h-screen lg:h-screen flex flex-col justify-between overflow-visible bg-primary-dark pb-16 border-b border-app-border">
         {/* Background Image Container */}
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1920&q=80')` }}>
           {/* Dark Architectural Brochure Overlay */}
@@ -649,10 +550,10 @@ export default function HomeClient() {
               DED License: CN-4998977 • Abu Dhabi General Contracting
             </span>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-heading font-extrabold text-white tracking-tight leading-[1.1] uppercase">
+            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-heading font-extrabold text-white tracking-tight leading-[1.1] uppercase">
               Building<br />
               Abu Dhabi&apos;s Future.
-            </h1>
+            </h2>
 
             <p className="text-gray-300 text-sm sm:text-base lg:text-lg leading-relaxed font-sans font-light max-w-2xl">
               Expertise in Luxury Villas, Infrastructure, and Specialized Engineering. Delivering premium turnkey contracting and certified utility pipeline installations.
@@ -674,7 +575,7 @@ export default function HomeClient() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
             {/* Card 1: Villa Construction */}
-            <div className="bg-app-card border border-app-border rounded-xl p-6 sm:p-8 shadow-2xl flex flex-col justify-between hover:border-brand-teal transition-all duration-300 group">
+            <div className="bg-app-card border border-app-border rounded-xl p-6 sm:p-8 shadow-2xl flex flex-col justify-between hover:border-brand-teal hover:-translate-y-3 hover:shadow-lg hover:shadow-brand-teal/10 transition-all duration-300 group cursor-pointer">
               <div className="space-y-4">
                 {/* SVG Home Icon */}
                 <div className="w-12 h-12 rounded-lg bg-brand-teal/10 flex items-center justify-center text-brand-teal group-hover:scale-105 transition-transform duration-300">
@@ -697,7 +598,7 @@ export default function HomeClient() {
             </div>
 
             {/* Card 2: HDPE Pipe Systems */}
-            <div className="bg-app-card border border-app-border rounded-xl p-6 sm:p-8 shadow-2xl flex flex-col justify-between hover:border-brand-teal transition-all duration-300 group">
+            <div className="bg-app-card border border-app-border rounded-xl p-6 sm:p-8 shadow-2xl flex flex-col justify-between hover:border-brand-teal hover:-translate-y-3 hover:shadow-lg hover:shadow-brand-teal/10 transition-all duration-300 group cursor-pointer">
               <div className="space-y-4">
                 {/* SVG Pipeline/Welding Icon */}
                 <div className="w-12 h-12 rounded-lg bg-brand-teal/10 flex items-center justify-center text-brand-teal group-hover:scale-105 transition-transform duration-300">
@@ -720,7 +621,7 @@ export default function HomeClient() {
             </div>
 
             {/* Card 3: Facility Management */}
-            <div className="bg-app-card border border-app-border rounded-xl p-6 sm:p-8 shadow-2xl flex flex-col justify-between hover:border-brand-teal transition-all duration-300 group">
+            <div className="bg-app-card border border-app-border rounded-xl p-6 sm:p-8 shadow-2xl flex flex-col justify-between hover:border-brand-teal hover:-translate-y-3 hover:shadow-lg hover:shadow-brand-teal/10 transition-all duration-300 group cursor-pointer">
               <div className="space-y-4">
                 {/* SVG Gear/Wrench Icon */}
                 <div className="w-12 h-12 rounded-lg bg-brand-teal/10 flex items-center justify-center text-brand-teal group-hover:scale-105 transition-transform duration-300">
@@ -747,216 +648,8 @@ export default function HomeClient() {
         </div>
       </section>
 
-      {/* 1D. PROJECT IMAGERY SHOWCASE: 21 UI/UX DESIGN STYLES */}
-      <section className="py-24 border-b border-app-border relative bg-app-bg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section title */}
-          <div className="max-w-3xl mx-auto text-center mb-16 space-y-3">
-            <span className="text-brand-gold text-xs font-bold uppercase tracking-widest font-mono">
-              Design Galleries Comparison
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-heading font-extrabold text-app-fg tracking-tight">
-              Project Imagery: 21 UI/UX Styles
-            </h2>
-            <div className="w-16 h-0.5 bg-brand-teal mx-auto mt-2"></div>
-            <p className="text-app-muted text-sm leading-relaxed font-light pt-2">
-              ArrowHead presents 21 premium UI/UX layouts for displaying project imagery. Scroll down to compare the look and choose the best layout structure.
-            </p>
-          </div>
-
-          {/* Style A: Editorial Masonry */}
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE A</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Asymmetrical Magazine Editorial Masonry</h3>
-            </div>
-            <EditorialMasonry />
-          </div>
-
-          {/* Style B: Horizontal Filmstrip */}
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE B</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Smooth Horizontal Filmstrip Carousel</h3>
-            </div>
-            <HorizontalFilmstrip />
-          </div>
-
-          {/* Style C: Split Category Tabs */}
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded">STYLE C</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Split Screen Category Hover Active Tabs</h3>
-            </div>
-            <SplitActiveShowcase />
-          </div>
-
-          {/* Style D: Isometric 3D Perspective Card Grid */}
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE D</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">3D Isometric Perspective Tilt Cards</h3>
-            </div>
-            <IsometricPerspectiveGrid />
-          </div>
-
-          {/* Style E: Cinematic Progress Slider */}
-          <div className="space-y-6">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE E</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Cinematic Widescreen Progress Bar Slideshow</h3>
-            </div>
-            <CinematicSlider />
-          </div>
-
-          {/* Style F: Drag-to-Reveal CAD Slider */}
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE F</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Interactive Drag-to-Reveal CAD Blueprint vs. Finished Build</h3>
-            </div>
-            <CadRevealSlider />
-          </div>
-
-          {/* Style G: Tactile Stacked Card Deck */}
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE G</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Tactile Stacked Project Card Deck</h3>
-            </div>
-            <StackedDeckShowcase />
-          </div>
-
-          {/* Style H: Progressive Build Timeline Phase Switcher */}
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE H</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Progressive Build Timeline Phase Switcher</h3>
-            </div>
-            <BuildTimelineShowcase />
-          </div>
-
-          {/* Style I: Tabular Factsheet Grid Row Hover */}
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE I</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Tabular Factsheet Grid Row Hover</h3>
-            </div>
-            <FactsheetGrid />
-          </div>
-
-          {/* Style J: Cinematic Spec Card Grid */}
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded">STYLE J</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Cinematic Spec Card Grid</h3>
-            </div>
-            <CinematicSpecGrid />
-          </div>
-
-          {/* Style K: Rotating 3D Card Ring Carousel */}
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE K</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Rotating 3D Card Ring Carousel</h3>
-            </div>
-            <Rotating3DCarousel />
-          </div>
-
-          {/* Style L: Asymmetric Random-Sized Collage Grid */}
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE L</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Asymmetric Random-Sized Collage Grid</h3>
-            </div>
-            <CollageBoxShowcase />
-          </div>
-
-          {/* Style M: Architectural Portfolio Grid */}
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE M</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Architectural Portfolio Grid</h3>
-            </div>
-            <ArchitecturalPortfolio />
-          </div>
-
-          {/* Style N: Material Spec Spotlight Reveal Grid */}
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE N</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Material Spec Spotlight Reveal Grid</h3>
-            </div>
-            <SpotlightRevealGrid />
-          </div>
-
-          {/* Style O: Curved 3D Panoramic Theater Carousel */}
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE O</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Curved 3D Panoramic Theater Carousel</h3>
-            </div>
-            <PanoramicCarousel />
-          </div>
-
-          {/* Style P: Architectural Material Spec & Mood Board */}
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE P</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Architectural Material Spec &amp; Mood Board</h3>
-            </div>
-            <GeographicMapExplorer />
-          </div>
-
-          {/* Style Q: Architectural Exploded-View Inspector */}
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE Q</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Architectural Exploded-View Inspector</h3>
-            </div>
-            <ExplodedViewInspector />
-          </div>
-
-          {/* Style R: Widescreen Editorial Showcase & Material Swatch Selector */}
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE R</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Widescreen Editorial Showcase &amp; Material Swatch Selector</h3>
-            </div>
-            <ProjectControlCenter />
-          </div>
-
-          {/* Style S: Minimalist Project Card Grid */}
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE S</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Minimalist Project Card Grid (Clean Hover Zoom)</h3>
-            </div>
-            <MinimalCardGrid />
-          </div>
-
-          {/* Style T: Widescreen Editorial Banner Slider */}
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE T</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Widescreen Editorial Banner Slider (Clean Crossfade)</h3>
-            </div>
-            <WidescreenEditorialSlider />
-          </div>
-
-          {/* Style U: Alternating Asymmetric Grid */}
-          <div className="space-y-6">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE U</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Alternating Asymmetric Grid (Brochure Layout)</h3>
-            </div>
-            <AlternatingAsymmetricGrid />
-          </div>
-        </div>
-      </section>
-
       {/* 2. STATS & CLIENT TICKER ROW */}
-      <section className="py-12 bg-app-secondary border-y border-app-border">
+      <section className="pt-24 pb-12 md:pt-32 md:pb-12 bg-app-secondary border-y border-app-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             {stats.map((stat, idx) => (
@@ -987,80 +680,37 @@ export default function HomeClient() {
         </div>
       </section>
 
-      {/* WHY CHOOSE ARROWHEAD */}
-      <section className="py-24 bg-app-bg relative">
+      {/* 1D. PROJECT IMAGERY SHOWCASE: 21 UI/UX DESIGN STYLES */}
+      <section className="pt-24 border-b border-app-border relative bg-app-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section title */}
           <div className="max-w-3xl mx-auto text-center mb-16 space-y-3">
-            <span className="text-brand-gold text-xs font-bold uppercase tracking-widest font-mono">Value Proposition</span>
-            <h2 className="text-3xl sm:text-4xl font-heading font-extrabold text-app-fg tracking-tight">Why B2B Clients Choose ArrowHead</h2>
+            <span className="text-brand-gold text-xs font-bold uppercase tracking-widest font-mono">
+              Design Galleries
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-heading font-extrabold text-app-fg tracking-tight">
+              Project Imagery
+              {/* Project Imagery: 21 UI/UX Styles */}
+            </h2>
             <div className="w-16 h-0.5 bg-brand-teal mx-auto mt-2"></div>
-            <p className="text-app-muted text-sm font-light leading-relaxed pt-2">
-              We combine DMT Class-I general contracting status with rigorous technical quality and verified local approvals compliance to deliver flawless utility and residential networks.
+            <p className="text-app-muted text-sm leading-relaxed font-light pt-2">
+              {/* ArrowHead presents 21 premium UI/UX layouts for displaying project imagery. Scroll down to compare the look and choose the best layout structure. */}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Pillar 1: Class-I Status */}
-            <div className="bg-app-card border border-app-border rounded-xl p-6 hover:border-brand-teal/40 transition-all duration-300 offset-border-frame flex flex-col justify-between space-y-4">
-              <div className="space-y-3">
-                <span className="text-3xl block">🏆</span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wider font-heading">Class-I DMT Registration</h4>
-                <p className="text-app-muted text-xs font-light leading-relaxed">
-                  Licensed by the Abu Dhabi Department of Municipalities and Transport for high-value general contracting civil projects, water pipelines, and major infrastructure tenders.
-                </p>
-              </div>
-              <span className="text-[9px] font-mono text-brand-gold font-bold tracking-widest uppercase block pt-2 border-t border-app-border/40">
-                CLASS-I REGISTERED
-              </span>
-            </div>
-
-            {/* Pillar 2: 100% NOC success */}
-            <div className="bg-app-card border border-app-border rounded-xl p-6 hover:border-brand-teal/40 transition-all duration-300 offset-border-frame flex flex-col justify-between space-y-4">
-              <div className="space-y-3">
-                <span className="text-3xl block">📋</span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wider font-heading">100% NOC Clearance Log</h4>
-                <p className="text-app-muted text-xs font-light leading-relaxed">
-                  End-to-end municipal permit approvals. We coordinate directly with TAMM, ADSSC, ADDC, ADM, and Civil Defense to ensure water, electrical, and occupancy approvals.
-                </p>
-              </div>
-              <span className="text-[9px] font-mono text-brand-teal font-bold tracking-widest uppercase block pt-2 border-t border-app-border/40">
-                TAMM SYSTEM INTEGRATED
-              </span>
-            </div>
-
-            {/* Pillar 3: Certified Crews & Rigs */}
-            <div className="bg-app-card border border-app-border rounded-xl p-6 hover:border-brand-teal/40 transition-all duration-300 offset-border-frame flex flex-col justify-between space-y-4">
-              <div className="space-y-3">
-                <span className="text-3xl block">⚙️</span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wider font-heading">Certified Crews &amp; Rigs</h4>
-                <p className="text-app-muted text-xs font-light leading-relaxed">
-                  All butt-welding and electrofusion jointing are executed by DVS 2207 and ISO certified technicians using calibrated hydraulic welding rigs with log printouts.
-                </p>
-              </div>
-              <span className="text-[9px] font-mono text-brand-gold font-bold tracking-widest uppercase block pt-2 border-t border-app-border/40">
-                DVS 2207 STANDARD
-              </span>
-            </div>
-
-            {/* Pillar 4: Zero Incident HSE */}
-            <div className="bg-app-card border border-app-border rounded-xl p-6 hover:border-brand-teal/40 transition-all duration-300 offset-border-frame flex flex-col justify-between space-y-4">
-              <div className="space-y-3">
-                <span className="text-3xl block">🛡️</span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wider font-heading">Strict Quality &amp; HSE</h4>
-                <p className="text-app-muted text-xs font-light leading-relaxed">
-                  Flawless safety records across all high-risk excavations, marine repairs, and heavy concrete casts. Hydrostatic testing up to PN25 witnessed by utility inspectors.
-                </p>
-              </div>
-              <span className="text-[9px] font-mono text-brand-teal font-bold tracking-widest uppercase block pt-2 border-t border-app-border/40">
-                ZERO-INCIDENT LOG
-              </span>
-            </div>
+          {/* Style A: Editorial Masonry */}
+          <div className="space-y-6 mb-24">
+            {/* <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE A</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Asymmetrical Magazine Editorial Masonry</h3>
+            </div> */}
+            <EditorialMasonry />
           </div>
-        </div>
-      </section>
+          </div>
+          </section>
 
-      {/* 3. CAPABILITIES PORTFOLIO (High-End Grid Layout) */}
-      <section className="py-24 relative">
+{/* 3. CAPABILITIES PORTFOLIO (High-End Grid Layout) */}
+      <section className="pt-24 pb-12 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Section Header */}
@@ -1144,6 +794,263 @@ export default function HomeClient() {
             ))}
           </div>
 
+        </div>
+      </section>
+          
+      <section className="py-24 border-b border-app-border relative bg-app-bg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* Style B: Horizontal Filmstrip */}
+          {/* <div className="space-y-6 mb-24">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE B</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Smooth Horizontal Filmstrip Carousel</h3>
+            </div>
+            <HorizontalFilmstrip />
+          </div> */}
+
+          {/* Style C: Split Category Tabs */}
+          <div className="space-y-6 mb-24">
+            {/* <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded">STYLE C</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Split Screen Category Hover Active Tabs</h3>
+            </div> */}
+            <SplitActiveShowcase />
+          </div>
+
+          {/* Style D: Isometric 3D Perspective Card Grid */}
+          {/* <div className="space-y-6 mb-24">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE D</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">3D Isometric Perspective Tilt Cards</h3>
+            </div>
+            <IsometricPerspectiveGrid />
+          </div> */}
+
+          {/* Style E: Cinematic Progress Slider */}
+          <div className="space-y-6">
+            {/* <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE E</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Cinematic Widescreen Progress Bar Slideshow</h3>
+            </div> */}
+            <CinematicSlider />
+          </div>
+
+          {/* Style F: Drag-to-Reveal CAD Slider */}
+          {/* <div className="space-y-6 mb-24">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE F</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Interactive Drag-to-Reveal CAD Blueprint vs. Finished Build</h3>
+            </div>
+            <CadRevealSlider />
+          </div> */}
+
+          {/* Style G: Tactile Stacked Card Deck */}
+          {/* <div className="space-y-6 mb-24">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE G</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Tactile Stacked Project Card Deck</h3>
+            </div>
+            <StackedDeckShowcase />
+          </div> */}
+
+          {/* Style H: Progressive Build Timeline Phase Switcher */}
+          {/* <div className="space-y-6 mb-24">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE H</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Progressive Build Timeline Phase Switcher</h3>
+            </div>
+            <BuildTimelineShowcase />
+          </div> */}
+
+          {/* Style I: Tabular Factsheet Grid Row Hover */}
+          {/* <div className="space-y-6 mb-24">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE I</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Tabular Factsheet Grid Row Hover</h3>
+            </div>
+            <FactsheetGrid />
+          </div> */}
+
+          {/* Style J: Cinematic Spec Card Grid */}
+          <div className="space-y-6 mb-24">
+            {/* <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded">STYLE J</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Cinematic Spec Card Grid</h3>
+            </div> */}
+            <CinematicSpecGrid />
+          </div>
+
+          {/* Style K: Rotating 3D Card Ring Carousel */}
+          {/* <div className="space-y-6 mb-24">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE K</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Rotating 3D Card Ring Carousel</h3>
+            </div>
+            <Rotating3DCarousel />
+          </div> */}
+
+          {/* Style L: Asymmetric Random-Sized Collage Grid */}
+          {/* <div className="space-y-6 mb-24">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE L</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Asymmetric Random-Sized Collage Grid</h3>
+            </div>
+            <CollageBoxShowcase />
+          </div> */}
+
+          {/* Style M: Architectural Portfolio Grid */}
+          {/* <div className="space-y-6 mb-24">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE M</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Architectural Portfolio Grid</h3>
+            </div>
+            <ArchitecturalPortfolio />
+          </div> */}
+
+          {/* Style N: Material Spec Spotlight Reveal Grid */}
+          <div className="space-y-6 mb-24">
+            {/* <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE N</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Material Spec Spotlight Reveal Grid</h3>
+            </div> */}
+            <SpotlightRevealGrid />
+          </div>
+
+          {/* Style O: Curved 3D Panoramic Theater Carousel */}
+          {/* <div className="space-y-6 mb-24">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE O</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Curved 3D Panoramic Theater Carousel</h3>
+            </div>
+            <PanoramicCarousel />
+          </div> */}
+
+          {/* Style P: Architectural Material Spec & Mood Board */}
+          {/* <div className="space-y-6 mb-24">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE P</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Architectural Material Spec &amp; Mood Board</h3>
+            </div>
+            <GeographicMapExplorer />
+          </div> */}
+
+          {/* Style Q: Architectural Exploded-View Inspector */}
+          {/* <div className="space-y-6 mb-24">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE Q</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Architectural Exploded-View Inspector</h3>
+            </div>
+            <ExplodedViewInspector />
+          </div> */}
+
+          {/* Style R: Widescreen Editorial Showcase & Material Swatch Selector */}
+          <div className="space-y-6 mb-24">
+            {/* <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE R</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Widescreen Editorial Showcase &amp; Material Swatch Selector</h3>
+            </div> */}
+            <ProjectControlCenter />
+          </div>
+
+          {/* Style S: Minimalist Project Card Grid */}
+          {/* <div className="space-y-6 mb-24">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE S</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Minimalist Project Card Grid (Clean Hover Zoom)</h3>
+            </div>
+            <MinimalCardGrid />
+          </div> */}
+
+          {/* Style T: Widescreen Editorial Banner Slider */}
+          {/* <div className="space-y-6 mb-24">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE T</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Widescreen Editorial Banner Slider (Clean Crossfade)</h3>
+            </div>
+            <WidescreenEditorialSlider />
+          </div> */}
+
+          {/* Style U: Alternating Asymmetric Grid */}
+          <div className="space-y-6">
+            {/* <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE U</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Alternating Asymmetric Grid (Brochure Layout)</h3>
+            </div> */}
+            <AlternatingAsymmetricGrid />
+          </div>
+        </div>
+      </section>
+
+      {/* WHY CHOOSE ARROWHEAD */}
+      <section className="py-24 bg-app-bg relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center mb-16 space-y-3">
+            <span className="text-brand-gold text-xs font-bold uppercase tracking-widest font-mono">Value Proposition</span>
+            <h2 className="text-3xl sm:text-4xl font-heading font-extrabold text-app-fg tracking-tight">Why B2B Clients Choose ArrowHead</h2>
+            <div className="w-16 h-0.5 bg-brand-teal mx-auto mt-2"></div>
+            <p className="text-app-muted text-sm font-light leading-relaxed pt-2">
+              We combine DMT Class-I general contracting status with rigorous technical quality and verified local approvals compliance to deliver flawless utility and residential networks.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Pillar 1: Class-I Status */}
+            <div className="bg-app-card border border-app-border rounded-xl p-6 hover:border-brand-teal/40 transition-all duration-300 offset-border-frame flex flex-col justify-between space-y-4">
+              <div className="space-y-3">
+                <span className="text-3xl block">🏆</span>
+                <h4 className="text-sm font-bold text-white uppercase tracking-wider font-heading">Class-I DMT Registration</h4>
+                <p className="text-app-muted text-xs font-light leading-relaxed">
+                  Licensed by the Abu Dhabi Department of Municipalities and Transport for high-value general contracting civil projects, water pipelines, and major infrastructure tenders.
+                </p>
+              </div>
+              <span className="text-[9px] font-mono text-brand-gold font-bold tracking-widest uppercase block pt-2 border-t border-app-border/40">
+                CLASS-I REGISTERED
+              </span>
+            </div>
+
+            {/* Pillar 2: 100% NOC success */}
+            <div className="bg-app-card border border-app-border rounded-xl p-6 hover:border-brand-teal/40 transition-all duration-300 offset-border-frame flex flex-col justify-between space-y-4">
+              <div className="space-y-3">
+                <span className="text-3xl block">📋</span>
+                <h4 className="text-sm font-bold text-white uppercase tracking-wider font-heading">100% NOC Clearance Log</h4>
+                <p className="text-app-muted text-xs font-light leading-relaxed">
+                  End-to-end municipal permit approvals. We coordinate directly with TAMM, ADSSC, ADDC, ADM, and Civil Defense to ensure water, electrical, and occupancy approvals.
+                </p>
+              </div>
+              <span className="text-[9px] font-mono text-brand-teal font-bold tracking-widest uppercase block pt-2 border-t border-app-border/40">
+                TAMM SYSTEM INTEGRATED
+              </span>
+            </div>
+
+            {/* Pillar 3: Certified Crews & Rigs */}
+            <div className="bg-app-card border border-app-border rounded-xl p-6 hover:border-brand-teal/40 transition-all duration-300 offset-border-frame flex flex-col justify-between space-y-4">
+              <div className="space-y-3">
+                <span className="text-3xl block">⚙️</span>
+                <h4 className="text-sm font-bold text-white uppercase tracking-wider font-heading">Certified Crews &amp; Rigs</h4>
+                <p className="text-app-muted text-xs font-light leading-relaxed">
+                  All butt-welding and electrofusion jointing are executed by DVS 2207 and ISO certified technicians using calibrated hydraulic welding rigs with log printouts.
+                </p>
+              </div>
+              <span className="text-[9px] font-mono text-brand-gold font-bold tracking-widest uppercase block pt-2 border-t border-app-border/40">
+                DVS 2207 STANDARD
+              </span>
+            </div>
+
+            {/* Pillar 4: Zero Incident HSE */}
+            <div className="bg-app-card border border-app-border rounded-xl p-6 hover:border-brand-teal/40 transition-all duration-300 offset-border-frame flex flex-col justify-between space-y-4">
+              <div className="space-y-3">
+                <span className="text-3xl block">🛡️</span>
+                <h4 className="text-sm font-bold text-white uppercase tracking-wider font-heading">Strict Quality &amp; HSE</h4>
+                <p className="text-app-muted text-xs font-light leading-relaxed">
+                  Flawless safety records across all high-risk excavations, marine repairs, and heavy concrete casts. Hydrostatic testing up to PN25 witnessed by utility inspectors.
+                </p>
+              </div>
+              <span className="text-[9px] font-mono text-brand-teal font-bold tracking-widest uppercase block pt-2 border-t border-app-border/40">
+                ZERO-INCIDENT LOG
+              </span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -1287,7 +1194,7 @@ export default function HomeClient() {
       </section>
 
       {/* GEOGRAPHIC OPERATIONAL MAP SECTION */}
-      <section className="py-24 relative border-t border-app-border bg-app-bg">
+      {/* <section className="py-24 relative border-t border-app-border bg-app-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16 space-y-3">
             <span className="text-brand-teal text-xs font-bold uppercase tracking-widest font-mono">Geographic Footprint</span>
@@ -1299,7 +1206,7 @@ export default function HomeClient() {
           </div>
           <MapExplorerWidget />
         </div>
-      </section>
+      </section> */}
 
       {/* 5. FEATURED PROJECTS (Case Studies) */}
       <section className="py-24 relative">
@@ -1357,8 +1264,8 @@ export default function HomeClient() {
           </div>
         </div>
       </section>
-
-{/* TESTIMONIALS SECTION */}
+      
+      {/* TESTIMONIALS SECTION */}
       <section className="py-24 relative border-t border-app-border bg-app-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 space-y-3">

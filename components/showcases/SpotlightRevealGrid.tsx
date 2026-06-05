@@ -13,14 +13,27 @@ interface SpotlightCard {
 
 function SpotlightCardItem({ card }: { card: SpotlightCard }) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const containerRect = useRef<DOMRect | null>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
 
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+    if (containerRef.current) {
+      // Cache container dimensions once when cursor enters to completely avoid layout thrashing during mouse movements
+      containerRect.current = containerRef.current.getBoundingClientRect();
+    }
+  };
+
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
-    if (!containerRef.current) return;
-    const rect = containerRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    if (!containerRect.current) {
+      if (containerRef.current) {
+        containerRect.current = containerRef.current.getBoundingClientRect();
+      }
+      return;
+    }
+    const x = e.clientX - containerRect.current.left;
+    const y = e.clientY - containerRect.current.top;
     setMousePos({ x, y });
   };
 
@@ -28,9 +41,14 @@ function SpotlightCardItem({ card }: { card: SpotlightCard }) {
     <div
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      onMouseEnter={() => setIsHovered(true)}
+      onMouseEnter={handleMouseEnter}
       onMouseLeave={() => setIsHovered(false)}
       className="relative aspect-[3/4] w-full rounded-xl overflow-hidden border border-app-border bg-slate-950 shadow-lg cursor-crosshair select-none"
+      style={{
+        // Share coordinate positions with child layers using CSS variables
+        ['--x' as any]: `${mousePos.x}px`,
+        ['--y' as any]: `${mousePos.y}px`,
+      }}
     >
       {/* 1. Base Layer: Finished color photo */}
       <img
@@ -42,16 +60,16 @@ function SpotlightCardItem({ card }: { card: SpotlightCard }) {
 
       {/* 2. Mask Layer: Structural blueprint layout. Revealed inside the clipping circle */}
       <div
-        className="absolute inset-0 transition-opacity duration-300 pointer-events-none"
+        className="absolute inset-0 pointer-events-none"
         style={{
           backgroundImage: `url('${card.blueprintImage}')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           opacity: isHovered ? 1 : 0,
           clipPath: isHovered 
-            ? `circle(90px at ${mousePos.x}px ${mousePos.y}px)` 
+            ? `circle(90px at var(--x) var(--y))` 
             : 'circle(0px at 0px 0px)',
-          transition: 'opacity 0.2s ease, clip-path 0.05s ease-out'
+          transition: 'opacity 0.2s ease'
         }}
       >
         {/* Underlay vector blueprints overlay sketch lines */}
@@ -63,9 +81,8 @@ function SpotlightCardItem({ card }: { card: SpotlightCard }) {
         <div
           className="absolute w-[180px] h-[180px] rounded-full border border-brand-teal/80 pointer-events-none z-20 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center bg-brand-teal/5"
           style={{
-            left: mousePos.x,
-            top: mousePos.y,
-            transition: 'left 0.05s ease-out, top 0.05s ease-out'
+            left: 'var(--x)',
+            top: 'var(--y)',
           }}
         >
           <span className="text-[7px] font-mono text-brand-teal uppercase tracking-widest font-bold">

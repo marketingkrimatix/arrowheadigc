@@ -43,7 +43,7 @@ export default function CinematicSlider() {
       setActiveSlide((prev) => (prev + 1) % slides.length);
     }, 6000);
     return () => clearInterval(interval);
-  }, [slides.length]);
+  }, [activeSlide, slides.length]);
 
   return (
     <div className="w-full bg-app-bg text-app-fg py-12 max-w-6xl mx-auto">
@@ -64,6 +64,7 @@ export default function CinematicSlider() {
             </div>
           );
         })}
+
 
         {/* Soft shadow cover */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent"></div>

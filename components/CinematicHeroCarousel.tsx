@@ -16,6 +16,7 @@ interface Slide {
 export default function CinematicHeroCarousel() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [progress, setProgress] = useState(0);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   const slides: Slide[] = [
@@ -48,14 +49,46 @@ export default function CinematicHeroCarousel() {
     }
   ];
 
-  // Auto transition slides
+  // Auto transition slides and track progress
   useEffect(() => {
     if (!isPlaying) return;
+
+    const intervalTime = 100; // tick every 100ms
+    const increment = (intervalTime / 10000) * 100; // 1% per tick
+
     const timer = setInterval(() => {
-      setActiveSlide((prev) => (prev + 1) % slides.length);
-    }, 20000);
+      setProgress((prev) => {
+        const next = prev + increment;
+        if (next >= 100) {
+          setActiveSlide((curr) => (curr + 1) % slides.length);
+          return 0;
+        }
+        return next;
+      });
+    }, intervalTime);
+
     return () => clearInterval(timer);
-  }, [isPlaying, slides.length]);
+  }, [isPlaying, activeSlide, slides.length]);
+
+  // Reset progress when activeSlide changes (e.g. manual select)
+  useEffect(() => {
+    setProgress(0);
+  }, [activeSlide]);
+
+  const handleScrollDown = () => {
+    const heroSection = document.querySelector('section');
+    if (heroSection) {
+      const nextSection = heroSection.nextElementSibling;
+      if (nextSection) {
+        nextSection.scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+    }
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: 'smooth',
+    });
+  };
 
   // Handle play/pause sync on video tags
   useEffect(() => {
@@ -72,7 +105,7 @@ export default function CinematicHeroCarousel() {
   }, [activeSlide, isPlaying, slides]);
 
   return (
-    <div className="w-full h-[92vh] relative overflow-hidden bg-primary-dark select-none flex flex-col justify-between p-8 sm:p-16 text-white border-b border-app-border">
+    <div className="w-full h-screen relative overflow-hidden bg-primary-dark select-none flex flex-col justify-between p-8 sm:p-16 text-white border-b border-app-border">
       
       {/* 1. Viewport Slides Backgrounds */}
       {slides.map((slide, idx) => {
@@ -91,7 +124,7 @@ export default function CinematicHeroCarousel() {
               muted
               playsInline
               className="w-full h-full object-cover"
-            />
+            />0
             {/* Cinematic dark overlay */}
             <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/40 to-transparent"></div>
           </div>
@@ -160,11 +193,13 @@ export default function CinematicHeroCarousel() {
               >
                 {/* Progress bar container */}
                 <div className="w-[120px] sm:w-[160px] h-[2px] bg-white/20 mb-2 relative overflow-hidden">
-                  {isActive && isPlaying && (
-                    <div className="absolute inset-y-0 left-0 bg-brand-gold w-full origin-left animate-[bar_20s_linear_infinite]"></div>
-                  )}
-                  {isActive && !isPlaying && (
-                    <div className="absolute inset-y-0 left-0 bg-brand-gold w-1/2"></div>
+                  {isActive && (
+                    <div 
+                      className={`absolute inset-y-0 left-0 bg-brand-gold origin-left ${
+                        progress === 0 ? 'transition-none' : 'transition-all duration-100 ease-linear'
+                      }`}
+                      style={{ width: `${progress}%` }}
+                    />
                   )}
                 </div>
                 {/* Labels */}
@@ -179,7 +214,7 @@ export default function CinematicHeroCarousel() {
         {/* Play/Pause Button */}
         <button
           onClick={() => setIsPlaying(!isPlaying)}
-          className="w-10 h-10 rounded-full border border-white/20 hover:border-brand-teal hover:text-brand-teal transition-colors flex items-center justify-center focus:outline-none cursor-pointer"
+          className="w-10 h-10 rounded-full border border-white/20 hover:border-brand-teal hover:text-brand-teal transition-colors flex items-center justify-center focus:outline-none cursor-pointer sm:mr-20 mr-0"
           title={isPlaying ? 'Pause Autoplay' : 'Play Autoplay'}
         >
           {isPlaying ? (
@@ -197,12 +232,27 @@ export default function CinematicHeroCarousel() {
 
       </div>
 
+      {/* 5. Scroll Down Indicator */}
+      <div 
+        onClick={handleScrollDown}
+        className="absolute bottom-5 left-1/2 -translate-x-1/2 z-20 hidden sm:flex flex-col items-center gap-1 cursor-pointer group"
+      >
+        <span className="text-[9px] font-mono tracking-widest uppercase text-white/40 group-hover:text-brand-gold transition-colors duration-300">
+          Scroll Down
+        </span>
+        <svg 
+          className="w-5 h-5 text-white/50 group-hover:text-brand-gold animate-bounce transition-colors duration-300"
+          fill="none" 
+          stroke="currentColor" 
+          strokeWidth="2" 
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+        </svg>
+      </div>
+
       {/* Progress Animation Inject */}
       <style jsx>{`
-        @keyframes bar {
-          0% { transform: scaleX(0); }
-          100% { transform: scaleX(1); }
-        }
         @keyframes fadeIn {
           0% { opacity: 0; transform: translateY(10px); }
           100% { opacity: 1; transform: translateY(0); }

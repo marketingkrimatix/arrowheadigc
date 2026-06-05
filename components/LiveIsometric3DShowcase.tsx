@@ -2,7 +2,11 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 
-export default function LiveIsometric3DShowcase() {
+interface LiveIsometric3DShowcaseProps {
+  facing?: 'left' | 'right';
+}
+
+export default function LiveIsometric3DShowcase({ facing = 'left' }: LiveIsometric3DShowcaseProps) {
   const [focusedLayer, setFocusedLayer] = useState<number>(2); // 0 = Bottom (CAD), 1 = Middle (MEP), 2 = Top (Handover)
   const [time, setTime] = useState<number>(0);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -19,9 +23,11 @@ export default function LiveIsometric3DShowcase() {
   }, []);
 
   // Calculate slow automated tilt coordinates
-  // Base state is rotateX = 22, rotateY = -32
+  // Base state is rotateX = 22, rotateY = -32 for left-facing, and rotateY = 32 for right-facing
+  const isLeft = facing === 'left';
   const rotateX = 22 + Math.sin(time * 0.7) * 5; // slow tilt oscillation
-  const rotateY = -32 + Math.cos(time * 0.5) * 8; // slow turn oscillation
+  const rotateY = (isLeft ? -32 : 32) + (isLeft ? Math.cos(time * 0.5) * 8 : -Math.cos(time * 0.5) * 8); // slow turn oscillation
+  const rotateZ = isLeft ? 8 : -8;
 
   // Breathing separation effect (translates layers apart and back together)
   const breathingOffset = 18 + Math.sin(time * 1.2) * 12; // oscillates between 6px and 30px
@@ -59,7 +65,7 @@ export default function LiveIsometric3DShowcase() {
         <div 
           className="relative w-[280px] sm:w-[320px] h-[360px] sm:h-[400px] transition-transform duration-1000 ease-out"
           style={{ 
-            transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(8deg)`,
+            transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`,
             transformStyle: 'preserve-3d',
           }}
         >

@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import AnimatedLogoSVG from './AnimatedLogoSVG';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,14 +12,18 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-app-border">
-
+          
           {/* Column 1: Brand Info */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center space-x-3 group">
-              <img
+            <img
                 src="/logo.jpeg"
                 alt="AHIGC Logo"
                 className="h-10 w-auto rounded object-contain bg-white p-0.5"
+              // <AnimatedLogoSVG
+              //   animated={false}
+              //   showText={false}
+              //   className="h-10 w-auto"
               />
               <div className="flex flex-col">
                 <span className="text-app-fg font-heading font-extrabold text-sm tracking-wider leading-none">
@@ -95,7 +100,7 @@ export default function Footer() {
           {/* Column 4: Contact Info */}
           <div className="space-y-4">
             <h3 className="text-brand-teal font-heading font-bold text-xs uppercase tracking-widest">Head Office</h3>
-
+            
             {/* Google Maps Embed */}
             <div className="w-full h-28 rounded-lg overflow-hidden border border-app-border bg-app-card shadow-sm">
               <iframe

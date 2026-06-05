@@ -25,6 +25,7 @@
 :root {
   /* Light Theme - Architectural Warm Paper & Slate */
   --background: #FCFCF9;
+  --background-rgb: 252, 252, 249;
   --foreground: #1E293B;
   --card-bg: #FFFFFF;
   --card-border: #E8E8E2;
@@ -35,6 +36,7 @@
 .dark {
   /* Dark Theme - Premium Deep Slate */
   --background: #090D16;
+  --background-rgb: 9, 13, 22;
   --foreground: #F1F5F9;
   --card-bg: #121A2A;
   --card-border: #1E2D4A;
@@ -96,5 +98,24 @@ body {
   background: #0090AA;
 }
 
+/* Architectural Fine Grid Utility */
+.bg-grid-pattern {
+  /* Light mode: Slate 800 at 5% opacity */
+  background-image: 
+    linear-gradient(to right, #1e293b0c 1px, transparent 1px),
+    linear-gradient(to bottom, #1e293b0c 1px, transparent 1px);
+  background-size: 4rem 4rem;
+}
 
+/* Automatically switch when .dark class is active on the html element */
+.dark .bg-grid-pattern {
+  /* Dark mode: White at 5% opacity */
+  background-image: 
+    linear-gradient(to right, #ffffff0c 1px, transparent 1px),
+    linear-gradient(to bottom, #ffffff0c 1px, transparent 1px);
+}
 
+/* Header dynamic bg opacity class */
+.bg-scrolled-header {
+  background-color: rgba(var(--background-rgb), 1.0);
+}

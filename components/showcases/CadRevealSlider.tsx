@@ -1,72 +1,114 @@
 'use client';
 
-import React, { useState, useEffect, useRef, MouseEvent, TouchEvent } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 export default function CadRevealSlider() {
   const [sliderPosition, setSliderPosition] = useState(50); // percentage (0 - 100)
   const [hasInteracted, setHasInteracted] = useState(false);
+  const [hasEnteredViewport, setHasEnteredViewport] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
+  const containerRect = useRef<DOMRect | null>(null);
 
+  // Bind drag movement to window events to ensure smooth movement even when cursor leaves boundaries
   useEffect(() => {
-    if (hasInteracted) return;
+    const handleMouseMove = (e: globalThis.MouseEvent) => {
+      if (!isDragging.current || !containerRect.current) return;
+      const x = e.clientX - containerRect.current.left;
+      const percentage = Math.max(0, Math.min(100, (x / containerRect.current.width) * 100));
+      setSliderPosition(percentage);
+    };
 
-    let startTime = Date.now();
+    const handleTouchMove = (e: globalThis.TouchEvent) => {
+      if (!isDragging.current || !containerRect.current) return;
+      if (e.touches && e.touches[0]) {
+        const x = e.touches[0].clientX - containerRect.current.left;
+        const percentage = Math.max(0, Math.min(100, (x / containerRect.current.width) * 100));
+        setSliderPosition(percentage);
+      }
+    };
+
+    const handleMouseUp = () => {
+      isDragging.current = false;
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('touchmove', handleTouchMove);
+    window.addEventListener('mouseup', handleMouseUp);
+    window.addEventListener('touchend', handleMouseUp);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('mouseup', handleMouseUp);
+      window.removeEventListener('touchend', handleMouseUp);
+    };
+  }, []);
+
+  // Intersection Observer to start the animation only when scrolled into view
+  useEffect(() => {
+    if (hasInteracted || hasEnteredViewport) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setHasEnteredViewport(true);
+          }
+        });
+      },
+      { threshold: 0.2 } // trigger when 20% of the element is visible
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [hasInteracted, hasEnteredViewport]);
+
+  // Automatic onboarding demo sweep (plays once: sweeps left, sweeps right, then settles in center)
+  useEffect(() => {
+    if (hasInteracted || !hasEnteredViewport) return;
+
+    const startTime = Date.now();
+    const duration = 4000; // 4 seconds total duration
     let animationFrameId: number;
 
     const animate = () => {
-      const elapsed = (Date.now() - startTime) / 1000;
-      // Smooth sine oscillation between 25% and 75%
-      const val = 50 + Math.sin(elapsed * 1.5) * 25;
+      const elapsed = Date.now() - startTime;
+      
+      if (elapsed >= duration) {
+        setSliderPosition(50);
+        return; // Stops requesting new frames, terminating the loop
+      }
+
+      const t = elapsed / duration; // normalized time from 0 to 1
+      // Sine wave shaped by a half-sine envelope: sin(2*pi*t) * sin(pi*t)
+      // Multiplied by 42.5 to achieve a max sweep range of exactly 20.3% and 79.7%
+      const val = 50 - 42.5 * Math.sin(t * Math.PI * 2) * Math.sin(t * Math.PI);
       setSliderPosition(val);
+      
       animationFrameId = requestAnimationFrame(animate);
     };
 
     animationFrameId = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(animationFrameId);
-  }, [hasInteracted]);
-
-  const handleMove = (clientX: number) => {
-    setHasInteracted(true);
-    if (!containerRef.current) return;
-    const rect = containerRef.current.getBoundingClientRect();
-    const x = clientX - rect.left;
-    const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
-    setSliderPosition(percentage);
-  };
-
-  const onMouseMove = (e: MouseEvent) => {
-    if (!isDragging.current) return;
-    handleMove(e.clientX);
-  };
-
-  const onTouchMove = (e: any) => {
-    if (!isDragging.current) return;
-    if (e.touches && e.touches[0]) {
-      handleMove(e.touches[0].clientX);
-    }
-  };
+  }, [hasInteracted, hasEnteredViewport]);
 
   const startDrag = () => {
     setHasInteracted(true);
     isDragging.current = true;
-  };
-
-  const stopDrag = () => {
-    isDragging.current = false;
+    if (containerRef.current) {
+      // Cache container dimensions ONCE when dragging starts to completely avoid layout thrashing during moves
+      containerRect.current = containerRef.current.getBoundingClientRect();
+    }
   };
 
   return (
-    <div 
-      className="w-full bg-app-bg text-app-fg py-12 max-w-5xl mx-auto select-none"
-      onMouseUp={stopDrag}
-      onMouseLeave={stopDrag}
-      onTouchEnd={stopDrag}
-    >
-      <div 
+    <div className="w-full bg-app-bg text-app-fg py-12 max-w-5xl mx-auto select-none">
+      <div
         ref={containerRef}
-        onMouseMove={onMouseMove}
-        onTouchMove={onTouchMove}
         className="relative w-full aspect-[16/9] rounded-xl overflow-hidden border border-app-border bg-slate-950 shadow-2xl cursor-ew-resize"
       >
         {/* UNDERLAY: Style 1 - CAD Blueprint Drawing (Left Side, seen when slider moves right) */}
@@ -113,26 +155,23 @@ export default function CadRevealSlider() {
           </div>
         </div>
 
-        {/* OVERLAY: Style 2 - Finished Handover Photograph (Right Side, clipped based on slider) */}
+        {/* OVERLAY: Style 2 - Finished Handover Photograph (Clipped using GPU-accelerated CSS clipPath) */}
         <div 
-          className="absolute inset-y-0 left-0 overflow-hidden transition-all duration-75"
-          style={{ width: `${sliderPosition}%` }}
+          className="absolute inset-0 overflow-hidden"
+          style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
         >
-          {/* Main Visual Image. Width matches outer container width to prevent stretching */}
-          <div className="absolute inset-y-0 left-0 w-[1000px] h-full" style={{ width: containerRef.current?.getBoundingClientRect().width }}>
-            <img 
-              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" 
-              alt="Villa Finished Reality" 
-              className="w-full h-full object-cover" 
-            />
-            {/* Soft dark gradient shadow */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-          </div>
+          <img 
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" 
+            alt="Villa Finished Reality" 
+            className="w-full h-full object-cover" 
+          />
+          {/* Soft dark gradient shadow */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
         </div>
 
         {/* Vertical Divider line & Drag Handle */}
         <div 
-          className="absolute inset-y-0 w-1 bg-brand-gold cursor-ew-resize flex items-center justify-center transition-all duration-75"
+          className="absolute inset-y-0 w-1 bg-brand-gold cursor-ew-resize flex items-center justify-center"
           style={{ left: `${sliderPosition}%` }}
           onMouseDown={startDrag}
           onTouchStart={startDrag}

@@ -81,3 +81,21 @@ Running the Next.js production build (`npm run build`):
 - Compiled successfully: **17 distinct routes static prerendered**.
 - Verified all client-side triggers (interactive FAQ accordions, project filtering, form validation).
 - Standardized layout spacing across all viewport dimensions (mobile responsive grids).
+
+---
+
+## 5. Hero Carousel Enhancements (June 2026)
+
+We implemented several timing, spacing, and accessibility refinements to the homepage hero slider component [CinematicHeroCarousel.tsx](file:///c:/krimatix/code/arrowheadigc/arrowheadigc/components/CinematicHeroCarousel.tsx):
+1. **Autoplay Timing State Sync**:
+   - Refactored autoplay timing logic from pure CSS animation classes (`animate-[bar_10s_linear_infinite]`) to a React state-based interval timer.
+   - Now, when a user pauses the autoplay, the progress indicator pauses at the exact current position.
+   - When play is toggled back on, it resumes cleanly from the exact same paused percentage, rather than restarting from zero.
+   - Clicking on slide tab navigation buttons manually resets the progress state to 0% and begins timing for the selected slide from the start.
+2. **Play/Pause Button Clearance**:
+   - Moved the Play/Pause circular button leftward on desktop/tablet views (`sm:mr-20`) to eliminate overlapping issues with the floating WhatsApp and Call widget (`fixed bottom-6 right-6`).
+3. **Bouncing Scroll-Down Indicator**:
+   - Added a centered scroll down chevron indicator at the bottom edge of the hero viewport (`hidden sm:flex`).
+   - The indicator animates with a gentle bounce to signal scrollability.
+   - Clicking the indicator triggers a smooth transition using standard `scrollIntoView` targeting the section immediately following the hero carousel.
+
