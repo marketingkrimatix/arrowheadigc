@@ -28,11 +28,11 @@ export default function GeographicMapExplorer() {
   const projects: MoodProject[] = [
     {
       id: 'saadiyat',
-      title: 'Saadiyat Island Cultural District Estate',
+      title: 'Sanjay Jain Luxury Custom Villa',
       category: 'Luxury Villa & Custom Interior',
-      location: 'Saadiyat Island, Abu Dhabi',
+      location: 'Saadiyat Island & Prime Abu Dhabi',
       description: 'A bespoke contemporary villa focusing on structural durability and luxury stone finishes. The design centers around local Estidama Pearl parameters, integrating thermal insulation wraps with massive natural Italian marble surfaces.',
-      photo: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80',
+      photo: '/images/ArrowheadVilla.png',
       materialName: 'Calacatta Lincoln Extra Vein Marble',
       materialType: 'marble',
       specs: [
@@ -49,7 +49,7 @@ export default function GeographicMapExplorer() {
         'Municipal certified structural pile casting',
         'Dry-cladding stainless steel anchor fittings',
         'VRF concealed HVAC integration for zero ceiling bulkhead lines',
-        'Custom joinery utilizing marine-grade structural plywood'
+        'Custom joinery utilizing high-durability moisture-resistant structural panels'
       ]
     },
     {
@@ -58,7 +58,7 @@ export default function GeographicMapExplorer() {
       category: 'HDPE Pipeline Supply & Installation',
       location: 'Yas North Sector, Abu Dhabi',
       description: 'A major infrastructure sewer network loop designed for high-stress municipal tie-ins. The project showcases high-density polyethylene pipe fusion under severe water table conditions, using computerized parameters for structural joints.',
-      photo: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80',
+      photo: '/images/123.jpeg',
       materialName: 'HDPE PE100-RC High Density Polyethylene',
       materialType: 'hdpe',
       specs: [
@@ -82,9 +82,9 @@ export default function GeographicMapExplorer() {
       id: 'mussafah',
       title: 'Mussafah Commercial Logistics Plant',
       category: 'Industrial fit-Out & Hard FM AMC',
-      location: 'Mussafah Port Channels, Abu Dhabi',
+      location: 'Mussafah Industrial Sector, Abu Dhabi',
       description: 'A production logistics facility prioritizing structural metal framing and HVAC chiller longevity. Built to endure high salinity and ambient temperatures, featuring annual preventive maintenance checklists.',
-      photo: 'https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=800&q=80',
+      photo: '/images/Matrix_project.jpeg',
       materialName: 'Galvanized Sheet Steel HVAC Ducting',
       materialType: 'steel',
       specs: [
@@ -100,8 +100,8 @@ export default function GeographicMapExplorer() {
       scopes: [
         'AC Chiller plant condenser coil chemical washing logs',
         'Main distribution board phase load balancing surveys',
-        'Sulfate-resistant slipway structural concrete casts',
-        'ADCD (Civil Defense) wet riser check compliance sign-offs'
+        'Sulfate-resistant foundation structural concrete casts',
+        'Civil Defense wet riser check compliance sign-offs'
       ]
     }
   ];
@@ -110,18 +110,17 @@ export default function GeographicMapExplorer() {
 
   return (
     <div className="w-full bg-app-bg text-app-fg py-8 max-w-6xl mx-auto">
-      
+
       {/* 1. Category Switcher Tabs */}
       <div className="flex flex-wrap gap-2 border-b border-app-border/60 pb-6 mb-8 justify-center">
         {projects.map((proj) => (
           <button
             key={proj.id}
             onClick={() => setActiveProject(proj.id)}
-            className={`px-6 py-3.5 rounded text-xs font-bold uppercase tracking-wider transition-all cursor-pointer border ${
-              activeProject === proj.id
-                ? 'bg-brand-teal text-primary-dark border-brand-teal shadow-lg shadow-brand-teal/10'
-                : 'bg-app-card border-app-border text-app-muted hover:text-app-fg hover:border-brand-teal/45'
-            }`}
+            className={`px-6 py-3.5 rounded text-xs font-bold uppercase tracking-wider transition-all cursor-pointer border ${activeProject === proj.id
+              ? 'bg-brand-teal text-primary-dark border-brand-teal shadow-lg shadow-brand-teal/10'
+              : 'bg-app-card border-app-border text-app-muted hover:text-app-fg hover:border-brand-teal/45'
+              }`}
           >
             {proj.title.split(' ')[0]} - {proj.category.split(' ')[0]}
           </button>
@@ -130,10 +129,10 @@ export default function GeographicMapExplorer() {
 
       {/* 2. Tactile Mood Board Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-        
+
         {/* Left Column: Visual Material & Color Palette (Tactile mood board) */}
         <div className="lg:col-span-6 space-y-8 flex flex-col justify-between">
-          
+
           {/* Main Photo Frame */}
           <div className="relative aspect-video w-full rounded-2xl overflow-hidden border border-app-border bg-app-secondary shadow-2xl group">
             <img
@@ -159,7 +158,7 @@ export default function GeographicMapExplorer() {
           <div className="bg-app-card border border-app-border rounded-2xl p-6 shadow-xl relative overflow-hidden flex-1 flex flex-col justify-between min-h-[220px]">
             {/* Accent paper texture/grid watermark */}
             <div className="absolute inset-0 opacity-[0.02] bg-[radial-gradient(#000_1px,transparent_1px)] bg-[size:12px_12px] pointer-events-none"></div>
-            
+
             <div className="space-y-2 relative z-10">
               <span className="block text-[8px] font-mono text-app-muted uppercase tracking-widest font-bold">
                 MATERIAL SAMPLE VEIN
@@ -171,7 +170,7 @@ export default function GeographicMapExplorer() {
 
             {/* Material Texture Renders (CSS/SVG based) */}
             <div className="w-full h-24 rounded-lg border border-app-border/75 my-4 relative overflow-hidden flex items-center justify-center bg-app-secondary/35">
-              
+
               {current.materialType === 'marble' && (
                 <div className="absolute inset-0 bg-white dark:bg-slate-900 transition-colors">
                   {/* Calacatta Lincoln Marble Veins via SVG */}
@@ -220,7 +219,7 @@ export default function GeographicMapExplorer() {
             <div className="border-t border-app-border/60 pt-4 flex justify-around gap-4">
               {current.palette.map((swatch, idx) => (
                 <div key={idx} className="flex flex-col items-center gap-1.5">
-                  <div 
+                  <div
                     className="w-8 h-8 rounded-full border border-app-border shadow-md"
                     style={{ backgroundColor: swatch.color }}
                   ></div>
@@ -237,7 +236,7 @@ export default function GeographicMapExplorer() {
 
         {/* Right Column: Technical Specs & Handover Checklists */}
         <div className="lg:col-span-6 bg-app-card border border-app-border rounded-2xl p-6 sm:p-8 shadow-2xl flex flex-col justify-between self-stretch">
-          
+
           <div className="space-y-6">
             <div className="space-y-2">
               <span className="text-[8px] font-mono text-brand-gold uppercase tracking-widest font-bold block">

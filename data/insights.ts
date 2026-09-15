@@ -23,7 +23,7 @@ export const insightArticles: InsightArticle[] = [
     date: 'May 12, 2026',
     readTime: '6 min read',
     summary: 'Navigating the TAMM portal for structural extensions, Majlis blocks, and custom luxury villa permits under Abu Dhabi Municipality regulations.',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
+    image: '/images/ArrowheadVilla.png',
     metaDesc: 'How to secure a building permit in Abu Dhabi via the TAMM portal. Learn about structural drawings, utility NOCs, and municipal inspection checks.',
     keywords: ['TAMM building permit Abu Dhabi', 'municipal permit Khalifa City', 'villa approvals Abu Dhabi', 'structural extensions approvals', 'Abu Dhabi DED License'],
     content: [
@@ -31,20 +31,20 @@ export const insightArticles: InsightArticle[] = [
         sectionTitle: 'Understanding the Abu Dhabi TAMM Approval Process',
         paragraphs: [
           'Securing a building permit for a custom villa, majlis extension, or structural renovation in Abu Dhabi is managed through the Unified Government Services Portal (TAMM). Planning ahead and coordinating all civil, MEP, and structural layers is key to avoiding structural inspection delays.',
-          'Before submitting a building permit request, a registered general contracting company (holding an active DED license, such as ArrowHead License CN-4998977) must prepare the complete design coordinates. This includes obtaining the initial site plan (Krooki) from the Abu Dhabi Municipality (ADM) showing plot boundaries and surrounding corridors.'
+          'Before submitting a building permit request, a registered general contracting company (holding an active Abu Dhabi commercial license, such as ArrowHead) must prepare the complete design coordinates. This includes obtaining the initial site plan (Krooki) from Abu Dhabi Municipality showing plot boundaries and surrounding corridors.'
         ]
       },
       {
         sectionTitle: 'Preparing Drawing Files & Securing Utility NOCs',
         paragraphs: [
           'The first phase of approval requires uploading structural drawings, architectural layouts, and MEP ducting schematics. Drawings must be prepared in CAD formats, detailing load capacity calculations, column schedules, and pile layouts.',
-          'Next, the contractor must apply for No Objection Certificates (NOCs) from relevant government utility providers. For water and sewage networks, NOCs are coordinated with the Abu Dhabi Distribution Company (ADDC) and the Abu Dhabi Sewerage Services Company (ADSSC). If the plot bounds public highways, a road traffic clearance from the Integrated Transport Centre (ITC) is also mandatory.'
+          'Next, the contractor must apply for No Objection Certificates (NOCs) from relevant government utility providers. For water and sewage networks, NOCs are coordinated with the local power, water, and sewerage utility entities. If the plot bounds public highways, a road traffic clearance from the Integrated Transport Centre (ITC) is also mandatory.'
         ]
       },
       {
         sectionTitle: 'Municipal Inspections & Handover Certification',
         paragraphs: [
-          'Once the NOCs are compiled, the file is submitted for ADM structural permit approval. During construction, the municipality issues inspection calls at critical phases: foundation steel checks before concrete casting, structural column inspection, and final envelope testing.',
+          'Once the NOCs are compiled, the file is submitted for municipal structural permit approval. During construction, the municipality issues inspection calls at critical phases: foundation steel checks before concrete casting, structural column inspection, and final envelope testing.',
           'Upon successful completion of all site scopes, the general contractor submits core hydrostatic test logbooks, Civil Defense compliance clearances, and structural stability certificates to secure the official Municipal Certificate of Occupancy, allowing utility connections.'
         ]
       }
@@ -67,9 +67,9 @@ export const insightArticles: InsightArticle[] = [
     date: 'April 28, 2026',
     readTime: '8 min read',
     summary: 'A technical reference for PE100 pipeline joint fusion pressure logs, heating temperature adjustments, and cooling times for utility pipeline contractors.',
-    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80',
+    image: '/images/123.jpeg',
     metaDesc: 'Standard butt-fusion welding parameters for HDPE pipes per DVS 2207. Learn about heating temperatures, cooling times, and joint log requirements.',
-    keywords: ['HDPE butt-fusion parameters', 'DVS 2207 welding standard', 'PE100 pipeline fusion joint', 'pipe welding logs Abu Dhabi', 'ADSSC pipeline contractors'],
+    keywords: ['HDPE butt-fusion parameters', 'DVS 2207 welding standard', 'PE100 pipeline fusion joint', 'pipe welding logs Abu Dhabi', 'pipeline contractors Abu Dhabi'],
     content: [
       {
         sectionTitle: 'Critical Parameters for HDPE Butt-Fusion Welding',
@@ -111,7 +111,7 @@ export const insightArticles: InsightArticle[] = [
     date: 'March 15, 2026',
     readTime: '5 min read',
     summary: 'An overview of Abu Dhabi Estidama Pearl rating guidelines, thermal insulation envelope checks, and water flow balancing for private villa contracting.',
-    image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80',
+    image: '/images/ArrowheadVilla.png',
     metaDesc: 'Estidama Pearl rating system explained for Abu Dhabi villas. Learn about thermal building envelopes, water efficiency, and municipal NOC steps.',
     keywords: ['Estidama Pearl ratings Abu Dhabi', 'green villa building codes', 'thermal insulation envelope check', 'Abu Dhabi energy conservation codes', 'Abu Dhabi DED License'],
     content: [

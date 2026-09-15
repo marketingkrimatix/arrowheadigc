@@ -20,48 +20,48 @@ export default function Rotating3DCarousel() {
     {
       title: 'Yas Island Main Water Loop',
       category: 'HDPE Pipelines',
-      image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80',
-      client: 'ADSSC / ADDC',
+      image: '/images/123.jpeg',
+      client: 'Abu Dhabi Utilities',
       details: 'Butt-fusion computerized welding of 4.8km trunk pipelines.',
-      badge: 'ADSSC Approved'
+      badge: 'Municipal Approved'
     },
     {
       title: 'Saadiyat Cultural District Substation',
       category: 'Civil Works',
-      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80',
+      image: '/images/civil-infrastructure.webp',
       client: 'Aldar Properties',
       details: 'C50/60 concrete foundation pouring and substation structures.',
       badge: 'Municipal Approved'
     },
     {
-      title: 'Mussafah Port Marine Repair',
-      category: 'Marine Works',
-      image: 'https://images.unsplash.com/photo-1505705694340-019e1e335916?auto=format&fit=crop&w=600&q=80',
-      client: 'Port Authority',
-      details: 'Underwater epoxy crack injection and sacrificial anode placement.',
-      badge: 'EAD Certified'
+      title: 'Mussafah Industrial Facility Civils',
+      category: 'Civil Works',
+      image: '/images/Matrix_project.jpeg',
+      client: 'Industrial Operations',
+      details: 'Structural foundation reinforcement, epoxy floor coatings, and machine plinths.',
+      badge: 'Municipal Approved'
     },
     {
-      title: 'Al Raha Gardens Premium Villa',
+      title: 'Sanjay Jain Luxury Villa',
       category: 'Villa Construction',
-      image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=600&q=80',
-      client: 'Private Owner',
-      details: 'Turnkey luxury structural casting with Estidama Pearl ratings.',
+      image: '/images/ArrowheadVilla.png',
+      client: 'Sanjay Jain',
+      details: 'Turnkey luxury structural casting with Estidama 2-Pearl ratings.',
       badge: 'Estidama 2-Pearl'
     },
     {
       title: 'Khalifa City Sector 14 Piping',
       category: 'Trenchless Utility Network',
-      image: 'https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=600&q=80',
-      client: 'ADSSC Approval Loop',
+      image: '/images/456.jpeg',
+      client: 'Municipal Utilities',
       details: 'Horizontal Directional Drilling (HDD) alignment for sewerage gravity mains.',
       badge: 'Trenchless HDD'
     },
     {
-      title: 'Commercial Office Tower HVAC',
+      title: 'Katheri Family Villa MEP Works',
       category: 'MEP Works',
-      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80',
-      client: 'Facilities AMC',
+      image: '/images/Matrix_project3.jpeg',
+      client: 'Katheri Family',
       details: 'Chilled water balancing and air conditioning duct fabrication.',
       badge: 'Civil Defense Approved'
     }
@@ -99,7 +99,8 @@ export default function Rotating3DCarousel() {
   return (
     <div className="w-full bg-app-bg text-app-fg py-16 flex flex-col items-center max-w-6xl mx-auto overflow-hidden">
       {/* Responsive perspective translation variable */}
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .scene-3d-wrapper {
           --carousel-translate-z: 200px;
         }
@@ -109,14 +110,14 @@ export default function Rotating3DCarousel() {
           }
         }
       `}} />
-      
+
       {/* 3D Scene Wrapper */}
-      <div 
+      <div
         className="relative w-full flex justify-center items-center h-[340px] sm:h-[400px] scene-3d-wrapper"
         style={{ perspective: '1000px' }}
       >
         {/* Carousel Rotation Ring */}
-        <div 
+        <div
           className="relative w-[220px] sm:w-[280px] h-[280px] sm:h-[340px] transition-transform duration-1000 ease-out"
           style={{
             transformStyle: 'preserve-3d',
@@ -125,7 +126,7 @@ export default function Rotating3DCarousel() {
         >
           {items.map((item, idx) => {
             const isCenter = idx === activeIndex;
-            
+
             return (
               <div
                 key={idx}

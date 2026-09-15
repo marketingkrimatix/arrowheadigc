@@ -6,7 +6,7 @@ import { projects } from '@/data/projects';
 
 export const metadata: Metadata = {
   title: 'Delivered Projects & Case Studies Abu Dhabi | ArrowHead',
-  description: 'Explore our general contracting case studies in Abu Dhabi: HDPE pipe supply networks on Yas Island, luxury turnkey villas, factory Hard FM, and marine slipways.',
+  description: 'Explore our general contracting case studies in Abu Dhabi: HDPE pipe supply networks on Yas Island, luxury turnkey villas, factory Hard FM, and civil infrastructure.',
   keywords: ['contracting portfolio Abu Dhabi', 'construction case studies UAE', 'HDPE pipeline projects', 'villa construction portfolio', 'facilities management clients'],
   alternates: {
     canonical: 'https://arrowheadigc.com/projects',
@@ -17,10 +17,10 @@ export const metadata: Metadata = {
     url: 'https://arrowheadigc.com/projects',
     siteName: 'ArrowHead General Contracting LLC',
     title: 'Delivered Projects & Case Studies Abu Dhabi | ArrowHead',
-    description: 'Explore our general contracting case studies in Abu Dhabi: HDPE pipe supply networks on Yas Island, luxury turnkey villas, factory Hard FM, and marine slipways.',
+    description: 'Explore our general contracting case studies in Abu Dhabi: HDPE pipe supply networks on Yas Island, luxury turnkey villas, factory Hard FM, and civil infrastructure.',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80',
+        url: '/images/Matrix_project1.jpeg',
         width: 800,
         height: 600,
         alt: 'ArrowHead General Contracting Projects Portfolio',
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Delivered Projects & Case Studies Abu Dhabi | ArrowHead',
-    description: 'Explore our general contracting case studies in Abu Dhabi: HDPE pipe supply networks on Yas Island, luxury turnkey villas, factory Hard FM, and marine slipways.',
-    images: ['https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80'],
+    description: 'Explore our general contracting case studies in Abu Dhabi: HDPE pipe supply networks on Yas Island, luxury turnkey villas, factory Hard FM, and civil infrastructure.',
+    images: ['/images/Matrix_project1.jpeg'],
   },
 };
 

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description: 'Specialized structural villa extensions, concrete majlis block contracting, and municipal building permit processing in Khalifa City, Abu Dhabi.',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
+        url: '/images/ArrowheadVilla.png',
         width: 800,
         height: 600,
         alt: 'Khalifa City Villa Extensions and Construction',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Villa Extensions & Majlis Construction Khalifa City | ArrowHead',
     description: 'Specialized structural villa extensions, concrete majlis block contracting, and municipal building permit processing in Khalifa City, Abu Dhabi.',
-    images: ['https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80'],
+    images: ['/images/ArrowheadVilla.png'],
   },
 };
 
@@ -46,7 +46,7 @@ export default function KhalifaCityGeoPage() {
     {
       title: 'Khalifa Sector 14 Sewer Reticulation',
       scope: 'Installation of DN 800mm gravity sewer mains, dewatering setups, and manhole connections.',
-      spec: 'ADSSC Certified Materials'
+      spec: 'Municipal Certified Materials'
     }
   ];
 
@@ -54,7 +54,7 @@ export default function KhalifaCityGeoPage() {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     'name': 'ArrowHead General Contracting LLC - Khalifa City Operations',
-    'image': 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
+    'image': '/images/ArrowheadVilla.png',
     'telephone': '+971-2-XXXXXXX',
     'address': {
       '@type': 'PostalAddress',
@@ -113,7 +113,7 @@ export default function KhalifaCityGeoPage() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            
+
             {/* Left Copy: Semantic HTML5 */}
             <div className="lg:col-span-7 space-y-6">
               <span className="text-brand-gold text-xs font-bold uppercase tracking-widest font-mono font-bold">
@@ -122,7 +122,7 @@ export default function KhalifaCityGeoPage() {
               <h2 className="text-2xl sm:text-3xl font-heading font-extrabold text-app-fg tracking-tight">
                 Secure Structural Additions &amp; Foundation Underpinning
               </h2>
-              
+
               <div className="text-app-muted space-y-5 text-xs sm:text-sm leading-relaxed font-light">
                 <p>
                   Villa renovations, expansions, and structural additions in Khalifa City require professional engineering audits and proper municipality permissions. As a fully licensed Abu Dhabi general contracting firm, we specialize in high-end structural modifications, including detached Majlis construction, double-story bedroom extensions, boundary wall reconstructions, swimming pool installations, and complete cosmetic layout remodeling. We ensure every modification preserves structural safety and enhances property value.
@@ -131,12 +131,12 @@ export default function KhalifaCityGeoPage() {
                   Before starting any structural extensions, our structural engineers conduct deep load path analysis on the existing concrete slab and columns. If additional load bearing is required, we execute carbon fiber wrapping (CFRP), concrete jacketing, or incorporate structural steel I-beams to distribute weights safely. We also manage damp-proofing and sub-slab waterproofing systems to protect the existing foundations from water ingress.
                 </p>
                 <p>
-                  We handle the entire municipal permitting process through the TAMM digital portal. Our in-house engineers prepare architectural layouts, structural designs, and MEP drafts, coordinating directly with Abu Dhabi Municipality (ADM) inspectors. We secure all necessary No Objection Certificates (NOCs), coordinate DED licensing renewals, and integrate Civil Defense (ADCD) compliant fire safety systems, securing the final legal Occupancy Certificate.
+                  We handle the entire municipal permitting process through the TAMM digital portal. Our in-house engineers prepare architectural layouts, structural designs, and MEP drafts, coordinating directly with Abu Dhabi Municipality inspectors. We secure all necessary No Objection Certificates (NOCs), coordinate DED licensing renewals, and integrate Civil Defense compliant fire safety systems, securing the final legal Occupancy Certificate.
                 </p>
                 <p>
                   Our masonry and finishing teams execute premium exterior works, applying weather-resistant textured paints, luxury stone cladding, and customized wrought-iron gates. This modernizes the villa's exterior profile and ensures that the finished extension blends seamlessly with the original building architecture.
                 </p>
-  </div>
+              </div>
             </div>
 
             {/* Right Column: Local Projects List */}
@@ -144,7 +144,7 @@ export default function KhalifaCityGeoPage() {
               <h3 className="font-heading font-extrabold text-sm text-white border-b border-app-border pb-4 uppercase tracking-widest">
                 Khalifa City Project Logs
               </h3>
-              
+
               <div className="space-y-6">
                 {localProjects.map((proj, idx) => (
                   <div key={idx} className="bg-app-secondary/60 p-5 rounded border border-app-border space-y-2">

@@ -53,7 +53,7 @@ export default function MepFlowShowcase() {
         if (prev >= 100) {
           clearInterval(interval);
           setIsDiagnosticRunning(false);
-          setDiagnosticResult('ALL SYSTEMS OPERATIONAL (PASS) - ADDC SAFETY SIGNOFF VALID');
+          setDiagnosticResult('ALL SYSTEMS OPERATIONAL (PASS) - UTILITY SAFETY SIGNOFF VALID');
           return 100;
         }
         return prev + 5;
@@ -68,7 +68,7 @@ export default function MepFlowShowcase() {
       {/* Header */}
       <div className="flex justify-between items-start border-b border-app-border pb-4 mb-6">
         <div>
-          <h3 className="text-sm font-heading font-extrabold text-white uppercase tracking-wider">
+          <h3 className="text-sm font-heading font-extrabold text-app-fg uppercase tracking-wider">
             MEP Cooling Loop &amp; VAV Control Simulator
           </h3>
           <p className="text-[10px] text-app-muted mt-0.5">
@@ -234,7 +234,7 @@ export default function MepFlowShowcase() {
         <div className="grid grid-cols-3 gap-4 text-[10px] font-mono border-b border-app-border/40 pb-2">
           <div>
             <span className="text-app-muted block">Flow Vol:</span>
-            <span className="text-white font-bold block mt-0.5">{flowRate} L/sec</span>
+            <span className="text-app-fg font-bold block mt-0.5">{flowRate} L/sec</span>
           </div>
           <div>
             <span className="text-app-muted block">Delta-T:</span>

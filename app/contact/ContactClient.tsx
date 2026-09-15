@@ -171,7 +171,7 @@ export default function ContactClient() {
               {/* License Panel */}
               <div className="bg-app-card border border-app-border rounded-xl p-6 shadow-sm text-center space-y-4 offset-border-frame">
                 <span className="inline-block text-[10px] font-mono font-bold bg-app-secondary border border-brand-teal/20 text-brand-teal px-3 py-1.5 rounded">
-                  Trade License: CN-4998977
+                  Licensed General Contractor • Abu Dhabi
                 </span>
                 <p className="text-xs text-app-muted font-light leading-relaxed pt-2">
                   ArrowHead International General Contracting LLC is licensed by the Abu Dhabi Department of Economic Development.
@@ -218,7 +218,7 @@ export default function ContactClient() {
                         {[
                           { key: 'residential', title: 'Residential & Villas', desc: 'Luxury villa builds, extensions, renovations' },
                           { key: 'industrial', title: 'Industrial & Manufacturing', desc: 'Mussafah workshops, warehouses, piping' },
-                          { key: 'marine', title: 'Marine & Ports', desc: 'Waterfront civils, slipways, seawalls' },
+                          { key: 'infrastructure', title: 'Infrastructure & Utilities', desc: 'HDPE pipelines, drainage, civil works' },
                           { key: 'commercial', title: 'Commercial & Retail', desc: 'Tenant fit-out MEP, chiller maintenance' },
                         ].map((sec) => (
                           <div

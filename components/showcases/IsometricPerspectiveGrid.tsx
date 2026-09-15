@@ -20,7 +20,7 @@ function TiltCard({ item }: { item: CardItem }) {
     const rect = cardRef.current.getBoundingClientRect();
     const width = rect.width;
     const height = rect.height;
-    
+
     // Mouse coordinates relative to card center (-0.5 to 0.5)
     const mouseX = (e.clientX - rect.left) / width - 0.5;
     const mouseY = (e.clientY - rect.top) / height - 0.5;
@@ -37,7 +37,7 @@ function TiltCard({ item }: { item: CardItem }) {
   };
 
   return (
-    <div 
+    <div
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
@@ -49,7 +49,7 @@ function TiltCard({ item }: { item: CardItem }) {
         borderColor: isHovered ? 'var(--color-brand-teal)' : 'var(--card-border)'
       }}
     >
-      <div 
+      <div
         className="w-full h-full flex flex-col justify-between"
         style={{
           transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(${isHovered ? '25px' : '0px'})`,
@@ -59,10 +59,10 @@ function TiltCard({ item }: { item: CardItem }) {
       >
         {/* Card Image */}
         <div className="aspect-[16/10] w-full rounded overflow-hidden relative bg-app-secondary">
-          <img 
-            src={item.image} 
-            alt={item.title} 
-            className="w-full h-full object-cover" 
+          <img
+            src={item.image}
+            alt={item.title}
+            className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
           <span className="absolute top-3 left-3 bg-primary-dark/80 backdrop-blur-xs text-brand-gold text-[7px] font-mono font-bold tracking-widest px-2 py-0.5 rounded">
@@ -87,19 +87,19 @@ export default function IsometricPerspectiveGrid() {
     {
       title: 'Water Transmission Pipe Network',
       category: 'HDPE PIPELINES',
-      image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80',
-      label: 'ADSSC APPROVED CONTRACTOR'
+      image: '/images/123.jpeg',
+      label: 'MUNICIPAL APPROVED CONTRACTOR'
     },
     {
-      title: 'Yas Island Residential Estate',
+      title: 'Sanjay Jain Luxury Custom Villa',
       category: 'VILLA CONSTRUCTION',
-      image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=600&q=80',
-      label: 'ESTIDAMA PEARL ALIGNED'
+      image: '/images/ArrowheadVilla.png',
+      label: 'ESTIDAMA 2-PEARL ALIGNED'
     },
     {
-      title: 'Commercial HQ Plant Retrofits',
+      title: 'Katheri Family Villa MEP Loops',
       category: 'MEP WORKS',
-      image: 'https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=600&q=80',
+      image: '/images/Matrix_project3.jpeg',
       label: 'CIVIL DEFENSE CERTIFIED'
     }
   ];

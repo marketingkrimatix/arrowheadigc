@@ -77,7 +77,7 @@ export default function CadRevealSlider() {
 
     const animate = () => {
       const elapsed = Date.now() - startTime;
-      
+
       if (elapsed >= duration) {
         setSliderPosition(50);
         return; // Stops requesting new frames, terminating the loop
@@ -88,7 +88,7 @@ export default function CadRevealSlider() {
       // Multiplied by 42.5 to achieve a max sweep range of exactly 20.3% and 79.7%
       const val = 50 - 42.5 * Math.sin(t * Math.PI * 2) * Math.sin(t * Math.PI);
       setSliderPosition(val);
-      
+
       animationFrameId = requestAnimationFrame(animate);
     };
 
@@ -126,23 +126,23 @@ export default function CadRevealSlider() {
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-40">
             {/* Grid background */}
             <div className="absolute inset-0 bg-[linear-gradient(rgba(0,168,198,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(0,168,198,0.15)_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-            
+
             <svg width="85%" height="85%" viewBox="0 0 800 450" className="text-brand-teal overflow-visible">
               {/* Outer structural layout */}
               <rect x="100" y="50" width="600" height="350" fill="none" stroke="currentColor" strokeWidth="2" />
               {/* Column frames */}
               <line x1="250" y1="50" x2="250" y2="400" stroke="currentColor" strokeWidth="1" strokeDasharray="5 5" />
               <line x1="550" y1="50" x2="550" y2="400" stroke="currentColor" strokeWidth="1" strokeDasharray="5 5" />
-              
+
               {/* Inner rooms / dividers */}
               <rect x="120" y="80" width="200" height="150" fill="none" stroke="currentColor" strokeWidth="1" />
               <rect x="480" y="80" width="200" height="150" fill="none" stroke="currentColor" strokeWidth="1" />
-              
+
               {/* Piping loops */}
               <path d="M 120 320 L 680 320 L 680 360" fill="none" stroke="#C5A880" strokeWidth="1.5" strokeDasharray="3 3" />
               <circle cx="120" cy="320" r="5" className="fill-brand-gold" />
               <circle cx="680" cy="320" r="5" className="fill-brand-gold" />
-              
+
               {/* Dimension markers */}
               <line x1="100" y1="30" x2="700" y2="30" stroke="currentColor" strokeWidth="0.8" />
               <text x="400" y="24" className="text-[10px] fill-brand-teal text-center font-bold">60.00m EXTENSION LOOP</text>
@@ -151,26 +151,26 @@ export default function CadRevealSlider() {
 
           {/* Title tag bottom left */}
           <div className="relative z-10 text-[8px] sm:text-[10px] text-white/50 border-t border-brand-teal/10 pt-2">
-            <span>© ARROWHEAD GENERAL CONTRACTING LLC CN-4998977</span>
+            <span>© ARROWHEAD GENERAL CONTRACTING LLC</span>
           </div>
         </div>
 
         {/* OVERLAY: Style 2 - Finished Handover Photograph (Clipped using GPU-accelerated CSS clipPath) */}
-        <div 
+        <div
           className="absolute inset-0 overflow-hidden"
           style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
         >
-          <img 
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" 
-            alt="Villa Finished Reality" 
-            className="w-full h-full object-cover" 
+          <img
+            src="/images/ArrowheadVilla.png"
+            alt="Villa Finished Reality"
+            className="w-full h-full object-cover"
           />
           {/* Soft dark gradient shadow */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
         </div>
 
         {/* Vertical Divider line & Drag Handle */}
-        <div 
+        <div
           className="absolute inset-y-0 w-1 bg-brand-gold cursor-ew-resize flex items-center justify-center"
           style={{ left: `${sliderPosition}%` }}
           onMouseDown={startDrag}
@@ -182,7 +182,7 @@ export default function CadRevealSlider() {
           </div>
         </div>
       </div>
-      
+
       {/* Visual Instruction label */}
       <p className="text-center text-[10px] sm:text-xs text-app-muted font-mono uppercase tracking-widest mt-4">
         Drag the golden divider left and right to reveal CAD Blueprint vs. Finished Build

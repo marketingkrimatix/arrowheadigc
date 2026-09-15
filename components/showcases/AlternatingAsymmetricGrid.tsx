@@ -16,11 +16,11 @@ export default function AlternatingAsymmetricGrid() {
   const projects: AsymmetricProject[] = [
     {
       id: 'proj-1',
-      title: 'Saadiyat District Luxury Estate',
-      category: 'Villa Construction & Finish',
-      location: 'Saadiyat Cultural District, Abu Dhabi',
-      image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80',
-      desc: 'Bespoke residential custom home focusing on premium interior finishes and structural stability. The envelope features high-performance thermal insulation ratings combined with massive natural Italian Carrara marble cladding slabs.',
+      title: 'Ali Makhboot Luxury Villa',
+      category: 'Turnkey Luxury Villa Construction',
+      location: 'Prestige Residential Sector, Abu Dhabi',
+      image: '/images/landscape.jpeg',
+      desc: 'Bespoke contemporary private residence featuring reinforced concrete substructure, high-efficiency thermal masonry, double-height curtain wall glazing, and luxury interior stone finishes.',
       specs: [
         { label: 'Foundation raft', value: 'C50/60 concrete' },
         { label: 'Green compliance', value: '2-Pearl Estidama' },
@@ -29,15 +29,15 @@ export default function AlternatingAsymmetricGrid() {
     },
     {
       id: 'proj-2',
-      title: 'Yas Island Sewerage Loop Network',
-      category: 'HDPE Pipelines & Dewatering',
-      location: 'Yas Island North Sector, Abu Dhabi',
-      image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80',
-      desc: 'Heavy infrastructure sewer trunk loop network. Completed butt-fusion computerized welding of PE100 polyethylene pipe units, executing alignments under tide-influenced shoring and deep-well dewatering set lines.',
+      title: 'Katheri Family Luxury Villa',
+      category: 'Luxury Villa Design-Build & Fit-Out',
+      location: 'Prime Residential Enclave, Abu Dhabi',
+      image: '/images/Matrix_project1.jpeg',
+      desc: 'Master private residential development featuring post-tensioned reinforced concrete slabs, bespoke luxury interior joinery, integrated VRF multi-zone HVAC cooling loops, and custom outdoor landscaped courtyards.',
       specs: [
-        { label: 'Pipe dimension', value: 'DN 1200mm Outer' },
-        { label: 'Pressure rating', value: 'PN16 (16 Bar load)' },
-        { label: 'Jointing specs', value: 'Computer Parameter log' }
+        { label: 'Structural frame', value: 'Post-Tensioned Slabs' },
+        { label: 'Finishing scope', value: 'Bespoke Marble & Joinery' },
+        { label: 'Total area size', value: '15,000 sq ft' }
       ]
     }
   ];
@@ -46,17 +46,16 @@ export default function AlternatingAsymmetricGrid() {
     <div className="w-full bg-app-bg py-4 max-w-6xl mx-auto space-y-12">
       {projects.map((proj, idx) => {
         const isEven = idx % 2 === 0;
-        
+
         return (
-          <div 
-            key={proj.id} 
+          <div
+            key={proj.id}
             className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
           >
-            
+
             {/* Image Box - Left-aligned on even index, right-aligned on odd index */}
-            <div className={`lg:col-span-7 relative aspect-[16/10] rounded-2xl overflow-hidden border border-app-border bg-app-secondary shadow-lg ${
-              isEven ? 'lg:order-1' : 'lg:order-2'
-            }`}>
+            <div className={`lg:col-span-7 relative aspect-[16/10] rounded-2xl overflow-hidden border border-app-border bg-app-secondary shadow-lg ${isEven ? 'lg:order-1' : 'lg:order-2'
+              }`}>
               <img
                 src={proj.image}
                 alt={proj.title}
@@ -65,9 +64,8 @@ export default function AlternatingAsymmetricGrid() {
             </div>
 
             {/* Typography Card - Right-aligned on even index, left-aligned on odd index */}
-            <div className={`lg:col-span-5 bg-app-card border border-app-border rounded-2xl p-6 sm:p-8 shadow-xl space-y-6 ${
-              isEven ? 'lg:order-2' : 'lg:order-1'
-            }`}>
+            <div className={`lg:col-span-5 bg-app-card border border-app-border rounded-2xl p-6 sm:p-8 shadow-xl space-y-6 ${isEven ? 'lg:order-2' : 'lg:order-1'
+              }`}>
               <div className="space-y-1">
                 <span className="text-[9px] font-mono text-brand-teal uppercase tracking-widest font-bold block">
                   {proj.category}

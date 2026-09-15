@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     'facility management company in Abu Dhabi',
     'facility management services UAE',
     'MEP contractors Abu Dhabi',
-    'marine and industrial facility maintenance Abu Dhabi'
+    'infrastructure and civil contracting Abu Dhabi'
   ],
   alternates: {
     canonical: 'https://arrowheadigc.com',
@@ -28,7 +28,7 @@ export default function HomePage() {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     'name': 'ArrowHead International General Contracting LLC',
-    'image': 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80',
+    'image': '/images/Matrix_project1.jpeg',
     'telephone': '+97125545230',
     'email': 'info@arrowheadigc.com',
     'address': {
@@ -55,14 +55,14 @@ export default function HomePage() {
       'Luxury villa design-build',
       'Hard and Soft Facilities Management',
       'MEP and Specialized Fit-out',
-      'Marine slipway repairs and Sea Walls'
+      'Infrastructure and Civil Works'
     ]
   };
 
   const homeFaqs = [
     {
       q: 'Is ArrowHead registered with Abu Dhabi utility authorities?',
-      a: 'Yes. ArrowHead is registered under Abu Dhabi Department of Economic Development (DED License: CN-4998977) and is fully aligned with the design, testing, and materials specifications of the Abu Dhabi Sewerage Services Company (ADSSC) and the Abu Dhabi Distribution Company (ADDC).',
+      a: 'Yes. ArrowHead is registered under Abu Dhabi Department of Economic Development and is fully aligned with the design, testing, and materials specifications of Abu Dhabi municipal and utility authorities.',
     },
     {
       q: 'What regions of the UAE does ArrowHead operate in?',

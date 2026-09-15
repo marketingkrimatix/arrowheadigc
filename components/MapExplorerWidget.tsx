@@ -28,13 +28,13 @@ export default function MapExplorerWidget() {
       cx: 120,
       cy: 40,
       category: 'Residential Luxury',
-      projectName: 'Saadiyat Beach Residence Estate',
+      projectName: 'Sanjay Jain Luxury Custom Villa',
       coordinates: '24.532° N, 54.437° E',
       scope: 'Design-Build custom estate villa, structural rafts, low-permeability SRC concrete casting, double-layer bituminous tanking, and premium Calacatta dry cladding Facades.',
-      spec: 'BUA: 12,500 SQ FT • C50 concrete, low-E glass (U-Value < 1.4)',
+      spec: 'BUA: 14,500 SQ FT • C50 concrete, low-E glass (U-Value < 1.4)',
       licensing: 'Estidama 3-Pearl compliance & TAMM approvals certified',
       href: '/locations/saadiyat-island',
-      image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=600&q=80'
+      image: '/images/ArrowheadVilla.png'
     },
     {
       id: 'yas',
@@ -44,11 +44,11 @@ export default function MapExplorerWidget() {
       category: 'Infrastructure & Utilities',
       projectName: 'Yas Trunk Sewerage Connection',
       coordinates: '24.498° N, 54.605° E',
-      scope: 'Deep utility trenching under high saline water tables. Excavation shoring, laying DN 1200mm PE100 gravity sewers, certified butt-welding (DVS 2207), and ADSSC inspector signoff.',
+      scope: 'Deep utility trenching under high saline water tables. Excavation shoring, laying DN 1200mm PE100 gravity sewers, certified butt-welding (DVS 2207), and municipal inspector signoff.',
       spec: 'DN 1200mm HDPE • Hydrostatic Pressure check PN16',
-      licensing: 'ADSSC Utility standards compliant & ADM NOC cleared',
+      licensing: 'Municipal utility standards compliant & Municipal NOC cleared',
       href: '/locations/yas-island',
-      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80'
+      image: '/images/123.jpeg'
     },
     {
       id: 'alraha',
@@ -56,13 +56,13 @@ export default function MapExplorerWidget() {
       cx: 190,
       cy: 110,
       category: 'Waterfront Civil Works',
-      projectName: 'Al Raha Cove Handovers',
+      projectName: 'Katheri Family Luxury Residence',
       coordinates: '24.441° N, 54.572° E',
       scope: 'Turnkey residential engineering for waterfront luxury villas. Specialized pile foundation anchor verification, waterproof envelope seals, and integrated VRF HVAC layouts.',
-      spec: 'BUA: 8,400 SQ FT • Bored Piles verification, VRF heat transfer loops',
-      licensing: 'ADDC Connected Load cleared & ADM Occupancy certified',
+      spec: 'BUA: 15,000 SQ FT • Bored Piles verification, VRF heat transfer loops',
+      licensing: 'Connected Load cleared & Municipal Occupancy certified',
       href: '/locations/al-raha',
-      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80'
+      image: '/images/Matrix_project1.jpeg'
     },
     {
       id: 'khalifa',
@@ -74,9 +74,9 @@ export default function MapExplorerWidget() {
       coordinates: '24.415° N, 54.588° E',
       scope: 'Structural additions to existing residential villa layouts. Excavating foundation extensions, structural columns tie-ins, Majlis builds, and boundary walls.',
       spec: 'Post-Tensioned concrete slabs, SRC cement, hollow thermal blocks',
-      licensing: 'ADM Building permit NOC & DED commercial registration',
+      licensing: 'Municipal Building permit NOC & DED commercial registration',
       href: '/locations/khalifa-city',
-      image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80'
+      image: '/images/villa_modern.png'
     },
     {
       id: 'mussafah',
@@ -88,9 +88,9 @@ export default function MapExplorerWidget() {
       coordinates: '24.364° N, 54.491° E',
       scope: 'Hard Facilities Management (FM) and mechanical retrofits. Replacing primary air handling units (AHU), balancing chiller water feeds, and performing thermal imaging DB load scans.',
       spec: 'Chiller loop AMC balancing, ABB switchboard load checks',
-      licensing: 'Civil Defense (ADCD) NFPA-13 certified & ADDC approved',
+      licensing: 'Civil Defense NFPA-13 certified & Utility approved',
       href: '/locations/mussafah',
-      image: 'https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=600&q=80'
+      image: '/images/facility.png'
     }
   ];
 
@@ -113,23 +113,23 @@ export default function MapExplorerWidget() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-        
+
         {/* Left Column: Styled Interactive SVG Map */}
         <div className="lg:col-span-5 bg-app-secondary border border-app-border rounded-xl p-4 flex flex-col justify-between items-center relative overflow-hidden select-none min-h-[260px]">
           <span className="absolute top-2 left-3 text-[6px] font-mono text-app-muted uppercase">Stylized Coastline &amp; Channels</span>
-          
+
           <svg width="100%" height="100%" viewBox="0 0 350 260" className="text-app-muted/20 overflow-visible relative z-10 w-full max-w-[280px]">
             {/* Outline of Abu Dhabi landmass islands (highly stylized curves) */}
-            <path 
-              d="M 10 200 C 60 210, 80 190, 100 200 C 130 215, 140 180, 160 170 C 180 160, 200 190, 230 170 C 260 150, 270 120, 290 100 C 310 80, 330 90, 340 70" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2" 
+            <path
+              d="M 10 200 C 60 210, 80 190, 100 200 C 130 215, 140 180, 160 170 C 180 160, 200 190, 230 170 C 260 150, 270 120, 290 100 C 310 80, 330 90, 340 70"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
               strokeDasharray="4 4"
             />
             {/* Saadiyat land block */}
             <path d="M 60 30 Q 110 20, 140 50 Q 100 70, 60 30 Z" fill="none" stroke="currentColor" strokeWidth="1" />
-            
+
             {/* Yas land block */}
             <path d="M 230 40 Q 280 30, 280 80 Q 240 90, 230 40 Z" fill="none" stroke="currentColor" strokeWidth="1" />
 
@@ -142,8 +142,8 @@ export default function MapExplorerWidget() {
 
             {/* Pulsating Hotspot nodes */}
             {hotspots.map((spot) => (
-              <g 
-                key={spot.id} 
+              <g
+                key={spot.id}
                 className="cursor-pointer"
                 onClick={() => setActiveLocationId(spot.id)}
               >
@@ -152,29 +152,28 @@ export default function MapExplorerWidget() {
                   <circle cx={spot.cx} cy={spot.cy} r="12" className="fill-brand-teal/20 stroke-brand-teal/40 animate-ping" />
                 )}
                 {/* Outer ring */}
-                <circle 
-                  cx={spot.cx} 
-                  cy={spot.cy} 
-                  r="6" 
-                  fill="none" 
-                  stroke={activeLocationId === spot.id ? '#00A8C6' : '#C5A880'} 
-                  strokeWidth="1.5" 
+                <circle
+                  cx={spot.cx}
+                  cy={spot.cy}
+                  r="6"
+                  fill="none"
+                  stroke={activeLocationId === spot.id ? '#00A8C6' : '#C5A880'}
+                  strokeWidth="1.5"
                 />
                 {/* Center dot */}
-                <circle 
-                  cx={spot.cx} 
-                  cy={spot.cy} 
-                  r="3.5" 
-                  fill={activeLocationId === spot.id ? '#00A8C6' : '#C5A880'} 
+                <circle
+                  cx={spot.cx}
+                  cy={spot.cy}
+                  r="3.5"
+                  fill={activeLocationId === spot.id ? '#00A8C6' : '#C5A880'}
                 />
                 {/* Labels */}
-                <text 
-                  x={spot.cx} 
-                  y={spot.cy - 10} 
-                  textAnchor="middle" 
-                  className={`font-mono text-[7px] tracking-wider uppercase font-bold ${
-                    activeLocationId === spot.id ? 'fill-brand-teal' : 'fill-app-muted'
-                  }`}
+                <text
+                  x={spot.cx}
+                  y={spot.cy - 10}
+                  textAnchor="middle"
+                  className={`font-mono text-[7px] tracking-wider uppercase font-bold ${activeLocationId === spot.id ? 'fill-brand-teal' : 'fill-app-muted'
+                    }`}
                 >
                   {spot.name.split(' ')[0]}
                 </text>

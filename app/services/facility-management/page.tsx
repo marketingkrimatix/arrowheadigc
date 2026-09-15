@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     description: 'Integrated Hard & Soft Facility Management (FM) solutions in Abu Dhabi. We manage scheduled MEP preventative maintenance, HVAC overhauls, cleaning, landscaping, and pest control.',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=800&q=80',
+        url: '/images/Matrix_project.jpeg',
         width: 800,
         height: 600,
         alt: 'Facility Management Services',
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Facility Management Services Abu Dhabi & UAE | ArrowHead',
     description: 'Integrated Hard & Soft Facility Management (FM) solutions in Abu Dhabi. We manage scheduled MEP preventative maintenance, HVAC overhauls, cleaning, landscaping, and pest control.',
-    images: ['https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=800&q=80'],
+    images: ['/images/Matrix_project.jpeg'],
   },
 };
 
@@ -54,7 +54,7 @@ export default function FacilityManagementPage() {
     },
     {
       title: 'Plumbing & Drainage Remediation',
-      desc: 'Regular flushing of drainage mains, grease trap cleaning, sump pump diagnostic checks, water tank sanitization (approved by ADDC), and quick response pipe repair services.',
+      desc: 'Regular flushing of drainage mains, grease trap cleaning, sump pump diagnostic checks, water tank sanitization (approved by municipal water authorities), and quick response pipe repair services.',
     },
     {
       title: 'Civil Fabric Maintenance',
@@ -118,7 +118,7 @@ export default function FacilityManagementPage() {
       'name': 'ArrowHead General Contracting LLC',
       'telephone': '+971-2-XXXXXXX',
       'priceRange': '$$$$',
-      'image': 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
+      'image': '/images/Matrix_project.jpeg',
       'address': {
         '@type': 'PostalAddress',
         'addressLocality': 'Abu Dhabi',
@@ -179,16 +179,16 @@ export default function FacilityManagementPage() {
       </section>
 
       <section className="py-24 border-b border-app-border relative bg-app-bg">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="space-y-6 mb-24">
-                  <div className="flex items-center gap-4 border-b border-app-border pb-4">
-                    <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE I</span>
-                    <h3 className="text-lg font-heading font-extrabold tracking-tight">Tabular Factsheet Grid Row Hover</h3>
-                  </div>
-                  <FactsheetGrid />
-                </div>
-                </div>
-                </section>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-6 mb-24">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE I</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Tabular Factsheet Grid Row Hover</h3>
+            </div>
+            <FactsheetGrid />
+          </div>
+        </div>
+      </section>
 
       {/* 2. SERVICES METHODOLOGY */}
       <section className="py-20">
@@ -205,7 +205,7 @@ export default function FacilityManagementPage() {
 
           {/* Hard vs Soft Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            
+
             {/* Hard FM */}
             <div className="space-y-6">
               <div className="flex items-center space-x-3 border-b border-app-border pb-4">
@@ -243,40 +243,40 @@ export default function FacilityManagementPage() {
       </section>
 
       <section className="py-24 border-b border-app-border relative bg-app-bg">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="space-y-6 mb-24">
-                  <div className="flex items-center gap-4 border-b border-app-border pb-4">
-                    <span className="text-xs font-mono font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded">STYLE J</span>
-                    <h3 className="text-lg font-heading font-extrabold tracking-tight">Cinematic Spec Card Grid</h3>
-                  </div>
-                  <CinematicSpecGrid />
-                </div>
-                </div>
-                </section>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-6 mb-24">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded">STYLE J</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Cinematic Spec Card Grid</h3>
+            </div>
+            <CinematicSpecGrid />
+          </div>
+        </div>
+      </section>
 
       <section className="py-24 border-b border-app-border relative bg-app-bg">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-             <div className="space-y-6 mb-24">
-                  <div className="flex items-center gap-4 border-b border-app-border pb-4">
-                    <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE B</span>
-                    <h3 className="text-lg font-heading font-extrabold tracking-tight">Smooth Horizontal Filmstrip Carousel</h3>
-                  </div>
-                  <HorizontalFilmstrip />
-                </div>
-                </div>
-                </section>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-6 mb-24">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE B</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Smooth Horizontal Filmstrip Carousel</h3>
+            </div>
+            <HorizontalFilmstrip />
+          </div>
+        </div>
+      </section>
 
-                <section className="py-24 border-b border-app-border relative bg-app-bg">
-                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                       <div className="space-y-6 mb-24">
-                            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-                              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE H</span>
-                              <h3 className="text-lg font-heading font-extrabold tracking-tight">Progressive Build Timeline Phase Switcher</h3>
-                            </div>
-                            <BuildTimelineShowcase />
-                          </div>
-                          </div>
-                          </section>
+      <section className="py-24 border-b border-app-border relative bg-app-bg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-6 mb-24">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE H</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Progressive Build Timeline Phase Switcher</h3>
+            </div>
+            <BuildTimelineShowcase />
+          </div>
+        </div>
+      </section>
 
       {/* 2.5 INTERACTIVE OPERATIONS COMMAND CENTER */}
       <section className="py-20 bg-app-bg border-t border-app-border">
@@ -297,16 +297,16 @@ export default function FacilityManagementPage() {
       </section>
 
       <section className="py-24 border-b border-app-border relative bg-app-bg">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="space-y-6 mb-24">
-                  <div className="flex items-center gap-4 border-b border-app-border pb-4">
-                    <span className="text-xs font-mono font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded">STYLE C</span>
-                    <h3 className="text-lg font-heading font-extrabold tracking-tight">Split Screen Category Hover Active Tabs</h3>
-                  </div>
-                  <SplitActiveShowcase />
-                </div>
-              </div>
-            </section>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-6 mb-24">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded">STYLE C</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Split Screen Category Hover Active Tabs</h3>
+            </div>
+            <SplitActiveShowcase />
+          </div>
+        </div>
+      </section>
 
       {/* 3. ANNUAL CONTRACT PACKAGES */}
       <section className="py-20 bg-app-secondary border-y border-app-border">
@@ -319,7 +319,7 @@ export default function FacilityManagementPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
+
             {/* Essential */}
             <div className="bg-app-card border border-app-border offset-border-frame shadow-sm p-8 rounded-xl border border-app-border flex flex-col justify-between shadow-2xl">
               <div>
@@ -399,7 +399,7 @@ export default function FacilityManagementPage() {
           <div className="space-y-4">
             {faqs.map((faq, idx) => (
               <details key={idx} className="group bg-app-secondary border border-app-border rounded-lg overflow-hidden">
-                <summary className="w-full text-left px-6 py-5 flex items-center justify-between font-bold text-white hover:text-brand-teal focus:outline-none transition-colors cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                <summary className="w-full text-left px-6 py-5 flex items-center justify-between font-bold text-app-fg hover:text-brand-teal focus:outline-none transition-colors cursor-pointer list-none [&::-webkit-details-marker]:hidden">
                   <span className="text-sm sm:text-base">{faq.q}</span>
                   <svg
                     className="w-4 h-4 text-app-muted/60 transition-transform duration-300 shrink-0 group-open:rotate-180 group-open:text-brand-teal"
@@ -426,7 +426,7 @@ export default function FacilityManagementPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-sm font-bold uppercase tracking-widest text-white mb-4">
+              <h3 className="text-sm font-bold uppercase tracking-widest text-app-fg mb-4">
                 Active Regional Operations
               </h3>
               <p className="text-xs text-app-muted mb-6 font-light">
@@ -441,7 +441,7 @@ export default function FacilityManagementPage() {
               </div>
             </div>
             <div>
-              <h3 className="text-sm font-bold uppercase tracking-widest text-white mb-4">
+              <h3 className="text-sm font-bold uppercase tracking-widest text-app-fg mb-4">
                 Technical Knowledge Base
               </h3>
               <p className="text-xs text-app-muted mb-6 font-light">
@@ -449,11 +449,11 @@ export default function FacilityManagementPage() {
               </p>
               <div className="flex flex-col space-y-4">
                 <Link href="/insights/understanding-estidama-pearl-ratings" className="p-4 bg-app-card rounded border border-app-border hover:border-brand-teal transition-colors">
-                  <span className="text-xs font-bold text-white block">Estidama Pearl Ratings Guide</span>
+                  <span className="text-xs font-bold text-app-fg block">Estidama Pearl Ratings Guide</span>
                   <span className="text-[10px] text-app-muted font-light mt-1 block">Learn about sustainable building insulation, HVAC efficiency, and Pearl ratings.</span>
                 </Link>
                 <Link href="/insights/guide-to-tamm-villa-approvals" className="p-4 bg-app-card rounded border border-app-border hover:border-brand-teal transition-colors">
-                  <span className="text-xs font-bold text-white block">Abu Dhabi TAMM Building Permit Guide</span>
+                  <span className="text-xs font-bold text-app-fg block">Abu Dhabi TAMM Building Permit Guide</span>
                   <span className="text-[10px] text-app-muted font-light mt-1 block">Step-by-step permit guide useful when planning maintenance modifications or extensions.</span>
                 </Link>
               </div>
@@ -464,7 +464,7 @@ export default function FacilityManagementPage() {
 
       {/* 6. CALL TO ACTION */}
       <section className="py-16 bg-app-secondary border-t border-app-border text-center">
-        <h2 className="text-xl sm:text-2xl font-heading font-extrabold text-white">
+        <h2 className="text-xl sm:text-2xl font-heading font-extrabold text-app-fg">
           Maintain Building Performance with ArrowHead
         </h2>
         <p className="mt-3 text-app-muted text-xs sm:text-sm max-w-xl mx-auto font-light">

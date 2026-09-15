@@ -36,7 +36,7 @@ export default function SmartFmDashboard() {
       amcCode: 'AMC-HVAC-2026-08',
       spec: 'Carrier 30XW Water Chiller, 1400kW cooling load',
       desc: 'Monitors the primary chilled water piping networks supplying the HVAC air handling units. Features digital flow switches, pressure transmitters, and automated balancing controls to minimize chilled water losses.',
-      complianceBody: 'ADDC Electrical & Load Guidelines'
+      complianceBody: 'DoE Electrical & Load Guidelines'
     },
     {
       id: 'electrical',
@@ -48,7 +48,7 @@ export default function SmartFmDashboard() {
       amcCode: 'AMC-ELEC-2026-11',
       spec: 'ABB 400V Distribution board, multi-tariff metering',
       desc: 'Controls building main panels, secondary boards, and automatic transfer switches (ATS) connected to the standby backup generator. Tracks phase balancing to optimize power factor and thermal safety.',
-      complianceBody: 'ADDC & Abu Dhabi Municipality Code'
+      complianceBody: 'DoE & Abu Dhabi Municipality Code'
     },
     {
       id: 'plumbing',
@@ -60,7 +60,7 @@ export default function SmartFmDashboard() {
       amcCode: 'AMC-PLUM-2026-04',
       spec: 'Grundfos Hydro MPC Multi-Pump Booster Rig',
       desc: 'Manages incoming potable water pressure and tank accumulation volumes. Automatically triggers variable speed booster motors to maintain constant header pressure of 4.5 bar across high floors.',
-      complianceBody: 'ADSSC Sewerage & Potable Water Standards'
+      complianceBody: 'Municipal Water & Sewerage Standards'
     },
     {
       id: 'fire',
@@ -72,7 +72,7 @@ export default function SmartFmDashboard() {
       amcCode: 'AMC-FIRE-2026-01',
       spec: 'Armstrong 1500 GPM Fire Pump (Diesel / Electric)',
       desc: 'Ensures immediate standby pressure is maintained inside wet sprinkler riser lines. Integrates flow switches directly with building fire alarm panel and local civil defense telemetry systems.',
-      complianceBody: 'Abu Dhabi Civil Defense (ADCD) NFPA-13'
+      complianceBody: 'Abu Dhabi Civil Defense NFPA-13'
     }
   ];
 

@@ -21,29 +21,29 @@ export default function CinematicHeroCarousel() {
 
   const slides: Slide[] = [
     {
-      category: 'CLIMATE RESILIENCE',
-      title: 'Strengthening Communities Through Infrastructure',
-      description: 'Deploying high-pressure DN 1200mm HDPE trunk sewer and water loops built to ADSSC & ADDC specifications in Abu Dhabi.',
-      video: 'https://assets.mixkit.co/videos/preview/mixkit-water-flowing-through-pipes-40019-large.mp4',
-      image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80',
-      link: '/services/hdpe-pipelines',
-      navLabel: 'Water Infrastructure'
-    },
-    {
       category: 'CIVIL STRUCTURAL',
       title: 'A Decade of Precision Villa Construction',
       description: 'From concrete foundations to high-end marble fit-outs, building custom luxury estates under Estidama green codes.',
-      video: 'https://assets.mixkit.co/videos/preview/mixkit-working-on-a-construction-site-41648-large.mp4',
-      image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80',
+      video: '/videos/VillaConstruction3DUpdated.mp4',
+      image: '/images/ArrowheadVilla.png',
       link: '/services/villa-construction',
       navLabel: 'Villa Construction'
+    },
+    {
+      category: 'CLIMATE RESILIENCE',
+      title: 'Strengthening Communities Through Infrastructure',
+      description: 'Deploying high-pressure DN 1200mm HDPE trunk sewer and water loops built to municipal utility specifications in Abu Dhabi.',
+      video: '/videos/HDPEPipes.mp4',
+      image: '/images/123.jpeg',
+      link: '/services/hdpe-pipelines',
+      navLabel: 'Infrastructure'
     },
     {
       category: 'FACILITIES MANAGEMENT',
       title: 'Protecting Asset Lifecycles 24/7',
       description: 'Structured preventative maintenance and hard mechanical services ensuring peak system performance for commercial blocks.',
-      video: '/arrowheadigc-media/villa-2.mp4',
-      image: 'https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=1200&q=80',
+      video: '/videos/FacilityManagement.mp4',
+      image: '/images/Matrix_project1.jpeg',
       link: '/services/facility-management',
       navLabel: 'Asset Management'
     }
@@ -58,17 +58,23 @@ export default function CinematicHeroCarousel() {
 
     const timer = setInterval(() => {
       setProgress((prev) => {
-        const next = prev + increment;
-        if (next >= 100) {
-          setActiveSlide((curr) => (curr + 1) % slides.length);
-          return 0;
+        if (prev >= 100) {
+          return 100;
         }
-        return next;
+        return prev + increment;
       });
     }, intervalTime);
 
     return () => clearInterval(timer);
   }, [isPlaying, activeSlide, slides.length]);
+
+  // Handle slide transition when progress reaches 100
+  useEffect(() => {
+    if (progress >= 100) {
+      setActiveSlide((curr) => (curr + 1) % slides.length);
+      setProgress(0);
+    }
+  }, [progress, slides.length]);
 
   // Reset progress when activeSlide changes (e.g. manual select)
   useEffect(() => {
@@ -96,7 +102,7 @@ export default function CinematicHeroCarousel() {
       const video = videoRefs.current[idx];
       if (video) {
         if (idx === activeSlide && isPlaying) {
-          video.play().catch(() => {});
+          video.play().catch(() => { });
         } else {
           video.pause();
         }
@@ -106,12 +112,12 @@ export default function CinematicHeroCarousel() {
 
   return (
     <div className="w-full h-screen relative overflow-hidden bg-primary-dark select-none flex flex-col justify-between p-8 sm:p-16 text-white border-b border-app-border">
-      
+
       {/* 1. Viewport Slides Backgrounds */}
       {slides.map((slide, idx) => {
         const isActive = idx === activeSlide;
         return (
-          <div 
+          <div
             key={idx}
             className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${isActive ? 'opacity-100 z-0' : 'opacity-0 -z-10'}`}
           >
@@ -168,7 +174,7 @@ export default function CinematicHeroCarousel() {
 
         {/* Link Button */}
         <div className="pt-2">
-          <Link 
+          <Link
             href={slides[activeSlide].link}
             className="group inline-flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-white hover:text-brand-teal transition-colors"
           >
@@ -180,7 +186,7 @@ export default function CinematicHeroCarousel() {
 
       {/* 4. Bottom Row Navigation & Play/Pause */}
       <div className="relative z-10 border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-6">
-        
+
         {/* Tab Selection */}
         <div className="flex flex-wrap gap-8 justify-center sm:justify-start w-full sm:w-auto">
           {slides.map((slide, idx) => {
@@ -194,10 +200,9 @@ export default function CinematicHeroCarousel() {
                 {/* Progress bar container */}
                 <div className="w-[120px] sm:w-[160px] h-[2px] bg-white/20 mb-2 relative overflow-hidden">
                   {isActive && (
-                    <div 
-                      className={`absolute inset-y-0 left-0 bg-brand-gold origin-left ${
-                        progress === 0 ? 'transition-none' : 'transition-all duration-100 ease-linear'
-                      }`}
+                    <div
+                      className={`absolute inset-y-0 left-0 bg-brand-gold origin-left ${progress === 0 ? 'transition-none' : 'transition-all duration-100 ease-linear'
+                        }`}
                       style={{ width: `${progress}%` }}
                     />
                   )}
@@ -220,12 +225,12 @@ export default function CinematicHeroCarousel() {
           {isPlaying ? (
             /* Pause Icon */
             <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+              <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
             </svg>
           ) : (
             /* Play Icon */
             <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M8 5v14l11-7z"/>
+              <path d="M8 5v14l11-7z" />
             </svg>
           )}
         </button>
@@ -233,18 +238,18 @@ export default function CinematicHeroCarousel() {
       </div>
 
       {/* 5. Scroll Down Indicator */}
-      <div 
+      <div
         onClick={handleScrollDown}
         className="absolute bottom-5 left-1/2 -translate-x-1/2 z-20 hidden sm:flex flex-col items-center gap-1 cursor-pointer group"
       >
         <span className="text-[9px] font-mono tracking-widest uppercase text-white/40 group-hover:text-brand-gold transition-colors duration-300">
           Scroll Down
         </span>
-        <svg 
+        <svg
           className="w-5 h-5 text-white/50 group-hover:text-brand-gold animate-bounce transition-colors duration-300"
-          fill="none" 
-          stroke="currentColor" 
-          strokeWidth="2" 
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
           viewBox="0 0 24 24"
         >
           <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />

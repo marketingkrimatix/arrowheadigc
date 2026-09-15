@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description: 'Specialized residential general contracting services in Abu Dhabi. Design-build luxury villas, expansions, cosmetic renovations, and Estidama 1/2-Pearl approvals.',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
+        url: '/images/ArrowheadVilla.png',
         width: 800,
         height: 600,
         alt: 'Residential and Luxury Villa Construction',
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Residential & Villa Construction Abu Dhabi | ArrowHead',
     description: 'Specialized residential general contracting services in Abu Dhabi. Design-build luxury villas, expansions, cosmetic renovations, and Estidama 1/2-Pearl approvals.',
-    images: ['https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80'],
+    images: ['/images/ArrowheadVilla.png'],
   },
 };
 
@@ -56,7 +56,7 @@ export default function ResidentialVillasSectorPage() {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     'name': 'ArrowHead General Contracting LLC - Residential Sector',
-    'image': 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
+    'image': '/images/ArrowheadVilla.png',
     'telephone': '+971-2-XXXXXXX',
     'address': {
       '@type': 'PostalAddress',
@@ -88,7 +88,7 @@ export default function ResidentialVillasSectorPage() {
     '@type': 'BreadcrumbList',
     'itemListElement': [
       { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://arrowheadigc.com' },
-      { '@type': 'ListItem', 'position': 2, 'name': 'Sectors', 'item': 'https://arrowheadigc.com/sectors' },
+      { '@type': 'ListItem', 'position': 2, 'name': 'Services', 'item': 'https://arrowheadigc.com/services' },
       { '@type': 'ListItem', 'position': 3, 'name': 'Residential & Villas', 'item': 'https://arrowheadigc.com/sectors/residential-villas' }
     ]
   };
@@ -100,7 +100,7 @@ export default function ResidentialVillasSectorPage() {
       {/* 1. HERO SECTION */}
       <section className="bg-app-bg py-20 relative overflow-hidden border-b border-app-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <Breadcrumbs items={[{ name: 'Sectors', href: '/sectors' }, { name: 'Residential & Villas' }]} />
+          <Breadcrumbs items={[{ name: 'Services', href: '/services' }, { name: 'Residential & Villas' }]} />
           <h1 className="text-4xl sm:text-5xl font-heading font-extrabold text-app-fg tracking-tight leading-tight">
             Residential &amp; Luxury Villa Contracting
           </h1>
@@ -119,16 +119,12 @@ export default function ResidentialVillasSectorPage() {
       </section>
 
       <section className="py-24 border-b border-app-border relative bg-app-bg">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-             <div className="space-y-6 mb-24">
-                  <div className="flex items-center gap-4 border-b border-app-border pb-4">
-                    <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE H</span>
-                    <h3 className="text-lg font-heading font-extrabold tracking-tight">Progressive Build Timeline Phase Switcher</h3>
-                  </div>
-                  <BuildTimelineShowcase />
-                </div>
-                </div>
-                </section>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-6">
+            <BuildTimelineShowcase />
+          </div>
+        </div>
+      </section>
 
       {/* 2. DETAILED SECTOR COPY */}
       <section className="py-20">
@@ -140,20 +136,20 @@ export default function ResidentialVillasSectorPage() {
                 Sleek Architecture &amp; Rigid Foundations
               </h2>
               <div className="text-app-muted space-y-5 text-xs sm:text-sm leading-relaxed font-light">
-          <p>
-            The residential villa sector in Abu Dhabi is highly regulated to ensure compliance with architectural codes, safety regulations, and environmental sustainability standards. Developing a custom private residence requires coordination between structural engineering, interior layouts, and government utility permits. ArrowHead provides comprehensive general contracting services, managing residential projects from architectural BIM design to turnkey handover.
-          </p>
-          <p>
-            Our structural engineering team designs and executes robust foundation systems. We assess local soil conditions to design bored piles or pour heavy reinforced concrete raft slabs. We apply advanced waterproofing membranes and install durable concrete masonry structures using sulfate-resistant cement to protect the villa structure from moisture and chemical attack.
-          </p>
-          <p>
-            We manage the entire regulatory clearance flow through the TAMM digital portal. We coordinate approvals with Abu Dhabi Municipality for building permits, obtain electrical and water connections from the Abu Dhabi Distribution Company (ADDC), align all designs with Estidama Pearl requirements, and integrate Civil Defense (ADCD) compliant fire safety systems, securing the legal Occupancy Certificate.
-          </p>
-  </div>
+                <p>
+                  The residential villa sector in Abu Dhabi is highly regulated to ensure compliance with architectural codes, safety regulations, and environmental sustainability standards. Developing a custom private residence requires coordination between structural engineering, interior layouts, and government utility permits. ArrowHead provides comprehensive general contracting services, managing residential projects from architectural BIM design to turnkey handover.
+                </p>
+                <p>
+                  Our structural engineering team designs and executes robust foundation systems. We assess local soil conditions to design bored piles or pour heavy reinforced concrete raft slabs. We apply advanced waterproofing membranes and install durable concrete masonry structures using sulfate-resistant cement to protect the villa structure from moisture and chemical attack.
+                </p>
+                <p>
+                  We manage the entire regulatory clearance flow through the TAMM digital portal. We coordinate approvals with Abu Dhabi Municipality for building permits, obtain electrical and water connections from local utility distribution authorities, align all designs with Estidama Pearl requirements, and integrate Civil Defense compliant fire safety systems, securing the legal Occupancy Certificate.
+                </p>
+              </div>
             </div>
-            
+
             <div className="lg:col-span-5 bg-app-card border border-app-border offset-border-frame shadow-sm border border-app-border rounded-xl p-8 shadow-2xl space-y-6">
-              <h4 className="font-heading font-extrabold text-sm text-white border-b border-app-border pb-4 uppercase tracking-widest">
+              <h4 className="font-heading font-extrabold text-sm text-app-fg border-b border-app-border pb-4 uppercase tracking-widest">
                 Villa capabilities
               </h4>
               <div className="grid grid-cols-1 gap-4">
@@ -170,74 +166,74 @@ export default function ResidentialVillasSectorPage() {
       </section>
 
       <section className="py-24 border-b border-app-border relative bg-app-bg">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="space-y-6 mb-24">
-                  <div className="flex items-center gap-4 border-b border-app-border pb-4">
-                    <span className="text-xs font-mono font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded">STYLE J</span>
-                    <h3 className="text-lg font-heading font-extrabold tracking-tight">Cinematic Spec Card Grid</h3>
-                  </div>
-                  <CinematicSpecGrid />
-                </div>
-                </div>
-                </section>
-
-                <section className="py-24 border-b border-app-border relative bg-app-bg">
-                                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                             <div className="space-y-6 mb-24">
-                                  <div className="flex items-center gap-4 border-b border-app-border pb-4">
-                                    <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE L</span>
-                                    <h3 className="text-lg font-heading font-extrabold tracking-tight">Asymmetric Random-Sized Collage Grid</h3>
-                                  </div>
-                                  <CollageBoxShowcase />
-                                </div>
-                                </div>
-                                </section>
-                
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-6 mb-24">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded">STYLE J</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Cinematic Spec Card Grid</h3>
+            </div>
+            <CinematicSpecGrid />
+          </div>
+        </div>
+      </section>
 
       <section className="py-24 border-b border-app-border relative bg-app-bg">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="space-y-6">
-                  <div className="flex items-center gap-4 border-b border-app-border pb-4">
-                    <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE E</span>
-                    <h3 className="text-lg font-heading font-extrabold tracking-tight">Cinematic Widescreen Progress Bar Slideshow</h3>
-                  </div>
-                  <CinematicSlider />
-                </div>
-                </div>
-                </section>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-6 mb-24">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE L</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Asymmetric Random-Sized Collage Grid</h3>
+            </div>
+            <CollageBoxShowcase />
+          </div>
+        </div>
+      </section>
 
-                <section className="py-24 border-b border-app-border relative bg-app-bg">
-                              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                           <div className="space-y-6 mb-24">
-                            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-                              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE N</span>
-                              <h3 className="text-lg font-heading font-extrabold tracking-tight">Material Spec Spotlight Reveal Grid</h3>
-                            </div>
-                            <SpotlightRevealGrid />
-                          </div>
-                          </div>
-                          </section>
 
-                          <section className="py-24 border-b border-app-border relative bg-app-bg">
-                                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                                    <div className="space-y-6 mb-24">
-                                      <div className="flex items-center gap-4 border-b border-app-border pb-4">
-                                        <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE R</span>
-                                        <h3 className="text-lg font-heading font-extrabold tracking-tight">Widescreen Editorial Showcase &amp; Material Swatch Selector</h3>
-                                      </div>
-                                      <ProjectControlCenter />
-                                    </div>
-                                    </div>
-                                    </section>
-                                    
-                          
+      <section className="py-24 border-b border-app-border relative bg-app-bg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-6">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE E</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Cinematic Widescreen Progress Bar Slideshow</h3>
+            </div>
+            <CinematicSlider />
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 border-b border-app-border relative bg-app-bg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-6 mb-24">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE N</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Material Spec Spotlight Reveal Grid</h3>
+            </div>
+            <SpotlightRevealGrid />
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 border-b border-app-border relative bg-app-bg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-6 mb-24">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE R</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Widescreen Editorial Showcase &amp; Material Swatch Selector</h3>
+            </div>
+            <ProjectControlCenter />
+          </div>
+        </div>
+      </section>
+
+
 
       {/* 3. REGIONAL SILO & KNOWLEDGE MATRIX */}
       <section className="py-16 bg-app-secondary border-t border-app-border">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-sm font-bold uppercase tracking-widest text-white mb-4">
+              <h3 className="text-sm font-bold uppercase tracking-widest text-app-fg mb-4">
                 Active Residential Operations
               </h3>
               <p className="text-xs text-app-muted mb-6 font-light">
@@ -252,7 +248,7 @@ export default function ResidentialVillasSectorPage() {
               </div>
             </div>
             <div>
-              <h3 className="text-sm font-bold uppercase tracking-widest text-white mb-4">
+              <h3 className="text-sm font-bold uppercase tracking-widest text-app-fg mb-4">
                 Technical Knowledge Base
               </h3>
               <p className="text-xs text-app-muted mb-6 font-light">
@@ -260,11 +256,11 @@ export default function ResidentialVillasSectorPage() {
               </p>
               <div className="flex flex-col space-y-4">
                 <Link href="/insights/guide-to-tamm-villa-approvals" className="p-4 bg-app-card rounded border border-app-border hover:border-brand-teal transition-colors">
-                  <span className="text-xs font-bold text-white block">Abu Dhabi TAMM Building Permit Guide</span>
+                  <span className="text-xs font-bold text-app-fg block">Abu Dhabi TAMM Building Permit Guide</span>
                   <span className="text-[10px] text-app-muted font-light mt-1 block">Learn about architectural guidelines, drawings, NOCs, and final approvals.</span>
                 </Link>
                 <Link href="/insights/understanding-estidama-pearl-ratings" className="p-4 bg-app-card rounded border border-app-border hover:border-brand-teal transition-colors">
-                  <span className="text-xs font-bold text-white block">Estidama Pearl Ratings Guide</span>
+                  <span className="text-xs font-bold text-app-fg block">Estidama Pearl Ratings Guide</span>
                   <span className="text-[10px] text-app-muted font-light mt-1 block">Compliance checklist for private villas to satisfy DMT sustainability ratings.</span>
                 </Link>
               </div>
@@ -273,21 +269,21 @@ export default function ResidentialVillasSectorPage() {
         </div>
       </section>
 
-<section className="py-24 border-b border-app-border relative bg-app-bg">
+      <section className="py-24 border-b border-app-border relative bg-app-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="space-y-6 mb-24">
+          <div className="space-y-6 mb-24">
             <div className="flex items-center gap-4 border-b border-app-border pb-4">
               <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE F</span>
               <h3 className="text-lg font-heading font-extrabold tracking-tight">Interactive Drag-to-Reveal CAD Blueprint vs. Finished Build</h3>
             </div>
             <CadRevealSlider />
           </div>
-          </div>
-          </section>
+        </div>
+      </section>
 
       {/* 4. RELATED SERVICES */}
       <section className="py-16 bg-app-secondary border-t border-app-border text-center">
-        <h2 className="text-sm font-bold uppercase tracking-widest text-white">Related Services for Private Clients</h2>
+        <h2 className="text-sm font-bold uppercase tracking-widest text-app-fg">Related Services for Private Clients</h2>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <Link href="/services/villa-construction" className="px-5 py-2.5 bg-app-bg border border-app-border hover:border-brand-teal text-xs font-bold text-brand-teal rounded transition-colors uppercase tracking-wider">
             Villa Construction

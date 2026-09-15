@@ -25,14 +25,14 @@ export default function FactsheetGrid() {
       location: 'Yas Island North, Abu Dhabi',
       value: 'AED 14.8M',
       material: 'PE100 HDPE (SDR11, DN 1200mm)',
-      authority: 'ADSSC / ADDC Certified',
+      authority: 'Municipal Utility Certified',
       safetyHours: '45,000 LTI-Free Hours',
       completion: '100% Handover Complete',
-      image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80',
+      image: '/images/123.jpeg',
       logs: [
         'Thermoplastic welding butt-fusion data logs submitted',
         'Hydrostatic pressure testing certified at 16 Bar',
-        'ADM road crossing micro-tunneling approved'
+        'Municipal road crossing micro-tunneling approved'
       ]
     },
     {
@@ -41,42 +41,42 @@ export default function FactsheetGrid() {
       location: 'Saadiyat Island, Abu Dhabi',
       value: 'AED 22.1M',
       material: 'C50/60 Concrete & GI Ducting',
-      authority: 'Civil Defense (ADCD) Approved',
+      authority: 'Civil Defense Approved',
       safetyHours: '82,000 LTI-Free Hours',
       completion: 'Under Civil Construction (85%)',
-      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80',
+      image: '/images/civil-infrastructure.webp',
       logs: [
         'Compressive strength tests verified: 62.5 MPa at 28 days',
         'Double-skin GI duct route installations finalized',
-        'ADDC transformer room layout clearances obtained'
+        'DoE transformer room layout clearances obtained'
       ]
     },
     {
       id: '03',
-      name: 'Mussafah Port Marine Slipway Repair',
-      location: 'Industrial Port Area, Abu Dhabi',
+      name: 'Mussafah Industrial Logistics Center & Civils',
+      location: 'Mussafah Industrial Zone, Abu Dhabi',
       value: 'AED 9.2M',
-      material: 'Corrosion-Resistant Polyurea & Cathodic Protection',
-      authority: 'Environment Agency (EAD) Coordinated',
+      material: 'TR34 High-Flatness Concrete & Structural Steel',
+      authority: 'ZonesCorp & Civil Defense Aligned',
       safetyHours: '31,000 LTI-Free Hours',
       completion: '100% Handover Complete',
-      image: 'https://images.unsplash.com/photo-1505705694340-019e1e335916?auto=format&fit=crop&w=800&q=80',
+      image: '/images/Matrix_project.jpeg',
       logs: [
-        'Saline splash-zone epoxy pressure spray inspection passed',
-        'Underwater concrete cracking epoxy injection seal verification',
-        'Sacrificial zinc anode installation log registered'
+        'TR34 high-flatness concrete slab floor survey passed',
+        'Structural steel portal frame alignment and torque inspection',
+        'Fire-rated industrial partition wall compliance registered'
       ]
     },
     {
       id: '04',
-      name: 'Al Raha Gardens Luxury Residential Villa',
-      location: 'Al Raha, Abu Dhabi',
-      value: 'AED 11.5M',
+      name: 'Sanjay Jain Luxury Custom Villa',
+      location: 'Saadiyat Island / Prime Enclave, Abu Dhabi',
+      value: 'AED 14.5M',
       material: 'Estidama 2-Pearl Casts & Marble Finishes',
-      authority: 'Abu Dhabi Municipality (ADM) Occupancy',
+      authority: 'Abu Dhabi Municipality Occupancy',
       safetyHours: '56,000 LTI-Free Hours',
       completion: '100% Handover Complete',
-      image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80',
+      image: '/images/ArrowheadVilla.png',
       logs: [
         'Estidama green building heat insulation rating cleared',
         'Abu Dhabi Civil Defense firefighting system compliance cert',
@@ -89,10 +89,10 @@ export default function FactsheetGrid() {
       location: 'Khalifa City, Abu Dhabi',
       value: 'AED 18.2M',
       material: 'HDPE Gravity Mains & Concrete Manholes',
-      authority: 'ADSSC Approval Loop',
+      authority: 'Municipal Sewerage Approval Loop',
       safetyHours: '95,000 LTI-Free Hours',
       completion: 'In-Progress (60%)',
-      image: 'https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=800&q=80',
+      image: '/images/456.jpeg',
       logs: [
         'Gravity sewer deflection test passed (DN 800)',
         'Shoring and deep well dewatering controls checked daily',
@@ -106,7 +106,7 @@ export default function FactsheetGrid() {
   return (
     <div className="w-full bg-app-bg text-app-fg py-12 max-w-6xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        
+
         {/* Left Side: Interactive Row List */}
         <div className="lg:col-span-7 space-y-4">
           <div className="hidden sm:grid grid-cols-12 px-4 pb-2 border-b border-app-border text-[10px] font-mono text-app-muted uppercase tracking-widest font-bold">
@@ -124,16 +124,15 @@ export default function FactsheetGrid() {
                   key={proj.id}
                   onMouseEnter={() => setActiveIdx(idx)}
                   onClick={() => setActiveIdx(idx)}
-                  className={`grid grid-cols-1 sm:grid-cols-12 items-center p-4 rounded-lg border transition-all duration-300 cursor-pointer ${
-                    isActive
-                      ? 'bg-app-secondary border-brand-teal shadow-md shadow-brand-teal/5'
-                      : 'bg-app-card border-app-border hover:border-brand-teal/40 hover:bg-app-secondary/30'
-                  }`}
+                  className={`grid grid-cols-1 sm:grid-cols-12 items-center p-4 rounded-lg border transition-all duration-300 cursor-pointer ${isActive
+                    ? 'bg-app-secondary border-brand-teal shadow-md shadow-brand-teal/5'
+                    : 'bg-app-card border-app-border hover:border-brand-teal/40 hover:bg-app-secondary/30'
+                    }`}
                 >
                   <div className="col-span-1 font-mono text-xs font-bold text-brand-teal">
                     {proj.id}
                   </div>
-                  
+
                   <div className="col-span-6 pr-4 mt-1 sm:mt-0">
                     <span className="block text-xs font-mono text-brand-gold uppercase tracking-wider font-bold">
                       {proj.material.split(' (')[0]}
@@ -173,7 +172,7 @@ export default function FactsheetGrid() {
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-            
+
             <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">
               <div>
                 <span className="block text-[8px] font-mono text-brand-gold uppercase tracking-widest font-bold">

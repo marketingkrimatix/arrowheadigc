@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description: 'Tenant fit-out, MEP engineering, chilled water line adjustments, fire sprinkler retrofits, and integrated facilities management for malls and offices in Abu Dhabi.',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
+        url: '/images/mall_shop.jpeg',
         width: 800,
         height: 600,
         alt: 'Commercial and Retail Sector Services',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Commercial & Retail General Contracting Abu Dhabi | ArrowHead',
     description: 'Tenant fit-out, MEP engineering, chilled water line adjustments, fire sprinkler retrofits, and integrated facilities management for malls and offices in Abu Dhabi.',
-    images: ['https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80'],
+    images: ['/images/mall_shop.jpeg'],
   },
 };
 
@@ -51,7 +51,7 @@ export default function CommercialRetailSectorPage() {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     'name': 'ArrowHead General Contracting LLC - Commercial Sector',
-    'image': 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
+    'image': '/images/mall_shop.jpeg',
     'telephone': '+971-2-XXXXXXX',
     'address': {
       '@type': 'PostalAddress',
@@ -67,7 +67,7 @@ export default function CommercialRetailSectorPage() {
       { '@type': 'AdministrativeArea', 'name': 'Mussafah' },
       { '@type': 'AdministrativeArea', 'name': 'Khalifa City' }
     ],
-    'knowsAbout': ['Tenant fit-out MEP', 'Chilled water systems', 'ADCD clearances', 'Building AMCs']
+    'knowsAbout': ['Tenant fit-out MEP', 'Chilled water systems', 'Civil Defense clearances', 'Building AMCs']
   };
 
   const locationLinks = [
@@ -83,7 +83,7 @@ export default function CommercialRetailSectorPage() {
     '@type': 'BreadcrumbList',
     'itemListElement': [
       { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://arrowheadigc.com' },
-      { '@type': 'ListItem', 'position': 2, 'name': 'Sectors', 'item': 'https://arrowheadigc.com/sectors' },
+      { '@type': 'ListItem', 'position': 2, 'name': 'Services', 'item': 'https://arrowheadigc.com/services' },
       { '@type': 'ListItem', 'position': 3, 'name': 'Commercial & Retail', 'item': 'https://arrowheadigc.com/sectors/commercial-retail' }
     ]
   };
@@ -95,7 +95,7 @@ export default function CommercialRetailSectorPage() {
       {/* 1. HERO SECTION */}
       <section className="bg-app-bg py-20 relative overflow-hidden border-b border-app-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <Breadcrumbs items={[{ name: 'Sectors', href: '/sectors' }, { name: 'Commercial & Retail' }]} />
+          <Breadcrumbs items={[{ name: 'Services', href: '/services' }, { name: 'Commercial & Retail' }]} />
           <h1 className="text-4xl sm:text-5xl font-heading font-extrabold text-app-fg tracking-tight leading-tight">
             Commercial &amp; Retail <br />General Contracting
           </h1>
@@ -113,17 +113,17 @@ export default function CommercialRetailSectorPage() {
         </div>
       </section>
 
-<section className="py-24 border-b border-app-border relative bg-app-bg">
+      <section className="py-24 border-b border-app-border relative bg-app-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="space-y-6 mb-24">
+          <div className="space-y-6 mb-24">
             <div className="flex items-center gap-4 border-b border-app-border pb-4">
               <span className="text-xs font-mono font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded">STYLE J</span>
               <h3 className="text-lg font-heading font-extrabold tracking-tight">Cinematic Spec Card Grid</h3>
             </div>
             <CinematicSpecGrid />
           </div>
-          </div>
-          </section>
+        </div>
+      </section>
 
       {/* 2. DETAILED SECTOR COPY */}
       <section className="py-20">
@@ -139,16 +139,16 @@ export default function CommercialRetailSectorPage() {
                   The commercial and retail sector in Abu Dhabi demand high-efficiency building operations, modern architectural aesthetics, and strict safety compliance to protect property assets, minimize tenant disruptions, and ensure customer satisfaction. ArrowHead provides comprehensive general contracting and mechanical, electrical, and plumbing (MEP) installations for shopping malls, retail outlets, corporate office blocks, and commercial business centers.
                 </p>
                 <p>
-                  Our specialized MEP fit-out division is experienced in managing landlord and tenant work subdivisions. We execute complete design modifications, resize AC air duct distribution networks, balance airflows, and install chilled water fan coil units (FCUs). Our electrical engineers calculate power load distributions, design and dress main Distribution Boards (DB) to ADDC regulations, install wire ways, and pull sub-main cabling. We install Civil Defense (ADCD) compliant fire sprinklers, smoke detectors, and manual call points, securing municipal building approvals.
+                  Our specialized MEP fit-out division is experienced in managing landlord and tenant work subdivisions. We execute complete design modifications, resize AC air duct distribution networks, balance airflows, and install chilled water fan coil units (FCUs). Our electrical engineers calculate power load distributions, design and dress main Distribution Boards (DB) to DoE and municipal regulations, install wire ways, and pull sub-main cabling. We install Civil Defense compliant fire sprinklers, smoke detectors, and manual call points, securing municipal building approvals.
                 </p>
                 <p>
                   To preserve commercial building value, our B2B facility management division structures comprehensive Annual Maintenance Contracts (AMCs). We perform scheduled preventative care, including AC condenser cleaning, mechanical pump checks, DB board thermal imaging scans, and water tank disinfections. These AMCs feature detailed Service Level Agreements (SLAs) with emergency technician dispatch times under 2 to 4 hours, ensuring continuous operation for commercial tenants.
                 </p>
               </div>
             </div>
-            
+
             <div className="lg:col-span-5 bg-app-card border border-app-border offset-border-frame shadow-sm border border-app-border rounded-xl p-8 shadow-2xl space-y-6">
-              <h4 className="font-heading font-extrabold text-sm text-white border-b border-app-border pb-4 uppercase tracking-widest">
+              <h4 className="font-heading font-extrabold text-sm text-app-fg border-b border-app-border pb-4 uppercase tracking-widest">
                 Commercial capabilities
               </h4>
               <div className="grid grid-cols-1 gap-4">
@@ -164,37 +164,37 @@ export default function CommercialRetailSectorPage() {
         </div>
       </section>
 
-<section className="py-24 border-b border-app-border relative bg-app-bg">
+      <section className="py-24 border-b border-app-border relative bg-app-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-       <div className="space-y-6 mb-24">
+          <div className="space-y-6 mb-24">
             <div className="flex items-center gap-4 border-b border-app-border pb-4">
               <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE H</span>
               <h3 className="text-lg font-heading font-extrabold tracking-tight">Progressive Build Timeline Phase Switcher</h3>
             </div>
             <BuildTimelineShowcase />
           </div>
-          </div>
-          </section>
+        </div>
+      </section>
 
-          <section className="py-24 border-b border-app-border relative bg-app-bg">
-                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="space-y-6">
-                      <div className="flex items-center gap-4 border-b border-app-border pb-4">
-                        <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE U</span>
-                        <h3 className="text-lg font-heading font-extrabold tracking-tight">Alternating Asymmetric Grid (Brochure Layout)</h3>
-                      </div>
-                      <AlternatingAsymmetricGrid />
-                    </div>
-                  </div>
-                </section>
-          
+      <section className="py-24 border-b border-app-border relative bg-app-bg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-6">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE U</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Alternating Asymmetric Grid (Brochure Layout)</h3>
+            </div>
+            <AlternatingAsymmetricGrid />
+          </div>
+        </div>
+      </section>
+
 
       {/* 3. REGIONAL SILO & KNOWLEDGE MATRIX */}
       <section className="py-16 bg-app-secondary border-t border-app-border">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-sm font-bold uppercase tracking-widest text-white mb-4">
+              <h3 className="text-sm font-bold uppercase tracking-widest text-app-fg mb-4">
                 Active Commercial Operations
               </h3>
               <p className="text-xs text-app-muted mb-6 font-light">
@@ -209,7 +209,7 @@ export default function CommercialRetailSectorPage() {
               </div>
             </div>
             <div>
-              <h3 className="text-sm font-bold uppercase tracking-widest text-white mb-4">
+              <h3 className="text-sm font-bold uppercase tracking-widest text-app-fg mb-4">
                 Technical Knowledge Base
               </h3>
               <p className="text-xs text-app-muted mb-6 font-light">
@@ -217,11 +217,11 @@ export default function CommercialRetailSectorPage() {
               </p>
               <div className="flex flex-col space-y-4">
                 <Link href="/insights/understanding-estidama-pearl-ratings" className="p-4 bg-app-card rounded border border-app-border hover:border-brand-teal transition-colors">
-                  <span className="text-xs font-bold text-white block">Estidama Pearl Ratings Guide</span>
+                  <span className="text-xs font-bold text-app-fg block">Estidama Pearl Ratings Guide</span>
                   <span className="text-[10px] text-app-muted font-light mt-1 block">Learn about sustainable building insulation, HVAC efficiency, and Pearl ratings.</span>
                 </Link>
                 <Link href="/insights/guide-to-tamm-villa-approvals" className="p-4 bg-app-card rounded border border-app-border hover:border-brand-teal transition-colors">
-                  <span className="text-xs font-bold text-white block">Abu Dhabi TAMM Building Permit Guide</span>
+                  <span className="text-xs font-bold text-app-fg block">Abu Dhabi TAMM Building Permit Guide</span>
                   <span className="text-[10px] text-app-muted font-light mt-1 block">Municipal permit guidelines useful when planning building modifications.</span>
                 </Link>
               </div>
@@ -232,7 +232,7 @@ export default function CommercialRetailSectorPage() {
 
       {/* 4. RELATED SERVICES */}
       <section className="py-16 bg-app-secondary border-t border-app-border text-center">
-        <h2 className="text-sm font-bold uppercase tracking-widest text-white">Related Services for Commercial Clients</h2>
+        <h2 className="text-sm font-bold uppercase tracking-widest text-app-fg">Related Services for Commercial Clients</h2>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <Link href="/services/mep-specialized" className="px-5 py-2.5 bg-app-bg border border-app-border hover:border-brand-teal text-xs font-bold text-brand-teal rounded transition-colors uppercase tracking-wider">
             MEP &amp; Fit-out Works

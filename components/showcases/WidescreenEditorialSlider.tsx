@@ -20,12 +20,12 @@ export default function WidescreenEditorialSlider() {
     {
       id: 'slide-1',
       num: '01',
-      title: 'Saadiyat District Luxury Custom Home',
+      title: 'Sanjay Jain Luxury Custom Villa',
       category: 'Villa Construction',
-      location: 'Saadiyat Island, Abu Dhabi',
+      location: 'Saadiyat Island & Prime Abu Dhabi',
       desc: 'Bespoke design-build contract focusing on high thermal efficiency insulation wraps, structural piles foundations, and Carrara bookmatched marble dry-laid interiors.',
-      specs: '14,000 sq ft • C50/60 foundations • 2-Pearl Estidama',
-      image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80'
+      specs: '14,500 sq ft • C50/60 foundations • 2-Pearl Estidama',
+      image: '/images/ArrowheadVilla.png'
     },
     {
       id: 'slide-2',
@@ -35,17 +35,17 @@ export default function WidescreenEditorialSlider() {
       location: 'Yas Island, Abu Dhabi',
       desc: 'Computerized butt-fusion welding of 4.8km high-density PE100 utility pressure pipelines. Managed continuous deep-well shoring and dewatering operations.',
       specs: '4.8km Length • DN 1200mm Outer Diameter • PN16 Rating',
-      image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80'
+      image: '/images/123.jpeg'
     },
     {
       id: 'slide-3',
       num: '03',
       title: 'Mussafah Industrial Facility AMC',
       category: 'Facility Management',
-      location: 'Mussafah Port Industrial Zone, Abu Dhabi',
+      location: 'Mussafah Industrial Sector, Abu Dhabi',
       desc: 'Annual maintenance contract (AMC) managing HVAC chilled water loops, phase-load distribution boards, Civil Defense wet risers, and scheduled preventative filter checks.',
       specs: '15,000 sqm • 24/7 Response SLA • Hard FM contract',
-      image: 'https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=1200&q=80'
+      image: '/images/facility.png'
     }
   ];
 
@@ -54,7 +54,7 @@ export default function WidescreenEditorialSlider() {
   return (
     <div className="w-full bg-app-bg py-4 max-w-6xl mx-auto">
       <div className="relative aspect-[21/9] w-full rounded-2xl overflow-hidden border border-app-border bg-app-secondary shadow-2xl">
-        
+
         {/* Main Photo Slide with smooth opacity fade */}
         <div className="absolute inset-0 transition-opacity duration-700 ease-in-out">
           <img
@@ -95,11 +95,10 @@ export default function WidescreenEditorialSlider() {
             <button
               key={sl.id}
               onClick={() => setActiveSlide(idx)}
-              className={`px-3 py-1.5 rounded font-mono text-xs font-bold transition-all cursor-pointer ${
-                activeSlide === idx
-                  ? 'bg-brand-teal text-primary-dark shadow-md'
-                  : 'text-white/60 hover:text-white hover:bg-white/5'
-              }`}
+              className={`px-3 py-1.5 rounded font-mono text-xs font-bold transition-all cursor-pointer ${activeSlide === idx
+                ? 'bg-brand-teal text-primary-dark shadow-md'
+                : 'text-white/60 hover:text-white hover:bg-white/5'
+                }`}
             >
               {sl.num}
             </button>

@@ -7,8 +7,8 @@ import Breadcrumbs from '@/components/SEO/Breadcrumbs';
 
 export const metadata: Metadata = {
   title: 'HDPE Pipeline & Infrastructure Contractors Yas Island | ArrowHead',
-  description: 'Certified HDPE pipeline installation and general contracting on Yas Island, Abu Dhabi. Specialized in butt-fusion welding and ADSSC trunk sewers.',
-  keywords: ['HDPE pipeline Yas Island', 'butt-fusion welding Yas Island', 'ADSSC approved contractors Abu Dhabi', 'Yas Island infrastructure contracting', 'dewatering contractors Yas'],
+  description: 'Certified HDPE pipeline installation and general contracting on Yas Island, Abu Dhabi. Specialized in butt-fusion welding and municipal trunk sewers.',
+  keywords: ['HDPE pipeline Yas Island', 'butt-fusion welding Yas Island', 'infrastructure contractors Abu Dhabi', 'Yas Island infrastructure contracting', 'dewatering contractors Yas'],
   alternates: {
     canonical: 'https://arrowheadigc.com/locations/yas-island'
   },
@@ -18,10 +18,10 @@ export const metadata: Metadata = {
     url: 'https://arrowheadigc.com/locations/yas-island',
     siteName: 'ArrowHead General Contracting LLC',
     title: 'HDPE Pipeline & Infrastructure Contractors Yas Island | ArrowHead',
-    description: 'Certified HDPE pipeline installation and general contracting on Yas Island, Abu Dhabi. Specialized in butt-fusion welding and ADSSC trunk sewers.',
+    description: 'Certified HDPE pipeline installation and general contracting on Yas Island, Abu Dhabi. Specialized in butt-fusion welding and municipal trunk sewers.',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80',
+        url: '/images/123.jpeg',
         width: 800,
         height: 600,
         alt: 'Yas Island Infrastructure Pipeline Construction',
@@ -31,8 +31,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'HDPE Pipeline & Infrastructure Contractors Yas Island | ArrowHead',
-    description: 'Certified HDPE pipeline installation and general contracting on Yas Island, Abu Dhabi. Specialized in butt-fusion welding and ADSSC trunk sewers.',
-    images: ['https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80'],
+    description: 'Certified HDPE pipeline installation and general contracting on Yas Island, Abu Dhabi. Specialized in butt-fusion welding and municipal trunk sewers.',
+    images: ['/images/123.jpeg'],
   },
 };
 
@@ -40,12 +40,12 @@ export default function YasIslandGeoPage() {
   const localProjects = [
     {
       title: 'Yas North Sewerage Trunk Network',
-      scope: '4.8km DN 1200mm HDPE line supply, computerized butt-fusion joints, and hydrostatic tests witnessed by ADSSC inspectors.',
+      scope: '4.8km DN 1200mm HDPE line supply, computerized butt-fusion joints, and hydrostatic tests witnessed by municipal utility inspectors.',
       spec: 'SDR 11 PE100-RC • PN16 Rating'
     },
     {
       title: 'Yas South Water Distribution Loops',
-      scope: 'Butt-welding and electrofusion installation of high-pressure water mains to ADDC standards.',
+      scope: 'Butt-welding and electrofusion installation of high-pressure water mains to municipal utility standards.',
       spec: 'DN 400mm Outer Diameter • PN10 Rating'
     }
   ];
@@ -55,7 +55,7 @@ export default function YasIslandGeoPage() {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     'name': 'ArrowHead General Contracting LLC - Yas Island Operations',
-    'image': 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80',
+    'image': '/images/123.jpeg',
     'telephone': '+971-2-XXXXXXX',
     'address': {
       '@type': 'PostalAddress',
@@ -72,7 +72,7 @@ export default function YasIslandGeoPage() {
     },
     'url': 'https://arrowheadigc.com/locations/yas-island',
     'priceRange': '$$$$',
-    'knowsAbout': ['HDPE Pipe Fusion', 'Dewatering setups', 'Butt-fusion logs', 'ADSSC standards']
+    'knowsAbout': ['HDPE Pipe Fusion', 'Dewatering setups', 'Butt-fusion logs', 'Municipal utility standards']
   };
 
   const breadcrumbSchema = {
@@ -96,7 +96,7 @@ export default function YasIslandGeoPage() {
             Infrastructure &amp; HDPE Pipeline Contracting in Yas Island
           </h1>
           <p className="mt-6 text-sm sm:text-base text-app-muted max-w-3xl font-light leading-relaxed">
-            ArrowHead General Contracting LLC delivers high-specification utility pipeline networks, heavy dewatering infrastructure, and specialized MEP connections on Yas Island. Operating under Abu Dhabi DED license CN-4998977, we align with ADSSC &amp; ADDC standard drawings.
+            ArrowHead General Contracting LLC delivers high-specification utility pipeline networks, heavy dewatering infrastructure, and specialized MEP connections on Yas Island. Operating as a licensed general contractor, we align with municipal &amp; utility standard drawings.
           </p>
           <div className="mt-8">
             <Link
@@ -113,7 +113,7 @@ export default function YasIslandGeoPage() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            
+
             {/* Left Copy: Semantic HTML5 detailing local regulations */}
             <div className="lg:col-span-7 space-y-6">
               <span className="text-brand-gold text-xs font-bold uppercase tracking-widest font-mono font-bold">
@@ -122,19 +122,19 @@ export default function YasIslandGeoPage() {
               <h2 className="text-2xl sm:text-3xl font-heading font-extrabold text-app-fg tracking-tight">
                 Meeting Rigorous Saline Dewatering &amp; Trenching Codes
               </h2>
-              
+
               <div className="text-app-muted space-y-5 text-xs sm:text-sm leading-relaxed font-light">
                 <p>
                   Yas Island represents one of the most prestigious and rapidly growing leisure and residential zones in Abu Dhabi. However, from an engineering perspective, it features a highly challenging tidal-influenced water table with severe saline concentrations and complex coastal sandy soils. Laying utility pipeline networks, gravity sewers, and storm drainage ducts in this environment requires specialized double-sheet piling shoring, trench safety cage assemblies, and continuous multi-stage deep-well dewatering configurations to keep excavations dry.
                 </p>
                 <p>
-                  At ArrowHead, our engineering crews are deeply familiar with the geological specifications of Yas Island. We excavate trenches to exact ADSSC specifications, applying dense gravel bedding layers and geotextile wraps to protect the pipe subgrade from sand migration. We utilize specialized high-capacity dewatering pumps that operate 24/7, maintaining a dry trench environment while managing safe saline water discharge in accordance with Environment Agency Abu Dhabi (EAD) permits.
+                  At ArrowHead, our engineering crews are deeply familiar with the geological specifications of Yas Island. We excavate trenches to exact municipal utility specifications, applying dense gravel bedding layers and geotextile wraps to protect the pipe subgrade from sand migration. We utilize specialized high-capacity dewatering pumps that operate 24/7, maintaining a dry trench environment while managing safe saline water discharge in accordance with Environment Agency Abu Dhabi (EAD) permits.
                 </p>
                 <p>
                   Our butt-fusion welding setups are fully computerized and calibrated for PE100 and PE100-RC materials. For every HDPE pipeline joint spanning DN 110mm to DN 1200mm, we deploy weather-resistant welding tents. This shields the joint from airborne dust, sand particles, and wind gusts that could cause thermal shrinkage or compromise the weld's integrity. We log bead-up heights, heating pressures, soak times, and cooling rates, exporting a digital validation tag for every joint.
                 </p>
                 <p>
-                  To secure municipal clearances, we coordinate directly with Aldar inspectors, client representatives, and utility technicians from ADSSC, ADDC, and Abu Dhabi Municipality (ADM). We submit comprehensive QA/QC inspection dossiers containing computerized butt-fusion parameters, hydrostatic pressure test logs (up to PN25), and independent compaction test results, ensuring rapid clearance and utility connection handovers.
+                  To secure municipal clearances, we coordinate directly with Aldar inspectors, client representatives, and utility technicians from local water, power, and sewerage entities, and Abu Dhabi Municipality. We submit comprehensive QA/QC inspection dossiers containing computerized butt-fusion parameters, hydrostatic pressure test logs (up to PN25), and independent compaction test results, ensuring rapid clearance and utility connection handovers.
                 </p>
               </div>
             </div>
@@ -144,7 +144,7 @@ export default function YasIslandGeoPage() {
               <h3 className="font-heading font-extrabold text-sm text-white border-b border-app-border pb-4 uppercase tracking-widest">
                 Delivered Yas Island Projects
               </h3>
-              
+
               <div className="space-y-6">
                 {localProjects.map((proj, idx) => (
                   <div key={idx} className="bg-app-secondary/60 p-5 rounded border border-app-border space-y-2">
@@ -163,7 +163,7 @@ export default function YasIslandGeoPage() {
 
               <div className="pt-4 border-t border-app-border/40 text-center">
                 <span className="text-[10px] font-mono text-app-muted uppercase">
-                  ADSSC Approved Material Specifications
+                  Municipal Approved Material Specifications
                 </span>
               </div>
             </div>

@@ -56,24 +56,23 @@ export default function VillaStructureShowcase() {
   return (
     <div className="w-full flex flex-col items-center select-none font-sans">
       {/* 3D Container */}
-      <div 
+      <div
         className="w-full h-[450px] sm:h-[480px] flex items-center justify-center cursor-pointer relative"
         ref={containerRef}
         style={{ perspective: 1200 }}
       >
-        <div 
+        <div
           className="relative w-[280px] sm:w-[320px] h-[340px] sm:h-[380px] transition-transform duration-1000 ease-out"
-          style={{ 
+          style={{
             transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(6deg)`,
             transformStyle: 'preserve-3d',
           }}
         >
           {/* Layer 1: Bottom Layer - Foundation Raft */}
-          <div 
+          <div
             onClick={() => setFocusedLayer(0)}
-            className={`absolute inset-0 rounded-xl border p-5 bg-app-card/35 backdrop-blur-xs flex flex-col justify-between transition-all duration-700 ease-out shadow-lg hover:border-brand-teal/70 ${
-              focusedLayer === 0 ? 'border-brand-teal/80 z-30 shadow-brand-teal/20 scale-[1.02]' : 'border-brand-teal/15 opacity-70 z-10'
-            }`}
+            className={`absolute inset-0 rounded-xl border p-5 bg-app-card/35 backdrop-blur-xs flex flex-col justify-between transition-all duration-700 ease-out shadow-lg hover:border-brand-teal/70 ${focusedLayer === 0 ? 'border-brand-teal/80 z-30 shadow-brand-teal/20 scale-[1.02]' : 'border-brand-teal/15 opacity-70 z-10'
+              }`}
             style={{ transform: `translateZ(${getTranslationZ(0)})` }}
           >
             <div className="flex justify-between items-start font-mono">
@@ -94,12 +93,12 @@ export default function VillaStructureShowcase() {
                 <circle cx="250" cy="50" r="10" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" />
                 <circle cx="100" cy="130" r="10" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" />
                 <circle cx="200" cy="130" r="10" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" />
-                
+
                 {/* Rebar cross grid lines */}
                 <line x1="10" y1="90" x2="270" y2="90" stroke="currentColor" strokeWidth="0.8" />
                 <line x1="10" y1="100" x2="270" y2="100" stroke="currentColor" strokeWidth="0.8" />
                 <line x1="10" y1="110" x2="270" y2="110" stroke="currentColor" strokeWidth="0.8" />
-                
+
                 <text x="15" y="165" className="fill-brand-teal font-mono text-[7px] font-bold">RAFT STEEL MESH SPEC: T20@150B2</text>
               </svg>
             </div>
@@ -111,11 +110,10 @@ export default function VillaStructureShowcase() {
           </div>
 
           {/* Layer 2: Middle Layer - Structural Concrete & Columns */}
-          <div 
+          <div
             onClick={() => setFocusedLayer(1)}
-            className={`absolute inset-0 rounded-xl border p-5 bg-app-card/45 backdrop-blur-xs flex flex-col justify-between transition-all duration-700 ease-out shadow-lg hover:border-brand-gold/70 ${
-              focusedLayer === 1 ? 'border-brand-gold/80 z-30 shadow-brand-gold/20 scale-[1.02]' : 'border-brand-gold/15 opacity-70 z-20'
-            }`}
+            className={`absolute inset-0 rounded-xl border p-5 bg-app-card/45 backdrop-blur-xs flex flex-col justify-between transition-all duration-700 ease-out shadow-lg hover:border-brand-gold/70 ${focusedLayer === 1 ? 'border-brand-gold/80 z-30 shadow-brand-gold/20 scale-[1.02]' : 'border-brand-gold/15 opacity-70 z-20'
+              }`}
             style={{ transform: `translateZ(${getTranslationZ(1)})` }}
           >
             <div className="flex justify-between items-start font-mono">
@@ -133,12 +131,12 @@ export default function VillaStructureShowcase() {
                 <line x1="50" y1="40" x2="50" y2="150" stroke="currentColor" strokeWidth="1.5" />
                 <line x1="130" y1="20" x2="130" y2="130" stroke="currentColor" strokeWidth="1.5" />
                 <line x1="210" y1="40" x2="210" y2="150" stroke="currentColor" strokeWidth="1.5" />
-                
+
                 {/* Horizontal beams */}
                 <line x1="50" y1="40" x2="130" y2="20" stroke="currentColor" strokeWidth="1.2" />
                 <line x1="130" y1="20" x2="210" y2="40" stroke="currentColor" strokeWidth="1.2" />
                 <line x1="50" y1="80" x2="130" y2="60" stroke="currentColor" strokeWidth="1" strokeDasharray="3 3" />
-                
+
                 <text x="60" y="70" className="fill-brand-gold font-mono text-[6px]">PT BEAM INTRUSION</text>
                 <text x="60" y="110" className="fill-app-fg/80 font-mono text-[7px] font-bold">THERMAL BLOCKWORK FILL</text>
               </svg>
@@ -151,22 +149,21 @@ export default function VillaStructureShowcase() {
           </div>
 
           {/* Layer 3: Top Layer - Finished Cladding & Marble Finishes */}
-          <div 
+          <div
             onClick={() => setFocusedLayer(2)}
-            className={`absolute inset-0 rounded-xl overflow-hidden border bg-app-secondary transition-all duration-700 ease-out shadow-2xl flex flex-col justify-between hover:border-brand-teal/70 ${
-              focusedLayer === 2 ? 'border-brand-teal/80 z-30 shadow-black/45 scale-[1.02]' : 'border-app-border opacity-70 z-10'
-            }`}
+            className={`absolute inset-0 rounded-xl overflow-hidden border bg-app-secondary transition-all duration-700 ease-out shadow-2xl flex flex-col justify-between hover:border-brand-teal/70 ${focusedLayer === 2 ? 'border-brand-teal/80 z-30 shadow-black/45 scale-[1.02]' : 'border-app-border opacity-70 z-10'
+              }`}
             style={{ transform: `translateZ(${getTranslationZ(2)})` }}
           >
             {/* Visual representation of finished villa facade */}
             <div className="relative w-full h-[250px] sm:h-[290px] overflow-hidden bg-primary-dark">
-              <img 
-                src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=700&q=80" 
-                alt="Bespoke Luxury Villa Finishes" 
+              <img
+                src="/images/ArrowheadVilla.png"
+                alt="Bespoke Luxury Villa Finishes"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
-              
+
               <div className="absolute top-4 left-4 flex gap-2">
                 <span className="bg-brand-gold text-primary-dark text-[8px] font-bold uppercase tracking-wider px-2 py-0.5 rounded shadow-sm">
                   ESTIDAMA 3-PEARL
@@ -178,7 +175,7 @@ export default function VillaStructureShowcase() {
 
               <div className="absolute bottom-4 left-4 right-4 text-white">
                 <span className="text-[8px] font-mono text-brand-gold uppercase tracking-widest block font-bold">03 / COMPLETED ARCHITECTURE</span>
-                <h4 className="text-sm font-heading font-extrabold tracking-tight mt-0.5">SAADIYAT LUXURY BEACH RESIDENCE</h4>
+                <h4 className="text-sm font-heading font-extrabold tracking-tight mt-0.5">SANJAY JAIN LUXURY CUSTOM RESIDENCE</h4>
                 <p className="text-[9px] text-white/70 font-light mt-0.5">Handed over custom villa estate with dry-clad marble facade.</p>
               </div>
             </div>
@@ -201,11 +198,10 @@ export default function VillaStructureShowcase() {
           <button
             key={layer.id}
             onClick={() => setFocusedLayer(layer.id)}
-            className={`px-3 py-1.5 rounded-full text-[9px] font-bold uppercase tracking-wider transition-all duration-300 ${
-              focusedLayer === layer.id
-                ? 'bg-brand-teal text-primary-dark shadow-md'
-                : 'text-app-fg hover:bg-app-secondary'
-            }`}
+            className={`px-3 py-1.5 rounded-full text-[9px] font-bold uppercase tracking-wider transition-all duration-300 ${focusedLayer === layer.id
+              ? 'bg-brand-teal text-primary-dark shadow-md'
+              : 'text-app-fg hover:bg-app-secondary'
+              }`}
           >
             {layer.id === 0 ? 'Foundation' : layer.id === 1 ? 'Frame' : 'Facade'}
           </button>

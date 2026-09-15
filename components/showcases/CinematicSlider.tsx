@@ -15,25 +15,25 @@ export default function CinematicSlider() {
 
   const slides: SlideItem[] = [
     {
-      title: 'Infrastructure Sewerage Network',
-      category: 'HDPE Pipelines',
-      image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80',
-      subtitle: 'Trenchless directional drilling under municipal road crossings.',
-      spec: 'Abu Dhabi Sewerage Services (ADSSC) Standards'
+      title: 'Khulagi Custom Residential Villa',
+      category: 'Turnkey Luxury Villa',
+      image: '/images/KhulagiVilla.png',
+      subtitle: 'Bespoke architectural engineering, modern private majlis, and Estidama certifications.',
+      spec: '11,000 sq ft • Estidama Certified'
     },
     {
-      title: 'Luxury Residential Handovers',
-      category: 'Villa Construction',
-      image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80',
-      subtitle: 'Complete design-build casting, custom marble, and glass fit-outs.',
-      spec: 'Abu Dhabi Municipality Approved (TAMM Portal)'
+      title: 'Katheri Family Luxury Compound',
+      category: 'Multi-Villa Construction',
+      image: '/images/Matrix_project.jpeg',
+      subtitle: 'Turnkey structural concrete casting, double-height panoramic glazing, and custom marble fit-outs.',
+      spec: 'Multi-Villa Master Build • Municipality Approved'
     },
     {
-      title: 'Waterfront Marine Slipways',
-      category: 'Marine Works',
-      image: 'https://images.unsplash.com/photo-1505705694340-019e1e335916?auto=format&fit=crop&w=1200&q=80',
-      subtitle: 'High-strength structural concrete casting under severe marine exposure.',
-      spec: 'Environment Agency Abu Dhabi Aligned'
+      title: 'Al Nahyan Prestige Villa',
+      category: 'Prestige Residential Build',
+      image: '/images/landscape1.jpeg',
+      subtitle: 'Expansive private majlis, structural perimeter walls, and luxury outdoor landscape architecture.',
+      spec: '15,500 sq ft • Turnkey MEP & Landscape'
     }
   ];
 
@@ -52,14 +52,14 @@ export default function CinematicSlider() {
         {slides.map((slide, idx) => {
           const isActive = idx === activeSlide;
           return (
-            <div 
+            <div
               key={idx}
               className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${isActive ? 'opacity-100' : 'opacity-0'}`}
             >
-              <img 
-                src={slide.image} 
-                alt={slide.title} 
-                className="w-full h-full object-cover transform scale-102 hover:scale-105 transition-transform duration-[12s] ease-out" 
+              <img
+                src={slide.image}
+                alt={slide.title}
+                className="w-full h-full object-cover transform scale-102 hover:scale-105 transition-transform duration-[12s] ease-out"
               />
             </div>
           );
@@ -92,7 +92,7 @@ export default function CinematicSlider() {
           {slides.map((_, idx) => {
             const isActive = idx === activeSlide;
             return (
-              <button 
+              <button
                 key={idx}
                 onClick={() => setActiveSlide(idx)}
                 className="flex-1 h-0.5 relative bg-white/20 overflow-hidden cursor-pointer"
@@ -105,7 +105,7 @@ export default function CinematicSlider() {
           })}
         </div>
       </div>
-      
+
       {/* Progress keyframes definition injected locally */}
       <style jsx>{`
         @keyframes progress {

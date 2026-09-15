@@ -17,7 +17,7 @@ export default function ContactPage() {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     'name': 'ArrowHead International General Contracting LLC',
-    'image': 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80',
+    'image': '/images/Matrix_project1.jpeg',
     'telephone': '+97125545230',
     'email': 'info@arrowheadigc.com',
     'address': {

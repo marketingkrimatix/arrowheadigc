@@ -60,7 +60,7 @@ export default function PipelineWeldingShowcase() {
       pressure: 'Locked Pressure (0.15 N/mm²)',
       time: 'Cooling: 15 minutes - 45 minutes',
       desc: 'The joint is maintained under locked fusion pressure inside the clamps to cure. Forced air or water cooling is prohibited to prevent internal stress voids. Once ambient temperature is reached, clamps are released.',
-      spec: 'Computerized log tagged and stored with joint coordinates for ADSSC inspection.'
+      spec: 'Computerized log tagged and stored with joint coordinates for municipal utility inspection.'
     }
   ];
 
@@ -69,7 +69,7 @@ export default function PipelineWeldingShowcase() {
       {/* Header */}
       <div className="flex justify-between items-start border-b border-app-border pb-4 mb-6">
         <div>
-          <h3 className="text-sm font-heading font-extrabold text-white uppercase tracking-wider">
+          <h3 className="text-sm font-heading font-extrabold text-app-fg uppercase tracking-wider">
             HDPE Butt-Fusion Welding Cycle Simulator
           </h3>
           <p className="text-[10px] text-app-muted mt-0.5">
@@ -187,7 +187,7 @@ export default function PipelineWeldingShowcase() {
           <span className="text-[9px] font-mono text-app-muted">DVS 2207 PROCEDURAL STEP</span>
         </div>
 
-        <h4 className="text-xs font-heading font-extrabold text-white uppercase tracking-wider">
+        <h4 className="text-xs font-heading font-extrabold text-app-fg uppercase tracking-wider">
           {steps[activeStep].title}
         </h4>
 

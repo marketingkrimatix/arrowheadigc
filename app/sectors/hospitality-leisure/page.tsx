@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description: 'Specialized fit-out construction, resort MEP installations, chilled water networks, and Annual Maintenance Contracts (AMCs) for hotels, resorts, and theme parks in Abu Dhabi.',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80',
+        url: '/images/landscape.jpeg',
         width: 800,
         height: 600,
         alt: 'Hospitality & Leisure Sector',
@@ -35,27 +35,27 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Hospitality, Leisure & Resort Contracting Abu Dhabi | ArrowHead',
     description: 'Specialized fit-out construction, resort MEP installations, chilled water networks, and Annual Maintenance Contracts (AMCs) for hotels, resorts, and theme parks in Abu Dhabi.',
-    images: ['https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80'],
+    images: ['/images/landscape.jpeg'],
   },
 };
 
 export default function HospitalityLeisureSectorPage() {
   const capabilities = [
-    { 
-      title: 'Interior Fit-Outs & Millwork', 
-      desc: 'High-end structural partitions, premium gypsum ceiling integrations, ceramic tiling, and custom wooden joinery installations for luxury hotels, lobby lounges, and restaurant spaces.' 
+    {
+      title: 'Interior Fit-Outs & Millwork',
+      desc: 'High-end structural partitions, premium gypsum ceiling integrations, ceramic tiling, and custom wooden joinery installations for luxury hotels, lobby lounges, and restaurant spaces.'
     },
-    { 
-      title: 'Chilled Water & HVAC Services', 
-      desc: 'Relocating, flushing, and adjusting chilled water fan coil units (FCU), air handling units (AHU), actuator valves, secondary pumps, and thermal insulation wrapping to maintain optimal climate control.' 
+    {
+      title: 'Chilled Water & HVAC Services',
+      desc: 'Relocating, flushing, and adjusting chilled water fan coil units (FCU), air handling units (AHU), actuator valves, secondary pumps, and thermal insulation wrapping to maintain optimal climate control.'
     },
-    { 
-      title: 'Integrated Facility Management AMCs', 
-      desc: 'Tailored B2B preventive maintenance contracts covering electrical distribution boards, thermographic scanning, drainage line flushing, water tank disinfection, and pest control.' 
+    {
+      title: 'Integrated Facility Management AMCs',
+      desc: 'Tailored B2B preventive maintenance contracts covering electrical distribution boards, thermographic scanning, drainage line flushing, water tank disinfection, and pest control.'
     },
-    { 
-      title: 'Theme Park & Leisure Maintenance', 
-      desc: 'Hard facilities management, mechanical component inspections, concrete pathway slab restorations, protective anti-corrosive coatings, and structural upgrades for entertainment venues.' 
+    {
+      title: 'Theme Park & Leisure Maintenance',
+      desc: 'Hard facilities management, mechanical component inspections, concrete pathway slab restorations, protective anti-corrosive coatings, and structural upgrades for entertainment venues.'
     },
   ];
 
@@ -63,7 +63,7 @@ export default function HospitalityLeisureSectorPage() {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     'name': 'ArrowHead General Contracting LLC - Hospitality & Leisure Sector',
-    'image': 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80',
+    'image': '/images/landscape.jpeg',
     'telephone': '+971-2-XXXXXXX',
     'address': {
       '@type': 'PostalAddress',
@@ -79,7 +79,7 @@ export default function HospitalityLeisureSectorPage() {
       { '@type': 'AdministrativeArea', 'name': 'Khalifa City' },
       { '@type': 'AdministrativeArea', 'name': 'Mussafah' }
     ],
-    'knowsAbout': ['Hotel fit-out construction', 'Chilled water HVAC', 'Preventive FM AMCs', 'Water tank disinfection', 'ADCD fire compliance']
+    'knowsAbout': ['Hotel fit-out construction', 'Chilled water HVAC', 'Preventive FM AMCs', 'Water tank disinfection', 'Civil Defense fire compliance']
   };
 
   const locationLinks = [
@@ -95,7 +95,7 @@ export default function HospitalityLeisureSectorPage() {
     '@type': 'BreadcrumbList',
     'itemListElement': [
       { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://arrowheadigc.com' },
-      { '@type': 'ListItem', 'position': 2, 'name': 'Sectors', 'item': 'https://arrowheadigc.com/sectors' },
+      { '@type': 'ListItem', 'position': 2, 'name': 'Services', 'item': 'https://arrowheadigc.com/services' },
       { '@type': 'ListItem', 'position': 3, 'name': 'Hospitality & Leisure', 'item': 'https://arrowheadigc.com/sectors/hospitality-leisure' }
     ]
   };
@@ -107,7 +107,7 @@ export default function HospitalityLeisureSectorPage() {
       {/* 1. HERO SECTION */}
       <section className="bg-app-bg py-20 relative overflow-hidden border-b border-app-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <Breadcrumbs items={[{ name: 'Sectors', href: '/sectors' }, { name: 'Hospitality & Leisure' }]} />
+          <Breadcrumbs items={[{ name: 'Services', href: '/services' }, { name: 'Hospitality & Leisure' }]} />
           <h1 className="text-4xl sm:text-5xl font-heading font-extrabold text-app-fg tracking-tight leading-tight">
             Hospitality, Leisure <br />&amp; Resort Contracting
           </h1>
@@ -126,28 +126,28 @@ export default function HospitalityLeisureSectorPage() {
       </section>
 
       <section className="py-24 border-b border-app-border relative bg-app-bg">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-             <div className="space-y-6 mb-24">
-                  <div className="flex items-center gap-4 border-b border-app-border pb-4">
-                    <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE H</span>
-                    <h3 className="text-lg font-heading font-extrabold tracking-tight">Progressive Build Timeline Phase Switcher</h3>
-                  </div>
-                  <BuildTimelineShowcase />
-                </div>
-                </div>
-                </section>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-6 mb-24">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE H</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Progressive Build Timeline Phase Switcher</h3>
+            </div>
+            <BuildTimelineShowcase />
+          </div>
+        </div>
+      </section>
 
-                <section className="py-24 border-b border-app-border relative bg-app-bg">
-                              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                      <div className="space-y-6 mb-24">
-                            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-                              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE I</span>
-                              <h3 className="text-lg font-heading font-extrabold tracking-tight">Tabular Factsheet Grid Row Hover</h3>
-                            </div>
-                            <FactsheetGrid />
-                          </div>
-                          </div>
-                          </section>
+      <section className="py-24 border-b border-app-border relative bg-app-bg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-6 mb-24">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE I</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Tabular Factsheet Grid Row Hover</h3>
+            </div>
+            <FactsheetGrid />
+          </div>
+        </div>
+      </section>
 
       {/* 2. DETAILED SECTOR COPY */}
       <section className="py-20">
@@ -159,20 +159,20 @@ export default function HospitalityLeisureSectorPage() {
                 Ensuring Five-Star Environments with Certified Preventive Engineering
               </h2>
               <div className="text-app-muted space-y-5 text-xs sm:text-sm leading-relaxed font-light">
-          <p>
-            The hospitality and leisure industry in Abu Dhabi requires perfect building performance, high aesthetic standards, and quiet, non-disruptive maintenance systems to protect the guest experience. ArrowHead provides specialized MEP contracting, interior remodeling, pool filtration installations, and preventative facility management contracts for luxury hotels, beach resorts, entertainment complexes, and theme parks.
-          </p>
-          <p>
-            Our mechanical engineering team manages chilled water pipeline integrations and variable refrigerant flow (VRF) HVAC systems, ensuring quiet and balanced climate control across hotel suites and public lobbies. We perform air balancing, duct cleaning, and install mechanical ventilation setups for commercial hotel kitchens. Our electrical crews manage decorative lighting controls, dress distribution boards, and perform preventative testing of emergency backup generator systems.
-          </p>
-          <p>
-            To ensure zero operational disruption, we structure specialized Facilities Management Annual Maintenance Contracts (AMCs) that operate under discrete night shifts and strict SLAs. Our certified technicians maintain water filtration plants for swimming pools, monitor booster pumps, and manage pest control services approved by the Abu Dhabi Municipality, ensuring hotel operations remain fully compliant with all local health regulations.
-          </p>
-  </div>
+                <p>
+                  The hospitality and leisure industry in Abu Dhabi requires perfect building performance, high aesthetic standards, and quiet, non-disruptive maintenance systems to protect the guest experience. ArrowHead provides specialized MEP contracting, interior remodeling, pool filtration installations, and preventative facility management contracts for luxury hotels, beach resorts, entertainment complexes, and theme parks.
+                </p>
+                <p>
+                  Our mechanical engineering team manages chilled water pipeline integrations and variable refrigerant flow (VRF) HVAC systems, ensuring quiet and balanced climate control across hotel suites and public lobbies. We perform air balancing, duct cleaning, and install mechanical ventilation setups for commercial hotel kitchens. Our electrical crews manage decorative lighting controls, dress distribution boards, and perform preventative testing of emergency backup generator systems.
+                </p>
+                <p>
+                  To ensure zero operational disruption, we structure specialized Facilities Management Annual Maintenance Contracts (AMCs) that operate under discrete night shifts and strict SLAs. Our certified technicians maintain water filtration plants for swimming pools, monitor booster pumps, and manage pest control services approved by the Abu Dhabi Municipality, ensuring hotel operations remain fully compliant with all local health regulations.
+                </p>
+              </div>
             </div>
-            
+
             <div className="lg:col-span-5 bg-app-card border border-app-border offset-border-frame shadow-sm border border-app-border rounded-xl p-8 shadow-2xl space-y-6">
-              <h4 className="font-heading font-extrabold text-sm text-white border-b border-app-border pb-4 uppercase tracking-widest">
+              <h4 className="font-heading font-extrabold text-sm text-app-fg border-b border-app-border pb-4 uppercase tracking-widest">
                 Hospitality Scopes
               </h4>
               <div className="grid grid-cols-1 gap-4">
@@ -189,35 +189,35 @@ export default function HospitalityLeisureSectorPage() {
       </section>
 
       <section className="py-24 border-b border-app-border relative bg-app-bg">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="space-y-6 mb-24">
-                  <div className="flex items-center gap-4 border-b border-app-border pb-4">
-                    <span className="text-xs font-mono font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded">STYLE J</span>
-                    <h3 className="text-lg font-heading font-extrabold tracking-tight">Cinematic Spec Card Grid</h3>
-                  </div>
-                  <CinematicSpecGrid />
-                </div>
-                </div>
-                </section>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-6 mb-24">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded">STYLE J</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Cinematic Spec Card Grid</h3>
+            </div>
+            <CinematicSpecGrid />
+          </div>
+        </div>
+      </section>
 
       <section className="py-24 border-b border-app-border relative bg-app-bg">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="space-y-6 mb-24">
-                  <div className="flex items-center gap-4 border-b border-app-border pb-4">
-                    <span className="text-xs font-mono font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded">STYLE C</span>
-                    <h3 className="text-lg font-heading font-extrabold tracking-tight">Split Screen Category Hover Active Tabs</h3>
-                  </div>
-                  <SplitActiveShowcase />
-                </div>
-              </div>
-            </section>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-6 mb-24">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded">STYLE C</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Split Screen Category Hover Active Tabs</h3>
+            </div>
+            <SplitActiveShowcase />
+          </div>
+        </div>
+      </section>
 
       {/* 3. REGIONAL SILO & KNOWLEDGE MATRIX */}
       <section className="py-16 bg-app-secondary border-t border-app-border">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-sm font-bold uppercase tracking-widest text-white mb-4">
+              <h3 className="text-sm font-bold uppercase tracking-widest text-app-fg mb-4">
                 Active Resort Operations
               </h3>
               <p className="text-xs text-app-muted mb-6 font-light">
@@ -232,7 +232,7 @@ export default function HospitalityLeisureSectorPage() {
               </div>
             </div>
             <div>
-              <h3 className="text-sm font-bold uppercase tracking-widest text-white mb-4">
+              <h3 className="text-sm font-bold uppercase tracking-widest text-app-fg mb-4">
                 Technical Knowledge Base
               </h3>
               <p className="text-xs text-app-muted mb-6 font-light">
@@ -240,11 +240,11 @@ export default function HospitalityLeisureSectorPage() {
               </p>
               <div className="flex flex-col space-y-4">
                 <Link href="/insights/understanding-estidama-pearl-ratings" className="p-4 bg-app-card rounded border border-app-border hover:border-brand-teal transition-colors">
-                  <span className="text-xs font-bold text-white block">Estidama Pearl Ratings Guide</span>
+                  <span className="text-xs font-bold text-app-fg block">Estidama Pearl Ratings Guide</span>
                   <span className="text-[10px] text-app-muted font-light mt-1 block">Learn about sustainable building insulation, HVAC efficiency, and Pearl ratings.</span>
                 </Link>
                 <Link href="/insights/guide-to-tamm-villa-approvals" className="p-4 bg-app-card rounded border border-app-border hover:border-brand-teal transition-colors">
-                  <span className="text-xs font-bold text-white block">Abu Dhabi TAMM Building Permit Guide</span>
+                  <span className="text-xs font-bold text-app-fg block">Abu Dhabi TAMM Building Permit Guide</span>
                   <span className="text-[10px] text-app-muted font-light mt-1 block">Step-by-step instructions for municipal approvals.</span>
                 </Link>
               </div>
@@ -255,7 +255,7 @@ export default function HospitalityLeisureSectorPage() {
 
       {/* 4. RELATED SERVICES */}
       <section className="py-16 bg-app-secondary border-t border-app-border text-center">
-        <h2 className="text-sm font-bold uppercase tracking-widest text-white">Related Services for Hospitality Clients</h2>
+        <h2 className="text-sm font-bold uppercase tracking-widest text-app-fg">Related Services for Hospitality Clients</h2>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <Link href="/services/facility-management" className="px-5 py-2.5 bg-app-bg border border-app-border hover:border-brand-teal text-xs font-bold text-brand-teal rounded transition-colors uppercase tracking-wider">
             Hard &amp; Soft Facilities Care

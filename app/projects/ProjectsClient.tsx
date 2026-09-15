@@ -4,17 +4,20 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { projects } from '@/data/projects';
 import Breadcrumbs from '@/components/SEO/Breadcrumbs';
+import ClientsMarquee from '@/components/ClientsMarquee';
 
 export default function ProjectsClient() {
   const [selectedFilter, setSelectedFilter] = useState('all');
 
   const filters = [
     { label: 'All Projects', key: 'all' },
-    { label: 'HDPE Pipelines', key: 'pipelines' },
+    { label: 'Office & Retail Fit-Out', key: 'interiors' },
     { label: 'Villa Construction', key: 'villas' },
+    { label: 'Industrial Warehouses', key: 'warehouses' },
+    { label: 'Infrastructure & Civils', key: 'civils' },
+    { label: 'HDPE Pipelines', key: 'pipelines' },
     { label: 'Facility Management', key: 'fm' },
     { label: 'MEP Specialized', key: 'mep' },
-    { label: 'Marine & Industrial', key: 'marine' },
   ];
 
   const filteredProjects =
@@ -108,9 +111,17 @@ export default function ProjectsClient() {
         </div>
       </section>
 
-      {/* 4. BOTTOM LEAD CAPTURE */}
+      {/* 4. OUR CLIENTS & CLICKABLE PROJECT LOGOS MARQUEE */}
+      <ClientsMarquee
+        badge="Trusted by 35+ Clients"
+        title="Our Clients & Project Partners"
+        subtitle="We have successfully delivered construction projects for businesses, organizations, and individual clients across different sectors. Click any client to view their project details."
+        showButton={false}
+      />
+
+      {/* 5. BOTTOM LEAD CAPTURE */}
       <section className="py-16 bg-app-secondary border-t border-app-border text-center">
-        <h2 className="text-xl sm:text-2xl font-heading font-extrabold text-white">
+        <h2 className="text-xl sm:text-2xl font-heading font-extrabold text-app-fg">
           Do You Have a Similar Project in Mind?
         </h2>
         <p className="mt-3 text-app-muted text-xs sm:text-sm max-w-xl mx-auto font-light">

@@ -23,7 +23,7 @@ export default function ProjectControlCenter() {
       name: 'Calacatta Lincoln Premium Stone',
       category: 'Villa Interiors & Masonry Cladding',
       colorHex: '#F2EFE8',
-      image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80',
+      image: '/images/ArrowheadVilla.png',
       label: 'Luxury Finishing Spec',
       description: 'Bookmatched Calacatta Lincoln natural marble sheets selected for main majlis floor areas and staircase spans. Precision dry-lay layout with stainless steel expansion brackets ensures long-term fit under thermal changes.',
       compliance: 'Abu Dhabi Municipality Decorative Finishing Standards',
@@ -39,7 +39,7 @@ export default function ProjectControlCenter() {
       name: 'Sulfate-Resistant C50/60 Concrete',
       category: 'Villa Foundations & Civil Works',
       colorHex: '#9CA1A6',
-      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
+      image: '/images/civil-infrastructure.webp',
       label: 'Structural Civil Spec',
       description: 'High-strength C50/60 concrete containing microsilica to prevent groundwater salt ingress. Used for deep-well foundations, raft reinforcement, and load-bearing column casts in Khalifa City sectors.',
       compliance: 'Abu Dhabi Municipal Code for Structural Casting',
@@ -55,10 +55,10 @@ export default function ProjectControlCenter() {
       name: 'PE100-RC High Density Polyethylene',
       category: 'Utility Pipeline Supply & Weld Jointing',
       colorHex: '#1C1D1E',
-      image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80',
+      image: '/images/123.jpeg',
       label: 'Infrastructure Pipeline Spec',
       description: 'Dense black HDPE PE100-RC pipe sections designed for municipal water trunk supply and gravity sewers. Extremely resistant to crack propagation, joint-welded using computerized butt-fusion rigs.',
-      compliance: 'ADSSC Standard Drawings and Specifications',
+      compliance: 'Municipal Utility Standard Drawings and Specifications',
       specs: [
         { label: 'Pressure Rating', value: 'PN16 (16 Bar working load)' },
         { label: 'Material Composition', value: 'Virgin PE100 Polyethylene' },
@@ -71,7 +71,7 @@ export default function ProjectControlCenter() {
       name: 'Galvanized GI Steel Ducting',
       category: 'Mechanical Services & HVAC Installations',
       colorHex: '#B2B7BA',
-      image: 'https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=1200&q=80',
+      image: '/images/Matrix_project3.jpeg',
       label: 'MEP Specialized Systems',
       description: 'Double-skin galvanized steel air ducting insulated with fiberglass cores. Designed for commercial office blocks and chillers to ensure steady airflow while minimizing condensation leaks.',
       compliance: 'SMACNA Standards & Abu Dhabi Civil Defense Codes',
@@ -90,11 +90,11 @@ export default function ProjectControlCenter() {
     <div className="w-full bg-app-bg text-app-fg py-8 max-w-6xl mx-auto">
       <div className="bg-app-card border border-app-border rounded-2xl overflow-hidden shadow-2xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
-          
+
           {/* Left Column: Magazine Spec Brochure Typography */}
           <div className="lg:col-span-5 p-8 sm:p-10 flex flex-col justify-between self-stretch bg-app-secondary/20">
             <div className="space-y-6">
-              
+
               <div className="space-y-2">
                 <span className="text-[9px] font-mono text-brand-gold bg-brand-gold/10 border border-brand-gold/30 px-3 py-1 rounded-full font-bold uppercase tracking-widest inline-block">
                   {current.label}
@@ -121,11 +121,10 @@ export default function ProjectControlCenter() {
                     <button
                       key={sw.id}
                       onClick={() => setActiveSwatch(sw.id)}
-                      className={`relative w-10 h-10 rounded-full border transition-all duration-300 flex items-center justify-center cursor-pointer ${
-                        activeSwatch === sw.id
-                          ? 'border-brand-teal scale-110 shadow-lg shadow-brand-teal/20 ring-2 ring-brand-teal/10'
-                          : 'border-app-border opacity-70 hover:opacity-100 hover:scale-105'
-                      }`}
+                      className={`relative w-10 h-10 rounded-full border transition-all duration-300 flex items-center justify-center cursor-pointer ${activeSwatch === sw.id
+                        ? 'border-brand-teal scale-110 shadow-lg shadow-brand-teal/20 ring-2 ring-brand-teal/10'
+                        : 'border-app-border opacity-70 hover:opacity-100 hover:scale-105'
+                        }`}
                       style={{ backgroundColor: sw.colorHex }}
                       title={sw.name}
                     >
@@ -156,7 +155,7 @@ export default function ProjectControlCenter() {
 
           {/* Right Column: Editorial Large Photo & Spec Sheets */}
           <div className="lg:col-span-7 flex flex-col justify-between self-stretch">
-            
+
             {/* Image viewport with crossfade transition */}
             <div className="relative aspect-[16/10] w-full bg-app-secondary border-b lg:border-b-0 border-app-border overflow-hidden">
               <img
@@ -165,7 +164,7 @@ export default function ProjectControlCenter() {
                 className="w-full h-full object-cover transition-all duration-700 ease-out scale-101"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent"></div>
-              
+
               <div className="absolute top-4 left-4 bg-black/60 border border-white/10 px-3 py-1 rounded text-white text-[9px] font-mono tracking-widest font-bold uppercase">
                 {activeSwatch === 'marble' ? 'Finishes' : activeSwatch === 'concrete' ? 'Civil Raft' : activeSwatch === 'hdpe' ? 'Piping Loop' : 'MEP Installation'}
               </div>

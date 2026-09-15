@@ -109,9 +109,9 @@ export default function HomepageRfqCalculator() {
       <div className="flex justify-between items-center border-b border-app-border pb-4 mb-6">
         <div>
           <span className="text-[8px] font-mono text-brand-gold font-bold uppercase tracking-widest block">
-            ESTIDAMA &amp; ADM COMPLIANT ESTIMATOR
+            ESTIDAMA &amp; MUNICIPAL COMPLIANT ESTIMATOR
           </span>
-          <h3 className="text-base font-heading font-extrabold text-white uppercase tracking-wider mt-0.5">
+          <h3 className="text-base font-heading font-extrabold text-app-fg uppercase tracking-wider mt-0.5">
             Technical Budget Calculator
           </h3>
         </div>
@@ -135,8 +135,8 @@ export default function HomepageRfqCalculator() {
               }`}
             >
               <span className="text-xl">🏡</span>
-              <h4 className="text-sm font-bold text-white uppercase tracking-wide mt-3">Villa Construction</h4>
-              <p className="text-[10px] text-app-muted mt-1 leading-relaxed">Luxury Design-Build private residences under ADM building permit regulations.</p>
+              <h4 className="text-sm font-bold text-app-fg uppercase tracking-wide mt-3">Villa Construction</h4>
+              <p className="text-[10px] text-app-muted mt-1 leading-relaxed">Luxury Design-Build private residences under Abu Dhabi Municipality building permit regulations.</p>
             </button>
 
             <button
@@ -146,8 +146,8 @@ export default function HomepageRfqCalculator() {
               }`}
             >
               <span className="text-xl">⚙️</span>
-              <h4 className="text-sm font-bold text-white uppercase tracking-wide mt-3">HDPE Pipelines</h4>
-              <p className="text-[10px] text-app-muted mt-1 leading-relaxed">Hydraulic networks, butt-fusion welding logs, and ADSSC/ADDC inspections.</p>
+              <h4 className="text-sm font-bold text-app-fg uppercase tracking-wide mt-3">HDPE Pipelines</h4>
+              <p className="text-[10px] text-app-muted mt-1 leading-relaxed">Hydraulic networks, butt-fusion welding logs, and municipal utility inspections.</p>
             </button>
 
             <button
@@ -157,7 +157,7 @@ export default function HomepageRfqCalculator() {
               }`}
             >
               <span className="text-xl">🔩</span>
-              <h4 className="text-sm font-bold text-white uppercase tracking-wide mt-3">Facilities Management</h4>
+              <h4 className="text-sm font-bold text-app-fg uppercase tracking-wide mt-3">Facilities Management</h4>
               <p className="text-[10px] text-app-muted mt-1 leading-relaxed">Hard MEP preventative maintenance contracts (AMCs) and building safety audits.</p>
             </button>
 
@@ -168,7 +168,7 @@ export default function HomepageRfqCalculator() {
               }`}
             >
               <span className="text-xl">🧱</span>
-              <h4 className="text-sm font-bold text-white uppercase tracking-wide mt-3">Infrastructure Civil</h4>
+              <h4 className="text-sm font-bold text-app-fg uppercase tracking-wide mt-3">Infrastructure Civil</h4>
               <p className="text-[10px] text-app-muted mt-1 leading-relaxed">Concrete rafts, sulfate-resistant castings, site grading, and dewatering.</p>
             </button>
           </div>
@@ -259,14 +259,14 @@ export default function HomepageRfqCalculator() {
                   <select 
                     value={pipeDiameter} 
                     onChange={(e) => setPipeDiameter(Number(e.target.value))}
-                    className="w-full bg-app-card border border-app-border text-xs text-white p-2.5 rounded focus:outline-none"
+                    className="w-full bg-app-card border border-app-border text-xs text-app-fg p-2.5 rounded focus:outline-none"
                   >
-                    <option value="110">DN 110mm</option>
-                    <option value="250">DN 250mm</option>
-                    <option value="400">DN 400mm (Main Distribution)</option>
-                    <option value="630">DN 630mm</option>
-                    <option value="900">DN 900mm (Trunk Sewer)</option>
-                    <option value="1200">DN 1200mm (Transmission)</option>
+                    <option value="110" className="bg-app-card text-app-fg">DN 110mm</option>
+                    <option value="250" className="bg-app-card text-app-fg">DN 250mm</option>
+                    <option value="400" className="bg-app-card text-app-fg">DN 400mm (Main Distribution)</option>
+                    <option value="630" className="bg-app-card text-app-fg">DN 630mm</option>
+                    <option value="900" className="bg-app-card text-app-fg">DN 900mm (Trunk Sewer)</option>
+                    <option value="1200" className="bg-app-card text-app-fg">DN 1200mm (Transmission)</option>
                   </select>
                 </div>
 
@@ -376,7 +376,7 @@ export default function HomepageRfqCalculator() {
                       concreteGrade === 'C40' ? 'bg-app-secondary border-brand-teal' : 'bg-app-card border-app-border'
                     }`}
                   >
-                    <span className="text-xs font-bold text-white block">C40 Grade (Standard)</span>
+                    <span className="text-xs font-bold text-app-fg block">C40 Grade (Standard)</span>
                     <span className="text-[8px] text-app-muted mt-0.5 block">Standard foundation work with OPC cement</span>
                   </button>
                   <button
@@ -385,7 +385,7 @@ export default function HomepageRfqCalculator() {
                       concreteGrade === 'C50-SRC' ? 'bg-app-secondary border-brand-teal' : 'bg-app-card border-app-border'
                     }`}
                   >
-                    <span className="text-xs font-bold text-white block">C50 SRC (Sulfate Resistant)</span>
+                    <span className="text-xs font-bold text-app-fg block">C50 SRC (Sulfate Resistant)</span>
                     <span className="text-[8px] text-brand-gold mt-0.5 block font-mono">Recommended: high saline water table defense</span>
                   </button>
                 </div>
@@ -397,7 +397,7 @@ export default function HomepageRfqCalculator() {
           <div className="flex justify-between items-center border-t border-app-border pt-5">
             <button
               onClick={() => setStep(1)}
-              className="px-4 py-2 border border-app-border hover:bg-app-secondary rounded text-xs font-bold text-white uppercase tracking-wider transition-colors"
+              className="px-4 py-2 border border-app-border hover:bg-app-secondary rounded text-xs font-bold text-app-fg uppercase tracking-wider transition-colors"
             >
               ← Back
             </button>
@@ -418,7 +418,7 @@ export default function HomepageRfqCalculator() {
             <span className="text-[9px] font-mono text-brand-gold uppercase tracking-widest block font-bold">
               ESTIMATED PROJECT BUDGET RANGE
             </span>
-            <div className="text-3xl sm:text-4xl font-heading font-extrabold text-white tracking-tight">
+            <div className="text-3xl sm:text-4xl font-heading font-extrabold text-app-fg tracking-tight">
               {formatAED(est.total * 0.92)} - {formatAED(est.total * 1.08)}
             </div>
             <p className="text-[10px] text-app-muted leading-relaxed max-w-md mx-auto font-light">
@@ -434,7 +434,7 @@ export default function HomepageRfqCalculator() {
               <div className="space-y-1">
                 <div className="flex justify-between items-center">
                   <span className="text-app-muted">Materials Procurement</span>
-                  <span className="text-white font-bold">{formatAED(est.materials)} ({(est.materials / est.total * 100).toFixed(0)}%)</span>
+                  <span className="text-app-fg font-bold">{formatAED(est.materials)} ({(est.materials / est.total * 100).toFixed(0)}%)</span>
                 </div>
                 <div className="h-2 bg-app-secondary rounded-full overflow-hidden">
                   <div className="bg-brand-teal h-full rounded-full" style={{ width: `${(est.materials / est.total) * 100}%` }}></div>
@@ -445,7 +445,7 @@ export default function HomepageRfqCalculator() {
               <div className="space-y-1">
                 <div className="flex justify-between items-center">
                   <span className="text-app-muted">Civil Labor &amp; Welding Rig Operators</span>
-                  <span className="text-white font-bold">{formatAED(est.labor)} ({(est.labor / est.total * 100).toFixed(0)}%)</span>
+                  <span className="text-app-fg font-bold">{formatAED(est.labor)} ({(est.labor / est.total * 100).toFixed(0)}%)</span>
                 </div>
                 <div className="h-2 bg-app-secondary rounded-full overflow-hidden">
                   <div className="bg-brand-gold h-full rounded-full" style={{ width: `${(est.labor / est.total) * 100}%` }}></div>
@@ -456,7 +456,7 @@ export default function HomepageRfqCalculator() {
               <div className="space-y-1">
                 <div className="flex justify-between items-center">
                   <span className="text-app-muted">QC Testing (Hydro / Compaction / PIT)</span>
-                  <span className="text-white font-bold">{formatAED(est.testing)} ({(est.testing / est.total * 100).toFixed(0)}%)</span>
+                  <span className="text-app-fg font-bold">{formatAED(est.testing)} ({(est.testing / est.total * 100).toFixed(0)}%)</span>
                 </div>
                 <div className="h-2 bg-app-secondary rounded-full overflow-hidden">
                   <div className="bg-brand-teal/60 h-full rounded-full" style={{ width: `${(est.testing / est.total) * 100}%` }}></div>
@@ -467,7 +467,7 @@ export default function HomepageRfqCalculator() {
               <div className="space-y-1">
                 <div className="flex justify-between items-center">
                   <span className="text-app-muted">TAMM Permits &amp; Utility Tie-in Approvals</span>
-                  <span className="text-white font-bold">{formatAED(est.approvals)} ({(est.approvals / est.total * 100).toFixed(0)}%)</span>
+                  <span className="text-app-fg font-bold">{formatAED(est.approvals)} ({(est.approvals / est.total * 100).toFixed(0)}%)</span>
                 </div>
                 <div className="h-2 bg-app-secondary rounded-full overflow-hidden">
                   <div className="bg-brand-gold/60 h-full rounded-full" style={{ width: `${(est.approvals / est.total) * 100}%` }}></div>
@@ -480,7 +480,7 @@ export default function HomepageRfqCalculator() {
           <div className="flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-3 border-t border-app-border pt-5">
             <button
               onClick={() => setStep(2)}
-              className="px-4 py-2 border border-app-border hover:bg-app-secondary rounded text-xs font-bold text-white uppercase tracking-wider text-center transition-colors"
+              className="px-4 py-2 border border-app-border hover:bg-app-secondary rounded text-xs font-bold text-app-fg uppercase tracking-wider text-center transition-colors"
             >
               ← Edit Specs
             </button>

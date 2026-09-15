@@ -9,8 +9,8 @@ import CinematicSpecGrid from '@/components/showcases/CinematicSpecGrid';
 
 export const metadata: Metadata = {
   title: 'Wet Utilities & Drainage Infrastructure Abu Dhabi | ArrowHead',
-  description: 'Certified wet utilities contractors in Abu Dhabi. Supply, installation, and testing of sewerage networks, storm water drainage, and potable water systems complying with ADSSC and ADDC guidelines.',
-  keywords: ['wet utilities Abu Dhabi', 'potable water networks', 'ADSSC sewerage lines', 'storm water drainage systems', 'utility pump stations'],
+  description: 'Certified wet utilities contractors in Abu Dhabi. Supply, installation, and testing of sewerage networks, storm water drainage, and potable water systems complying with municipal and international utility guidelines.',
+  keywords: ['wet utilities Abu Dhabi', 'potable water networks', 'sewerage infrastructure lines', 'storm water drainage systems', 'utility pump stations'],
   alternates: {
     canonical: 'https://arrowheadigc.com/services/wet-utilities-infrastructure',
   },
@@ -20,10 +20,10 @@ export const metadata: Metadata = {
     url: 'https://arrowheadigc.com/services/wet-utilities-infrastructure',
     siteName: 'ArrowHead General Contracting LLC',
     title: 'Wet Utilities & Drainage Infrastructure Abu Dhabi | ArrowHead',
-    description: 'Certified wet utilities contractors in Abu Dhabi. Supply, installation, and testing of sewerage networks, storm water drainage, and potable water systems complying with ADSSC and ADDC guidelines.',
+    description: 'Certified wet utilities contractors in Abu Dhabi. Supply, installation, and testing of sewerage networks, storm water drainage, and potable water systems complying with municipal and international utility guidelines.',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80',
+        url: '/images/123.jpeg',
         width: 800,
         height: 600,
         alt: 'Wet Utilities Infrastructure',
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Wet Utilities & Drainage Infrastructure Abu Dhabi | ArrowHead',
-    description: 'Certified wet utilities contractors in Abu Dhabi. Supply, installation, and testing of sewerage networks, storm water drainage, and potable water systems complying with ADSSC and ADDC guidelines.',
-    images: ['https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80'],
+    description: 'Certified wet utilities contractors in Abu Dhabi. Supply, installation, and testing of sewerage networks, storm water drainage, and potable water systems complying with municipal and international utility guidelines.',
+    images: ['/images/123.jpeg'],
   },
 };
 
@@ -42,11 +42,11 @@ export default function WetUtilitiesInfrastructurePage() {
   const subServices = [
     {
       title: 'Sewerage Networks & Gravity Sewers',
-      desc: 'Excavation, shoring, laying, and testing of gravity sewerage systems. We install PE100 HDPE pipelines and precast concrete manholes with internal epoxy coatings, satisfying the strict inspection checklists of the Abu Dhabi Sewerage Services Company (ADSSC).',
+      desc: 'Excavation, shoring, laying, and testing of gravity sewerage systems. We install PE100 HDPE pipelines and precast concrete manholes with internal epoxy coatings, satisfying the strict inspection checklists of municipal utility authorities.',
     },
     {
       title: 'Potable Water Distribution Networks',
-      desc: 'Installation of high-pressure main potable water waterlines, distribution loops, and building connections. We perform butt-fusion joints, weld validation recording, pipe swabbing, chlorination, and disinfection to ADDC standards.',
+      desc: 'Installation of high-pressure main potable water waterlines, distribution loops, and building connections. We perform butt-fusion joints, weld validation recording, pipe swabbing, chlorination, and disinfection to municipal utility standards.',
     },
     {
       title: 'Storm Water Drainage & Outfalls',
@@ -59,25 +59,25 @@ export default function WetUtilitiesInfrastructurePage() {
   ];
 
   const standards = [
-    { title: 'Sewerage Guidelines', value: 'ADSSC Standard Detail Drawings & Materials List' },
-    { title: 'Potable Water Codes', value: 'ADDC Water Transmission & Distribution Regulations' },
+    { title: 'Sewerage Guidelines', value: 'Municipal Standard Detail Drawings & Materials List' },
+    { title: 'Potable Water Codes', value: 'Water Transmission & Distribution Regulations' },
     { title: 'Pipe Jointing Methods', value: 'DVS 2207 Butt-Fusion, Electrofusion Jointing' },
-    { title: 'Excavation Details', value: 'ADM Dewatering Permits, Shoring Sheet Piles' },
+    { title: 'Excavation Details', value: 'Municipal Dewatering Permits, Shoring Sheet Piles' },
     { title: 'Manhole Specifications', value: 'Precast Concrete with GRP Lining / Epoxy Paint' },
   ];
 
   const faqs = [
     {
-      q: 'Does ArrowHead secure the ADSSC NOCs required for sewer connection works?',
-      a: 'Yes. We prepare the complete utility drawings, design shop layouts, obtain municipal dewatering permits, and submit them via the TAMM portal to secure the necessary ADSSC No Objection Certificate (NOC) and final connection approval.',
+      q: 'Does ArrowHead secure the municipal NOCs required for sewer connection works?',
+      a: 'Yes. We prepare the complete utility drawings, design shop layouts, obtain municipal dewatering permits, and submit them via the TAMM portal to secure the necessary No Objection Certificate (NOC) and final connection approval.',
     },
     {
-      q: 'What testing is required to hand over a potable water waterline to ADDC?',
-      a: 'All potable lines must pass hydrostatic pressure testing (PN10/PN16 depending on layout parameters) witnessed by ADDC inspectors. After testing, we sanitize, flush, and perform laboratory water sampling checks to ensure compliance with potability codes.',
+      q: 'What testing is required to hand over a potable water waterline?',
+      a: 'All potable lines must pass hydrostatic pressure testing (PN10/PN16 depending on layout parameters) witnessed by utility inspectors. After testing, we sanitize, flush, and perform laboratory water sampling checks to ensure compliance with potability codes.',
     },
     {
       q: 'Do you construct precast and cast-in-situ valve chambers?',
-      a: 'Yes, we construct both. We specialize in reinforced concrete chambers matching ADSSC/ADDC drawings, applying premium quality waterproofing membranes and anti-corrosive epoxy layers to protect steel reinforcement from high ground salinity.',
+      a: 'Yes, we construct both. We specialize in reinforced concrete chambers matching municipal utility drawings, applying premium quality waterproofing membranes and anti-corrosive epoxy layers to protect steel reinforcement from high ground salinity.',
     },
   ];
 
@@ -103,7 +103,7 @@ export default function WetUtilitiesInfrastructurePage() {
       'name': 'ArrowHead General Contracting LLC',
       'telephone': '+971-2-XXXXXXX',
       'priceRange': '$$$$',
-      'image': 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80',
+      'image': '/images/123.jpeg',
       'address': {
         '@type': 'PostalAddress',
         'addressLocality': 'Abu Dhabi',
@@ -163,35 +163,35 @@ export default function WetUtilitiesInfrastructurePage() {
         </div>
       </section>
 
-<section className="py-24 border-b border-app-border relative bg-app-bg">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="space-y-6 mb-24">
+      <section className="py-24 border-b border-app-border relative bg-app-bg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-6 mb-24">
             <div className="flex items-center gap-4 border-b border-app-border pb-4">
               <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE I</span>
               <h3 className="text-lg font-heading font-extrabold tracking-tight">Tabular Factsheet Grid Row Hover</h3>
             </div>
             <FactsheetGrid />
           </div>
-          </div>
-          </section>
+        </div>
+      </section>
 
-          <section className="py-24 border-b border-app-border relative bg-app-bg">
-                  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="space-y-6 mb-24">
-                      <div className="flex items-center gap-4 border-b border-app-border pb-4">
-                        <span className="text-xs font-mono font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded">STYLE J</span>
-                        <h3 className="text-lg font-heading font-extrabold tracking-tight">Cinematic Spec Card Grid</h3>
-                      </div>
-                      <CinematicSpecGrid />
-                    </div>
-                    </div>
-                    </section>
+      <section className="py-24 border-b border-app-border relative bg-app-bg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-6 mb-24">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded">STYLE J</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Cinematic Spec Card Grid</h3>
+            </div>
+            <CinematicSpecGrid />
+          </div>
+        </div>
+      </section>
 
       {/* 2. SPECIFICATION OVERVIEW */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
               <span className="text-brand-teal text-xs font-bold uppercase tracking-widest font-mono">Infrastructure Engineering</span>
@@ -203,17 +203,17 @@ export default function WetUtilitiesInfrastructurePage() {
                   Wet utility infrastructure forms the baseline of urban development, managing potable water distribution, gravity sewerage trunk networks, storm water drainage channels, and district irrigation lines. Engineering these underground networks requires managing complex hydraulics, varying soil loads, and crossing utility lines. ArrowHead delivers complete Engineering, Procurement, and Construction (EPC) services for municipal and private developers, executing wet utility projects from initial routing approvals to final network connection.
                 </p>
                 <p>
-                  Our pipeline construction division operates heavy trenching machinery and shoring box systems. We excel in laying deep sewer trunk mains, casting reinforced concrete manholes with protective internal GRP liners, and installing potable water lines. We apply dense aggregate pipe bedding, lay warning tapes, and execute backfilling in strict compliance with the Standard Detail Drawings of the Abu Dhabi Sewerage Services Company (ADSSC) and Abu Dhabi Distribution Company (ADDC).
+                  Our pipeline construction division operates heavy trenching machinery and shoring box systems. We excel in laying deep sewer trunk mains, casting reinforced concrete manholes with protective internal GRP liners, and installing potable water lines. We apply dense aggregate pipe bedding, lay warning tapes, and execute backfilling in strict compliance with the Standard Detail Drawings of Abu Dhabi municipal and utility authorities.
                 </p>
                 <p>
-                  For utility pipelines crossing active roadways or existing infrastructure, we coordinate trenchless Horizontal Directional Drilling (HDD) alignments to minimize surface disruption. Every pipeline section is subjected to rigorous quality checks. We conduct hydrostatic pressure testing (up to PN25), gravity sewer deflection checks, and pipeline disinfection. These tests are witnessed and certified by ADSSC and ADDC inspectors, facilitating rapid municipal network integration.
+                  For utility pipelines crossing active roadways or existing infrastructure, we coordinate trenchless Horizontal Directional Drilling (HDD) alignments to minimize surface disruption. Every pipeline section is subjected to rigorous quality checks. We conduct hydrostatic pressure testing (up to PN25), gravity sewer deflection checks, and pipeline disinfection. These tests are witnessed and certified by municipal utility inspectors, facilitating rapid municipal network integration.
                 </p>
-  </div>
+              </div>
             </div>
 
             {/* Right Specification Table */}
             <div className="lg:col-span-5 bg-app-card border border-app-border offset-border-frame shadow-sm border border-app-border rounded-xl p-8 shadow-2xl">
-              <h3 className="text-base font-bold text-white border-b border-app-border pb-4 uppercase tracking-wider font-heading">
+              <h3 className="text-base font-bold text-app-fg border-b border-app-border pb-4 uppercase tracking-wider font-heading">
                 Wet Utilities Standards
               </h3>
               <ul className="mt-6 space-y-4 text-xs sm:text-sm">
@@ -231,16 +231,16 @@ export default function WetUtilitiesInfrastructurePage() {
       </section>
 
       <section className="py-24 border-b border-app-border relative bg-app-bg">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-             <div className="space-y-6 mb-24">
-                  <div className="flex items-center gap-4 border-b border-app-border pb-4">
-                    <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE H</span>
-                    <h3 className="text-lg font-heading font-extrabold tracking-tight">Progressive Build Timeline Phase Switcher</h3>
-                  </div>
-                  <BuildTimelineShowcase />
-                </div>
-                </div>
-                </section>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-6 mb-24">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE H</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Progressive Build Timeline Phase Switcher</h3>
+            </div>
+            <BuildTimelineShowcase />
+          </div>
+        </div>
+      </section>
 
       {/* 3. SUB-SERVICES GRID */}
       <section className="py-20 bg-app-secondary border-y border-app-border">
@@ -256,7 +256,7 @@ export default function WetUtilitiesInfrastructurePage() {
             {subServices.map((sub, idx) => (
               <div key={idx} className="bg-app-card border border-app-border offset-border-frame shadow-sm p-8 rounded-xl border border-app-border shadow-2xl space-y-3">
                 <span className="text-brand-teal font-mono font-bold text-xs block">0{idx + 1}. Sub-Service Scope</span>
-                <h3 className="text-base sm:text-lg font-bold text-white">{sub.title}</h3>
+                <h3 className="text-base sm:text-lg font-bold text-app-fg">{sub.title}</h3>
                 <p className="text-app-muted text-xs sm:text-sm leading-relaxed font-light">{sub.desc}</p>
               </div>
             ))}
@@ -265,17 +265,17 @@ export default function WetUtilitiesInfrastructurePage() {
       </section>
 
       {/* 4. COMPLIANCE BANNER */}
-      <section className="bg-app-secondary text-white py-16 relative overflow-hidden">
+      <section className="bg-app-secondary text-app-fg py-16 relative overflow-hidden">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
-          <h2 className="text-2xl sm:text-3xl font-heading font-extrabold text-white">
-            ADM, ADSSC, and ADDC Standards Aligned
+          <h2 className="text-2xl sm:text-3xl font-heading font-extrabold text-app-fg">
+            Abu Dhabi Municipality &amp; Utility Standards Aligned
           </h2>
           <p className="text-xs sm:text-sm text-app-muted max-w-3xl mx-auto leading-relaxed font-light">
-            We work as an approved wet utilities contractor, executing trenchings, bedding layers, pipeline alignments, pressure tests, and valve chambers. All operations strictly satisfy the Standard Detail Drawings of the Department of Municipalities and Transport, Abu Dhabi Sewerage Services Company, and Abu Dhabi Distribution Company.
+            We work as an approved wet utilities contractor, executing trenchings, bedding layers, pipeline alignments, pressure tests, and valve chambers. All operations strictly satisfy the Standard Detail Drawings of the Department of Municipalities and Transport and local utility authorities.
           </p>
           <div className="flex justify-center space-x-6 text-[10px] sm:text-xs text-brand-teal font-bold uppercase tracking-wider">
             <span>✓ TAMM Permit Submittals</span>
-            <span>✓ ADSSC Materials Compliance</span>
+            <span>✓ Utility Materials Compliance</span>
             <span>✓ Potable Disinfection Clearances</span>
           </div>
         </div>
@@ -294,7 +294,7 @@ export default function WetUtilitiesInfrastructurePage() {
           <div className="space-y-4">
             {faqs.map((faq, idx) => (
               <details key={idx} className="group bg-app-secondary border border-app-border rounded-lg overflow-hidden">
-                <summary className="w-full text-left px-6 py-5 flex items-center justify-between font-bold text-white hover:text-brand-teal focus:outline-none transition-colors cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                <summary className="w-full text-left px-6 py-5 flex items-center justify-between font-bold text-app-fg hover:text-brand-teal focus:outline-none transition-colors cursor-pointer list-none [&::-webkit-details-marker]:hidden">
                   <span className="text-sm sm:text-base">{faq.q}</span>
                   <svg
                     className="w-4 h-4 text-app-muted/60 transition-transform duration-300 shrink-0 group-open:rotate-180 group-open:text-brand-teal"
@@ -321,7 +321,7 @@ export default function WetUtilitiesInfrastructurePage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-sm font-bold uppercase tracking-widest text-white mb-4">
+              <h3 className="text-sm font-bold uppercase tracking-widest text-app-fg mb-4">
                 Active Regional Infrastructure Operations
               </h3>
               <p className="text-xs text-app-muted mb-6 font-light">
@@ -336,7 +336,7 @@ export default function WetUtilitiesInfrastructurePage() {
               </div>
             </div>
             <div>
-              <h3 className="text-sm font-bold uppercase tracking-widest text-white mb-4">
+              <h3 className="text-sm font-bold uppercase tracking-widest text-app-fg mb-4">
                 Technical Knowledge Base
               </h3>
               <p className="text-xs text-app-muted mb-6 font-light">
@@ -344,7 +344,7 @@ export default function WetUtilitiesInfrastructurePage() {
               </p>
               <div className="flex flex-col space-y-4">
                 <Link href="/insights/hdpe-butt-fusion-welding-parameters" className="p-4 bg-app-card rounded border border-app-border hover:border-brand-teal transition-colors">
-                  <span className="text-xs font-bold text-white block">HDPE Butt-Fusion Welding Technical Parameters</span>
+                  <span className="text-xs font-bold text-app-fg block">HDPE Butt-Fusion Welding Technical Parameters</span>
                   <span className="text-[10px] text-app-muted font-light mt-1 block">Heating temperatures, bead-up pressures, and cooling logs per DVS 2207.</span>
                 </Link>
               </div>
@@ -354,8 +354,8 @@ export default function WetUtilitiesInfrastructurePage() {
       </section>
 
       {/* 7. CALL TO ACTION */}
-      <section className="py-16 bg-app-secondary border-t border-app-border text-center">
-        <h2 className="text-xl sm:text-2xl font-heading font-extrabold text-white">
+      <section className="py-16 bg-app-secondary border-t border-app-border text-center text-app-fg">
+        <h2 className="text-xl sm:text-2xl font-heading font-extrabold text-app-fg">
           Discuss Your Wet Utilities Specifications
         </h2>
         <p className="mt-3 text-app-muted text-xs sm:text-sm max-w-xl mx-auto font-light">

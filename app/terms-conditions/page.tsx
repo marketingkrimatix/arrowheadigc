@@ -40,7 +40,7 @@ export default function TermsConditionsPage() {
                 1. Acceptance of Terms
               </h2>
               <p className="text-app-muted text-xs sm:text-sm leading-relaxed font-light">
-                These Terms &amp; Conditions govern the use of this website, online estimators, RFQ tools, and the commercial relationship with <strong className="font-semibold text-app-fg">ArrowHead International General Contracting LLC</strong> (hereinafter referred to as &quot;ArrowHead&quot;, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot;), licensed under Abu Dhabi Department of Economic Development DED License <strong className="font-semibold text-app-fg">CN-4998977</strong>, with head offices on 5th Floor, Prestige Towers, Mussaffah, Abu Dhabi, United Arab Emirates.
+                These Terms &amp; Conditions govern the use of this website, online estimators, RFQ tools, and the commercial relationship with <strong className="font-semibold text-app-fg">ArrowHead International General Contracting LLC</strong> (hereinafter referred to as &quot;ArrowHead&quot;, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot;), licensed under the Abu Dhabi Department of Economic Development, with head offices on 5th Floor, Prestige Towers, Mussaffah, Abu Dhabi, United Arab Emirates.
               </p>
               <p className="text-app-muted text-xs sm:text-sm leading-relaxed font-light">
                 By accessing this website, submitting an RFQ, requesting a construction estimate, or communicating with us, you agree to be bound by these Terms &amp; Conditions, and all applicable federal laws of the United Arab Emirates and local decrees of the Emirate of Abu Dhabi. If you do not accept these terms, you must discontinue the use of this site immediately.
@@ -74,7 +74,7 @@ export default function TermsConditionsPage() {
               <ul className="list-disc pl-5 text-app-muted text-xs sm:text-sm space-y-2 font-light">
                 <li><strong className="font-semibold text-app-fg">Client Obligations</strong>: The client is responsible for providing valid plot titles, land maps, design briefs, soil survey clearances, and corporate/individual identification documents required to process permit submissions.</li>
                 <li><strong className="font-semibold text-app-fg">TAMM Portal NOCs</strong>: We coordinate TAMM Municipal portal submittals and NOC acquisitions. Any delays caused by municipal authorities, regulatory updates, environmental assessments (EAD), or incomplete client document logs are outside our control and will adjust project schedules accordingly.</li>
-                <li><strong className="font-semibold text-app-fg">Utility Inspections</strong>: Pipeline testing, gravity trunk hookups, and electrical board connections are subject to field testing and inspection checks by Abu Dhabi Sewerage Services Company (ADSSC) and Abu Dhabi Distribution Company (ADDC) inspectors. Construction milestones are dependent on obtaining these official inspection stamps.</li>
+                <li><strong className="font-semibold text-app-fg">Utility Inspections</strong>: Pipeline testing, gravity trunk hookups, and electrical board connections are subject to field testing and inspection checks by municipal and utility authority inspectors. Construction milestones are dependent on obtaining these official inspection stamps.</li>
               </ul>
             </div>
 

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description: 'Turnkey luxury villa builders on Saadiyat Island, Abu Dhabi. High-end architectural design-build contracting meeting Estidama 2-Pearl rating guidelines.',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80',
+        url: '/images/ArrowheadVilla.png',
         width: 800,
         height: 600,
         alt: 'Saadiyat Island Luxury Villa Construction',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Luxury Villa Construction Saadiyat Island | ArrowHead General Contracting',
     description: 'Turnkey luxury villa builders on Saadiyat Island, Abu Dhabi. High-end architectural design-build contracting meeting Estidama 2-Pearl rating guidelines.',
-    images: ['https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80'],
+    images: ['/images/ArrowheadVilla.png'],
   },
 };
 
@@ -54,7 +54,7 @@ export default function SaadiyatIslandGeoPage() {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     'name': 'ArrowHead General Contracting LLC - Saadiyat Island Operations',
-    'image': 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80',
+    'image': '/images/ArrowheadVilla.png',
     'telephone': '+971-2-XXXXXXX',
     'address': {
       '@type': 'PostalAddress',
@@ -96,7 +96,7 @@ export default function SaadiyatIslandGeoPage() {
             Luxury Custom Villa Builders in Saadiyat Island
           </h1>
           <p className="mt-6 text-sm sm:text-base text-app-muted max-w-3xl font-light leading-relaxed">
-            Delivering bespoke turnkey custom estates, structural concrete additions, and fine stone interior fittings on Saadiyat Island. Registered under DED License CN-4998977, we align with the building permit guidelines of the Abu Dhabi Municipality.
+            Delivering bespoke turnkey custom estates, structural concrete additions, and fine stone interior fittings on Saadiyat Island. As a registered Abu Dhabi contractor, we align with the building permit guidelines of the Abu Dhabi Municipality.
           </p>
           <div className="mt-8">
             <Link
@@ -113,7 +113,7 @@ export default function SaadiyatIslandGeoPage() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            
+
             {/* Left Copy: Semantic HTML5 */}
             <div className="lg:col-span-7 space-y-6">
               <span className="text-brand-teal text-xs font-bold uppercase tracking-widest font-mono font-bold">
@@ -122,7 +122,7 @@ export default function SaadiyatIslandGeoPage() {
               <h2 className="text-2xl sm:text-3xl font-heading font-extrabold text-app-fg tracking-tight">
                 Rigid Foundations &amp; Pearl Rating Consultations
               </h2>
-              
+
               <div className="text-app-muted space-y-5 text-xs sm:text-sm leading-relaxed font-light">
                 <p>
                   Villa contracting and residential development on Saadiyat Island requires adhering to strict architectural guidelines, luxury aesthetic directives from master developers (such as Aldar), and the environmental preservation rules of the Saadiyat Beach district. Our design-build engineering teams utilize advanced Revit BIM tools to build high-precision digital models. This allows us to pre-coordinate structural columns, mechanical ductwork, electrical trays, and plumbing slopes, eliminating design conflicts before ground is broken.
@@ -144,7 +144,7 @@ export default function SaadiyatIslandGeoPage() {
               <h3 className="font-heading font-extrabold text-sm text-white border-b border-app-border pb-4 uppercase tracking-widest">
                 Saadiyat Island Handovers
               </h3>
-              
+
               <div className="space-y-6">
                 {localProjects.map((proj, idx) => (
                   <div key={idx} className="bg-app-secondary/60 p-5 rounded border border-app-border space-y-2">

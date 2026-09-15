@@ -16,41 +16,41 @@ export default function PanoramicCarousel() {
 
   const slides: ProjectSlide[] = [
     {
-      title: 'Saadiyat Island Luxury Beach Villa',
+      title: 'Sanjay Jain Luxury Villa',
       category: 'Villa Construction',
-      image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=600&q=80',
-      location: 'Saadiyat North, Abu Dhabi',
-      specs: '14,000 sqft | 2-Pearl Estidama',
+      image: '/images/ArrowheadVilla.png',
+      location: 'Saadiyat & Prime Abu Dhabi',
+      specs: '14,500 sqft | 2-Pearl Estidama',
       code: 'AH-CIVIL-SAADIYAT-01'
     },
     {
       title: 'Yas Island Sewerage Trunk Network',
       category: 'HDPE Pipelines network',
-      image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80',
+      image: '/images/123.jpeg',
       location: 'Yas South Loop, Abu Dhabi',
       specs: 'DN 1200mm | PE100 SDR11',
       code: 'AH-INFRA-YAS-02'
     },
     {
-      title: 'Mussafah Port slipway Restoration',
-      category: 'Marine & Industrial',
-      image: 'https://images.unsplash.com/photo-1505705694340-019e1e335916?auto=format&fit=crop&w=600&q=80',
-      location: 'Mussafah Marine Channel',
-      specs: 'Saline Epoxy | Cathodic Protections',
-      code: 'AH-MARINE-PORT-03'
+      title: 'Katheri Family Logistics Civils',
+      category: 'Infrastructure & Civils',
+      image: '/images/Matrix_project.jpeg',
+      location: 'Mussafah Industrial Sector',
+      specs: 'High-Strength Concrete | Epoxy Floor',
+      code: 'AH-CIVIL-MUSSAFAH-03'
     },
     {
-      title: 'Commercial Office Tower HVAC',
+      title: 'Katheri Family Villa MEP Loops',
       category: 'MEP Specialized Works',
-      image: 'https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=600&q=80',
-      location: 'Capital Tower, Abu Dhabi',
+      image: '/images/Matrix_project3.jpeg',
+      location: 'Prime Residential Enclave, Abu Dhabi',
       specs: 'Double-Skin GI | Air Sizing',
       code: 'AH-MEP-HVAC-04'
     },
     {
       title: 'Al Raha Gardens Majlis Extension',
       category: 'Villa Renovation',
-      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80',
+      image: '/images/villa_modern.png',
       location: 'Al Raha Gardens, Abu Dhabi',
       specs: '2,800 sqft | Structural Casting',
       code: 'AH-RENOV-RAHA-05'
@@ -69,9 +69,9 @@ export default function PanoramicCarousel() {
 
   return (
     <div className="w-full bg-app-bg text-app-fg py-16 flex flex-col items-center max-w-6xl mx-auto overflow-hidden">
-      
+
       {/* 3D Curved Perspective Stage */}
-      <div 
+      <div
         className="relative w-full flex justify-center items-center h-[360px] sm:h-[420px]"
         style={{ perspective: '1200px' }}
       >
@@ -80,7 +80,7 @@ export default function PanoramicCarousel() {
           {slides.map((slide, idx) => {
             const diff = idx - activeIndex;
             const isActive = idx === activeIndex;
-            
+
             // Calculate 3D transformation values to position cards on a curved stage
             const rotateYVal = diff * 18; // Rotate cards on sides
             const translateZVal = Math.abs(diff) * -70; // Push side cards back
@@ -128,7 +128,7 @@ export default function PanoramicCarousel() {
                       📍 {slide.location}
                     </p>
                   </div>
-                  
+
                   <span className="block text-[8.5px] font-mono text-brand-gold uppercase tracking-wider border-t border-app-border/40 pt-1.5 mt-2 font-bold">
                     {slide.specs}
                   </span>

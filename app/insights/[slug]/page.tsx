@@ -151,7 +151,7 @@ export default async function InsightDetailPage({ params }: PageProps) {
                 <div className="space-y-4">
                   {article.faqs.map((f, fIdx) => (
                     <div key={fIdx} className="bg-app-card border border-app-border p-6 rounded-xl shadow-md space-y-2">
-                      <h4 className="font-bold text-white text-xs sm:text-sm">{f.q}</h4>
+                      <h4 className="font-bold text-app-fg text-xs sm:text-sm">{f.q}</h4>
                       <p className="text-app-muted text-xs sm:text-sm leading-relaxed font-light bg-app-bg/10 rounded p-4 border border-app-border/40">
                         {f.a}
                       </p>
@@ -166,7 +166,7 @@ export default async function InsightDetailPage({ params }: PageProps) {
               
               {/* Proposal Call-to-action */}
               <div className="bg-app-card border border-app-border offset-border-frame shadow-sm rounded-xl p-6 sm:p-8 shadow-2xl space-y-4">
-                <h4 className="font-heading font-extrabold text-xs text-white uppercase tracking-widest">
+                <h4 className="font-heading font-extrabold text-xs text-app-fg uppercase tracking-widest">
                   Need Technical Engineering Services?
                 </h4>
                 <p className="text-app-muted text-xs leading-relaxed font-light">
@@ -182,7 +182,7 @@ export default async function InsightDetailPage({ params }: PageProps) {
 
               {/* Related Guides */}
               <div className="bg-app-card border border-app-border rounded-xl p-6 sm:p-8 shadow-xl space-y-4">
-                <h4 className="font-heading font-extrabold text-xs text-white uppercase tracking-widest">
+                <h4 className="font-heading font-extrabold text-xs text-app-fg uppercase tracking-widest">
                   Related Engineering Guides
                 </h4>
                 <div className="space-y-4">
@@ -193,7 +193,7 @@ export default async function InsightDetailPage({ params }: PageProps) {
                       className="block p-3 bg-app-secondary/40 hover:bg-app-secondary/80 rounded border border-app-border transition-colors group"
                     >
                       <span className="block text-[8px] font-mono text-brand-gold uppercase font-bold">{rel.category}</span>
-                      <span className="block text-xs font-bold text-white group-hover:text-brand-teal transition-colors mt-1 leading-tight">
+                      <span className="block text-xs font-bold text-app-fg group-hover:text-brand-teal transition-colors mt-1 leading-tight">
                         {rel.title}
                       </span>
                     </Link>

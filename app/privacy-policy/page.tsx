@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy | General Contracting & Engineering Abu Dhabi',
-  description: 'Read the privacy policy of ArrowHead International General Contracting LLC. Registered in Abu Dhabi (DED License CN-4998977). Compliance with UAE Data Protection Law.',
+  description: 'Read the privacy policy of ArrowHead International General Contracting LLC. Registered in Abu Dhabi. Compliance with UAE Data Protection Law.',
   keywords: ['ArrowHead Privacy Policy', 'contracting privacy UAE', 'Prestige Towers Abu Dhabi', 'general contracting privacy policy'],
   alternates: {
     canonical: 'https://arrowheadigc.com/privacy-policy',
@@ -40,7 +40,7 @@ export default function PrivacyPolicyPage() {
                 1. Introduction
               </h2>
               <p className="text-app-muted text-xs sm:text-sm leading-relaxed font-light">
-                ArrowHead International General Contracting LLC (&quot;ArrowHead&quot;, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot;), registered under Abu Dhabi Department of Economic Development DED License <strong className="font-semibold text-app-fg">CN-4998977</strong> with its head office at 5th Floor, Prestige Towers, Mussaffah, Abu Dhabi, United Arab Emirates, is committed to safeguarding the privacy of our clients, partners, website visitors, and service users. 
+                ArrowHead International General Contracting LLC (&quot;ArrowHead&quot;, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot;), registered under the Abu Dhabi Department of Economic Development with its head office at 5th Floor, Prestige Towers, Mussaffah, Abu Dhabi, United Arab Emirates, is committed to safeguarding the privacy of our clients, partners, website visitors, and service users. 
               </p>
               <p className="text-app-muted text-xs sm:text-sm leading-relaxed font-light">
                 This Privacy Policy explains how we collect, store, process, share, and protect your personal data when you interact with our website, request tenders/RFQs, utilize our online budget estimation tools, or engage our engineering, construction, pipeline, or facilities management services. We process personal data in compliance with UAE Federal Decree-Law No. 45 of 2021 on Personal Data Protection (PDPL) and local Abu Dhabi municipal data regulations.
@@ -57,7 +57,7 @@ export default function PrivacyPolicyPage() {
               </p>
               <ul className="list-disc pl-5 text-app-muted text-xs sm:text-sm space-y-2 font-light">
                 <li><strong className="font-semibold text-app-fg">Identity &amp; Contact Details</strong>: Name, email address, telephone numbers, corporate role, company name, and physical office or plot address.</li>
-                <li><strong className="font-semibold text-app-fg">Project &amp; Property Specifications</strong>: Site plot numbers, land boundary details, structural layouts, utility specifications, current municipal approvals (TAMM NOCs, ADSSC/ADDC clearances), and architectural preferences.</li>
+                <li><strong className="font-semibold text-app-fg">Project &amp; Property Specifications</strong>: Site plot numbers, land boundary details, structural layouts, utility specifications, current municipal approvals (TAMM NOCs, utility clearances), and architectural preferences.</li>
                 <li><strong className="font-semibold text-app-fg">Financial &amp; Estimation Logs</strong>: Estimated project budgets, RFQ calculations, and contract values processed via our online estimators or billing departments.</li>
                 <li><strong className="font-semibold text-app-fg">Usage &amp; Technical Data</strong>: IP address, device specifications, operating system, and browsing activity collected through website cookies and analytics frameworks.</li>
               </ul>
@@ -73,7 +73,7 @@ export default function PrivacyPolicyPage() {
               </p>
               <ul className="list-disc pl-5 text-app-muted text-xs sm:text-sm space-y-2 font-light">
                 <li>Configuring project budget estimations and drafting official tenders/RFQs.</li>
-                <li>Processing permit applications, utility connection requests, and building clearances through Abu Dhabi government portals (TAMM, ADSSC, ADDC, Abu Dhabi Civil Defense).</li>
+                <li>Processing permit applications, utility connection requests, and building clearances through Abu Dhabi government portals (TAMM, municipal utilities, Abu Dhabi Civil Defense).</li>
                 <li>Executing turnkey building works, HDPE pipeline installations, MEP engineering, and dispatching preventative maintenance crews under Annual Maintenance Contracts (AMCs).</li>
                 <li>Managing corporate contracts, invoices, material procurements, and structural warranties.</li>
                 <li>Sending safety notices, technical guide updates, and operational communications regarding your asset management.</li>
@@ -89,7 +89,7 @@ export default function PrivacyPolicyPage() {
                 We do not sell, lease, or distribute your personal data to commercial third parties. However, due to the regulatory nature of general contracting, we share necessary data with:
               </p>
               <ul className="list-disc pl-5 text-app-muted text-xs sm:text-sm space-y-2 font-light">
-                <li><strong className="font-semibold text-app-fg">Government and Utility Authorities</strong>: Including Abu Dhabi Municipality (ADM), TAMM portal agencies, Abu Dhabi Sewerage Services Company (ADSSC), Abu Dhabi Distribution Company (ADDC), and Abu Dhabi Civil Defense (ADCD) for structural NOCs, permits, and connection clearances.</li>
+                <li><strong className="font-semibold text-app-fg">Government and Utility Authorities</strong>: Including Abu Dhabi Municipality, TAMM portal agencies, local water, power, and sewerage utility entities, and Abu Dhabi Civil Defense for structural NOCs, permits, and connection clearances.</li>
                 <li><strong className="font-semibold text-app-fg">Subcontractors and Consultants</strong>: Vetted third-party engineering consultants, laboratory testers, and logistics suppliers operating under strict confidentiality agreements to deliver specific project scopes (e.g. soil testing, concrete checks).</li>
                 <li><strong className="font-semibold text-app-fg">Legal &amp; Regulatory Bodies</strong>: Where required to protect corporate rights, resolve contractual disputes, or satisfy audits mandated by UAE Federal Law.</li>
               </ul>

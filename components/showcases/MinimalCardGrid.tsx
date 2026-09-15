@@ -14,11 +14,11 @@ interface SimpleProject {
 export default function MinimalCardGrid() {
   const projects: SimpleProject[] = [
     {
-      title: 'Saadiyat Island Cultural Villa',
+      title: 'Sanjay Jain Luxury Villa',
       category: 'Villa Construction',
-      location: 'Saadiyat District, Abu Dhabi',
-      specs: '14,000 sq ft • 2-Pearl Estidama',
-      image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=600&q=80',
+      location: 'Saadiyat & Prime Abu Dhabi, UAE',
+      specs: '14,500 sq ft • 2-Pearl Estidama',
+      image: '/images/ArrowheadVilla.png',
       desc: 'Bespoke high-end residential custom home featuring extensive Calacatta marble wall cladding, insulated masonry, and high-efficiency VRF HVAC units.'
     },
     {
@@ -26,16 +26,16 @@ export default function MinimalCardGrid() {
       category: 'HDPE Pipelines',
       location: 'Yas North Corridor, Abu Dhabi',
       specs: 'DN 1200mm PE100 • PN16 Rating',
-      image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80',
+      image: '/images/123.jpeg',
       desc: 'Supply and butt-fusion pipe welding of high-density trunk lines, executed with computerized logs under water table dewatering constraints.'
     },
     {
-      title: 'Mussafah Marine Slipway',
-      category: 'Marine & Industrial',
-      location: 'Mussafah Port Channel, Abu Dhabi',
-      specs: 'Microsilica Castings • Polyurea Coat',
-      image: 'https://images.unsplash.com/photo-1505705694340-019e1e335916?auto=format&fit=crop&w=600&q=80',
-      desc: 'Structural restoration of reinforced concrete marine slipway. Prepared sandblasting anchors, sacrificial zinc grounding, and chemical epoxy coating.'
+      title: 'Katheri Family Logistics Complex',
+      category: 'Infrastructure & Civils',
+      location: 'Mussafah Industrial Area, Abu Dhabi',
+      specs: 'Microsilica Castings • Epoxy Flooring',
+      image: '/images/Matrix_project.jpeg',
+      desc: 'Structural construction and civil works for commercial logistics facility. Heavy machinery plinth foundation casting and high-durability floor coating.'
     }
   ];
 
@@ -43,8 +43,8 @@ export default function MinimalCardGrid() {
     <div className="w-full bg-app-bg py-4 max-w-6xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {projects.map((proj, idx) => (
-          <div 
-            key={idx} 
+          <div
+            key={idx}
             className="bg-app-card border border-app-border rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl hover:border-brand-teal/30 group"
           >
             {/* Visual Image container */}
@@ -65,11 +65,11 @@ export default function MinimalCardGrid() {
                 <span>📍</span>
                 <span>{proj.location}</span>
               </div>
-              
+
               <h4 className="text-base font-heading font-extrabold text-app-fg uppercase tracking-tight group-hover:text-brand-teal transition-colors duration-200">
                 {proj.title}
               </h4>
-              
+
               <p className="text-xs text-app-muted font-light leading-relaxed">
                 {proj.desc}
               </p>

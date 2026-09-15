@@ -39,7 +39,7 @@ export default function Footer() {
             </p>
             <div className="pt-2">
               <span className="inline-block text-[10px] font-mono font-bold bg-app-card border border-brand-teal/20 text-brand-teal px-3 py-1 rounded shadow-sm">
-                DED License: CN-4998977
+                Licensed Abu Dhabi General Contractor
               </span>
             </div>
           </div>
@@ -55,6 +55,9 @@ export default function Footer() {
                 <Link href="/about" className="hover:text-brand-teal transition-colors">About Us</Link>
               </li>
               <li>
+                <Link href="/clients" className="hover:text-brand-teal transition-colors text-brand-gold font-semibold">Our Clients &amp; Partners</Link>
+              </li>
+              <li>
                 <Link href="/projects" className="hover:text-brand-teal transition-colors">Delivered Projects</Link>
               </li>
               <li>
@@ -66,10 +69,21 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Capabilities */}
+          {/* Column 3: Capabilities & Sectors */}
           <div className="space-y-4">
-            <h3 className="text-brand-teal font-heading font-bold text-xs uppercase tracking-widest">Core Divisions</h3>
+            <h3 className="text-brand-teal font-heading font-bold text-xs uppercase tracking-widest">
+              <Link href="/services" className="hover:underline">Services &amp; Sectors</Link>
+            </h3>
             <ul className="space-y-2 text-xs text-app-muted font-medium">
+              <li>
+                <Link href="/services/office-interiors" className="hover:text-brand-teal transition-colors">Office Interiors &amp; Fit-Out</Link>
+              </li>
+              <li>
+                <Link href="/services/industrial-warehouses" className="hover:text-brand-teal transition-colors">Industrial Warehouses &amp; AMC</Link>
+              </li>
+              <li>
+                <Link href="/services/villa-construction" className="hover:text-brand-teal transition-colors">Villa Construction</Link>
+              </li>
               <li>
                 <Link href="/services/hdpe-pipelines" className="hover:text-brand-teal transition-colors">HDPE Pipeline Supply</Link>
               </li>
@@ -80,19 +94,13 @@ export default function Footer() {
                 <Link href="/services/infrastructure-civil-works" className="hover:text-brand-teal transition-colors">Infrastructure Civil Works</Link>
               </li>
               <li>
-                <Link href="/services/villa-construction" className="hover:text-brand-teal transition-colors">Villa Construction</Link>
-              </li>
-              <li>
-                <Link href="/services/villa-renovation" className="hover:text-brand-teal transition-colors">Villa Extensions</Link>
-              </li>
-              <li>
                 <Link href="/services/facility-management" className="hover:text-brand-teal transition-colors">Facility Management</Link>
               </li>
               <li>
-                <Link href="/services/mep-specialized" className="hover:text-brand-teal transition-colors">MEP Works</Link>
+                <Link href="/services/mep-specialized" className="hover:text-brand-teal transition-colors">MEP Specialized Works</Link>
               </li>
               <li>
-                <Link href="/services/marine-industrial" className="hover:text-brand-teal transition-colors">Marine &amp; Industrial</Link>
+                <Link href="/sectors" className="hover:text-brand-teal transition-colors text-brand-gold">Industry Sector Solutions &rarr;</Link>
               </li>
             </ul>
           </div>
@@ -145,8 +153,8 @@ export default function Footer() {
             </div>
           </div>
           <div className="mt-4 md:mt-0 flex space-x-6">
-            <span className="hover:text-brand-teal transition-colors">ADSSC Approved</span>
-            <span className="hover:text-gray-400 transition-colors">ADDC Standards Compliant</span>
+            <span className="hover:text-brand-teal transition-colors">ISO Certified</span>
+            <span className="hover:text-gray-400 transition-colors">Municipal Compliant</span>
             <span className="hover:text-gray-400 transition-colors">Estidama Aligned</span>
           </div>
         </div>

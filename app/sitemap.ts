@@ -6,6 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const basePages = [
     '',
     '/about',
+    '/clients',
     '/contact',
     '/insights',
     '/projects',
@@ -14,12 +15,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const services = [
+    '/services/office-interiors',
+    '/services/industrial-warehouses',
     '/services/hdpe-pipelines',
     '/services/villa-construction',
     '/services/villa-renovation',
     '/services/facility-management',
     '/services/mep-specialized',
-    '/services/marine-industrial',
     '/services/wet-utilities-infrastructure',
     '/services/infrastructure-civil-works',
   ];
@@ -27,7 +29,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const sectors = [
     '/sectors/commercial-retail',
     '/sectors/industrial-manufacturing',
-    '/sectors/marine-ports',
     '/sectors/residential-villas',
     '/sectors/infrastructure-utilities',
     '/sectors/hospitality-leisure',
@@ -47,13 +48,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/insights/understanding-estidama-pearl-ratings',
   ];
 
-  const projects = [
+  const projectPaths = [
+    '/projects/jack-wills-fitout',
+    '/projects/foot-locker-fitout',
+    '/projects/ali-makhboot-villa',
+    '/projects/ali-hammadi-villa',
+    '/projects/al-nahyan-villa',
+    '/projects/katheri-family-villas',
+    '/projects/khulagi-villa',
+    '/projects/sanjay-jain-villa',
+    '/projects/mussafah-warehouse-civils',
     '/projects/yas-island-sewerage',
-    '/projects/al-raha-villa',
     '/projects/mussafah-fm',
-    '/projects/khalifa-extension',
-    '/projects/corporate-mep',
-    '/projects/mussafah-marine',
   ];
 
   const allPaths = [
@@ -62,7 +68,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...sectors,
     ...locations,
     ...insights,
-    ...projects,
+    ...projectPaths,
   ];
 
   return allPaths.map((path) => ({

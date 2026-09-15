@@ -26,7 +26,7 @@ export default function VillaRenovationShowcase() {
       name: 'Original Villa Structure',
       badge: 'BEFORE',
       focus: 'Traditional Arabic layout with flat plaster facades and standard openings.',
-      image: '/arrowheadigc-media/renovation/villa_before.png',
+      image: '/images/villa_before.png',
       details: [
         'Plain cement stucco boundary wall and facades',
         'Standard square windows with simple metal frames',
@@ -44,7 +44,7 @@ export default function VillaRenovationShowcase() {
       name: 'Modern Luxury Upgrade',
       badge: 'CONCEPT 01 / 05',
       focus: 'High-end travertine cladding, floor-to-ceiling glass, and a sleek infinity pool.',
-      image: '/arrowheadigc-media/renovation/villa_modern.png',
+      image: '/images/villa_modern.png',
       details: [
         'Premium natural Italian Travertine limestone wall cladding',
         'Post-tensioned concrete structural extensions for double-height lounges',
@@ -62,7 +62,7 @@ export default function VillaRenovationShowcase() {
       name: 'Contemporary Minimalist',
       badge: 'CONCEPT 02 / 05',
       focus: 'Raw architectural concrete, dark basalt stone accents, and clean geometric lines.',
-      image: '/arrowheadigc-media/renovation/villa_contemporary.png',
+      image: '/images/villa_contemporary.png',
       details: [
         'Finished raw concrete facade panels with dark basalt stone pillars',
         'Minimalist frameless glass balconies and dark structural steel frames',
@@ -80,7 +80,7 @@ export default function VillaRenovationShowcase() {
       name: 'Elegant Mediterranean',
       badge: 'CONCEPT 03 / 05',
       focus: 'Smooth white stucco arches, terracotta tile highlights, and lush gardens.',
-      image: '/arrowheadigc-media/renovation/villa_mediterranean.png',
+      image: '/images/villa_mediterranean.png',
       details: [
         'Smooth off-white stucco wall plaster with graceful rounded structural arches',
         'Subtle terracotta clay tile highlights on roof edges and boundary tops',
@@ -98,7 +98,7 @@ export default function VillaRenovationShowcase() {
       name: 'Smart Sustainable Villa',
       badge: 'CONCEPT 04 / 05',
       focus: 'Integrated solar roofing, smart-tinting glass, and dynamic accent lighting.',
-      image: '/arrowheadigc-media/renovation/villa_smart.png',
+      image: '/images/villa_smart.png',
       details: [
         'Building-Integrated Photovoltaic (BIPV) solar roof panels',
         'Dynamic electrochromic smart glass that auto-tints with sunlight intensity',
@@ -116,7 +116,7 @@ export default function VillaRenovationShowcase() {
       name: 'Ultra-Luxury Resort Estate',
       badge: 'CONCEPT 05 / 05',
       focus: 'Grand double-height lobby, floating teak walkway, and poolside cabanas.',
-      image: '/arrowheadigc-media/renovation/villa_resort.png',
+      image: '/images/villa_resort.png',
       details: [
         'Monumental double-height glass facade lobby with a grand pivot doorway',
         'Floating teak wood pathway over a large water feature and reflection pools',
@@ -210,12 +210,12 @@ export default function VillaRenovationShowcase() {
   const prevConcept = prevIndex !== null ? concepts[prevIndex] : null;
 
   return (
-    <div 
+    <div
       ref={showcaseRef}
       tabIndex={0}
       className="w-full bg-slate-950/70 backdrop-blur-md border border-app-border rounded-2xl p-4 sm:p-5 flex flex-col gap-4 focus:outline-none focus:ring-1 focus:ring-brand-teal/40 shadow-2xl relative select-none group/showcase max-w-lg mx-auto"
     >
-      
+
       {/* 1. Header indicators */}
       <div className="flex justify-between items-center text-[10px] font-mono tracking-wider font-bold">
         <span className={`${currentIndex === 0 ? 'text-brand-gold' : 'text-brand-teal'} uppercase bg-slate-900 px-2.5 py-1.5 rounded border border-white/5`}>
@@ -228,8 +228,8 @@ export default function VillaRenovationShowcase() {
         </div>
       </div>
 
-      {/* 2. Interactive Image Port */}
-      <div 
+      {/* 2. Interactive Image Viewport */}
+      <div
         onClick={() => triggerCycle(1)}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
@@ -237,17 +237,17 @@ export default function VillaRenovationShowcase() {
         className="relative w-full aspect-[4/3] rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-inner bg-slate-900 group"
       >
         {/* Background Image: The newly selected concept (revealed during wipe) */}
-        <img 
-          src={currentConcept.image} 
-          alt={currentConcept.name} 
-          className="w-full h-full object-cover select-none pointer-events-none" 
+        <img
+          src={currentConcept.image}
+          alt={currentConcept.name}
+          className="w-full h-full object-cover select-none pointer-events-none"
         />
 
         {/* Overlay Image: The previous concept (wiping away) */}
         {prevConcept && transitionState !== 'idle' && (
-          <img 
-            src={prevConcept.image} 
-            alt={prevConcept.name} 
+          <img
+            src={prevConcept.image}
+            alt={prevConcept.name}
             className="absolute inset-0 w-full h-full object-cover select-none pointer-events-none z-10 wipe-element"
             style={{
               animation: 'wipeTransition 1000ms cubic-bezier(0.76, 0, 0.24, 1) forwards'
@@ -257,7 +257,7 @@ export default function VillaRenovationShowcase() {
 
         {/* Golden light streak divider line (moves synced with wipe) */}
         {prevConcept && transitionState !== 'idle' && (
-          <div 
+          <div
             className="absolute inset-y-0 w-[2px] bg-gradient-to-b from-brand-gold via-white to-brand-gold z-20 shadow-[0_0_15px_rgba(197,168,128,0.8)] line-element pointer-events-none"
             style={{
               animation: 'lineMove 1000ms cubic-bezier(0.76, 0, 0.24, 1) forwards'
@@ -277,7 +277,7 @@ export default function VillaRenovationShowcase() {
 
         {/* Quick Nav arrows inside the image */}
         <div className="absolute inset-x-4 top-1/2 -translate-y-1/2 flex justify-between z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <button 
+          <button
             onClick={(e) => {
               e.stopPropagation();
               triggerCycle(-1);
@@ -287,7 +287,7 @@ export default function VillaRenovationShowcase() {
           >
             ←
           </button>
-          <button 
+          <button
             onClick={(e) => {
               e.stopPropagation();
               triggerCycle(1);
@@ -310,7 +310,7 @@ export default function VillaRenovationShowcase() {
         {concepts.map((concept, idx) => {
           const isBefore = idx === 0;
           if (isBefore) return null; // do not show bar for "Before" state in the 5-concept bar count
-          
+
           const isActive = idx === currentIndex;
           const isViewed = idx < currentIndex;
 
@@ -332,10 +332,9 @@ export default function VillaRenovationShowcase() {
               className="flex-1 h-[3px] rounded-full focus:outline-none relative overflow-hidden bg-white/10 hover:bg-white/20 transition-colors cursor-pointer"
               title={`Jump to Concept ${idx}`}
             >
-              <div 
-                className={`absolute inset-y-0 left-0 bg-brand-teal transition-transform duration-500 origin-left ${
-                  isActive ? 'scale-x-100' : isViewed ? 'scale-x-100 opacity-40' : 'scale-x-0'
-                }`}
+              <div
+                className={`absolute inset-y-0 left-0 bg-brand-teal transition-transform duration-500 origin-left ${isActive ? 'scale-x-100' : isViewed ? 'scale-x-100 opacity-40' : 'scale-x-0'
+                  }`}
               />
             </button>
           );
@@ -352,7 +351,7 @@ export default function VillaRenovationShowcase() {
             {currentIndex === 0 ? 'Original' : 'Upgrade Option'}
           </span>
         </div>
-        
+
         <p className="text-[11px] text-white/70 font-light leading-relaxed mt-2">
           {currentConcept.focus}
         </p>

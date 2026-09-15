@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     description: 'Professional Mechanical, Electrical, Plumbing, and Firefighting engineering in Abu Dhabi. We install high-efficiency HVAC ducting, switchboards, booster pumps, and Civil Defense firefighting systems.',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80',
+        url: '/images/Matrix_project3.jpeg',
         width: 800,
         height: 600,
         alt: 'MEP and Specialized Works',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'MEP & Specialized Works Contractors Abu Dhabi | ArrowHead',
     description: 'Professional Mechanical, Electrical, Plumbing, and Firefighting engineering in Abu Dhabi. We install high-efficiency HVAC ducting, switchboards, booster pumps, and Civil Defense firefighting systems.',
-    images: ['https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80'],
+    images: ['/images/Matrix_project3.jpeg'],
   },
 };
 
@@ -62,10 +62,10 @@ export default function MepSpecializedPage() {
   ];
 
   const standards = [
-    { title: 'Electrical Codes', value: 'ADDC Regulations for Electrical Installations' },
+    { title: 'Electrical Codes', value: 'DoE & Municipal Regulations for Electrical Installations' },
     { title: 'AC Standards', value: 'ASHRAE Compliant Ducting & Ventilation Scopes' },
-    { title: 'Fire Safety Compliance', value: 'Abu Dhabi Civil Defense (ADCD) Approved Details' },
-    { title: 'Plumbing Codes', value: 'IPC / ADDC Water Supply Guidelines' },
+    { title: 'Fire Safety Compliance', value: 'Abu Dhabi Civil Defense Approved Details' },
+    { title: 'Plumbing Codes', value: 'IPC / Municipal Water Supply Guidelines' },
     { title: 'Energy Auditing', value: 'Estidama Rating Support, Power Factor Correction' },
   ];
 
@@ -106,7 +106,7 @@ export default function MepSpecializedPage() {
       'name': 'ArrowHead General Contracting LLC',
       'telephone': '+971-2-XXXXXXX',
       'priceRange': '$$$$',
-      'image': 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
+      'image': '/images/Matrix_project3.jpeg',
       'address': {
         '@type': 'PostalAddress',
         'addressLocality': 'Abu Dhabi',
@@ -120,7 +120,7 @@ export default function MepSpecializedPage() {
       { '@type': 'AdministrativeArea', 'name': 'Mussafah' },
       { '@type': 'AdministrativeArea', 'name': 'Khalifa City' }
     ],
-    'description': 'Professional Mechanical, Electrical, Plumbing, and Firefighting engineering services in Abu Dhabi. We install energy-efficient HVAC, switchboards, water pumps, and ADCD approved sprinkler lines.'
+    'description': 'Professional Mechanical, Electrical, Plumbing, and Firefighting engineering services in Abu Dhabi. We install energy-efficient HVAC, switchboards, water pumps, and Civil Defense approved sprinkler lines.'
   };
 
   const locationLinks = [
@@ -153,7 +153,7 @@ export default function MepSpecializedPage() {
             MEP &amp; Specialized Works <br />Contractors Abu Dhabi
           </h1>
           <p className="mt-6 text-sm sm:text-base text-app-muted max-w-3xl font-light leading-relaxed">
-            Professional Mechanical, Electrical, Plumbing, and Firefighting engineering. We install high-efficiency HVAC ducting, switchboards, booster pumps, sprinkler systems, and chilled water lines complying with ADDC and Civil Defense codes.
+            Professional Mechanical, Electrical, Plumbing, and Firefighting engineering. We install high-efficiency HVAC ducting, switchboards, booster pumps, sprinkler systems, and chilled water lines complying with municipal utility and Civil Defense codes.
           </p>
           <div className="mt-8">
             <Link
@@ -167,22 +167,22 @@ export default function MepSpecializedPage() {
       </section>
 
       <section className="py-24 border-b border-app-border relative bg-app-bg">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-             <div className="space-y-6 mb-24">
-                  <div className="flex items-center gap-4 border-b border-app-border pb-4">
-                    <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE H</span>
-                    <h3 className="text-lg font-heading font-extrabold tracking-tight">Progressive Build Timeline Phase Switcher</h3>
-                  </div>
-                  <BuildTimelineShowcase />
-                </div>
-                </div>
-                </section>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-6 mb-24">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE H</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Progressive Build Timeline Phase Switcher</h3>
+            </div>
+            <BuildTimelineShowcase />
+          </div>
+        </div>
+      </section>
 
       {/* 2. SPECIFICATION OVERVIEW */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
               <span className="text-brand-teal text-xs font-bold uppercase tracking-widest font-mono">MEP Engineering</span>
@@ -194,15 +194,15 @@ export default function MepSpecializedPage() {
                   Mechanical, Electrical, and Plumbing (MEP) systems are the core operational systems of any modern building, determining its energy efficiency, indoor air quality, fire safety, and tenant comfort. Designing and installing these specialized systems requires rigorous engineering calculations, detailed coordinate drawings, and strict adherence to utility company guidelines. ArrowHead delivers specialized MEP engineering and installation services for commercial fit-outs, industrial plants, and luxury residential estates.
                 </p>
                 <p>
-                  Our electrical engineering division manages power distribution systems from main Distribution Boards (DB) down to individual circuits. We perform electrical load calculations, design balanced single-line diagrams, dress DB panels to ADDC standards, install cable trays, and pull armored sub-main cables. We execute grounding, insulation resistance testing, and earth leakage tests to guarantee electrical safety and pass ADDC utility inspections.
+                  Our electrical engineering division manages power distribution systems from main Distribution Boards (DB) down to individual circuits. We perform electrical load calculations, design balanced single-line diagrams, dress DB panels to DoE &amp; municipal standards, install cable trays, and pull armored sub-main cables. We execute grounding, insulation resistance testing, and earth leakage tests to guarantee electrical safety and pass utility inspections.
                 </p>
                 <p>
-                  Our mechanical and HVAC division designs and fabricates double-skin galvanized iron (GI) ductwork, balances air distribution networks, and installs chilled water piping loops. We size and install variable refrigerant flow (VRF) units, fan coil units (FCU), and air handling units (AHU). Our plumbing team installs high-pressure booster pump sets, gravity drainage pipelines, and coordinates with our fire division to layout Civil Defense (ADCD) approved wet sprinkler lines, smoke detection networks, and clean gas FM200 suppression systems.
+                  Our mechanical and HVAC division designs and fabricates double-skin galvanized iron (GI) ductwork, balances air distribution networks, and installs chilled water piping loops. We size and install variable refrigerant flow (VRF) units, fan coil units (FCU), and air handling units (AHU). Our plumbing team installs high-pressure booster pump sets, gravity drainage pipelines, and coordinates with our fire division to layout Civil Defense approved wet sprinkler lines, smoke detection networks, and clean gas FM200 suppression systems.
                 </p>
-  </div>
+              </div>
             </div>
 
-                 {/* Right Details Table */}
+            {/* Right Details Table */}
             {/* <div className="lg:col-span-5 bg-app-card border border-app-border offset-border-frame shadow-sm border border-app-border rounded-xl p-8 shadow-2xl">
               <h3 className="text-base font-bold text-white border-b border-app-border pb-4 uppercase tracking-wider font-heading">
                 MEP Code Standards
@@ -224,10 +224,10 @@ export default function MepSpecializedPage() {
           </div>
         </div>
       </section>
-      
-  <section className="py-24 border-b border-app-border relative bg-app-bg">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="space-y-6">
+
+      <section className="py-24 border-b border-app-border relative bg-app-bg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-6">
             <div className="flex items-center gap-4 border-b border-app-border pb-4">
               <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE U</span>
               <h3 className="text-lg font-heading font-extrabold tracking-tight">Alternating Asymmetric Grid (Brochure Layout)</h3>
@@ -238,28 +238,28 @@ export default function MepSpecializedPage() {
       </section>
 
       <section className="py-24 border-b border-app-border relative bg-app-bg">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="space-y-6 mb-24">
-                  <div className="flex items-center gap-4 border-b border-app-border pb-4">
-                    <span className="text-xs font-mono font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded">STYLE J</span>
-                    <h3 className="text-lg font-heading font-extrabold tracking-tight">Cinematic Spec Card Grid</h3>
-                  </div>
-                  <CinematicSpecGrid />
-                </div>
-                </div>
-                </section>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-6 mb-24">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded">STYLE J</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Cinematic Spec Card Grid</h3>
+            </div>
+            <CinematicSpecGrid />
+          </div>
+        </div>
+      </section>
 
       <section className="py-24 border-b border-app-border relative bg-app-bg">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="space-y-6">
-                  <div className="flex items-center gap-4 border-b border-app-border pb-4">
-                    <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE E</span>
-                    <h3 className="text-lg font-heading font-extrabold tracking-tight">Cinematic Widescreen Progress Bar Slideshow</h3>
-                  </div>
-                  <CinematicSlider />
-                </div>
-                </div>
-                </section>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-6">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE E</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Cinematic Widescreen Progress Bar Slideshow</h3>
+            </div>
+            <CinematicSlider />
+          </div>
+        </div>
+      </section>
 
       {/* 3. SUB-SERVICES GRID */}
       <section className="py-20 bg-app-secondary border-y border-app-border">
@@ -275,7 +275,7 @@ export default function MepSpecializedPage() {
             {subServices.map((sub, idx) => (
               <div key={idx} className="bg-app-card border border-app-border offset-border-frame shadow-sm p-8 rounded-xl border border-app-border shadow-2xl space-y-3">
                 <span className="text-brand-teal font-mono font-bold text-xs block">0{idx + 1}. Specialty</span>
-                <h3 className="text-base sm:text-lg font-bold text-white">{sub.title}</h3>
+                <h3 className="text-base sm:text-lg font-bold text-app-fg">{sub.title}</h3>
                 <p className="text-app-muted text-xs sm:text-sm leading-relaxed font-light">{sub.desc}</p>
               </div>
             ))}
@@ -284,16 +284,16 @@ export default function MepSpecializedPage() {
       </section>
 
       {/* 4. COMPLIANCE BANNER */}
-      <section className="bg-app-secondary text-white py-16 relative overflow-hidden">
+      <section className="bg-app-secondary text-app-fg py-16 relative overflow-hidden">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
-          <h2 className="text-2xl sm:text-3xl font-heading font-extrabold text-white">
-            ADDC &amp; Civil Defense Approved Details
+          <h2 className="text-2xl sm:text-3xl font-heading font-extrabold text-app-fg">
+            DoE &amp; Civil Defense Approved Details
           </h2>
           <p className="text-xs sm:text-sm text-app-muted max-w-3xl mx-auto leading-relaxed font-light">
-            We source our switchboards, sprinklers, dampers, and piping materials from approved local lists. All cable layouts, cable gland jointings, sprinkler system hydraulic models, and pump room dimensions strictly comply with the electrical, plumbing, and firefighting codes of the Abu Dhabi Distribution Company and Civil Defense.
+            We source our switchboards, sprinklers, dampers, and piping materials from approved local lists. All cable layouts, cable gland jointings, sprinkler system hydraulic models, and pump room dimensions strictly comply with the electrical, plumbing, and firefighting codes of Abu Dhabi utility authorities and Civil Defense.
           </p>
           <div className="flex justify-center space-x-6 text-[10px] sm:text-xs text-brand-teal font-bold uppercase tracking-wider">
-            <span>✓ ADDC Load Clearances</span>
+            <span>✓ Utility Load Clearances</span>
             <span>✓ Civil Defense Approvals</span>
             <span>✓ Calibrated DB Scanners</span>
             <span>✓ ASHRAE Air Balancing</span>
@@ -314,7 +314,7 @@ export default function MepSpecializedPage() {
           <div className="space-y-4">
             {faqs.map((faq, idx) => (
               <details key={idx} className="group bg-app-secondary border border-app-border rounded-lg overflow-hidden">
-                <summary className="w-full text-left px-6 py-5 flex items-center justify-between font-bold text-white hover:text-brand-teal focus:outline-none transition-colors cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                <summary className="w-full text-left px-6 py-5 flex items-center justify-between font-bold text-app-fg hover:text-brand-teal focus:outline-none transition-colors cursor-pointer list-none [&::-webkit-details-marker]:hidden">
                   <span className="text-sm sm:text-base">{faq.q}</span>
                   <svg
                     className="w-4 h-4 text-app-muted/60 transition-transform duration-300 shrink-0 group-open:rotate-180 group-open:text-brand-teal"
@@ -341,7 +341,7 @@ export default function MepSpecializedPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-sm font-bold uppercase tracking-widest text-white mb-4">
+              <h3 className="text-sm font-bold uppercase tracking-widest text-app-fg mb-4">
                 Active Regional MEP Operations
               </h3>
               <p className="text-xs text-app-muted mb-6 font-light">
@@ -356,7 +356,7 @@ export default function MepSpecializedPage() {
               </div>
             </div>
             <div>
-              <h3 className="text-sm font-bold uppercase tracking-widest text-white mb-4">
+              <h3 className="text-sm font-bold uppercase tracking-widest text-app-fg mb-4">
                 Technical Knowledge Base
               </h3>
               <p className="text-xs text-app-muted mb-6 font-light">
@@ -364,11 +364,11 @@ export default function MepSpecializedPage() {
               </p>
               <div className="flex flex-col space-y-4">
                 <Link href="/insights/understanding-estidama-pearl-ratings" className="p-4 bg-app-card rounded border border-app-border hover:border-brand-teal transition-colors">
-                  <span className="text-xs font-bold text-white block">Estidama Pearl Ratings Guide</span>
+                  <span className="text-xs font-bold text-app-fg block">Estidama Pearl Ratings Guide</span>
                   <span className="text-[10px] text-app-muted font-light mt-1 block">Learn about sustainable building insulation, HVAC efficiency, and Pearl ratings.</span>
                 </Link>
                 <Link href="/insights/guide-to-tamm-villa-approvals" className="p-4 bg-app-card rounded border border-app-border hover:border-brand-teal transition-colors">
-                  <span className="text-xs font-bold text-white block">Abu Dhabi TAMM Building Permit Guide</span>
+                  <span className="text-xs font-bold text-app-fg block">Abu Dhabi TAMM Building Permit Guide</span>
                   <span className="text-[10px] text-app-muted font-light mt-1 block">Learn about mechanical layout compliance and municipal approvals.</span>
                 </Link>
               </div>
@@ -379,7 +379,7 @@ export default function MepSpecializedPage() {
 
       {/* 7. CALL TO ACTION */}
       <section className="py-16 bg-app-secondary border-t border-app-border text-center">
-        <h2 className="text-xl sm:text-2xl font-heading font-extrabold text-white">
+        <h2 className="text-xl sm:text-2xl font-heading font-extrabold text-app-fg">
           Discuss Your MEP Project Requirements
         </h2>
         <p className="mt-3 text-app-muted text-xs sm:text-sm max-w-xl mx-auto font-light">

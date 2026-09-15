@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description: 'Technical contracting resources for Abu Dhabi developers. Read guides on securing TAMM building permits, HDPE DVS 2207 welding, and Estidama Pearl ratings.',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=800&q=80',
+        url: '/images/ArrowheadVilla.png',
         width: 800,
         height: 600,
         alt: 'Engineering Insights and Building Guides',
@@ -33,15 +33,15 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Engineering Insights & Abu Dhabi Municipal Building Guides | ArrowHead',
     description: 'Technical contracting resources for Abu Dhabi developers. Read guides on securing TAMM building permits, HDPE DVS 2207 welding, and Estidama Pearl ratings.',
-    images: ['https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=800&q=80'],
+    images: ['/images/ArrowheadVilla.png'],
   },
 };
 
 export default function InsightsPage() {
   const globalFaqs = [
     {
-      q: 'What is DED License CN-4998977?',
-      a: 'This is the official commercial license number issued to ArrowHead International General Contracting LLC by the Abu Dhabi Department of Economic Development, authorizing us to execute general civil contracting, pipeline networks, and building maintenance works.',
+      q: 'Is ArrowHead a registered general contractor in Abu Dhabi?',
+      a: 'Yes. ArrowHead International General Contracting LLC is licensed by the Abu Dhabi Department of Economic Development, authorizing us to execute general civil contracting, pipeline networks, and building maintenance works.',
     },
     {
       q: 'Do you charge for initial site surveys or villa design estimates?',
@@ -115,9 +115,9 @@ export default function InsightsPage() {
               >
                 <div>
                   <div className="h-48 bg-gray-900 relative overflow-hidden">
-                    <img 
-                      src={article.image} 
-                      alt={article.title} 
+                    <img
+                      src={article.image}
+                      alt={article.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-103"
                     />
                     <span className="absolute top-4 left-4 bg-app-card/90 border border-app-border px-2.5 py-1 rounded text-[8px] font-mono font-bold uppercase tracking-widest text-brand-teal">
@@ -130,7 +130,7 @@ export default function InsightsPage() {
                       <span>•</span>
                       <span>{article.readTime}</span>
                     </div>
-                    <h3 className="text-base font-bold text-white leading-tight uppercase group-hover:text-brand-teal transition-colors duration-200">
+                    <h3 className="text-base font-bold text-app-fg leading-tight uppercase group-hover:text-brand-teal transition-colors duration-200">
                       {article.title}
                     </h3>
                     <p className="text-app-muted text-xs font-light mt-3 leading-relaxed">
@@ -141,8 +141,8 @@ export default function InsightsPage() {
 
                 <div className="p-6 pt-0 border-t border-app-border/40 mt-4 pt-4 flex justify-between items-center text-[10px] font-bold uppercase tracking-widest">
                   <span className="text-slate-500 font-mono">GUIDE #{article.slug.slice(-2).toUpperCase()}</span>
-                  <Link 
-                    href={`/insights/${article.slug}`} 
+                  <Link
+                    href={`/insights/${article.slug}`}
                     className="text-brand-teal hover:text-brand-teal-hover transition-colors cursor-pointer"
                   >
                     Read Technical Guide →
@@ -166,11 +166,11 @@ export default function InsightsPage() {
 
           <div className="space-y-4">
             {globalFaqs.map((faq, idx) => (
-              <details 
-                key={idx} 
+              <details
+                key={idx}
                 className="group bg-app-secondary border border-app-border rounded-lg overflow-hidden focus:outline-none"
               >
-                <summary className="w-full text-left px-6 py-5 flex items-center justify-between font-bold text-white hover:text-brand-teal cursor-pointer select-none">
+                <summary className="w-full text-left px-6 py-5 flex items-center justify-between font-bold text-app-fg hover:text-brand-teal cursor-pointer select-none">
                   <span className="text-sm sm:text-base pr-4">{faq.q}</span>
                   {/* Native SVG rotating Chevron using group-open state */}
                   <svg
@@ -193,7 +193,7 @@ export default function InsightsPage() {
 
       {/* 4. CALL TO ACTION */}
       <section className="py-16 bg-app-bg text-center border-t border-app-border">
-        <h2 className="text-xl sm:text-2xl font-heading font-extrabold text-white">
+        <h2 className="text-xl sm:text-2xl font-heading font-extrabold text-app-fg">
           Do You Need Specialized Technical Advice?
         </h2>
         <p className="mt-3 text-app-muted text-xs sm:text-sm max-w-xl mx-auto font-light">

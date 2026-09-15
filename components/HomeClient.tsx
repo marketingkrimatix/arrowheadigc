@@ -5,35 +5,15 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 
 const LiveIsometric3DShowcase = dynamic(() => import('@/components/LiveIsometric3DShowcase'), { ssr: false });
-
-
-const EditorialMasonry = dynamic(() => import('@/components/showcases/EditorialMasonry'), { ssr: false });
-const HorizontalFilmstrip = dynamic(() => import('@/components/showcases/HorizontalFilmstrip'), { ssr: false });
-const SplitActiveShowcase = dynamic(() => import('@/components/showcases/SplitActiveShowcase'), { ssr: false });
-const IsometricPerspectiveGrid = dynamic(() => import('@/components/showcases/IsometricPerspectiveGrid'), { ssr: false });
-const CinematicSlider = dynamic(() => import('@/components/showcases/CinematicSlider'), { ssr: false });
-
 const CinematicHeroCarousel = dynamic(() => import('@/components/CinematicHeroCarousel'), { ssr: false });
-const CadRevealSlider = dynamic(() => import('@/components/showcases/CadRevealSlider'), { ssr: false });
-const StackedDeckShowcase = dynamic(() => import('@/components/showcases/StackedDeckShowcase'), { ssr: false });
-const BuildTimelineShowcase = dynamic(() => import('@/components/showcases/BuildTimelineShowcase'), { ssr: false });
-const FactsheetGrid = dynamic(() => import('@/components/showcases/FactsheetGrid'), { ssr: false });
-const CinematicSpecGrid = dynamic(() => import('@/components/showcases/CinematicSpecGrid'), { ssr: false });
-const Rotating3DCarousel = dynamic(() => import('@/components/showcases/Rotating3DCarousel'), { ssr: false });
-const CollageBoxShowcase = dynamic(() => import('@/components/showcases/CollageBoxShowcase'), { ssr: false });
-const ArchitecturalPortfolio = dynamic(() => import('@/components/showcases/ArchitecturalPortfolio'), { ssr: false });
-const SpotlightRevealGrid = dynamic(() => import('@/components/showcases/SpotlightRevealGrid'), { ssr: false });
-const PanoramicCarousel = dynamic(() => import('@/components/showcases/PanoramicCarousel'), { ssr: false });
-const GeographicMapExplorer = dynamic(() => import('@/components/showcases/GeographicMapExplorer'), { ssr: false });
-const ExplodedViewInspector = dynamic(() => import('@/components/showcases/ExplodedViewInspector'), { ssr: false });
-const ProjectControlCenter = dynamic(() => import('@/components/showcases/ProjectControlCenter'), { ssr: false });
-const MinimalCardGrid = dynamic(() => import('@/components/showcases/MinimalCardGrid'), { ssr: false });
-const WidescreenEditorialSlider = dynamic(() => import('@/components/showcases/WidescreenEditorialSlider'), { ssr: false });
+const EditorialMasonry = dynamic(() => import('@/components/showcases/EditorialMasonry'), { ssr: false });
+const CinematicSlider = dynamic(() => import('@/components/showcases/CinematicSlider'), { ssr: false });
 const AlternatingAsymmetricGrid = dynamic(() => import('@/components/showcases/AlternatingAsymmetricGrid'), { ssr: false });
 
 import HomepageRfqCalculator from '@/components/HomepageRfqCalculator';
 import MunicipalRoadmapTracker from '@/components/MunicipalRoadmapTracker';
 import MapExplorerWidget from '@/components/MapExplorerWidget';
+import ClientLogoGrid from '@/components/ClientLogoGrid';
 
 interface ServiceDetail {
   title: string;
@@ -85,25 +65,6 @@ export default function HomeClient() {
   ];
 
   const serviceCapabilities: Record<string, ServiceDetail> = {
-    pipelines: {
-      title: 'HDPE Pipelines (Supply & Installation)',
-      tagline: 'Precision welding and trenchless installation for pressure networks.',
-      desc: 'We deliver complete HDPE pipeline scopes from DN 110mm to DN 1200mm. Operating state-of-the-art hydraulic butt-fusion and electrofusion welding units, our certified crews execute water mains, fire protection lines, and gravity sewers under severe site constraints.',
-      checklist: [
-        'Butt-fusion welding certified to DVS 2207 specifications',
-        'Electrofusion sleeve jointing & computerized log outputs',
-        'Trenchless Horizontal Directional Drilling (HDD) alignment',
-        'Hydrostatic testing (up to PN25) & chemical disinfection',
-      ],
-      specs: [
-        { label: 'Material Grade', value: 'PE100 / PE100-RC' },
-        { label: 'Compliance Code', value: 'ADSSC & ADDC Standard Drawings' },
-        { label: 'Weld Recording', value: 'Parameters Logged per Joint' },
-      ],
-      authority: 'ADSSC & ADDC Approved Materials',
-      href: '/services/hdpe-pipelines',
-      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80',
-    },
     villas: {
       title: 'Luxury Villa Construction',
       tagline: 'Turnkey residential design-build contracting in Abu Dhabi.',
@@ -119,9 +80,9 @@ export default function HomeClient() {
         { label: 'Green Codes', value: 'Estidama 1 to 3 Pearl Ratings' },
         { label: 'Finishing Scopes', value: 'In-house Joinery & Masonry' },
       ],
-      authority: 'ADM Building Regulations Aligned',
+      authority: 'Abu Dhabi Municipality Regulations Aligned',
       href: '/services/villa-construction',
-      image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=600&q=80',
+      image: '/images/ArrowheadVilla.png',
     },
     renovations: {
       title: 'Villa Renovation & Extensions',
@@ -138,9 +99,9 @@ export default function HomeClient() {
         { label: 'Structure', value: 'Structural steel I-beams integration' },
         { label: 'Clearance', value: 'Legal Occupancy Certificate updates' },
       ],
-      authority: 'Complete TAMM Permit Handling',
+      authority: 'Complete Handling',
       href: '/services/villa-renovation',
-      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80',
+      image: '/images/villa_modern.png',
     },
     fm: {
       title: 'Facility Management (Hard & Soft)',
@@ -159,7 +120,7 @@ export default function HomeClient() {
       ],
       authority: 'Licensed by Abu Dhabi Municipality',
       href: '/services/facility-management',
-      image: 'https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=600&q=80',
+      image: '/images/facility.png',
     },
     mep: {
       title: 'MEP & Specialized Works',
@@ -172,63 +133,124 @@ export default function HomeClient() {
         'Chilled water pipelines & pump room installations',
       ],
       specs: [
-        { label: 'Electrical Codes', value: 'ADDC Electrical Installations' },
-        { label: 'Safety Code', value: 'Civil Defense (ADCD) Approvals' },
-        { label: 'Plumbing standard', value: 'IPC / ADDC Water Specifications' },
+        { label: 'Electrical Codes', value: 'DoE & Municipal Electrical Codes' },
+        { label: 'Safety Code', value: 'Civil Defense Approvals' },
+        { label: 'Plumbing standard', value: 'IPC / Municipal Water Specifications' },
       ],
       authority: 'Abu Dhabi Civil Defense Certified',
       href: '/services/mep-specialized',
-      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80',
+      image: '/images/mep-work.png',
     },
-    marine: {
-      title: 'Marine & Industrial Works',
-      tagline: 'Heavy engineering inside Port and Industrial city zones.',
-      desc: 'Delivering durable construction to survive corrosive saline climates. We sandblast and repair marine slipways, reinforce sea walls, fabricate steel warehouse frames, and layout piping loops in Mussafah, ICAD, and Ports.',
+    civils: {
+      title: 'Infrastructure & Civil Works',
+      tagline: 'Heavy earthworks, foundation casting, and site infrastructure.',
+      desc: 'Executing comprehensive civil contracting across Abu Dhabi. Bulk earthworks, site grading, compaction testing, boundary walls construction, interlocking paving, and heavy concrete foundations.',
       checklist: [
-        'Waterfront concrete slipway restoration under tidal rules',
-        'Anti-corrosive marine epoxy painting & cathodic anodes',
-        'Industrial steel warehouse fabrication & roof cladding',
-        'Environment Agency Abu Dhabi (EAD) permit processing',
+        'Site clearing, grading & heavy compaction density tests',
+        'Heavy reinforced concrete equipment foundations',
+        'Interlocking paving & municipal kerbstone installations',
+        'Structural boundary walls & retaining infrastructure',
       ],
       specs: [
-        { label: 'Materials', value: 'Microsilica C50/60 Concrete' },
-        { label: 'Steel Code', value: 'BS EN 1090-2 Fabrications' },
-        { label: 'Zones Served', value: 'Mussafah Port, ICAD, Industrial' },
+        { label: 'Materials', value: 'Grade 40/50 Structural Concrete' },
+        { label: 'Compaction', value: '95-98% Modified Proctor Density' },
+        { label: 'Codes', value: 'Abu Dhabi Municipal Standard Details' },
       ],
-      authority: 'EAD & Port Authority Coordinated',
-      href: '/services/marine-industrial',
-      image: 'https://images.unsplash.com/photo-1505705694340-019e1e335916?auto=format&fit=crop&w=600&q=80',
+      authority: 'Municipal & Civil Approvals Aligned',
+      href: '/services/infrastructure-civil-works',
+      image: '/images/civil-infrastructure.webp',
     },
+    interiors: {
+      title: 'Commercial Office Interiors & Fit-Out',
+      tagline: 'Turnkey commercial workspace & retail boutique interior fit-out.',
+      desc: 'Complete turnkey architectural fit-outs for corporate offices, retail stores (Jack Wills), and commercial premises. We deliver acoustic drywall partitions, glass systems, custom joinery, and Civil Defense approvals.',
+      checklist: [
+        'Turnkey Cat A & Cat B commercial office fit-outs',
+        'Bespoke architectural joinery, reception desks & cabinetry',
+        'Acoustic soundproof partitions (STC 45 - 55) & glass walls',
+        'Abu Dhabi Civil Defense safety NOC certifications',
+      ],
+      specs: [
+        { label: 'Project Models', value: 'Turnkey Design-Build Fit-Out' },
+        { label: 'Approvals', value: 'TAMM & Building Management' },
+        { label: 'Acoustics', value: 'High STC-Rated Partitions' },
+      ],
+      authority: 'Civil Certified',
+      href: '/services/office-interiors',
+      image: '/images/jack-wills.jpeg',
+    },
+    warehouses: {
+      title: 'Industrial Warehouses Construction & AMC',
+      tagline: 'Turnkey pre-engineered steel buildings and warehouse maintenance.',
+      desc: 'Engineered for logistics and manufacturing in Mussafah, ICAD, and KIZAD. Structural steel portal frame erection, TR34 high-flatness concrete slabs, crane gantries, and comprehensive warehouse maintenance AMCs.',
+      checklist: [
+        'Pre-engineered structural steel portal framing & PEB design',
+        'TR34 high-flatness concrete floor slabs & laser screeding',
+        'Overhead crane gantry runway beams (5 to 50 tons)',
+        'Warehouse preventative civil AMC & roof leakproofing',
+      ],
+      specs: [
+        { label: 'Structural Code', value: 'BS EN 1090-2 Steel Execution' },
+        { label: 'Flooring', value: 'TR34 High-Flatness Tolerances' },
+        { label: 'Authorities', value: 'ZonesCorp & Municipal Aligned' },
+      ],
+      authority: 'Municipal Compliant',
+      href: '/services/industrial-warehouses',
+      image: '/images/civil-infrastructure.webp',
+    },
+    pipelines: {
+      title: 'HDPE Pipelines (Supply & Installation)',
+      tagline: 'Precision welding and trenchless installation for pressure networks.',
+      desc: 'We deliver complete HDPE pipeline scopes from DN 110mm to DN 1200mm. Operating state-of-the-art hydraulic butt-fusion and electrofusion welding units, our certified crews execute water mains, fire protection lines, and gravity sewers under severe site constraints.',
+      checklist: [
+        'Butt-fusion welding certified to DVS 2207 specifications',
+        'Electrofusion sleeve jointing & computerized log outputs',
+        'Trenchless Horizontal Directional Drilling (HDD) alignment',
+        'Hydrostatic testing (up to PN25) & chemical disinfection',
+      ],
+
+      specs: [
+        { label: 'Material Grade', value: 'PE100 / PE100-RC' },
+        { label: 'Compliance Code', value: 'Municipal & International Utility Standards' },
+        { label: 'Weld Recording', value: 'Parameters Logged per Joint' },
+      ],
+      authority: 'Municipal & International Approved Materials',
+      href: '/services/hdpe-pipelines',
+      image: '/images/hdpe.jpg',
+    }
   };
 
   const featuredProjects = [
     {
-      title: 'Yas Island HDPE Trunk Sewerage Connection',
-      category: 'HDPE Pipelines',
-      desc: 'Supply and installation of 4.8km of PE100 HDPE trunk sewerage lines (1200mm diameter), including hydrostatic testing and ADSSC certifications.',
-      stats: '4.8km Length | DN 1200mm | ADSSC Approved',
-      image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80',
+      title: 'Sanjay Jain Luxury Custom Villa',
+      category: 'Turnkey Luxury Villa',
+      desc: 'Turnkey architectural design-build contracting of an expansive private luxury residence for Sanjay Jain. Features reinforced C50/60 concrete foundation raft, 2-Pearl Estidama thermal envelope, Italian marble floorings, and double-height curtain glass.',
+      stats: '14,500 sq ft | Design-Build | 2-Pearl Estidama',
+      image: '/images/ArrowheadVilla.png',
+      link: '/projects/sanjay-jain-villa',
     },
     {
-      title: 'Al Raha Gardens Premium Turnkey Villa',
-      category: 'Villa Construction',
-      desc: 'Complete design-build of a contemporary luxury 6-bedroom villa. Featuring double-height glazing, custom joinery, smart lighting, and an Estidama 2-Pearl rating.',
-      stats: '12,500 sq ft | Design-Build | 2-Pearl Estidama',
-      image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=600&q=80',
+      title: 'Katheri Family Luxury Compound & Villas',
+      category: 'Multi-Villa Construction',
+      desc: 'Master residential development project for the Katheri Family. Features concurrent excavation, reinforced concrete foundations, double-height panoramic glass elevations, private majlis pavilions, and smart home automation.',
+      stats: 'Luxury Compound | Turnkey Master Build | High-End Finishes',
+      image: '/images/Matrix_project.jpeg',
+      link: '/projects/katheri-family-villas',
     },
     {
-      title: 'Mussafah Industrial Factory Hard FM',
-      category: 'Facility Management',
-      desc: 'Annual maintenance contract (AMC) for integrated hard services. Maintaining HVAC chiller plants, electrical switchgear distributions, pumps, and fire protection systems.',
-      stats: '15,000 sqm Managed | 24/7 Support | Hard FM',
-      image: 'https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=600&q=80',
+      title: 'Al Nahyan Prestige Villa',
+      category: 'Prestige Residential Build',
+      desc: 'Exclusive private residence development featuring expansive reception majlis, modern architectural elevations, integrated boundary security walls, and luxury outdoor landscape amenities.',
+      stats: '15,500 sq ft | Prestige Residence | Turnkey MEP & Landscape',
+      image: '/images/landscape1.jpeg',
+      link: '/projects/al-nahyan-villa',
     },
   ];
 
   const homeFaqs = [
     {
       q: 'Is ArrowHead registered with Abu Dhabi utility authorities?',
-      a: 'Yes. ArrowHead is registered under Abu Dhabi Department of Economic Development (DED License: CN-4998977) and is fully aligned with the design, testing, and materials specifications of the Abu Dhabi Sewerage Services Company (ADSSC) and the Abu Dhabi Distribution Company (ADDC).',
+      a: 'Yes. ArrowHead is registered under Abu Dhabi Department of Economic Development and is fully aligned with the design, testing, and materials specifications of Abu Dhabi municipal and utility authorities.',
     },
     {
       q: 'What regions of the UAE does ArrowHead operate in?',
@@ -271,7 +293,7 @@ export default function HomeClient() {
             <div className="lg:col-span-7 space-y-8">
               <div className="space-y-4">
                 <span className="inline-flex items-center px-3.5 py-1 text-[10px] font-bold uppercase tracking-widest text-brand-gold bg-brand-gold/10 border border-brand-gold/20 rounded">
-                  DED License: CN-4998977 • Abu Dhabi
+                  Licensed Contractor • Abu Dhabi
                 </span>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight leading-[1.15]">
                   Engineering Value &<br />
@@ -281,7 +303,7 @@ export default function HomeClient() {
               </div>
 
               <p className="text-app-muted text-sm sm:text-base leading-relaxed font-sans font-light max-w-xl">
-                ArrowHead International General Contracting LLC delivers technical pipeline infrastructure, custom luxury villas, complex MEP configurations, and integrated facilities management built to ADSSC &amp; ADDC standards.
+                ArrowHead International General Contracting LLC delivers technical pipeline infrastructure, custom luxury villas, complex MEP configurations, and integrated facilities management built to municipal and international utility standards.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-2">
@@ -295,28 +317,8 @@ export default function HomeClient() {
                   href="/projects"
                   className="inline-flex items-center justify-center px-8 py-4 rounded bg-app-card border border-app-border text-app-fg font-bold text-xs uppercase tracking-wider hover:border-brand-teal/50 hover:bg-app-secondary transition-all duration-300 cursor-pointer"
                 >
-                  Explore Case Studies
+                  Explore Projects
                 </Link>
-              </div>
-
-              {/* Structural engineering bullet highlights */}
-              <div className="pt-6 grid grid-cols-2 gap-4 border-t border-app-border max-w-lg">
-                <div className="flex items-center space-x-2.5">
-                  <span className="text-brand-teal text-base font-bold">✓</span>
-                  <span className="text-xs font-semibold text-app-fg/90">ADSSC / ADDC Compliant</span>
-                </div>
-                <div className="flex items-center space-x-2.5">
-                  <span className="text-brand-teal text-base font-bold">✓</span>
-                  <span className="text-xs font-semibold text-app-fg/90">Estidama Aligned Builds</span>
-                </div>
-                <div className="flex items-center space-x-2.5">
-                  <span className="text-brand-teal text-base font-bold">✓</span>
-                  <span className="text-xs font-semibold text-app-fg/90">In-house Welding Crews</span>
-                </div>
-                <div className="flex items-center space-x-2.5">
-                  <span className="text-brand-teal text-base font-bold">✓</span>
-                  <span className="text-xs font-semibold text-app-fg/90">Civil Defense Approved</span>
-                </div>
               </div>
             </div>
 
@@ -329,7 +331,7 @@ export default function HomeClient() {
               {/* Main Large Image */}
               {/* <div className="absolute inset-0 rounded-lg overflow-hidden border border-app-border shadow-2xl bg-app-secondary">
                   <img
-                    src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80"
+                    src="/images/Matrix_project.jpeg"
                     alt="AHIGC Civil Project"
                     className="w-full h-full object-cover"
                   />
@@ -339,7 +341,7 @@ export default function HomeClient() {
               {/* Overlapping Small Architectural Frame */}
               {/* <div className="absolute -bottom-8 -left-8 w-[180px] sm:w-[220px] aspect-square rounded-lg overflow-hidden border-4 border-app-card shadow-2xl offset-border-frame">
                   <img
-                    src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=400&q=80"
+                    src="/images/ArrowheadVilla.png"
                     alt="Luxury Residential Build"
                     className="w-full h-full object-cover"
                   />
@@ -358,187 +360,10 @@ export default function HomeClient() {
         </div>
       </section>
 
-      {/* 1A (Reversed). HERO SECTION - OPTION A: CSS 3D Isometric Parallax (Reversed Layout) */}
-      <section className="relative min-h-[100vh] flex items-center overflow-hidden pt-24 pb-20 sm:pb-28 border-b border-app-border bg-app-bg">
-        {/* Soft Depth Gradients (Reversed) */}
-        <div className="absolute top-1/4 left-0 w-[45%] h-[55%] bg-brand-teal/5 rounded-full blur-3xl pointer-events-none"></div>
-        <div className="absolute bottom-10 right-10 w-[30%] h-[30%] bg-brand-gold/5 rounded-full blur-3xl pointer-events-none"></div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
-
-            {/* Hero Left: 3D Interactive Isometric Showcase (Reversed Position) */}
-            <div className="lg:col-span-5 order-2 lg:order-1 relative mt-6 lg:mt-0 flex justify-center lg:justify-start">
-              <LiveIsometric3DShowcase facing="right" />
-            </div>
-
-            {/* Hero Right: Text & Action (Reversed Position) */}
-            <div className="lg:col-span-7 order-1 lg:order-2 space-y-8 lg:pl-8 lg:flex lg:flex-col lg:items-end text-right">
-              <div className="space-y-4 lg:flex lg:flex-col lg:items-end">
-                <span className="inline-flex items-center px-3.5 py-1 text-[10px] font-bold uppercase tracking-widest text-brand-gold bg-brand-gold/10 border border-brand-gold/20 rounded">
-                  DED License: CN-4998977 • Abu Dhabi
-                </span>
-                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight leading-[1.15]">
-                  Engineering Value &<br />
-                  <span className="text-brand-teal">Prestige Structures</span><br />
-                  <span className="font-light italic text-brand-gold">in Abu Dhabi</span>
-                </h2>
-              </div>
-
-              <p className="text-app-muted text-sm sm:text-base leading-relaxed font-sans font-light max-w-xl">
-                ArrowHead International General Contracting LLC delivers technical pipeline infrastructure, custom luxury villas, complex MEP configurations, and integrated facilities management built to ADSSC &amp; ADDC standards.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 pt-2">
-                <Link
-                  href="/contact?rfq=true"
-                  className="inline-flex items-center justify-center px-8 py-4 rounded bg-brand-teal hover:bg-brand-teal-hover text-primary-dark font-bold text-xs uppercase tracking-wider shadow-lg shadow-brand-teal/20 transition-all duration-300 cursor-pointer"
-                >
-                  Request a Proposal
-                </Link>
-                <Link
-                  href="/projects"
-                  className="inline-flex items-center justify-center px-8 py-4 rounded bg-app-card border border-app-border text-app-fg font-bold text-xs uppercase tracking-wider hover:border-brand-teal/50 hover:bg-app-secondary transition-all duration-300 cursor-pointer"
-                >
-                  Explore Case Studies
-                </Link>
-              </div>
-
-              {/* Structural engineering bullet highlights */}
-              <div className="pt-6 grid grid-cols-2 gap-4 border-t border-app-border max-w-lg w-full">
-                <div className="flex items-center space-x-2.5 lg:justify-end">
-                  <span className="text-brand-teal text-base font-bold">✓</span>
-                  <span className="text-xs font-semibold text-app-fg/90">ADSSC / ADDC Compliant</span>
-                </div>
-                <div className="flex items-center space-x-2.5 lg:justify-end">
-                  <span className="text-brand-teal text-base font-bold">✓</span>
-                  <span className="text-xs font-semibold text-app-fg/90">Estidama Aligned Builds</span>
-                </div>
-                <div className="flex items-center space-x-2.5 lg:justify-end">
-                  <span className="text-brand-teal text-base font-bold">✓</span>
-                  <span className="text-xs font-semibold text-app-fg/90">In-house Welding Crews</span>
-                </div>
-                <div className="flex items-center space-x-2.5 lg:justify-end">
-                  <span className="text-brand-teal text-base font-bold">✓</span>
-                  <span className="text-xs font-semibold text-app-fg/90">Civil Defense Approved</span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-{/* 1A. HERO SECTION - OPTION A: CSS 3D Isometric Parallax */}
-      <section className="relative min-h-[100vh] flex items-center overflow-hidden pt-24 pb-20 sm:pb-28 border-b border-app-border bg-app-bg">
-        {/* Version Badge */}
-        {/* <div className="absolute top-6 left-1/2 -translate-x-1/2 z-20 bg-brand-teal/10 border border-brand-teal/30 px-4 py-1.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-widest text-brand-teal flex items-center gap-1.5 shadow-sm">
-          <span className="w-1.5 h-1.5 rounded-full bg-brand-teal animate-ping"></span>
-          Hero Option A: CSS 3D Isometric Parallax Stack (Lightweight)
-        </div> */}
-
-        {/* Soft Depth Gradients */}
-        <div className="absolute top-1/4 right-0 w-[45%] h-[55%] bg-brand-teal/5 rounded-full blur-3xl pointer-events-none"></div>
-        <div className="absolute bottom-10 left-10 w-[30%] h-[30%] bg-brand-gold/5 rounded-full blur-3xl pointer-events-none"></div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
-
-            {/* Hero Left: Text & Action */}
-            <div className="lg:col-span-7 space-y-8">
-              <div className="space-y-4">
-                <span className="inline-flex items-center px-3.5 py-1 text-[10px] font-bold uppercase tracking-widest text-brand-gold bg-brand-gold/10 border border-brand-gold/20 rounded">
-                  DED License: CN-4998977 • Abu Dhabi
-                </span>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight leading-[1.15]">
-                  Engineering Value &<br />
-                  <span className="text-brand-teal">Prestige Structures</span><br />
-                  <span className="font-light italic text-brand-gold">in Abu Dhabi</span>
-                </h1>
-              </div>
-
-              <p className="text-app-muted text-sm sm:text-base leading-relaxed font-sans font-light max-w-xl">
-                ArrowHead International General Contracting LLC delivers technical pipeline infrastructure, custom luxury villas, complex MEP configurations, and integrated facilities management built to ADSSC &amp; ADDC standards.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 pt-2">
-                <Link
-                  href="/contact?rfq=true"
-                  className="inline-flex items-center justify-center px-8 py-4 rounded bg-brand-teal hover:bg-brand-teal-hover text-primary-dark font-bold text-xs uppercase tracking-wider shadow-lg shadow-brand-teal/20 transition-all duration-300 cursor-pointer"
-                >
-                  Request a Proposal
-                </Link>
-                <Link
-                  href="/projects"
-                  className="inline-flex items-center justify-center px-8 py-4 rounded bg-app-card border border-app-border text-app-fg font-bold text-xs uppercase tracking-wider hover:border-brand-teal/50 hover:bg-app-secondary transition-all duration-300 cursor-pointer"
-                >
-                  Explore Case Studies
-                </Link>
-              </div>
-
-              {/* Structural engineering bullet highlights */}
-              <div className="pt-6 grid grid-cols-2 gap-4 border-t border-app-border max-w-lg">
-                <div className="flex items-center space-x-2.5">
-                  <span className="text-brand-teal text-base font-bold">✓</span>
-                  <span className="text-xs font-semibold text-app-fg/90">ADSSC / ADDC Compliant</span>
-                </div>
-                <div className="flex items-center space-x-2.5">
-                  <span className="text-brand-teal text-base font-bold">✓</span>
-                  <span className="text-xs font-semibold text-app-fg/90">Estidama Aligned Builds</span>
-                </div>
-                <div className="flex items-center space-x-2.5">
-                  <span className="text-brand-teal text-base font-bold">✓</span>
-                  <span className="text-xs font-semibold text-app-fg/90">In-house Welding Crews</span>
-                </div>
-                <div className="flex items-center space-x-2.5">
-                  <span className="text-brand-teal text-base font-bold">✓</span>
-                  <span className="text-xs font-semibold text-app-fg/90">Civil Defense Approved</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Hero Right: 3D Interactive Isometric Showcase */}
-            <div className="lg:col-span-5 relative mt-6 lg:mt-0 flex justify-center lg:justify-end">
-              {/* <div className="relative w-full max-w-[420px] aspect-[4/5] sm:aspect-[3/4]"> */}
-              {/* Underlay Offset Border */}
-              {/* <div className="absolute inset-0 border-2 border-brand-gold/30 translate-x-6 translate-y-6 rounded-lg pointer-events-none"></div> */}
-
-              {/* Main Large Image */}
-              {/* <div className="absolute inset-0 rounded-lg overflow-hidden border border-app-border shadow-2xl bg-app-secondary">
-                  <img
-                    src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80"
-                    alt="AHIGC Civil Project"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                </div> */}
-
-              {/* Overlapping Small Architectural Frame */}
-              {/* <div className="absolute -bottom-8 -left-8 w-[180px] sm:w-[220px] aspect-square rounded-lg overflow-hidden border-4 border-app-card shadow-2xl offset-border-frame">
-                  <img
-                    src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=400&q=80"
-                    alt="Luxury Residential Build"
-                    className="w-full h-full object-cover"
-                  />
-                </div> */}
-
-              {/* Bottom Label Badge */}
-              {/* <div className="absolute bottom-4 right-4 bg-app-card/95 backdrop-blur-xs border border-app-border rounded p-3 text-[10px] uppercase font-mono tracking-wider shadow-md">
-                  <span className="text-brand-gold font-bold">Authorized Contractor</span>
-                  <span className="block text-app-fg font-light mt-0.5">Mussafah, Abu Dhabi</span>
-                </div>
-              </div> */}
-              <LiveIsometric3DShowcase />
-            </div>
-
-          </div>
-        </div>
-      </section>
-      
       {/* 1C-E. HERO SECTION - OPTION E: Three Business Verticals Overlay Hero */}
-      <section className="relative min-h-screen flex flex-col justify-between overflow-visible bg-primary-dark pb-16 border-b border-app-border">
+      <section className="relative min-h-screen flex flex-col justify-between overflow-visible bg-primary-dark pb-16 sm:pb-12 border-b border-app-border">
         {/* Background Image Container */}
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1920&q=80')` }}>
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0" style={{ backgroundImage: `url('/images/ArrowheadVilla.png')` }}>
           {/* Dark Architectural Brochure Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/35"></div>
         </div>
@@ -547,7 +372,7 @@ export default function HomeClient() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex-1 flex flex-col justify-center w-full pt-32 pb-24">
           <div className="max-w-3xl space-y-6 text-left">
             <span className="inline-flex items-center px-3.5 py-1 text-[10px] font-bold uppercase tracking-widest text-brand-teal bg-brand-teal/10 border border-brand-teal/20 rounded">
-              DED License: CN-4998977 • Abu Dhabi General Contracting
+              Licensed • Abu Dhabi General Contracting
             </span>
 
             <h2 className="text-4xl sm:text-5xl lg:text-7xl font-heading font-extrabold text-white tracking-tight leading-[1.1] uppercase">
@@ -611,12 +436,12 @@ export default function HomeClient() {
                     HDPE Pipe Systems
                   </h3>
                   <p className="text-xs text-app-muted font-light leading-relaxed mt-2">
-                    Expertise in water network supply, computerized butt-fusion welding, and high-pressure infrastructure pipeline connections certified to ADSSC standard drawings.
+                    Expertise in water network supply, computerized butt-fusion welding, and high-pressure infrastructure pipeline connections certified to municipal utility standard drawings.
                   </p>
                 </div>
               </div>
               <span className="block text-[9px] font-mono text-brand-teal uppercase tracking-widest font-bold border-t border-app-border/60 pt-4 mt-6">
-                ADSSC &amp; ADDC Materials Aligned
+                Municipal Utility Materials Aligned
               </span>
             </div>
 
@@ -670,10 +495,10 @@ export default function HomeClient() {
               Direct Utility &amp; Licensing Compliance
             </span>
             <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-10 text-xs font-semibold text-app-fg/70">
-              <span className="px-3.5 py-1.5 rounded bg-app-bg border border-app-border">ADSSC Approved</span>
-              <span className="px-3.5 py-1.5 rounded bg-app-bg border border-app-border">ADDC Compliant</span>
-              <span className="px-3.5 py-1.5 rounded bg-app-bg border border-app-border">ADM Registered</span>
-              <span className="px-3.5 py-1.5 rounded bg-app-bg border border-app-border">Civil Defense (ADCD)</span>
+              <span className="px-3.5 py-1.5 rounded bg-app-bg border border-app-border">ISO Certified</span>
+              <span className="px-3.5 py-1.5 rounded bg-app-bg border border-app-border">Utility Compliant</span>
+              <span className="px-3.5 py-1.5 rounded bg-app-bg border border-app-border">Municipality Registered</span>
+              <span className="px-3.5 py-1.5 rounded bg-app-bg border border-app-border">Civil Defense</span>
               <span className="px-3.5 py-1.5 rounded bg-app-bg border border-app-border">Estidama Aligned</span>
             </div>
           </div>
@@ -686,30 +511,24 @@ export default function HomeClient() {
           {/* Section title */}
           <div className="max-w-3xl mx-auto text-center mb-16 space-y-3">
             <span className="text-brand-gold text-xs font-bold uppercase tracking-widest font-mono">
-              Design Galleries
+              Featured Work
             </span>
             <h2 className="text-3xl sm:text-4xl font-heading font-extrabold text-app-fg tracking-tight">
-              Project Imagery
-              {/* Project Imagery: 21 UI/UX Styles */}
+              Featured Projects &amp; Architecture
             </h2>
             <div className="w-16 h-0.5 bg-brand-teal mx-auto mt-2"></div>
             <p className="text-app-muted text-sm leading-relaxed font-light pt-2">
-              {/* ArrowHead presents 21 premium UI/UX layouts for displaying project imagery. Scroll down to compare the look and choose the best layout structure. */}
+              Explore our landmark projects across luxury residential villas, civil engineering infrastructure, and bespoke commercial interior fit-outs in Abu Dhabi.
             </p>
           </div>
 
-          {/* Style A: Editorial Masonry */}
           <div className="space-y-6 mb-24">
-            {/* <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE A</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Asymmetrical Magazine Editorial Masonry</h3>
-            </div> */}
             <EditorialMasonry />
           </div>
-          </div>
-          </section>
+        </div>
+      </section>
 
-{/* 3. CAPABILITIES PORTFOLIO (High-End Grid Layout) */}
+      {/* 3. CAPABILITIES PORTFOLIO (High-End Grid Layout) */}
       <section className="pt-24 pb-12 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -796,187 +615,14 @@ export default function HomeClient() {
 
         </div>
       </section>
-          
+
       <section className="py-24 border-b border-app-border relative bg-app-bg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-          {/* Style B: Horizontal Filmstrip */}
-          {/* <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE B</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Smooth Horizontal Filmstrip Carousel</h3>
-            </div>
-            <HorizontalFilmstrip />
-          </div> */}
-
-          {/* Style C: Split Category Tabs */}
-          <div className="space-y-6 mb-24">
-            {/* <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded">STYLE C</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Split Screen Category Hover Active Tabs</h3>
-            </div> */}
-            <SplitActiveShowcase />
-          </div>
-
-          {/* Style D: Isometric 3D Perspective Card Grid */}
-          {/* <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE D</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">3D Isometric Perspective Tilt Cards</h3>
-            </div>
-            <IsometricPerspectiveGrid />
-          </div> */}
-
-          {/* Style E: Cinematic Progress Slider */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
           <div className="space-y-6">
-            {/* <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE E</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Cinematic Widescreen Progress Bar Slideshow</h3>
-            </div> */}
             <CinematicSlider />
           </div>
 
-          {/* Style F: Drag-to-Reveal CAD Slider */}
-          {/* <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE F</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Interactive Drag-to-Reveal CAD Blueprint vs. Finished Build</h3>
-            </div>
-            <CadRevealSlider />
-          </div> */}
-
-          {/* Style G: Tactile Stacked Card Deck */}
-          {/* <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE G</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Tactile Stacked Project Card Deck</h3>
-            </div>
-            <StackedDeckShowcase />
-          </div> */}
-
-          {/* Style H: Progressive Build Timeline Phase Switcher */}
-          {/* <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE H</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Progressive Build Timeline Phase Switcher</h3>
-            </div>
-            <BuildTimelineShowcase />
-          </div> */}
-
-          {/* Style I: Tabular Factsheet Grid Row Hover */}
-          {/* <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE I</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Tabular Factsheet Grid Row Hover</h3>
-            </div>
-            <FactsheetGrid />
-          </div> */}
-
-          {/* Style J: Cinematic Spec Card Grid */}
-          <div className="space-y-6 mb-24">
-            {/* <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded">STYLE J</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Cinematic Spec Card Grid</h3>
-            </div> */}
-            <CinematicSpecGrid />
-          </div>
-
-          {/* Style K: Rotating 3D Card Ring Carousel */}
-          {/* <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE K</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Rotating 3D Card Ring Carousel</h3>
-            </div>
-            <Rotating3DCarousel />
-          </div> */}
-
-          {/* Style L: Asymmetric Random-Sized Collage Grid */}
-          {/* <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE L</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Asymmetric Random-Sized Collage Grid</h3>
-            </div>
-            <CollageBoxShowcase />
-          </div> */}
-
-          {/* Style M: Architectural Portfolio Grid */}
-          {/* <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE M</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Architectural Portfolio Grid</h3>
-            </div>
-            <ArchitecturalPortfolio />
-          </div> */}
-
-          {/* Style N: Material Spec Spotlight Reveal Grid */}
-          <div className="space-y-6 mb-24">
-            {/* <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE N</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Material Spec Spotlight Reveal Grid</h3>
-            </div> */}
-            <SpotlightRevealGrid />
-          </div>
-
-          {/* Style O: Curved 3D Panoramic Theater Carousel */}
-          {/* <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE O</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Curved 3D Panoramic Theater Carousel</h3>
-            </div>
-            <PanoramicCarousel />
-          </div> */}
-
-          {/* Style P: Architectural Material Spec & Mood Board */}
-          {/* <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE P</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Architectural Material Spec &amp; Mood Board</h3>
-            </div>
-            <GeographicMapExplorer />
-          </div> */}
-
-          {/* Style Q: Architectural Exploded-View Inspector */}
-          {/* <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE Q</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Architectural Exploded-View Inspector</h3>
-            </div>
-            <ExplodedViewInspector />
-          </div> */}
-
-          {/* Style R: Widescreen Editorial Showcase & Material Swatch Selector */}
-          <div className="space-y-6 mb-24">
-            {/* <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE R</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Widescreen Editorial Showcase &amp; Material Swatch Selector</h3>
-            </div> */}
-            <ProjectControlCenter />
-          </div>
-
-          {/* Style S: Minimalist Project Card Grid */}
-          {/* <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE S</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Minimalist Project Card Grid (Clean Hover Zoom)</h3>
-            </div>
-            <MinimalCardGrid />
-          </div> */}
-
-          {/* Style T: Widescreen Editorial Banner Slider */}
-          {/* <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE T</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Widescreen Editorial Banner Slider (Clean Crossfade)</h3>
-            </div>
-            <WidescreenEditorialSlider />
-          </div> */}
-
-          {/* Style U: Alternating Asymmetric Grid */}
           <div className="space-y-6">
-            {/* <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE U</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Alternating Asymmetric Grid (Brochure Layout)</h3>
-            </div> */}
             <AlternatingAsymmetricGrid />
           </div>
         </div>
@@ -999,7 +645,7 @@ export default function HomeClient() {
             <div className="bg-app-card border border-app-border rounded-xl p-6 hover:border-brand-teal/40 transition-all duration-300 offset-border-frame flex flex-col justify-between space-y-4">
               <div className="space-y-3">
                 <span className="text-3xl block">🏆</span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wider font-heading">Class-I DMT Registration</h4>
+                <h4 className="text-sm font-bold text-app-fg uppercase tracking-wider font-heading">Class-I DMT Registration</h4>
                 <p className="text-app-muted text-xs font-light leading-relaxed">
                   Licensed by the Abu Dhabi Department of Municipalities and Transport for high-value general contracting civil projects, water pipelines, and major infrastructure tenders.
                 </p>
@@ -1013,9 +659,9 @@ export default function HomeClient() {
             <div className="bg-app-card border border-app-border rounded-xl p-6 hover:border-brand-teal/40 transition-all duration-300 offset-border-frame flex flex-col justify-between space-y-4">
               <div className="space-y-3">
                 <span className="text-3xl block">📋</span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wider font-heading">100% NOC Clearance Log</h4>
+                <h4 className="text-sm font-bold text-app-fg uppercase tracking-wider font-heading">100% NOC Clearance Log</h4>
                 <p className="text-app-muted text-xs font-light leading-relaxed">
-                  End-to-end municipal permit approvals. We coordinate directly with TAMM, ADSSC, ADDC, ADM, and Civil Defense to ensure water, electrical, and occupancy approvals.
+                  End-to-end municipal permit approvals. We coordinate directly with TAMM, Abu Dhabi Municipality, utility authorities, and Civil Defense to ensure water, electrical, and occupancy approvals.
                 </p>
               </div>
               <span className="text-[9px] font-mono text-brand-teal font-bold tracking-widest uppercase block pt-2 border-t border-app-border/40">
@@ -1027,7 +673,7 @@ export default function HomeClient() {
             <div className="bg-app-card border border-app-border rounded-xl p-6 hover:border-brand-teal/40 transition-all duration-300 offset-border-frame flex flex-col justify-between space-y-4">
               <div className="space-y-3">
                 <span className="text-3xl block">⚙️</span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wider font-heading">Certified Crews &amp; Rigs</h4>
+                <h4 className="text-sm font-bold text-app-fg uppercase tracking-wider font-heading">Certified Crews &amp; Rigs</h4>
                 <p className="text-app-muted text-xs font-light leading-relaxed">
                   All butt-welding and electrofusion jointing are executed by DVS 2207 and ISO certified technicians using calibrated hydraulic welding rigs with log printouts.
                 </p>
@@ -1041,9 +687,9 @@ export default function HomeClient() {
             <div className="bg-app-card border border-app-border rounded-xl p-6 hover:border-brand-teal/40 transition-all duration-300 offset-border-frame flex flex-col justify-between space-y-4">
               <div className="space-y-3">
                 <span className="text-3xl block">🛡️</span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wider font-heading">Strict Quality &amp; HSE</h4>
+                <h4 className="text-sm font-bold text-app-fg uppercase tracking-wider font-heading">Strict Quality &amp; HSE</h4>
                 <p className="text-app-muted text-xs font-light leading-relaxed">
-                  Flawless safety records across all high-risk excavations, marine repairs, and heavy concrete casts. Hydrostatic testing up to PN25 witnessed by utility inspectors.
+                  Flawless safety records across all high-risk excavations, pipeline installations, and heavy concrete casts. Hydrostatic testing up to PN25 witnessed by utility inspectors.
                 </p>
               </div>
               <span className="text-[9px] font-mono text-brand-teal font-bold tracking-widest uppercase block pt-2 border-t border-app-border/40">
@@ -1094,7 +740,7 @@ export default function HomeClient() {
               <div>
                 <div className="h-48 relative overflow-hidden bg-app-secondary">
                   <img
-                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=500&q=80"
+                    src="/images/ArrowheadVilla.png"
                     alt="Residential & Villas"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-103"
                   />
@@ -1119,8 +765,8 @@ export default function HomeClient() {
               <div>
                 <div className="h-48 relative overflow-hidden bg-app-secondary">
                   <img
-                    src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=500&q=80"
-                    alt="Industrial & Manufacturing"
+                    src="/images/hdpe.jpg"
+                    alt="HDPE Pipelines & Pressure Networks"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-103"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
@@ -1128,7 +774,7 @@ export default function HomeClient() {
                 <div className="p-6 space-y-3">
                   <h3 className="text-base font-bold text-app-fg group-hover:text-brand-teal transition-colors">Industrial &amp; Manufacturing</h3>
                   <p className="text-app-muted text-xs leading-relaxed font-light">
-                    PE100 pipeline loops, warehouse steel fabrication, machinery foundation castings, and hard FM support in Mussafah/ICAD.
+                    Supply and installation of PE100 HDPE pipelines (DN 110mm to DN 1200mm), certified DVS 2207 butt-fusion welding, and municipal pressure testing.
                   </p>
                 </div>
               </div>
@@ -1144,21 +790,21 @@ export default function HomeClient() {
               <div>
                 <div className="h-48 relative overflow-hidden bg-app-secondary">
                   <img
-                    src="https://images.unsplash.com/photo-1505705694340-019e1e335916?auto=format&fit=crop&w=500&q=80"
-                    alt="Marine & Ports"
+                    src="/images/civil-infrastructure.webp"
+                    alt="Infrastructure & Utilities"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-103"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 </div>
                 <div className="p-6 space-y-3">
-                  <h3 className="text-base font-bold text-app-fg group-hover:text-brand-teal transition-colors">Marine &amp; Ports</h3>
+                  <h3 className="text-base font-bold text-app-fg group-hover:text-brand-teal transition-colors">Infrastructure &amp; Utilities</h3>
                   <p className="text-app-muted text-xs leading-relaxed font-light">
-                    Waterfront slipway concrete restoration, seawall crack injections, harbor block placing, and administrative block FM.
+                    Substation civil works, deep foundation excavations, reinforced concrete structures, road paving, and specialized earthworks.
                   </p>
                 </div>
               </div>
               <div className="p-6 pt-0">
-                <Link href="/sectors/marine-ports" className="inline-flex items-center text-xs font-bold text-brand-teal hover:text-brand-teal-hover transition-colors uppercase tracking-widest">
+                <Link href="/sectors/infrastructure-utilities" className="inline-flex items-center text-xs font-bold text-brand-teal hover:text-brand-teal-hover transition-colors uppercase tracking-widest">
                   <span>Explore Sector →</span>
                 </Link>
               </div>
@@ -1169,7 +815,7 @@ export default function HomeClient() {
               <div>
                 <div className="h-48 relative overflow-hidden bg-app-secondary">
                   <img
-                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=500&q=80"
+                    src="/images/mall_shop.jpeg"
                     alt="Commercial & Retail"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-103"
                   />
@@ -1232,16 +878,17 @@ export default function HomeClient() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             {featuredProjects.map((project, idx) => (
-              <div
+              <Link
                 key={idx}
-                className="bg-app-card rounded-lg overflow-hidden border border-app-border shadow-sm hover:border-brand-teal/20 transition-all duration-300 flex flex-col justify-between offset-border-frame"
+                href={project.link}
+                className="bg-app-card rounded-lg overflow-hidden border border-app-border shadow-sm hover:border-brand-teal/40 transition-all duration-300 flex flex-col justify-between offset-border-frame group cursor-pointer hover:-translate-y-1"
               >
                 <div>
                   <div className="h-56 bg-app-secondary relative overflow-hidden">
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                     />
                     <div className="absolute top-4 left-4 bg-app-card/90 backdrop-blur-xs text-brand-teal text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 rounded border border-app-border">
                       {project.category}
@@ -1251,7 +898,7 @@ export default function HomeClient() {
                     <span className="text-[10px] font-bold font-mono text-brand-gold uppercase tracking-widest block">
                       {project.stats}
                     </span>
-                    <h3 className="text-base sm:text-lg font-heading font-bold text-app-fg leading-tight">
+                    <h3 className="text-base sm:text-lg font-heading font-bold text-app-fg leading-tight group-hover:text-brand-teal transition-colors">
                       {project.title}
                     </h3>
                     <p className="text-app-muted text-xs leading-relaxed font-light">
@@ -1259,30 +906,34 @@ export default function HomeClient() {
                     </p>
                   </div>
                 </div>
-              </div>
+                <div className="px-6 pb-6 pt-2 border-t border-app-border/40 flex justify-between items-center text-[10px] font-mono font-bold text-brand-teal uppercase tracking-widest">
+                  <span>Explore Case Study</span>
+                  <span className="group-hover:translate-x-1 transition-transform inline-block">→</span>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
-      
+
       {/* TESTIMONIALS SECTION */}
       <section className="py-24 relative border-t border-app-border bg-app-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 space-y-3">
             <span className="text-brand-gold text-xs font-bold uppercase tracking-widest font-mono">Testimonials</span>
-            <h2 className="text-3xl font-heading font-extrabold tracking-tight text-white">What Our B2B Partners Say</h2>
+            <h2 className="text-3xl font-heading font-extrabold tracking-tight text-app-fg">What Our B2B Partners Say</h2>
             <div className="w-16 h-0.5 bg-brand-teal mx-auto mt-2"></div>
-          </div>      
+          </div>
 
           {/* Testimonials responsive grid layout */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {testimonials.map((t, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className="bg-app-card border border-app-border rounded-2xl p-8 sm:p-10 shadow-2xl relative flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-teal/50 h-full group"
               >
                 <span className="absolute top-4 left-6 text-brand-gold text-5xl font-serif opacity-30 select-none">“</span>
-                
+
                 <div className="space-y-6 relative z-10 text-left flex flex-col h-full justify-between">
                   {/* Quote text */}
                   <p className="text-app-fg text-sm sm:text-base leading-relaxed font-light italic flex-grow">
@@ -1296,7 +947,7 @@ export default function HomeClient() {
                       {t.avatar}
                     </div>
                     <div>
-                      <h4 className="text-sm font-bold text-white leading-none">
+                      <h4 className="text-sm font-bold text-app-fg leading-none">
                         {t.author}
                       </h4>
                       <span className="text-[10px] text-brand-gold block font-mono mt-1 font-semibold uppercase">
@@ -1311,6 +962,16 @@ export default function HomeClient() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* 5.5 CLIENT PARTNERS SECTION */}
+      <section className="py-24 border-t border-app-border bg-app-bg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ClientLogoGrid
+            title="Our Clients &amp; Engineering Partners"
+            subtitle="Proudly collaborating with the UAE's tier-1 main contractors, specialized interior fit-out leaders, and accredited engineering consultancies."
+          />
         </div>
       </section>
 
@@ -1385,7 +1046,7 @@ export default function HomeClient() {
             in Abu Dhabi?
           </h2>
           <p className="text-app-muted text-sm sm:text-base max-w-2xl mx-auto font-sans font-light leading-relaxed">
-            Partner with a fully licensed general contracting firm that complies with ADSSC &amp; ADDC engineering standards. Submit your project requirements to our estimation team in Mussafah today.
+            Partner with a fully licensed general contracting firm that complies with municipal and international utility engineering standards. Submit your project requirements to our estimation team in Mussafah today.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <Link

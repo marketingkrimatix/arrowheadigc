@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description: 'Licensed infrastructure civil works contractor in Abu Dhabi. We manage heavy site grading, boundary wall construction, concrete slab castings, parking paving, and road civils.',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80',
+        url: '/images/civil-infrastructure.webp',
         width: 800,
         height: 600,
         alt: 'Infrastructure Civil Works',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Infrastructure & Civil Contracting Services Abu Dhabi | ArrowHead',
     description: 'Licensed infrastructure civil works contractor in Abu Dhabi. We manage heavy site grading, boundary wall construction, concrete slab castings, parking paving, and road civils.',
-    images: ['https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80'],
+    images: ['/images/civil-infrastructure.webp'],
   },
 };
 
@@ -60,11 +60,11 @@ export default function InfrastructureCivilWorksPage() {
   ];
 
   const standards = [
-    { title: 'Municipal Approvals', value: 'Abu Dhabi Municipality (ADM) Building Permits via TAMM' },
+    { title: 'Municipal Approvals', value: 'Abu Dhabi Municipality Building Permits via TAMM' },
     { title: 'Concrete Strength', value: 'C30/37, C40/50 depending on load calculation details' },
     { title: 'Slab Specifications', value: 'Reinforced Steel Mesh, Anti-Cracking Joint Sealants' },
     { title: 'Compaction Quality', value: '95% to 98% Proctor Density testing witness' },
-    { title: 'Boundary Wall Heights', value: 'Aligned with ADM zoning height guidelines' },
+    { title: 'Boundary Wall Heights', value: 'Aligned with Municipal zoning height guidelines' },
   ];
 
   const faqs = [
@@ -104,7 +104,7 @@ export default function InfrastructureCivilWorksPage() {
       'name': 'ArrowHead General Contracting LLC',
       'telephone': '+971-2-XXXXXXX',
       'priceRange': '$$$$',
-      'image': 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80',
+      'image': '/images/civil-infrastructure.webp',
       'address': {
         '@type': 'PostalAddress',
         'addressLocality': 'Abu Dhabi',
@@ -165,34 +165,34 @@ export default function InfrastructureCivilWorksPage() {
       </section>
 
       <section className="py-24 border-b border-app-border relative bg-app-bg">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-             <div className="space-y-6 mb-24">
-                  <div className="flex items-center gap-4 border-b border-app-border pb-4">
-                    <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE H</span>
-                    <h3 className="text-lg font-heading font-extrabold tracking-tight">Progressive Build Timeline Phase Switcher</h3>
-                  </div>
-                  <BuildTimelineShowcase />
-                </div>
-                </div>
-                </section>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-6 mb-24">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE H</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Progressive Build Timeline Phase Switcher</h3>
+            </div>
+            <BuildTimelineShowcase />
+          </div>
+        </div>
+      </section>
 
-                <section className="py-24 border-b border-app-border relative bg-app-bg">
-                              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                      <div className="space-y-6 mb-24">
-                            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-                              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE I</span>
-                              <h3 className="text-lg font-heading font-extrabold tracking-tight">Tabular Factsheet Grid Row Hover</h3>
-                            </div>
-                            <FactsheetGrid />
-                          </div>
-                          </div>
-                          </section>
+      <section className="py-24 border-b border-app-border relative bg-app-bg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-6 mb-24">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE I</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Tabular Factsheet Grid Row Hover</h3>
+            </div>
+            <FactsheetGrid />
+          </div>
+        </div>
+      </section>
 
       {/* 2. SPECIFICATION OVERVIEW */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
               <span className="text-brand-teal text-xs font-bold uppercase tracking-widest font-mono">Civil Masonry &amp; Earthworks</span>
@@ -209,12 +209,12 @@ export default function InfrastructureCivilWorksPage() {
                 <p>
                   To survive the aggressive chloride and sulfate concentrations common in Abu Dhabi's subsoils, all concrete works utilize sulfate-resistant cement (SRC) blended with microsilica. We apply thick, double-layer bituminous coatings and self-adhesive waterproofing membranes to all underground concrete surfaces. We maintain strict wet-curing protocols for 7 to 10 days to maximize concrete compressive strength and durability, conforming to Abu Dhabi Municipality regulations.
                 </p>
-  </div>
+              </div>
             </div>
 
             {/* Right Details Table */}
             <div className="lg:col-span-5 bg-app-card border border-app-border offset-border-frame shadow-sm border border-app-border rounded-xl p-8 shadow-2xl">
-              <h3 className="text-base font-bold text-white border-b border-app-border pb-4 uppercase tracking-wider font-heading">
+              <h3 className="text-base font-bold text-app-fg border-b border-app-border pb-4 uppercase tracking-wider font-heading">
                 Civil Project Metrics
               </h3>
               <ul className="mt-6 space-y-4 text-xs sm:text-sm">
@@ -232,20 +232,20 @@ export default function InfrastructureCivilWorksPage() {
       </section>
 
       <section className="py-24 border-b border-app-border relative bg-app-bg">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="space-y-6 mb-24">
-                  <div className="flex items-center gap-4 border-b border-app-border pb-4">
-                    <span className="text-xs font-mono font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded">STYLE J</span>
-                    <h3 className="text-lg font-heading font-extrabold tracking-tight">Cinematic Spec Card Grid</h3>
-                  </div>
-                  <CinematicSpecGrid />
-                </div>
-                </div>
-                </section>
-
-  <section className="py-24 border-b border-app-border relative bg-app-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="space-y-6 mb-24">
+          <div className="space-y-6 mb-24">
+            <div className="flex items-center gap-4 border-b border-app-border pb-4">
+              <span className="text-xs font-mono font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded">STYLE J</span>
+              <h3 className="text-lg font-heading font-extrabold tracking-tight">Cinematic Spec Card Grid</h3>
+            </div>
+            <CinematicSpecGrid />
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 border-b border-app-border relative bg-app-bg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-6 mb-24">
             <div className="flex items-center gap-4 border-b border-app-border pb-4">
               <span className="text-xs font-mono font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded">STYLE C</span>
               <h3 className="text-lg font-heading font-extrabold tracking-tight">Split Screen Category Hover Active Tabs</h3>
@@ -269,7 +269,7 @@ export default function InfrastructureCivilWorksPage() {
             {subServices.map((sub, idx) => (
               <div key={idx} className="bg-app-card border border-app-border offset-border-frame shadow-sm p-8 rounded-xl border border-app-border shadow-2xl space-y-3">
                 <span className="text-brand-teal font-mono font-bold text-xs block">0{idx + 1}. Capability Scope</span>
-                <h3 className="text-base sm:text-lg font-bold text-white">{sub.title}</h3>
+                <h3 className="text-base sm:text-lg font-bold text-app-fg">{sub.title}</h3>
                 <p className="text-app-muted text-xs sm:text-sm leading-relaxed font-light">{sub.desc}</p>
               </div>
             ))}
@@ -278,9 +278,9 @@ export default function InfrastructureCivilWorksPage() {
       </section>
 
       {/* 4. COMPLIANCE BANNER */}
-      <section className="bg-app-secondary text-white py-16 relative overflow-hidden">
+      <section className="bg-app-secondary text-app-fg py-16 relative overflow-hidden">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
-          <h2 className="text-2xl sm:text-3xl font-heading font-extrabold text-white">
+          <h2 className="text-2xl sm:text-3xl font-heading font-extrabold text-app-fg">
             TAMM &amp; Municipal Permit Compliance
           </h2>
           <p className="text-xs sm:text-sm text-app-muted max-w-3xl mx-auto leading-relaxed font-light">
@@ -307,7 +307,7 @@ export default function InfrastructureCivilWorksPage() {
           <div className="space-y-4">
             {faqs.map((faq, idx) => (
               <details key={idx} className="group bg-app-secondary border border-app-border rounded-lg overflow-hidden">
-                <summary className="w-full text-left px-6 py-5 flex items-center justify-between font-bold text-white hover:text-brand-teal focus:outline-none transition-colors cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                <summary className="w-full text-left px-6 py-5 flex items-center justify-between font-bold text-app-fg hover:text-brand-teal focus:outline-none transition-colors cursor-pointer list-none [&::-webkit-details-marker]:hidden">
                   <span className="text-sm sm:text-base">{faq.q}</span>
                   <svg
                     className="w-4 h-4 text-app-muted/60 transition-transform duration-300 shrink-0 group-open:rotate-180 group-open:text-brand-teal"
@@ -334,7 +334,7 @@ export default function InfrastructureCivilWorksPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-sm font-bold uppercase tracking-widest text-white mb-4">
+              <h3 className="text-sm font-bold uppercase tracking-widest text-app-fg mb-4">
                 Active Regional Infrastructure Operations
               </h3>
               <p className="text-xs text-app-muted mb-6 font-light">
@@ -349,7 +349,7 @@ export default function InfrastructureCivilWorksPage() {
               </div>
             </div>
             <div>
-              <h3 className="text-sm font-bold uppercase tracking-widest text-white mb-4">
+              <h3 className="text-sm font-bold uppercase tracking-widest text-app-fg mb-4">
                 Technical Knowledge Base
               </h3>
               <p className="text-xs text-app-muted mb-6 font-light">
@@ -357,7 +357,7 @@ export default function InfrastructureCivilWorksPage() {
               </p>
               <div className="flex flex-col space-y-4">
                 <Link href="/insights/guide-to-tamm-villa-approvals" className="p-4 bg-app-card rounded border border-app-border hover:border-brand-teal transition-colors">
-                  <span className="text-xs font-bold text-white block">Abu Dhabi TAMM Building Permit Guide</span>
+                  <span className="text-xs font-bold text-app-fg block">Abu Dhabi TAMM Building Permit Guide</span>
                   <span className="text-[10px] text-app-muted font-light mt-1 block">A step-by-step engineering walkthrough of municipal NOCs and approvals.</span>
                 </Link>
               </div>
@@ -367,8 +367,8 @@ export default function InfrastructureCivilWorksPage() {
       </section>
 
       {/* 7. CALL TO ACTION */}
-      <section className="py-16 bg-app-secondary border-t border-app-border text-center">
-        <h2 className="text-xl sm:text-2xl font-heading font-extrabold text-white">
+      <section className="py-16 bg-app-secondary border-t border-app-border text-center text-app-fg">
+        <h2 className="text-xl sm:text-2xl font-heading font-extrabold text-app-fg">
           Discuss Your Civil Project Specifications
         </h2>
         <p className="mt-3 text-app-muted text-xs sm:text-sm max-w-xl mx-auto font-light">

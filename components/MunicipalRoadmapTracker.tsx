@@ -6,7 +6,7 @@ interface ApprovalNode {
   id: number;
   title: string;
   authority: string;
-  authShort: 'ADM' | 'ADDC' | 'ADSSC' | 'ADCD';
+  authShort: 'MUNI' | 'POWER' | 'SEWER' | 'SAFETY';
   timeframe: string;
   desc: string;
   docs: string[];
@@ -20,14 +20,14 @@ export default function MunicipalRoadmapTracker() {
     {
       id: 0,
       title: 'Geotechnical & Soil Testing NOC',
-      authority: 'Abu Dhabi Municipality (ADM)',
-      authShort: 'ADM',
+      authority: 'Abu Dhabi Municipality',
+      authShort: 'MUNI',
       timeframe: '5 - 7 Working Days',
       desc: 'Required before any foundation design can begin. Geotechnical engineers core-drill soil samples up to 15 meters deep to evaluate soil bearing capacity, moisture contents, and underground water chemical parameters.',
       docs: [
         'Boundary plot plan from TAMM',
         'Authorized soil investigation core-drill layout',
-        'ADM Surveyor plot verification'
+        'Municipal Surveyor plot verification'
       ],
       tips: 'Critical for Saadiyat Island structures (sandy corridor) and Yas Island (high salt water table) to optimize SRC cement thickness.'
     },
@@ -35,7 +35,7 @@ export default function MunicipalRoadmapTracker() {
       id: 1,
       title: 'Structural & Architectural Permit NOC',
       authority: 'Abu Dhabi Municipality & Estidama Department',
-      authShort: 'ADM',
+      authShort: 'MUNI',
       timeframe: '10 - 15 Working Days',
       desc: 'Municipal structural engineers review architectural plans and concrete calculations to verify safety coefficients. Simultaneously, the design is audited for compliance with Estidama Pearl Rating energy saving thresholds.',
       docs: [
@@ -48,10 +48,10 @@ export default function MunicipalRoadmapTracker() {
     {
       id: 2,
       title: 'Electrical Load Schedule NOC',
-      authority: 'Abu Dhabi Distribution Company (ADDC)',
-      authShort: 'ADDC',
+      authority: 'Electricity & Power Distribution Authority',
+      authShort: 'POWER',
       timeframe: '7 - 10 Working Days',
-      desc: 'ADDC engineers review the building’s projected power demands (connected vs. maximum demand load). They verify sizing of main cables, distribution boards, load balancing schedules, and location parameters for the sub-station/chiller unit.',
+      desc: 'Power authority engineers review the building’s projected power demands (connected vs. maximum demand load). They verify sizing of main cables, distribution boards, load balancing schedules, and location parameters for the sub-station/chiller unit.',
       docs: [
         'Connected load schedules & phase calculations',
         'Electrical Single Line Diagrams (SLD)',
@@ -62,22 +62,22 @@ export default function MunicipalRoadmapTracker() {
     {
       id: 3,
       title: 'Water & Sewerage Network Tie-In NOC',
-      authority: 'Abu Dhabi Sewerage Services Company (ADSSC)',
-      authShort: 'ADSSC',
+      authority: 'Water & Sewerage Services Authority',
+      authShort: 'SEWER',
       timeframe: '7 - 10 Working Days',
-      desc: 'ADSSC reviews layout routing for sewer gravity lines and potable water lines. They verify locations of inspection manholes, slope angles (1:100 or 1:150), grease traps (for kitchens), and connection coordinates to the municipal main network.',
+      desc: 'Utility engineers review layout routing for sewer gravity lines and potable water lines. They verify locations of inspection manholes, slope angles (1:100 or 1:150), grease traps (for kitchens), and connection coordinates to the municipal main network.',
       docs: [
         'Site utility piping plans and layout slope data',
         'Manhole schedules & GRP protective liner certificates',
         'Grease trap volume capacity sizing reports'
       ],
-      tips: 'Gravity lines must comply with ADSSC minimum cover depths. Use shoring boxes for any excavation exceeding 1.5 meters.'
+      tips: 'Gravity lines must comply with municipal minimum cover depths. Use shoring boxes for any excavation exceeding 1.5 meters.'
     },
     {
       id: 4,
       title: 'Fire Safety & Firefighting NOC',
-      authority: 'Abu Dhabi Civil Defense (ADCD)',
-      authShort: 'ADCD',
+      authority: 'Abu Dhabi Civil Defense',
+      authShort: 'SAFETY',
       timeframe: '5 - 7 Working Days',
       desc: 'Civil Defense officers audit the fire suppression layouts. They inspect partition classifications for smoke defense, routes of fire exits, layouts of wet sprinkler heads, fire pumps parameters, and early smoke detector alarm linkages.',
       docs: [
@@ -85,18 +85,18 @@ export default function MunicipalRoadmapTracker() {
         'Smoke detection & fire alarm wiring schematics',
         'Material safety certificates for interior wall linings'
       ],
-      tips: 'Only materials sourced from ADCD approved manufacturing lists can be integrated into the mechanical safety installations.'
+      tips: 'Only materials sourced from Civil Defense approved manufacturing lists can be integrated into the mechanical safety installations.'
     },
     {
       id: 5,
       title: 'Municipal Inspection & Occupancy Certificate',
-      authority: 'Abu Dhabi Municipality (ADM Inspectors)',
-      authShort: 'ADM',
+      authority: 'Abu Dhabi Municipality (Municipal Inspectors)',
+      authShort: 'MUNI',
       timeframe: '3 - 5 Working Days',
-      desc: 'Upon construction completion, municipal inspectors visit the site to verify structural compliance against the approved building permit. Once signed off, the final Occupancy Certificate is issued, enabling ADDC utility line activation.',
+      desc: 'Upon construction completion, municipal inspectors visit the site to verify structural compliance against the approved building permit. Once signed off, the final Occupancy Certificate is issued, enabling permanent utility line activation.',
       docs: [
         'Completed structural concrete strength reports (cube tests)',
-        'Certified hydrostatic pressure test logs from ADDC/ADSSC',
+        'Certified hydrostatic pressure test logs from municipal utility inspectors',
         'Civil Defense final audit clearance report'
       ],
       tips: 'Ensure all structural extensions exactly match approved TAMM permit drawings; any deviation triggers penalties or revision scopes.'
@@ -110,7 +110,7 @@ export default function MunicipalRoadmapTracker() {
           <span className="text-[8px] font-mono text-brand-gold font-bold uppercase tracking-widest block">
             MUNICIPAL APPROVAL WORKFLOW
           </span>
-          <h3 className="text-base font-heading font-extrabold text-white uppercase tracking-wider mt-0.5">
+          <h3 className="text-base font-heading font-extrabold text-app-fg uppercase tracking-wider mt-0.5">
             Abu Dhabi NOC Permitting Sequence
           </h3>
         </div>
@@ -142,7 +142,7 @@ export default function MunicipalRoadmapTracker() {
               }`}>
                 0{idx + 1}
               </span>
-              <h4 className="text-[10px] font-bold text-white uppercase tracking-wider mt-2.5 line-clamp-1">
+              <h4 className="text-[10px] font-bold text-app-fg uppercase tracking-wider mt-2.5 line-clamp-1">
                 {step.authShort} NOC
               </h4>
               <span className="text-[8px] font-mono text-app-muted block mt-0.5">
@@ -159,11 +159,11 @@ export default function MunicipalRoadmapTracker() {
             <div>
               <div className="flex justify-between items-center flex-wrap gap-2">
                 <span className={`px-2 py-0.5 rounded text-[8px] font-mono font-bold ${
-                  steps[activeStep].authShort === 'ADM'
+                  steps[activeStep].authShort === 'MUNI'
                     ? 'bg-brand-teal/15 text-brand-teal border border-brand-teal/20'
-                    : steps[activeStep].authShort === 'ADDC'
+                    : steps[activeStep].authShort === 'POWER'
                     ? 'bg-brand-gold/15 text-brand-gold border border-brand-gold/20'
-                    : steps[activeStep].authShort === 'ADSSC'
+                    : steps[activeStep].authShort === 'SEWER'
                     ? 'bg-blue-500/15 text-blue-400 border border-blue-500/20'
                     : 'bg-red-500/15 text-red-400 border border-red-500/20'
                 }`}>
@@ -172,7 +172,7 @@ export default function MunicipalRoadmapTracker() {
                 <span className="text-[8px] font-mono text-app-muted">TIME: {steps[activeStep].timeframe}</span>
               </div>
               
-              <h4 className="text-xs font-heading font-extrabold text-white uppercase tracking-wider mt-3">
+              <h4 className="text-xs font-heading font-extrabold text-app-fg uppercase tracking-wider mt-3">
                 {steps[activeStep].title}
               </h4>
               

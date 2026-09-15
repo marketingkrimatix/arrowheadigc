@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     'facility management company in Abu Dhabi',
     'facility management services UAE',
     'MEP contractors Abu Dhabi',
-    'marine and industrial facility maintenance Abu Dhabi'
+    'infrastructure and civil contracting Abu Dhabi'
   ],
   openGraph: {
     type: 'website',

@@ -63,7 +63,7 @@ export default function ExplodedViewInspector() {
       color: 'text-white border-white/20',
       bgClass: '',
       isCustomContent: false,
-      image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=600&q=80',
+      image: '/images/ArrowheadVilla.png',
       description: '2-Pearl Estidama rating certified luxury residential facade handover.'
     }
   ];
@@ -91,7 +91,7 @@ export default function ExplodedViewInspector() {
       top: '45%',
       left: '65%',
       title: 'HVAC Chilled Water Loop',
-      desc: 'Certified double-skin GI duct alignment balanced per ADDC utilities codes.'
+      desc: 'Certified double-skin GI duct alignment balanced per municipal utilities codes.'
     },
     {
       id: 'hs-4',
@@ -104,9 +104,9 @@ export default function ExplodedViewInspector() {
   ];
 
   const toggleLayer = (id: string) => {
-    setActiveLayers(prev => 
-      prev.includes(id) 
-        ? prev.filter(layerId => layerId !== id) 
+    setActiveLayers(prev =>
+      prev.includes(id)
+        ? prev.filter(layerId => layerId !== id)
         : [...prev, id]
     );
   };
@@ -116,7 +116,7 @@ export default function ExplodedViewInspector() {
   return (
     <div className="w-full bg-app-bg text-app-fg py-12 max-w-6xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start bg-app-secondary/35 rounded-xl border border-app-border p-8">
-        
+
         {/* Left: 3D Exploded-View Canvas Frame */}
         <div className="lg:col-span-7 flex flex-col justify-between h-full space-y-6">
           <div className="space-y-1">
@@ -132,13 +132,13 @@ export default function ExplodedViewInspector() {
           </div>
 
           {/* Isometric Perspective Stack Area */}
-          <div 
+          <div
             className="relative w-full aspect-[4/3] rounded-lg border border-app-border bg-slate-950 overflow-hidden flex items-center justify-center p-8 select-none"
             style={{ perspective: '1200px' }}
           >
             {/* Blueprint Grid Lines */}
             <div className="absolute inset-0 bg-[linear-gradient(rgba(0,168,198,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,168,198,0.03)_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-            
+
             {/* The 3D Rotational Assembly */}
             <div
               className="relative w-[280px] sm:w-[320px] aspect-[16/10] transition-transform duration-500 ease-out"
@@ -150,16 +150,15 @@ export default function ExplodedViewInspector() {
               {layers.map((layer, idx) => {
                 const isActive = activeLayers.includes(layer.id);
                 // Active layers translate upward along Z axis based on spacing
-                const translateZVal = isActive 
+                const translateZVal = isActive
                   ? idx * explodeSpacing - (activeLayers.length * 15)
                   : 0;
 
                 return (
                   <div
                     key={layer.id}
-                    className={`absolute inset-0 border rounded-lg shadow-2xl transition-all duration-700 ease-out flex flex-col justify-between p-4 ${
-                      layer.color
-                    } ${layer.bgClass}`}
+                    className={`absolute inset-0 border rounded-lg shadow-2xl transition-all duration-700 ease-out flex flex-col justify-between p-4 ${layer.color
+                      } ${layer.bgClass}`}
                     style={{
                       transform: `translateZ(${translateZVal}px)`,
                       opacity: isActive ? 1 : 0,
@@ -173,7 +172,7 @@ export default function ExplodedViewInspector() {
                       <div className="w-full h-full flex flex-col justify-between font-mono text-[8px] relative">
                         {/* Grid lines */}
                         <div className="absolute inset-0 border border-white/5 bg-[radial-gradient(ellipse_at_center,rgba(0,168,198,0.05)_0%,transparent_80%)] rounded"></div>
-                        
+
                         <div className="flex justify-between items-start relative z-10">
                           <span>{layer.badge}</span>
                           <span>BIM LEVEL 0{idx + 1}</span>
@@ -210,10 +209,10 @@ export default function ExplodedViewInspector() {
                       </div>
                     ) : (
                       <div className="absolute inset-0 rounded-lg overflow-hidden border border-white/10 select-none">
-                        <img 
-                          src={layer.image} 
-                          alt={layer.name} 
-                          className="w-full h-full object-cover select-none" 
+                        <img
+                          src={layer.image}
+                          alt={layer.name}
+                          className="w-full h-full object-cover select-none"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                       </div>
@@ -227,11 +226,10 @@ export default function ExplodedViewInspector() {
                           e.stopPropagation();
                           setSelectedHotspot(hs.id);
                         }}
-                        className={`absolute w-5 h-5 rounded-full border flex items-center justify-center font-mono text-[8px] font-bold z-50 cursor-pointer shadow-lg transition-transform duration-300 hover:scale-110 -translate-x-1/2 -translate-y-1/2 ${
-                          selectedHotspot === hs.id
-                            ? 'bg-brand-teal border-brand-teal text-primary-dark scale-110 shadow-brand-teal/20'
-                            : 'bg-primary-dark/95 border-brand-gold text-brand-gold hover:border-brand-teal hover:text-brand-teal'
-                        }`}
+                        className={`absolute w-5 h-5 rounded-full border flex items-center justify-center font-mono text-[8px] font-bold z-50 cursor-pointer shadow-lg transition-transform duration-300 hover:scale-110 -translate-x-1/2 -translate-y-1/2 ${selectedHotspot === hs.id
+                          ? 'bg-brand-teal border-brand-teal text-primary-dark scale-110 shadow-brand-teal/20'
+                          : 'bg-primary-dark/95 border-brand-gold text-brand-gold hover:border-brand-teal hover:text-brand-teal'
+                          }`}
                         style={{
                           top: hs.top,
                           left: hs.left,
@@ -287,7 +285,7 @@ export default function ExplodedViewInspector() {
         {/* Right: Layer Checklist & Hotspot Inspector factsheet */}
         <div className="lg:col-span-5 bg-app-card border border-app-border rounded-xl p-6 shadow-xl space-y-6 self-stretch flex flex-col justify-between">
           <div className="space-y-6">
-            
+
             {/* Layer Checklist Controller */}
             <div className="space-y-3">
               <span className="block text-[8px] font-mono text-brand-gold uppercase tracking-widest font-bold">
@@ -300,18 +298,16 @@ export default function ExplodedViewInspector() {
                     <button
                       key={layer.id}
                       onClick={() => toggleLayer(layer.id)}
-                      className={`w-full flex justify-between items-center p-3 rounded-lg border text-left text-xs transition-colors cursor-pointer ${
-                        isActive
-                          ? 'bg-app-secondary border-brand-teal text-app-fg'
-                          : 'bg-app-card border-app-border text-app-muted hover:border-brand-teal/20'
-                      }`}
+                      className={`w-full flex justify-between items-center p-3 rounded-lg border text-left text-xs transition-colors cursor-pointer ${isActive
+                        ? 'bg-app-secondary border-brand-teal text-app-fg'
+                        : 'bg-app-card border-app-border text-app-muted hover:border-brand-teal/20'
+                        }`}
                     >
                       <span className="font-semibold">{layer.name}</span>
-                      <span className={`text-[8px] font-mono uppercase px-2 py-0.5 rounded border ${
-                        isActive
-                          ? 'bg-brand-teal/10 border-brand-teal/20 text-brand-teal font-bold'
-                          : 'bg-app-secondary border-app-border text-app-muted'
-                      }`}>
+                      <span className={`text-[8px] font-mono uppercase px-2 py-0.5 rounded border ${isActive
+                        ? 'bg-brand-teal/10 border-brand-teal/20 text-brand-teal font-bold'
+                        : 'bg-app-secondary border-app-border text-app-muted'
+                        }`}>
                         {isActive ? 'ACTIVE' : 'HIDDEN'}
                       </span>
                     </button>
@@ -326,7 +322,7 @@ export default function ExplodedViewInspector() {
                 <span className="block text-[8px] font-mono text-brand-teal uppercase tracking-widest font-bold">
                   BIM DETAIL FACTSHEET
                 </span>
-                
+
                 <div className="bg-app-secondary/35 border border-app-border p-4 rounded-xl space-y-2">
                   <div className="flex justify-between items-center">
                     <h4 className="text-xs font-mono font-bold uppercase text-app-fg">
@@ -346,7 +342,7 @@ export default function ExplodedViewInspector() {
           </div>
 
           <div className="pt-4 border-t border-app-border/40">
-            <a 
+            <a
               href="/contact?rfq=true&ref=bim-exploded"
               className="w-full text-center inline-flex items-center justify-center px-6 py-3.5 rounded bg-brand-teal hover:bg-brand-teal-hover text-primary-dark font-extrabold text-xs uppercase tracking-wider shadow-lg shadow-brand-teal/15 transition-all duration-300"
             >

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef, MouseEvent } from 'react';
+import React, { useState, useRef, useEffect, MouseEvent } from 'react';
 
 interface SpotlightCard {
   title: string;
@@ -37,13 +37,60 @@ function SpotlightCardItem({ card }: { card: SpotlightCard }) {
     setMousePos({ x, y });
   };
 
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const updateTouchPos = (clientX: number, clientY: number) => {
+      if (!containerRect.current) {
+        containerRect.current = container.getBoundingClientRect();
+      }
+      const x = clientX - containerRect.current.left;
+      const y = clientY - containerRect.current.top;
+      setMousePos({ x, y });
+    };
+
+    const handleTouchStart = (e: TouchEvent) => {
+      setIsHovered(true);
+      containerRect.current = container.getBoundingClientRect();
+      if (e.touches.length > 0) {
+        updateTouchPos(e.touches[0].clientX, e.touches[0].clientY);
+      }
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (e.cancelable) {
+        e.preventDefault();
+      }
+      if (e.touches.length > 0) {
+        updateTouchPos(e.touches[0].clientX, e.touches[0].clientY);
+      }
+    };
+
+    const handleTouchEnd = () => {
+      setIsHovered(false);
+    };
+
+    container.addEventListener('touchstart', handleTouchStart, { passive: true });
+    container.addEventListener('touchmove', handleTouchMove, { passive: false });
+    container.addEventListener('touchend', handleTouchEnd, { passive: true });
+    container.addEventListener('touchcancel', handleTouchEnd, { passive: true });
+
+    return () => {
+      container.removeEventListener('touchstart', handleTouchStart);
+      container.removeEventListener('touchmove', handleTouchMove);
+      container.removeEventListener('touchend', handleTouchEnd);
+      container.removeEventListener('touchcancel', handleTouchEnd);
+    };
+  }, []);
+
   return (
     <div
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={() => setIsHovered(false)}
-      className="relative aspect-[3/4] w-full rounded-xl overflow-hidden border border-app-border bg-slate-950 shadow-lg cursor-crosshair select-none"
+      className="relative aspect-[3/4] w-full rounded-xl overflow-hidden border border-app-border bg-slate-950 shadow-lg cursor-crosshair select-none touch-none"
       style={{
         // Share coordinate positions with child layers using CSS variables
         ['--x' as any]: `${mousePos.x}px`,
@@ -66,8 +113,8 @@ function SpotlightCardItem({ card }: { card: SpotlightCard }) {
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           opacity: isHovered ? 1 : 0,
-          clipPath: isHovered 
-            ? `circle(90px at var(--x) var(--y))` 
+          clipPath: isHovered
+            ? `circle(90px at var(--x) var(--y))`
             : 'circle(0px at 0px 0px)',
           transition: 'opacity 0.2s ease'
         }}
@@ -111,33 +158,34 @@ function SpotlightCardItem({ card }: { card: SpotlightCard }) {
 export default function SpotlightRevealGrid() {
   const cards: SpotlightCard[] = [
     {
-      title: 'Saadiyat Majesty Concrete raft',
+      title: 'Sanjay Jain Custom Villa Raft',
       category: 'Villa Civil Engineering',
-      photoImage: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=600&q=80',
-      blueprintImage: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80',
+      photoImage: '/images/ArrowheadVilla.png',
+      blueprintImage: '/images/Matrix_project.jpeg',
       specTitle: 'C50/60 Microsilica Raft Pour',
       specs: ['IS 2911 layout', 'Compressive strength checked', 'Estidama rating compliance']
     },
     {
       title: 'Yas Island Main trunk welding',
       category: 'HDPE Pipelines network',
-      photoImage: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80',
-      blueprintImage: 'https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=600&q=80',
+      photoImage: '/images/123.jpeg',
+      blueprintImage: '/images/456.jpeg',
       specTitle: 'DN 1200mm PE100 fusion logs',
-      specs: ['Joint reports recorded', 'Hydrostatic PN16 pass', 'ADSSC approval code']
+      specs: ['Joint reports recorded', 'Hydrostatic PN16 pass', 'Municipal approval code']
     },
     {
-      title: 'Capital Tower building ducts',
+      title: 'Katheri Family Villa MEP Loops',
       category: 'Specialized MEP Routing',
-      photoImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80',
-      blueprintImage: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80',
+      photoImage: '/images/Matrix_project3.jpeg',
+      blueprintImage: '/images/Matrix_project.jpeg',
       specTitle: 'Double-skin HVAC GI loop',
-      specs: ['Balanced air registers', 'Civil Defense certified fire systems', 'ADDC panels verified']
+      specs: ['Balanced air registers', 'Civil Defense certified fire systems', 'DoE panels verified']
     }
   ];
 
   return (
-    <div className="w-full bg-app-bg text-app-fg py-12 max-w-6xl mx-auto">
+    <div className="w-full bg-app-bg text-app-fg py-12 px-6 md:px-0 max-w-6xl mx-auto">
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {cards.map((card, idx) => (
           <SpotlightCardItem key={idx} card={card} />
@@ -146,3 +194,4 @@ export default function SpotlightRevealGrid() {
     </div>
   );
 }
+

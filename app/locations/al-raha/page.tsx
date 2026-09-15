@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description: 'Turnkey luxury villa contracting and home renovations in Al Raha Gardens & Al Raha Beach, Abu Dhabi. High-end finishing and MEP installations.',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
+        url: '/images/Matrix_project1.jpeg',
         width: 800,
         height: 600,
         alt: 'Al Raha Turnkey Luxury Villa Construction',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Turnkey Luxury Villa Construction Al Raha | ArrowHead Contracting',
     description: 'Turnkey luxury villa contracting and home renovations in Al Raha Gardens & Al Raha Beach, Abu Dhabi. High-end finishing and MEP installations.',
-    images: ['https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80'],
+    images: ['/images/Matrix_project1.jpeg'],
   },
 };
 
@@ -54,7 +54,7 @@ export default function AlRahaGeoPage() {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     'name': 'ArrowHead General Contracting LLC - Al Raha Operations',
-    'image': 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
+    'image': '/images/Matrix_project1.jpeg',
     'telephone': '+971-2-XXXXXXX',
     'address': {
       '@type': 'PostalAddress',
@@ -96,7 +96,7 @@ export default function AlRahaGeoPage() {
             Turnkey Villa Construction &amp; Fit-Out in Al Raha
           </h1>
           <p className="mt-6 text-sm sm:text-base text-app-muted max-w-3xl font-light leading-relaxed">
-            Delivering premium turnkey custom villas, structural renovations, and specialized commercial MEP installations in Al Raha Gardens and Al Raha Beach. Registered under Abu Dhabi DED license CN-4998977.
+            Delivering premium turnkey custom villas, structural renovations, and specialized commercial MEP installations in Al Raha Gardens and Al Raha Beach. Fully licensed Abu Dhabi general contractor.
           </p>
           <div className="mt-8">
             <Link
@@ -113,7 +113,7 @@ export default function AlRahaGeoPage() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            
+
             {/* Left Copy: Semantic HTML5 */}
             <div className="lg:col-span-7 space-y-6">
               <span className="text-brand-gold text-xs font-bold uppercase tracking-widest font-mono font-bold">
@@ -122,7 +122,7 @@ export default function AlRahaGeoPage() {
               <h2 className="text-2xl sm:text-3xl font-heading font-extrabold text-app-fg tracking-tight">
                 Turnkey Project Delivery &amp; High-Efficiency MEP Systems
               </h2>
-              
+
               <div className="text-app-muted space-y-5 text-xs sm:text-sm leading-relaxed font-light">
                 <p>
                   Al Raha Beach is one of Abu Dhabi's premier waterfront residential zones, demanding the highest level of craftsmanship, structural safety, and mechanical sophistication. ArrowHead provides turnkey villa construction, high-end residential extensions, and premium MEP remodeling services in Al Raha Gardens, Al Bandar, Al Muneera, and adjacent luxury communities, ensuring compliance with strict community guidelines and municipal standards.
@@ -131,12 +131,12 @@ export default function AlRahaGeoPage() {
                   To address the unique, saturated soil profiles found near the canal waterfront, we perform comprehensive pile foundation engineering. We cast bored concrete piles to deep load-bearing strata, execute structural integrity testing (PIT), and apply multi-layer self-adhesive waterproofing membranes. This prevents groundwater moisture from rising into the villa foundations, protecting structural masonry from efflorescence and salt damage.
                 </p>
                 <p>
-                  Our specialized MEP division coordinates mechanical and electrical layout engineering. We perform electrical load calculations, design and dress main Distribution Boards (DB) to ADDC regulations, size and route double-skin HVAC duct networks, and connect chilled water pipelines to district cooling systems. We install automated variable air volume (VAV) boxes to maintain optimal indoor climate control.
+                  Our specialized MEP division coordinates mechanical and electrical layout engineering. We perform electrical load calculations, design and dress main Distribution Boards (DB) to local utility regulations, size and route double-skin HVAC duct networks, and connect chilled water pipelines to district cooling systems. We install automated variable air volume (VAV) boxes to maintain optimal indoor climate control.
                 </p>
                 <p>
-                  We manage the entire utility application process. Our engineers submit load schedules and single-line diagrams to the Abu Dhabi Distribution Company (ADDC). We coordinate all testing, inspect grounding and continuity systems, and obtain the necessary clearances to secure permanent electrical power connections and municipal water meters.
+                  We manage the entire utility application process. Our engineers submit load schedules and single-line diagrams to local utility distribution authorities. We coordinate all testing, inspect grounding and continuity systems, and obtain the necessary clearances to secure permanent electrical power connections and municipal water meters.
                 </p>
-  </div>
+              </div>
             </div>
 
             {/* Right Column: Local Projects List */}
@@ -144,7 +144,7 @@ export default function AlRahaGeoPage() {
               <h3 className="font-heading font-extrabold text-sm text-white border-b border-app-border pb-4 uppercase tracking-widest">
                 Al Raha Beach Handovers
               </h3>
-              
+
               <div className="space-y-6">
                 {localProjects.map((proj, idx) => (
                   <div key={idx} className="bg-app-secondary/60 p-5 rounded border border-app-border space-y-2">
@@ -163,7 +163,7 @@ export default function AlRahaGeoPage() {
 
               <div className="pt-4 border-t border-app-border/40 text-center">
                 <span className="text-[10px] font-mono text-app-muted uppercase">
-                  Estidama &amp; ADM Permit Compliant
+                  Estidama &amp; Municipal Permit Compliant
                 </span>
               </div>
             </div>
