@@ -31,9 +31,16 @@ export const clientPartners: ClientPartner[] = [
   {
     name: 'Ghuzlan Emirates Furn & Decor',
     category: 'Main Contractor & Fit-Out',
-    logo: undefined,
-    description: 'Established UAE interior fit-out, bespoke furniture, and decorative contracting enterprise with extensive commercial portfolio.',
-    scope: 'Interior Fit-Out Contracting, Custom Joinery, Decorative Ceilings'
+    logo: '/client-logos/ghuzlan.jpeg',
+    description: 'Established UAE interior fit-out, bespoke furniture, and decorative contracting enterprise with extensive prestige residential and commercial portfolios.',
+    scope: 'Damac Lagoons Venice Cluster Fit-Out, Custom Joinery, Decorative Ceilings'
+  },
+  {
+    name: 'RAK Ceramics',
+    category: 'Main Contractor & Fit-Out',
+    logo: '/client-logos/rak-ceramics.jpeg',
+    description: 'Global ceramic and lifestyle solutions leader partnering on flagship retail showroom fit-outs, display architecture, and premium interior commercial spaces.',
+    scope: 'Retail Flagship Fit-Out, Architectural Display Joinery, Lighting & MEP Coordination'
   },
   {
     name: 'Matrix Engineering Consultants',

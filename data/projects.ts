@@ -21,6 +21,69 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: 'ghuzlan-commercial-fitout',
+    title: 'Ghuzlan Damac Lagoons Venice Cluster Fit-Out',
+    category: 'Office & Retail Fit-Out',
+    categoryKey: 'interiors',
+    location: 'Damac Lagoons - Venice Cluster, UAE',
+    desc: 'Comprehensive interior architectural fit-out and specialized decorative joinery execution for Ghuzlan Emirates at Damac Lagoons - Venice Cluster. Scope encompasses bespoke wall paneling, luxury acoustic ceiling treatments, integrated MEP distribution, and fine decorative finishes.',
+    stats: 'Luxury Cluster Fit-Out | Bespoke Joinery | Turnkey Handover',
+    image: '/images/ghuzlan-site.jpeg',
+    challenges: 'Executing intricate architectural joinery and custom ceiling designs in a fast-track luxury cluster environment while maintaining rigorous acoustic and MEP integration standards.',
+    solutions: 'Utilized off-site precision joinery prefabrication, deployed synchronized on-site installation teams, and implemented detailed QA/QC inspections for seamless handover.',
+    scope: [
+      'Luxury architectural fit-out, partition walls & decorative ceilings',
+      'Bespoke joinery wall paneling, custom cabinetry & architectural trims',
+      'MEP electrical power coordination, lighting installation & HVAC integration',
+      'Life safety compliance, emergency lighting & authority inspection clearances',
+    ],
+    keyServices: ['Luxury Fit-Out Contracting', 'Custom Joinery & Decor', 'MEP Distribution', 'QA/QC Handover Certification'],
+    clientTestimonial: {
+      quote: 'ArrowHead demonstrated superior engineering precision and craftsmanship at our Damac Lagoons Venice Cluster site.',
+      author: 'Project Operations Lead',
+      company: 'Ghuzlan Emirates Furn & Decor'
+    },
+    gallery: [
+      '/images/ghuzlan-site.jpeg',
+      '/images/ghuzlan-site1.jpeg',
+      '/images/interior.jpeg',
+      '/images/interior1.jpeg',
+      '/images/interior2.jpeg',
+    ]
+  },
+  {
+    slug: 'rak-ceramics-showroom',
+    title: 'RAK Ceramics Flagship Retail Showroom Fit-Out',
+    category: 'Office & Retail Fit-Out',
+    categoryKey: 'interiors',
+    location: 'Prime Commercial & Retail District, Abu Dhabi',
+    desc: 'Turnkey architectural fit-out and MEP engineering for RAK Ceramics flagship brand experience center. Features heavy-load custom tile display fixtures, architectural track lighting, polished screed flooring, customer consultation lounges, and Civil Defense approvals.',
+    stats: 'Flagship Retail Showroom | Display Architecture | Fast-Track Turnkey',
+    image: '/images/rak-ceramics-store.jpeg',
+    challenges: 'Engineering structural reinforcement and high-capacity floor loadings for heavy ceramic tile sliding display racks and multi-angle exhibition bays.',
+    solutions: 'Engineered secondary steel sub-frames anchored to structural slabs, installed precision linear track lighting with CRI 90+ color rendering, and conducted comprehensive load tests prior to showroom opening.',
+    scope: [
+      'Complete flagship showroom architectural fit-out & spatial planning',
+      'Custom heavy-duty ceramic tile display racks & boutique display casework',
+      'Specialized high-CRI retail track lighting, HVAC ducting & power points',
+      'Civil Defense approvals, fire safety compliance & final municipality clearances',
+    ],
+    keyServices: ['Retail Showroom Fit-Out', 'Display Architecture', 'Specialized Lighting & MEP', 'Civil Defense Clearances'],
+    clientTestimonial: {
+      quote: 'The showroom finish is world-class. ArrowHead handled complex display loads and precision lighting to showcase our ceramic collections beautifully.',
+      author: 'Retail Development Lead',
+      company: 'RAK Ceramics UAE'
+    },
+    gallery: [
+      '/images/rak-ceramics-store.jpeg',
+      '/images/rak-ceramics-store1.jpeg',
+      '/images/rak-ceramics-store2.jpeg',
+      '/images/rak-ceramics-store3.jpeg',
+      '/images/store.jpeg',
+      '/images/store1.jpeg',
+    ]
+  },
+  {
     slug: 'jack-wills-fitout',
     title: 'Jack Wills Commercial Retail Store Fit-Out',
     category: 'Office & Retail Fit-Out',

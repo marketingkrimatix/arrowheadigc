@@ -53,6 +53,32 @@ export const clientsData: ClientItem[] = [
     ),
   },
   {
+    name: 'Ghuzlan Emirates',
+    category: 'Commercial Fit-Out & Joinery',
+    projectTitle: 'Damac Lagoons Venice Cluster Fit-Out',
+    projectSlug: 'ghuzlan-commercial-fitout',
+    logoText: 'GHUZLAN',
+    iconSvg: (
+      <svg className="w-9 h-9" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 36V14L24 22L36 14V36H12Z" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round" />
+        <path d="M24 22V36" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    name: 'RAK Ceramics',
+    category: 'Flagship Retail & Display Architecture',
+    projectTitle: 'RAK Ceramics Flagship Retail Showroom',
+    projectSlug: 'rak-ceramics-showroom',
+    logoText: 'RAK CERAMICS',
+    iconSvg: (
+      <svg className="w-9 h-9" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="12" y="12" width="24" height="24" rx="2" stroke="currentColor" strokeWidth="2.5" />
+        <path d="M12 24H36M24 12V36" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
     name: 'Capital Corporation',
     category: 'Commercial Real Estate & Fit-Out',
     projectTitle: 'Corporate Office Fit-Out & MEP',

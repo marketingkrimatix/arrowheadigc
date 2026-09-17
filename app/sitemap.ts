@@ -49,6 +49,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const projectPaths = [
+    '/projects/ghuzlan-commercial-fitout',
+    '/projects/rak-ceramics-showroom',
     '/projects/jack-wills-fitout',
     '/projects/foot-locker-fitout',
     '/projects/ali-makhboot-villa',
