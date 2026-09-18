@@ -42,73 +42,100 @@ export default function ServicesPage() {
       id: 'office-interiors',
       title: 'Commercial Office Interiors & Fit-Out',
       category: 'Interiors & Commercial',
-      desc: 'Turnkey commercial office fit-out, retail boutique interiors (Jack Wills), and corporate workspace renovations in Abu Dhabi. Complete architectural joinery, acoustic partitions, MEP distribution, and Civil Defense approvals.',
-      features: ['Turnkey Office Fit-Out', 'Retail Shop & Boutique Interiors', 'Custom Architectural Joinery', 'Civil Defense NOCs'],
+      desc: 'Turnkey commercial office fit-out, retail flagship boutiques (Jack Wills, RAK Ceramics, Ghuzlan), and corporate workspace renovations in Abu Dhabi. Complete architectural joinery, acoustic partitions, MEP distribution, and Civil Defense approvals.',
+      features: ['Turnkey Office & Boutique Fit-Out', 'Custom Architectural Joinery & Wall Panels', 'MEP Power, Lighting & HVAC Air Balancing', 'Civil Defense Clearances & Municipal NOCs'],
       href: '/services/office-interiors',
+      image: '/images/ghuzlan-site.jpeg',
+      standard: 'Abu Dhabi Civil Defense & Mall Management Fit-Out Standards',
+      complianceDesc: 'Comprehensive interior fit-out, bespoke decorative joinery, acoustic ceiling systems, and fast-track authority inspections.',
+    },
+    {
+      id: 'villa-construction',
+      title: 'Villa Construction & Contractors',
+      category: 'Building',
+      desc: 'Elite design-build villa contractors in Abu Dhabi. Turnkey residential engineering, custom luxury architecture, reinforced concrete casting, shell & core, and Estidama 2-Pearl certifications.',
+      features: ['Turnkey Custom Luxury Villas', 'Estidama 2-Pearl Thermal Compliance', 'Structural & Substructure Raft Civils', 'TAMM Municipality Permits & Clearances'],
+      href: '/services/villa-construction',
+      image: '/images/ArrowheadVilla.png',
+      standard: 'TAMM Permit Compliant / Estidama 2-Pearl Certified',
+      complianceDesc: 'Turnkey design-build engineering, high-strength C50/60 concrete casting, thermal envelope insulation, and luxury architectural finishes.',
+    },
+    {
+      id: 'villa-renovation',
+      title: 'Villa Renovation & Extensions',
+      category: 'Building',
+      desc: 'Premium structural extensions, majlis additions, kitchen and bathroom luxury upgrades, layout redesigns, boundary walls construction, and refurbishment works for private residences.',
+      features: ['Structural Majlis Extensions', 'Boundary & Exterior Facade Upgrades', 'Interior Fit-Out & Luxury Marble Tiling', 'TAMM Municipal Building NOCs'],
+      href: '/services/villa-renovation',
+      image: '/images/landscape1.jpeg',
+      standard: 'Abu Dhabi Municipality Renovation & Extension Permits',
+      complianceDesc: 'Structural load-bearing modifications, exterior perimeter walls, high-efficiency MEP retrofitting, and authority completion certificates.',
+    },
+    {
+      id: 'mep-specialized',
+      title: 'MEP & Specialized Works',
+      category: 'Engineering',
+      desc: 'Technical mechanical, electrical, and plumbing engineering. HVAC ventilation retrofits, main distribution boards (MDB/SMDB), drainage networks, and firefighting suppression installations.',
+      features: ['HVAC Ducting & Chilled Water Balancing', 'Electrical Distribution Boards & Sizing', 'Fire Suppression & Sprinkler Riser Systems', 'Energy Consumption & Thermography Audits'],
+      href: '/services/mep-specialized',
+      image: '/images/mep-work.png',
+      standard: 'ADDC Electricity Regulations & Civil Defense NFPA Codes',
+      complianceDesc: 'Secondary electrical distribution, multi-zone VRF climate networks, fire pump testing, and municipal utility certifications.',
+    },
+    {
+      id: 'facility-management',
+      title: 'Facility Management (Hard & Soft Services)',
+      category: 'Facility Care',
+      desc: 'Complete integrated building care. Hard FM covering preventative MEP, HVAC chiller servicing, and drainage flushing. Soft FM covering deep cleaning, landscaping, and pest control under structured AMCs.',
+      features: ['MEP Preventative Maintenance (AMC)', 'HVAC Chiller & Coil Overhauls', 'Commercial Cleaning & Landscaping', '24/7 Reactive Emergency Dispatch SLA'],
+      href: '/services/facility-management',
+      image: '/images/facility.png',
+      standard: 'ISO 41001 FM Standards / 24/7 SLA Compliance',
+      complianceDesc: 'Preventative multi-tier maintenance routines, electrical thermal scans, and rapid 2-hour technician dispatch SLAs.',
+    },
+    {
+      id: 'hdpe-pipelines',
+      title: 'HDPE Pipelines (Supply & Installation)',
+      category: 'Infrastructure',
+      desc: 'Expert services for HDPE pipeline supply, electrofusion and butt-fusion welding to DVS 2207, trenchless horizontal directional drilling (HDD), and hydrostatic pressure testing. Fully compliant with ADDC and municipal utility regulations.',
+      features: ['PE100 Pipeline Networks (DN 50 - DN 1200)', 'DVS 2207 Butt-Fusion & Electrofusion', 'Trenchless Installation (HDD)', 'Hydrostatic Pressure & Leak Testing'],
+      href: '/services/hdpe-pipelines',
+      image: '/images/123.jpeg',
+      standard: 'DVS 2207 / ISO 4427 / ADDC & Municipality Certified',
+      complianceDesc: 'Certified butt-fusion & electrofusion welding with computerized datalogger records and hydrostatic pressure testing to 10+ Bar.',
+    },
+    {
+      id: 'wet-utilities-infrastructure',
+      title: 'Wet Utilities & Drainage Infrastructure',
+      category: 'Infrastructure',
+      desc: 'Certified wet utilities contracting across Abu Dhabi. Supply, trenching, welding, pressure testing, and connection of sewage gravity grids, storm water outfalls, and potable water networks.',
+      features: ['Sewerage Gravity & Pressure Lines', 'Potable Water Distribution Mains', 'Storm Water Outfalls & Attenuation', 'Precast Valve Chambers & Manholes'],
+      href: '/services/wet-utilities-infrastructure',
+      image: '/images/789.jpeg',
+      standard: 'Abu Dhabi Municipality & ADDC Approved Standards',
+      complianceDesc: 'Gravity sewer networks, storm water lines, potable water transmission loops, and reinforced precast valve chambers.',
+    },
+    {
+      id: 'infrastructure-civil-works',
+      title: 'Infrastructure & Civil Works',
+      category: 'Infrastructure',
+      desc: 'Approved civil engineering contracting in Abu Dhabi. Bulk earthworks, site grading, compaction testing, reinforced boundary walls, interlocking paving, and heavy concrete foundations.',
+      features: ['Site Grading & Bulk Earthworks', 'Boundary & Structural Retaining Walls', 'Heavy Compaction Testing & Subgrades', 'Interlock & Kerbstone Paving'],
+      href: '/services/infrastructure-civil-works',
+      image: '/images/civil-infrastructure.webp',
+      standard: 'DoT & Abu Dhabi Municipality Civil Specifications',
+      complianceDesc: 'Substructure excavations, engineered backfilling, asphalt paving, boundary enclosures, and municipal right-of-way compliance.',
     },
     {
       id: 'industrial-warehouses',
       title: 'Industrial Warehouses Construction & AMC',
       category: 'Industrial & Civil',
       desc: 'Turnkey industrial warehouse construction, pre-engineered steel buildings (PEB), TR34 high-flatness concrete flooring, crane gantry structures, and warehouse maintenance AMCs in Mussafah, ICAD, and KIZAD.',
-      features: ['PEB Steel Portal Frames', 'TR34 High-Flatness Concrete', 'Overhead Crane Gantries', 'Warehouse Maintenance AMC'],
+      features: ['PEB Steel Portal Frames', 'TR34 High-Flatness Concrete Flooring', 'Overhead Crane Gantries & Rail Alignment', 'Industrial Warehouse Maintenance AMC'],
       href: '/services/industrial-warehouses',
-    },
-    {
-      id: 'hdpe-pipelines',
-      title: 'HDPE Pipelines (Supply & Installation)',
-      category: 'Infrastructure',
-      desc: 'Expert services for HDPE pipeline welding (butt-fusion and electrofusion), trenchless horizontal directional drilling (HDD), and hydrostatic pressure testing. Complying with municipal and international utility guidelines.',
-      features: ['PE100 Pipeline Networks', 'Butt-Fusion & Electrofusion Welding', 'Trenchless Installation (HDD)', 'Hydrostatic Pressure Testing'],
-      href: '/services/hdpe-pipelines',
-    },
-    {
-      id: 'villa-construction',
-      title: 'Villa Construction & Contractors',
-      category: 'Building',
-      desc: 'Elite design-build villa contractors in Abu Dhabi. Turnkey residential engineering, custom architecture, structural casting, shell & core, and Estidama certifications.',
-      features: ['Turnkey Custom Villas', 'Estidama Pearl Ratings', 'Structural & Foundation Civils', 'TAMM Municipality Approvals'],
-      href: '/services/villa-construction',
-    },
-    {
-      id: 'villa-renovation',
-      title: 'Villa Renovation & Extensions',
-      category: 'Building',
-      desc: 'Premium structural extensions, kitchen and bathroom upgrades, layout redesigns, boundary walls construction, and refurbishment works for private residences.',
-      features: ['Structural Extensions', 'Majlis & Boundary Upgrades', 'Fit-out & Tiling Works', 'Municipal Building Permits'],
-      href: '/services/villa-renovation',
-    },
-    {
-      id: 'facility-management',
-      title: 'Facility Management (Hard & Soft Services)',
-      category: 'Facility Care',
-      desc: 'Complete integrated building care. Hard FM covering preventative MEP, HVAC servicing, and drainage flushing. Soft FM covering deep cleaning, landscaping, and pest control.',
-      features: ['MEP Preventative Maintenance', 'HVAC Chiller Overhauls', 'Deep Cleaning & Landscaping', 'Abu Dhabi Municipality Pest Control'],
-      href: '/services/facility-management',
-    },
-    {
-      id: 'mep-specialized',
-      title: 'MEP & Specialized Works',
-      category: 'Engineering',
-      desc: 'Technical mechanical, electrical, and plumbing engineering. HVAC ventilation retrofits, DB sizing, drainage networks, and firefighting suppression installations.',
-      features: ['HVAC Ducting & Ventilation', 'Electrical DB Installations', 'Fire Suppression Infrastructure', 'Energy Consumption Audits'],
-      href: '/services/mep-specialized',
-    },
-    {
-      id: 'wet-utilities-infrastructure',
-      title: 'Wet Utilities & Drainage Infrastructure',
-      category: 'Infrastructure',
-      desc: 'Certified wet utilities contracting. Supply, welding, pressure testing, and connection of sewage grids, water transmission networks, and storm outfalls conforming to municipal and international utility standard details.',
-      features: ['Sewerage Gravity Lines', 'Potable Water Mains', 'Storm Water Outfalls', 'Precast Valve Chambers'],
-      href: '/services/wet-utilities-infrastructure',
-    },
-    {
-      id: 'infrastructure-civil-works',
-      title: 'Infrastructure & Civil Works',
-      category: 'Infrastructure',
-      desc: 'Approved civil engineering contracting in Abu Dhabi. Bulk earthworks, site grading, compaction testing, boundary walls construction, interlocking paving, and heavy concrete foundations.',
-      features: ['Site Grading & Earthworks', 'Boundary & Retaining Walls', 'Heavy Compaction Testing', 'Interlock & Kerbstone Paving'],
-      href: '/services/infrastructure-civil-works',
+      image: '/images/Matrix_project.jpeg',
+      standard: 'Civil Defense 924 / TR34 Floor Flatness Compliant',
+      complianceDesc: 'Heavy-duty steel portal frame erection, superflat laser-screed concrete slabs, and wet sprinkler fire protection networks.',
     },
   ];
 
@@ -203,7 +230,7 @@ export default function ServicesPage() {
       <JsonLd schema={[servicesSchema, breadcrumbSchema]} />
 
       {/* 1. HERO HEADER */}
-      <section className="bg-app-secondary py-16 relative overflow-hidden border-b border-app-border">
+      <section className="bg-app-secondary py-20 relative overflow-hidden border-b border-app-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <Breadcrumbs items={[{ name: 'Services' }]} />
           <h1 className="text-4xl font-heading font-extrabold text-app-fg mt-3 tracking-tight">
@@ -231,8 +258,9 @@ export default function ServicesPage() {
             {serviceList.map((service, index) => (
               <div
                 key={service.id}
-                className={`grid grid-cols-1 lg:grid-cols-12 gap-10 items-center pb-12 border-b border-app-border last:border-b-0 last:pb-0 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''
-                  }`}
+                className={`grid grid-cols-1 lg:grid-cols-12 gap-10 items-center pb-12 border-b border-app-border last:border-b-0 last:pb-0 ${
+                  index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+                }`}
               >
                 {/* Details */}
                 <div className={`lg:col-span-7 space-y-5 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
@@ -266,19 +294,42 @@ export default function ServicesPage() {
                   </div>
                 </div>
 
-                {/* Banner / Visual Placeholder */}
-                <div className={`lg:col-span-5 bg-app-secondary border border-app-border rounded-2xl p-8 flex flex-col justify-center min-h-[220px] shadow-2xl relative overflow-hidden ${index % 2 === 1 ? 'lg:order-1' : ''
-                  }`}>
-                  <div className="absolute inset-0 bg-gradient-to-tr from-primary-navy/95 to-primary-navy/40 mix-blend-multiply pointer-events-none"></div>
-                  <div className="relative z-10 text-white space-y-4">
-                    <span className="text-[10px] uppercase font-bold tracking-widest text-brand-teal block font-mono">
-                      Scope Compliance
+                {/* Visual Showcase Card with Real Image and Compliance Overlay */}
+                <div
+                  className={`lg:col-span-5 rounded-2xl overflow-hidden border border-app-border shadow-xl hover:shadow-2xl transition-all duration-300 relative min-h-[260px] sm:min-h-[300px] flex flex-col justify-between group ${
+                    index % 2 === 1 ? 'lg:order-1' : ''
+                  }`}
+                >
+                  {/* Background Image with zoom on hover */}
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                  />
+
+                  {/* High-Contrast Multi-Layer Overlay for Perfect Contrast in Light & Dark Mode */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/65 to-slate-950/30 pointer-events-none"></div>
+
+                  {/* Top Badge */}
+                  <div className="relative z-10 p-5 sm:p-6 pb-0 flex items-center justify-between">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full bg-brand-teal text-primary-dark font-mono font-bold text-[10px] uppercase tracking-wider shadow-md">
+                      Scope &amp; Compliance
                     </span>
-                    <p className="text-xs font-light text-slate-200 leading-relaxed">
-                      All technical materials, dimensions, testing protocols, and welding operations are certified to meet municipal and utility codes.
+                    <span className="text-[10px] font-mono text-slate-300 bg-black/40 backdrop-blur-sm px-2.5 py-1 rounded border border-white/10">
+                      0{index + 1}
+                    </span>
+                  </div>
+
+                  {/* Content Details */}
+                  <div className="relative z-10 p-5 sm:p-6 space-y-2.5 text-white">
+                    <p className="text-xs font-light text-slate-200 leading-relaxed drop-shadow-sm">
+                      {service.complianceDesc}
                     </p>
-                    <div className="text-[10px] font-mono text-slate-400">
-                      Standard: ISO, Municipal &amp; Utility Approvals
+                    <div className="pt-2 border-t border-white/15 flex items-center gap-1.5">
+                      <span className="text-brand-teal text-[11px] font-mono">Standard:</span>
+                      <span className="text-[10px] font-mono text-slate-300 truncate">
+                        {service.standard}
+                      </span>
                     </div>
                   </div>
                 </div>

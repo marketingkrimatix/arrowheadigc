@@ -29,7 +29,7 @@ export default function ProjectsClient() {
     <div id="projects-portfolio-page" className="bg-app-bg text-app-fg min-h-screen relative">
       
       {/* 1. HERO HEADER */}
-      <section className="bg-app-bg py-16 relative overflow-hidden border-b border-app-border">
+      <section className="bg-app-secondary py-20 relative overflow-hidden border-b border-app-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <Breadcrumbs items={[{ name: 'Projects' }]} />
           <h1 className="text-4xl font-heading font-extrabold text-app-fg mt-3 tracking-tight">

@@ -69,7 +69,7 @@ export default function Header() {
     { name: 'Hospitality & Leisure', href: '/sectors/hospitality-leisure', desc: 'Resort FM & luxury fit-outs' },
   ];
 
-  const allServiceLinks = [...infrastructureLinks, ...buildingLinks];
+  const allServiceLinks = [...buildingLinks, ...infrastructureLinks];
 
   return (
     <>

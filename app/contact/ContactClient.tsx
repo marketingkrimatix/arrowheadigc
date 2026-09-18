@@ -94,7 +94,7 @@ export default function ContactClient() {
     <div id="contact-page-container" className="bg-app-bg text-app-fg min-h-screen transition-colors duration-200">
       
       {/* 1. HERO HEADER */}
-      <section className="bg-app-secondary py-16 text-center relative overflow-hidden border-b border-app-border">
+      <section className="bg-app-secondary py-20 text-center relative overflow-hidden border-b border-app-border">
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <span className="text-brand-teal text-xs font-bold uppercase tracking-widest font-mono">Connect with Us</span>

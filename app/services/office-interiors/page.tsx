@@ -345,21 +345,6 @@ export default function OfficeInteriorsPage() {
         </div>
       </section>
 
-      {/* 5. INTERACTIVE SPEC SHOWCASE */}
-      <section className="py-20 bg-app-secondary border-b border-app-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="text-brand-teal text-xs font-bold uppercase tracking-widest font-mono">
-              Live Specification Matrix
-            </span>
-            <h2 className="text-3xl font-heading font-extrabold text-app-fg mt-2">
-              Fit-Out Material &amp; MEP Control
-            </h2>
-          </div>
-          <CinematicSpecGrid />
-        </div>
-      </section>
-
       {/* 6. FAQS */}
       <section className="py-20 border-b border-app-border">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
