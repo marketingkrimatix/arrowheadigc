@@ -46,13 +46,6 @@ export default function SectorsPage() {
       href: '/sectors/residential-villas',
     },
     {
-      id: 'industrial-manufacturing',
-      title: 'Industrial & Manufacturing',
-      desc: 'Pipeline supply loops, steel workshop fabrications, heavy concrete foundation bases, and hard maintenance services in Mussafah and ICAD zones.',
-      image: '/images/civil-infrastructure.webp',
-      href: '/sectors/industrial-manufacturing',
-    },
-    {
       id: 'commercial-retail',
       title: 'Commercial Offices & Retail Malls',
       desc: 'Tenant fit-out MEP, chilled water line adjustments, fire sprinkler retrofits, and integrated facilities management contracts.',
@@ -65,13 +58,6 @@ export default function SectorsPage() {
       desc: 'Municipal utility pipelines, gravity sewerage grids, storm drainage outfalls, and potable water distribution networks complying with municipal and international standard details.',
       image: '/images/123.jpeg',
       href: '/sectors/infrastructure-utilities',
-    },
-    {
-      id: 'hospitality-leisure',
-      title: 'Hospitality, Resorts & Leisure',
-      desc: 'High-end fit-out interior construction, specialized HVAC chilled water configurations, and comprehensive preventive building facility management AMCs for hotels and theme parks.',
-      image: '/images/landscape.jpeg',
-      href: '/sectors/hospitality-leisure',
     },
   ];
 

@@ -23,7 +23,7 @@ export default function SplitActiveShowcase() {
       desc: 'Trenchless directional drilling and butt-fusion welding for municipal water pressure networks.',
       spec1: 'Municipal Utility Standard Compliance',
       spec2: 'Pipeline Scopes: DN 110mm to DN 1200mm',
-      image: '/images/123.jpeg'
+      image: '/images/hdpe.jpg'
     },
     {
       id: 'villas',

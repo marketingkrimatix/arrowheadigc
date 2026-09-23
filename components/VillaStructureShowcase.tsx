@@ -32,21 +32,21 @@ export default function VillaStructureShowcase() {
   const layers = [
     {
       id: 0,
-      title: '01 / Foundation & Sub-Structure',
-      badge: 'SULFATE-RESISTANT',
-      details: 'Bored concrete piles, thick reinforced raft slab, double-layer waterproofing, and PIT integrity testing.',
-      spec: 'C45 SRC Concrete • 1200 Gauge HDPE Membrane'
+      title: '01 / Villa 1 - Khulagi Luxury Residence',
+      badge: 'CUSTOM RESIDENCE',
+      details: 'Comprehensive luxury private villa development featuring contemporary architectural finishes, expansive glazing, and bespoke landscape integration.',
+      spec: 'Contemporary Estate • Estidama Compliant'
     },
     {
       id: 1,
-      title: '02 / Structural Columns & Masonry',
-      badge: 'ESTIDAMA INSULATED',
-      details: 'Reinforced concrete columns, post-tensioned slabs, insulated thermal blockwork, and MEP conduit integration.',
-      spec: 'C50 Concrete • 200mm Autoclaved Aerated Blocks'
+      title: '02 / Villa 2 - Contemporary Executive Villa',
+      badge: 'GLASS & MARBLE FACADE',
+      details: 'Modern architectural villa construction featuring floor-to-ceiling glass facades, premium thermal insulation, and integrated MEP systems.',
+      spec: 'Modern Architecture • High-Spec Finishes'
     },
     {
       id: 2,
-      title: '03 / Dry Cladding & Finishes',
+      title: '03 / Villa 3 - Sanjay Jain Residence',
       badge: 'LUXURY BROCHURE',
       details: 'Premium Italian marble dry-cladding, low-E double-glazed windows, and Estidama compliant envelope seals.',
       spec: 'Calacatta Vein Cut • Double Glazed U-Value < 1.4'
@@ -68,87 +68,87 @@ export default function VillaStructureShowcase() {
             transformStyle: 'preserve-3d',
           }}
         >
-          {/* Layer 1: Bottom Layer - Foundation Raft */}
+          {/* Layer 1: Villa 1 */}
           <div
             onClick={() => setFocusedLayer(0)}
-            className={`absolute inset-0 rounded-xl border p-5 bg-app-card/35 backdrop-blur-xs flex flex-col justify-between transition-all duration-700 ease-out shadow-lg hover:border-brand-teal/70 ${focusedLayer === 0 ? 'border-brand-teal/80 z-30 shadow-brand-teal/20 scale-[1.02]' : 'border-brand-teal/15 opacity-70 z-10'
+            className={`absolute inset-0 rounded-xl overflow-hidden border bg-app-secondary transition-all duration-700 ease-out shadow-2xl flex flex-col justify-between hover:border-brand-teal/70 ${focusedLayer === 0 ? 'border-brand-teal/80 z-30 shadow-black/45 scale-[1.02]' : 'border-app-border opacity-70 z-10'
               }`}
             style={{ transform: `translateZ(${getTranslationZ(0)})` }}
           >
-            <div className="flex justify-between items-start font-mono">
-              <div className="space-y-1">
-                <span className="text-[8px] font-bold text-brand-teal uppercase tracking-widest block">FOUNDATION ARCHITECTURE</span>
-                <span className="text-[6px] text-app-muted block">GRID LEVEL: B1 SUB-GRADE</span>
+            <div className="relative w-full h-[250px] sm:h-[290px] overflow-hidden bg-primary-dark">
+              <img
+                src="/images/KhulagiVilla.png"
+                alt="Villa 1 - Khulagi Luxury Residence"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
+
+              <div className="absolute top-4 left-4 flex gap-2">
+                <span className="bg-brand-gold text-primary-dark text-[8px] font-bold uppercase tracking-wider px-2 py-0.5 rounded shadow-sm">
+                  ESTIDAMA 2-PEARL
+                </span>
+                <span className="bg-brand-teal text-primary-dark text-[8px] font-bold uppercase tracking-wider px-2 py-0.5 rounded shadow-sm">
+                  CUSTOM BUILD
+                </span>
               </div>
-              <span className="text-[7px] text-brand-teal font-bold bg-brand-teal/10 px-1.5 py-0.5 rounded">SRC LEVEL</span>
+
+              <div className="absolute bottom-4 left-4 right-4 text-white">
+                <span className="text-[8px] font-mono text-brand-gold uppercase tracking-widest block font-bold">01 / VILLA 1</span>
+                <h4 className="text-sm font-heading font-extrabold tracking-tight mt-0.5">KHULAGI LUXURY RESIDENCE</h4>
+                <p className="text-[9px] text-white/70 font-light mt-0.5">Custom luxury private residence with contemporary architecture.</p>
+              </div>
             </div>
 
-            {/* CAD Grid and Foundation Rebar wireframe */}
-            <div className="flex-1 my-3 relative flex items-center justify-center opacity-60">
-              <div className="absolute inset-0 bg-[linear-gradient(rgba(0,168,198,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,168,198,0.05)_1px,transparent_1px)] bg-[size:12px_12px]"></div>
-              <svg width="100%" height="100%" className="text-brand-teal overflow-visible">
-                {/* Pile anchors */}
-                <circle cx="50" cy="50" r="10" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" />
-                <circle cx="150" cy="50" r="10" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" />
-                <circle cx="250" cy="50" r="10" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" />
-                <circle cx="100" cy="130" r="10" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" />
-                <circle cx="200" cy="130" r="10" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" />
-
-                {/* Rebar cross grid lines */}
-                <line x1="10" y1="90" x2="270" y2="90" stroke="currentColor" strokeWidth="0.8" />
-                <line x1="10" y1="100" x2="270" y2="100" stroke="currentColor" strokeWidth="0.8" />
-                <line x1="10" y1="110" x2="270" y2="110" stroke="currentColor" strokeWidth="0.8" />
-
-                <text x="15" y="165" className="fill-brand-teal font-mono text-[7px] font-bold">RAFT STEEL MESH SPEC: T20@150B2</text>
-              </svg>
-            </div>
-
-            <div className="flex justify-between items-end font-mono text-[7px] text-app-muted border-t border-brand-teal/10 pt-2">
-              <span>NOC OBTAINED</span>
-              <span className="text-brand-teal font-bold">● ANCHORS VERIFIED</span>
+            <div className="p-3 bg-app-card border-t border-app-border flex justify-between items-center">
+              <div className="flex items-center space-x-2">
+                <span className="w-2 h-2 rounded-full bg-brand-teal animate-pulse"></span>
+                <span className="text-[8px] font-mono text-app-fg font-bold tracking-wider uppercase">COMPLETED VILLA</span>
+              </div>
+              <span className="text-[8px] font-mono text-brand-gold font-bold">BUILD CODE: AH-VILLA-01</span>
             </div>
           </div>
 
-          {/* Layer 2: Middle Layer - Structural Concrete & Columns */}
+          {/* Layer 2: Villa 2 */}
           <div
             onClick={() => setFocusedLayer(1)}
-            className={`absolute inset-0 rounded-xl border p-5 bg-app-card/45 backdrop-blur-xs flex flex-col justify-between transition-all duration-700 ease-out shadow-lg hover:border-brand-gold/70 ${focusedLayer === 1 ? 'border-brand-gold/80 z-30 shadow-brand-gold/20 scale-[1.02]' : 'border-brand-gold/15 opacity-70 z-20'
+            className={`absolute inset-0 rounded-xl overflow-hidden border bg-app-secondary transition-all duration-700 ease-out shadow-2xl flex flex-col justify-between hover:border-brand-gold/70 ${focusedLayer === 1 ? 'border-brand-gold/80 z-30 shadow-black/45 scale-[1.02]' : 'border-app-border opacity-70 z-20'
               }`}
             style={{ transform: `translateZ(${getTranslationZ(1)})` }}
           >
-            <div className="flex justify-between items-start font-mono">
-              <div className="space-y-1">
-                <span className="text-[8px] font-bold text-brand-gold uppercase tracking-widest block">COLUMN FRAME & CORE WALLS</span>
-                <span className="text-[6px] text-app-muted block">SHEET NO: AH-V-STR-04</span>
+            <div className="relative w-full h-[250px] sm:h-[290px] overflow-hidden bg-primary-dark">
+              <img
+                src="/images/villa_contemporary.png"
+                alt="Villa 2 - Contemporary Executive Villa"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
+
+              <div className="absolute top-4 left-4 flex gap-2">
+                <span className="bg-brand-gold text-primary-dark text-[8px] font-bold uppercase tracking-wider px-2 py-0.5 rounded shadow-sm">
+                  CONTEMPORARY
+                </span>
+                <span className="bg-brand-teal text-primary-dark text-[8px] font-bold uppercase tracking-wider px-2 py-0.5 rounded shadow-sm">
+                  GLASS FACADE
+                </span>
               </div>
-              <span className="text-[7px] text-brand-gold font-bold bg-brand-gold/10 px-1.5 py-0.5 rounded">C50 CORE</span>
+
+              <div className="absolute bottom-4 left-4 right-4 text-white">
+                <span className="text-[8px] font-mono text-brand-gold uppercase tracking-widest block font-bold">02 / VILLA 2</span>
+                <h4 className="text-sm font-heading font-extrabold tracking-tight mt-0.5">CONTEMPORARY EXECUTIVE VILLA</h4>
+                <p className="text-[9px] text-white/70 font-light mt-0.5">Architectural villa design with floor-to-ceiling glass and private pool.</p>
+              </div>
             </div>
 
-            {/* Column layout and thermal block grid */}
-            <div className="flex-1 my-3 relative flex items-center justify-center opacity-65">
-              <svg width="100%" height="100%" className="text-brand-gold overflow-visible">
-                {/* 3D columns wireframe */}
-                <line x1="50" y1="40" x2="50" y2="150" stroke="currentColor" strokeWidth="1.5" />
-                <line x1="130" y1="20" x2="130" y2="130" stroke="currentColor" strokeWidth="1.5" />
-                <line x1="210" y1="40" x2="210" y2="150" stroke="currentColor" strokeWidth="1.5" />
-
-                {/* Horizontal beams */}
-                <line x1="50" y1="40" x2="130" y2="20" stroke="currentColor" strokeWidth="1.2" />
-                <line x1="130" y1="20" x2="210" y2="40" stroke="currentColor" strokeWidth="1.2" />
-                <line x1="50" y1="80" x2="130" y2="60" stroke="currentColor" strokeWidth="1" strokeDasharray="3 3" />
-
-                <text x="60" y="70" className="fill-brand-gold font-mono text-[6px]">PT BEAM INTRUSION</text>
-                <text x="60" y="110" className="fill-app-fg/80 font-mono text-[7px] font-bold">THERMAL BLOCKWORK FILL</text>
-              </svg>
-            </div>
-
-            <div className="flex justify-between items-end font-mono text-[7px] text-app-muted border-t border-brand-gold/10 pt-2">
-              <span>ESTIDAMA PEARL COMPLIANT</span>
-              <span>SLAB DE-SHUTTERED</span>
+            <div className="p-3 bg-app-card border-t border-app-border flex justify-between items-center">
+              <div className="flex items-center space-x-2">
+                <span className="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
+                <span className="text-[8px] font-mono text-app-fg font-bold tracking-wider uppercase">TURNKEY BUILD</span>
+              </div>
+              <span className="text-[8px] font-mono text-brand-gold font-bold">BUILD CODE: AH-VILLA-02</span>
             </div>
           </div>
 
-          {/* Layer 3: Top Layer - Finished Cladding & Marble Finishes */}
+          {/* Layer 3: Villa 3 */}
           <div
             onClick={() => setFocusedLayer(2)}
             className={`absolute inset-0 rounded-xl overflow-hidden border bg-app-secondary transition-all duration-700 ease-out shadow-2xl flex flex-col justify-between hover:border-brand-teal/70 ${focusedLayer === 2 ? 'border-brand-teal/80 z-30 shadow-black/45 scale-[1.02]' : 'border-app-border opacity-70 z-10'
@@ -159,7 +159,7 @@ export default function VillaStructureShowcase() {
             <div className="relative w-full h-[250px] sm:h-[290px] overflow-hidden bg-primary-dark">
               <img
                 src="/images/ArrowheadVilla.png"
-                alt="Bespoke Luxury Villa Finishes"
+                alt="Villa 3 - Sanjay Jain Residence"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
@@ -174,7 +174,7 @@ export default function VillaStructureShowcase() {
               </div>
 
               <div className="absolute bottom-4 left-4 right-4 text-white">
-                <span className="text-[8px] font-mono text-brand-gold uppercase tracking-widest block font-bold">03 / COMPLETED ARCHITECTURE</span>
+                <span className="text-[8px] font-mono text-brand-gold uppercase tracking-widest block font-bold">03 / VILLA 3</span>
                 <h4 className="text-sm font-heading font-extrabold tracking-tight mt-0.5">SANJAY JAIN LUXURY CUSTOM RESIDENCE</h4>
                 <p className="text-[9px] text-white/70 font-light mt-0.5">Handed over custom villa estate with dry-clad marble facade.</p>
               </div>
@@ -186,7 +186,7 @@ export default function VillaStructureShowcase() {
                 <span className="w-2 h-2 rounded-full bg-brand-teal animate-pulse"></span>
                 <span className="text-[8px] font-mono text-app-fg font-bold tracking-wider uppercase">STRUCTURAL SIGN-OFF</span>
               </div>
-              <span className="text-[8px] font-mono text-brand-gold font-bold">BUILD CODE: AH-VILLA-SAAD</span>
+              <span className="text-[8px] font-mono text-brand-gold font-bold">BUILD CODE: AH-VILLA-03</span>
             </div>
           </div>
         </div>
@@ -203,7 +203,7 @@ export default function VillaStructureShowcase() {
               : 'text-app-fg hover:bg-app-secondary'
               }`}
           >
-            {layer.id === 0 ? 'Foundation' : layer.id === 1 ? 'Frame' : 'Facade'}
+            {layer.id === 0 ? 'Villa 1' : layer.id === 1 ? 'Villa 2' : 'Villa 3'}
           </button>
         ))}
       </div>

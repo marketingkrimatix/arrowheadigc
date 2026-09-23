@@ -112,41 +112,17 @@ export default function CadRevealSlider() {
         className="relative w-full aspect-[16/9] rounded-xl overflow-hidden border border-app-border bg-slate-950 shadow-2xl cursor-ew-resize"
       >
         {/* UNDERLAY: Style 1 - CAD Blueprint Drawing (Left Side, seen when slider moves right) */}
-        <div className="absolute inset-0 bg-slate-950 flex flex-col justify-between p-8 font-mono">
-          {/* Header Specs */}
-          <div className="flex justify-between items-start text-brand-teal/80 text-[8px] sm:text-[10px]">
-            <div>
-              <span className="block font-bold">AH-VILLA-DESIGN-DWG</span>
-              <span className="block text-[7px] text-white/40">ELEVATION ANCHORS SCALE: 1:50</span>
-            </div>
-            <span className="text-right">CAD SECTION 03-A</span>
-          </div>
+        <div className="absolute inset-0 bg-slate-950 flex flex-col justify-end p-8 font-mono">
 
-          {/* SVG Blueprint Vectors */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-40">
-            {/* Grid background */}
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(0,168,198,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(0,168,198,0.15)_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-
-            <svg width="85%" height="85%" viewBox="0 0 800 450" className="text-brand-teal overflow-visible">
-              {/* Outer structural layout */}
-              <rect x="100" y="50" width="600" height="350" fill="none" stroke="currentColor" strokeWidth="2" />
-              {/* Column frames */}
-              <line x1="250" y1="50" x2="250" y2="400" stroke="currentColor" strokeWidth="1" strokeDasharray="5 5" />
-              <line x1="550" y1="50" x2="550" y2="400" stroke="currentColor" strokeWidth="1" strokeDasharray="5 5" />
-
-              {/* Inner rooms / dividers */}
-              <rect x="120" y="80" width="200" height="150" fill="none" stroke="currentColor" strokeWidth="1" />
-              <rect x="480" y="80" width="200" height="150" fill="none" stroke="currentColor" strokeWidth="1" />
-
-              {/* Piping loops */}
-              <path d="M 120 320 L 680 320 L 680 360" fill="none" stroke="#C5A880" strokeWidth="1.5" strokeDasharray="3 3" />
-              <circle cx="120" cy="320" r="5" className="fill-brand-gold" />
-              <circle cx="680" cy="320" r="5" className="fill-brand-gold" />
-
-              {/* Dimension markers */}
-              <line x1="100" y1="30" x2="700" y2="30" stroke="currentColor" strokeWidth="0.8" />
-              <text x="400" y="24" className="text-[10px] fill-brand-teal text-center font-bold">60.00m EXTENSION LOOP</text>
-            </svg>
+          {/* Structural Construction Underlay Image */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+            <img
+              src="/images/villa.png"
+              alt="Villa Structural Framework"
+              className="w-full h-full object-cover"
+            />
+            {/* Architectural grid overlay */}
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(0,168,198,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(0,168,198,0.12)_1px,transparent_1px)] bg-[size:24px_24px] opacity-25"></div>
           </div>
 
           {/* Title tag bottom left */}
@@ -161,7 +137,7 @@ export default function CadRevealSlider() {
           style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
         >
           <img
-            src="/images/ArrowheadVilla.png"
+            src="/images/Matrix_project2.jpeg"
             alt="Villa Finished Reality"
             className="w-full h-full object-cover"
           />
@@ -185,7 +161,7 @@ export default function CadRevealSlider() {
 
       {/* Visual Instruction label */}
       <p className="text-center text-[10px] sm:text-xs text-app-muted font-mono uppercase tracking-widest mt-4">
-        Drag the golden divider left and right to reveal CAD Blueprint vs. Finished Build
+        Drag the golden divider left and right to reveal Structural Stage vs. Finished Reality
       </p>
     </div>
   );

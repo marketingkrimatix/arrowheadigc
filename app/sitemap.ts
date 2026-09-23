@@ -28,10 +28,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const sectors = [
     '/sectors/commercial-retail',
-    '/sectors/industrial-manufacturing',
     '/sectors/residential-villas',
     '/sectors/infrastructure-utilities',
-    '/sectors/hospitality-leisure',
   ];
 
   const locations = [
@@ -59,7 +57,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/projects/katheri-family-villas',
     '/projects/khulagi-villa',
     '/projects/sanjay-jain-villa',
-    '/projects/mussafah-warehouse-civils',
     '/projects/yas-island-sewerage',
     '/projects/mussafah-fm',
   ];

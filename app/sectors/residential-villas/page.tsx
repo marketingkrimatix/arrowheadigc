@@ -6,11 +6,9 @@ import JsonLd from '@/components/SEO/JsonLd';
 import Breadcrumbs from '@/components/SEO/Breadcrumbs';
 import CinematicSlider from '@/components/showcases/CinematicSlider';
 import CadRevealSlider from '@/components/showcases/CadRevealSlider';
-import BuildTimelineShowcase from '@/components/showcases/BuildTimelineShowcase';
 import CinematicSpecGrid from '@/components/showcases/CinematicSpecGrid';
 import CollageBoxShowcase from '@/components/showcases/CollageBoxShowcase';
-import SpotlightRevealGrid from '@/components/showcases/SpotlightRevealGrid';
-import ProjectControlCenter from '@/components/showcases/ProjectControlCenter';
+
 
 
 export const metadata: Metadata = {
@@ -50,6 +48,51 @@ export default function ResidentialVillasSectorPage() {
     { title: 'Custom Majlis Pavilions', desc: 'Detached Arabian majlis blocks, boundary fences, driveway paving, customized steel entrance gates, and landscape masonry.' },
     { title: 'Home Extensions', desc: 'Reinforced concrete additions, adding second-floor levels, structural partitions, kitchen and guest room extensions with load validations.' },
     { title: 'Cosmetic Renovations', desc: 'Bathroom tiling replacements, kitchen remodeling, thermal window installations, and complete structural damp remediation works.' },
+  ];
+
+  const residentialVillaCards = [
+    {
+      title: 'Khulagi Luxury Residence',
+      category: 'Turnkey Luxury Villa',
+      image: '/images/KhulagiVilla.png',
+      client: 'Private Residential Owner',
+      authorityApproval: 'Abu Dhabi Municipality Approved',
+      certCode: 'RES-VILLA-KH-01',
+      summary: 'Complete architectural design-build villa development with custom structural casting, thermal blockwork, and Estidama 2-Pearl compliance.',
+      specs: [
+        'Bespoke architectural layout & engineering',
+        'Reinforced C50 concrete casting & raft foundation',
+        'TAMM building permit & completion certificates'
+      ]
+    },
+    {
+      title: 'Contemporary Executive Villa',
+      category: 'Custom Architectural Build',
+      image: '/images/villa_contemporary.png',
+      client: 'Executive Client Estate',
+      authorityApproval: 'Estidama & Civil Defense Certified',
+      certCode: 'RES-VILLA-VC-02',
+      summary: 'Modern executive villa featuring floor-to-ceiling panoramic curtain wall glazing, infinity pool, and integrated smart home automation.',
+      specs: [
+        'Acoustic double-glazed facade engineering',
+        'Private outdoor pool & landscape civil works',
+        'Multi-zone VRF HVAC climate balancing'
+      ]
+    },
+    {
+      title: 'Sanjay Jain Luxury Villa',
+      category: 'High-End Residential Estate',
+      image: '/images/ArrowheadVilla.png',
+      client: 'Sanjay Jain / Private Estate',
+      authorityApproval: 'Estidama 3-Pearl Certified',
+      certCode: 'RES-VILLA-SJ-03',
+      summary: 'Handed-over luxury custom residential estate featuring Italian Calacatta marble dry cladding, bespoke joinery, and full MEP commissioning.',
+      specs: [
+        'Italian marble dry-clad facade systems',
+        'Custom executive interior joinery suites',
+        'Turnkey municipal occupancy certification'
+      ]
+    }
   ];
 
   const residentialSchema = {
@@ -118,13 +161,6 @@ export default function ResidentialVillasSectorPage() {
         </div>
       </section>
 
-      <section className="py-24 border-b border-app-border relative bg-app-bg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-6">
-            <BuildTimelineShowcase />
-          </div>
-        </div>
-      </section>
 
       {/* 2. DETAILED SECTOR COPY */}
       <section className="py-20">
@@ -168,11 +204,7 @@ export default function ResidentialVillasSectorPage() {
       <section className="py-24 border-b border-app-border relative bg-app-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded">STYLE J</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Cinematic Spec Card Grid</h3>
-            </div>
-            <CinematicSpecGrid />
+            <CinematicSpecGrid cards={residentialVillaCards} />
           </div>
         </div>
       </section>
@@ -180,10 +212,6 @@ export default function ResidentialVillasSectorPage() {
       <section className="py-24 border-b border-app-border relative bg-app-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE L</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Asymmetric Random-Sized Collage Grid</h3>
-            </div>
             <CollageBoxShowcase />
           </div>
         </div>
@@ -193,38 +221,12 @@ export default function ResidentialVillasSectorPage() {
       <section className="py-24 border-b border-app-border relative bg-app-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-6">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE E</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Cinematic Widescreen Progress Bar Slideshow</h3>
-            </div>
             <CinematicSlider />
           </div>
         </div>
       </section>
 
-      <section className="py-24 border-b border-app-border relative bg-app-bg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE N</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Material Spec Spotlight Reveal Grid</h3>
-            </div>
-            <SpotlightRevealGrid />
-          </div>
-        </div>
-      </section>
 
-      <section className="py-24 border-b border-app-border relative bg-app-bg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE R</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Widescreen Editorial Showcase &amp; Material Swatch Selector</h3>
-            </div>
-            <ProjectControlCenter />
-          </div>
-        </div>
-      </section>
 
 
 
@@ -272,10 +274,6 @@ export default function ResidentialVillasSectorPage() {
       <section className="py-24 border-b border-app-border relative bg-app-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE F</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Interactive Drag-to-Reveal CAD Blueprint vs. Finished Build</h3>
-            </div>
             <CadRevealSlider />
           </div>
         </div>

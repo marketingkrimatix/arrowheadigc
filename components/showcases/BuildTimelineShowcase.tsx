@@ -39,7 +39,7 @@ export default function BuildTimelineShowcase() {
       name: 'HDPE Pipeline Installation',
       milestone: 'Laying pressure networks with certified butt-fusion joints.',
       date: 'Months 7 - 8',
-      image: '/images/123.jpeg',
+      image: '/images/hdpe.jpg',
       specs: ['Butt-fusion log output logged', 'Hydrostatic testing at PN16 rating', 'Municipal standards compliant'],
       refCode: 'MUNI-PIPE-DN1200'
     },

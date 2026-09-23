@@ -15,7 +15,7 @@ export default function HorizontalFilmstrip() {
     {
       title: 'DN 1200 Trunk Sewer Connection',
       category: 'HDPE Pipelines',
-      image: '/images/123.jpeg',
+      image: '/images/wet utilities.png',
       desc: 'Heavy utility alignment through Yas Island sectors.',
       spec: 'Diameter: DN 1200 | PN16 Rating'
     },

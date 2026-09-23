@@ -7,11 +7,8 @@ import Breadcrumbs from '@/components/SEO/Breadcrumbs';
 import VillaRenovationShowcase from '@/components/VillaRenovationShowcase';
 import CinematicSlider from '@/components/showcases/CinematicSlider';
 import CadRevealSlider from '@/components/showcases/CadRevealSlider';
-import BuildTimelineShowcase from '@/components/showcases/BuildTimelineShowcase';
 import CinematicSpecGrid from '@/components/showcases/CinematicSpecGrid';
 import CollageBoxShowcase from '@/components/showcases/CollageBoxShowcase';
-import SpotlightRevealGrid from '@/components/showcases/SpotlightRevealGrid';
-import ProjectControlCenter from '@/components/showcases/ProjectControlCenter';
 
 export const metadata: Metadata = {
   title: 'Villa Renovation & Extensions Abu Dhabi | ArrowHead',
@@ -62,6 +59,51 @@ export default function VillaRenovationPage() {
       title: 'Swimming Pools & Landscape civil works',
       desc: 'Convert your backyard into an oasis. We construct custom concrete swimming pools, pergolas, stone paving pathways, outdoor seating majlis, and install sub-surface drainage lines.',
     },
+  ];
+
+  const villaRenovationCards = [
+    {
+      title: 'Khulagi Luxury Villa Transformation',
+      category: 'Villa Structural Extension',
+      image: '/images/KhulagiVilla.png',
+      client: 'Private Residential Owner',
+      authorityApproval: 'Abu Dhabi Municipality TAMM Approved',
+      certCode: 'RES-RENOV-KH-01',
+      summary: 'Complete modern structural addition, cantilevered Majlis extension, and floor-to-ceiling panoramic glass facade transformation.',
+      specs: [
+        'Reinforced concrete frame extension',
+        'Estidama Pearl thermal envelope compliance',
+        'TAMM building permit & occupancy sign-off'
+      ]
+    },
+    {
+      title: 'Contemporary Villa Remodeling & Pool',
+      category: 'Modern Architectural Redesign',
+      image: '/images/villa_contemporary.png',
+      client: 'Executive Client Estate',
+      authorityApproval: 'Civil Defense & Municipality Cleared',
+      certCode: 'RES-RENOV-VC-02',
+      summary: 'Turnkey facade remodeling with Italian travertine cladding, integrated infinity pool, floating teak deck, and smart HVAC multi-zone retrofit.',
+      specs: [
+        'Exterior travertine stone dry cladding',
+        'Custom reinforced pool & landscape civil works',
+        'Acoustic glazing & low-E solar glass retrofits'
+      ]
+    },
+    {
+      title: 'Sanjay Jain Residence Full Overhaul',
+      category: 'Luxury Interior & Exterior Renovation',
+      image: '/images/ArrowheadVilla.png',
+      client: 'Sanjay Jain / Private Estate',
+      authorityApproval: 'Estidama 3-Pearl Certified',
+      certCode: 'RES-RENOV-SJ-03',
+      summary: 'High-end marble floor polishing, luxury bathroom suites, custom decorative ceiling joinery, and upgraded power distribution boards.',
+      specs: [
+        'Calacatta marble finishes & custom joinery',
+        'Full MEP piping overhaul & leakage prevention',
+        'Smart automation & architectural lighting'
+      ]
+    }
   ];
 
   const standards = [
@@ -172,26 +214,11 @@ export default function VillaRenovationPage() {
       <section className="py-24 border-b border-app-border relative bg-app-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE L</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Asymmetric Random-Sized Collage Grid</h3>
-            </div>
             <CollageBoxShowcase />
           </div>
         </div>
       </section>
 
-      <section className="py-24 border-b border-app-border relative bg-app-bg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE N</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Material Spec Spotlight Reveal Grid</h3>
-            </div>
-            <SpotlightRevealGrid />
-          </div>
-        </div>
-      </section>
 
       {/* 2. INTERACTIVE CONCEPT SHOWCASE */}
       <section className="py-20 border-b border-app-border bg-app-secondary/5">
@@ -260,18 +287,6 @@ export default function VillaRenovationPage() {
         </div>
       </section>
 
-      <section className="py-24 border-b border-app-border relative bg-app-bg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE R</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Widescreen Editorial Showcase &amp; Material Swatch Selector</h3>
-            </div>
-            <ProjectControlCenter />
-          </div>
-        </div>
-      </section>
-
 
       {/* 2. SPECIFICATION OVERVIEW */}
       <section className="py-20">
@@ -322,35 +337,16 @@ export default function VillaRenovationPage() {
       <section className="py-24 border-b border-app-border relative bg-app-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-6">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE E</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Cinematic Widescreen Progress Bar Slideshow</h3>
-            </div>
             <CinematicSlider />
           </div>
         </div>
       </section>
 
-      <section className="py-24 border-b border-app-border relative bg-app-bg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE H</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Progressive Build Timeline Phase Switcher</h3>
-            </div>
-            <BuildTimelineShowcase />
-          </div>
-        </div>
-      </section>
 
       <section className="py-24 border-b border-app-border relative bg-app-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded">STYLE J</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Cinematic Spec Card Grid</h3>
-            </div>
-            <CinematicSpecGrid />
+            <CinematicSpecGrid cards={villaRenovationCards} />
           </div>
         </div>
       </section>
@@ -380,10 +376,6 @@ export default function VillaRenovationPage() {
       <section className="py-24 border-b border-app-border relative bg-app-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE F</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Interactive Drag-to-Reveal CAD Blueprint vs. Finished Build</h3>
-            </div>
             <CadRevealSlider />
           </div>
         </div>

@@ -733,7 +733,7 @@ export default function HomeClient() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
             {/* Sector 1 */}
             <div className="bg-app-card rounded-lg overflow-hidden border border-app-border shadow-sm hover:border-brand-teal/20 transition-all duration-300 group flex flex-col justify-between">
@@ -765,31 +765,6 @@ export default function HomeClient() {
               <div>
                 <div className="h-48 relative overflow-hidden bg-app-secondary">
                   <img
-                    src="/images/hdpe.jpg"
-                    alt="HDPE Pipelines & Pressure Networks"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-103"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                </div>
-                <div className="p-6 space-y-3">
-                  <h3 className="text-base font-bold text-app-fg group-hover:text-brand-teal transition-colors">Industrial &amp; Manufacturing</h3>
-                  <p className="text-app-muted text-xs leading-relaxed font-light">
-                    Supply and installation of PE100 HDPE pipelines (DN 110mm to DN 1200mm), certified DVS 2207 butt-fusion welding, and municipal pressure testing.
-                  </p>
-                </div>
-              </div>
-              <div className="p-6 pt-0">
-                <Link href="/sectors/industrial-manufacturing" className="inline-flex items-center text-xs font-bold text-brand-teal hover:text-brand-teal-hover transition-colors uppercase tracking-widest">
-                  <span>Explore Sector →</span>
-                </Link>
-              </div>
-            </div>
-
-            {/* Sector 3 */}
-            <div className="bg-app-card rounded-lg overflow-hidden border border-app-border shadow-sm hover:border-brand-teal/20 transition-all duration-300 group flex flex-col justify-between">
-              <div>
-                <div className="h-48 relative overflow-hidden bg-app-secondary">
-                  <img
                     src="/images/civil-infrastructure.webp"
                     alt="Infrastructure & Utilities"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-103"
@@ -810,7 +785,7 @@ export default function HomeClient() {
               </div>
             </div>
 
-            {/* Sector 4 */}
+            {/* Sector 3 */}
             <div className="bg-app-card rounded-lg overflow-hidden border border-app-border shadow-sm hover:border-brand-teal/20 transition-all duration-300 group flex flex-col justify-between">
               <div>
                 <div className="h-48 relative overflow-hidden bg-app-secondary">

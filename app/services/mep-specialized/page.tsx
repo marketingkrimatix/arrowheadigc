@@ -5,10 +5,6 @@ import JsonLd from '@/components/SEO/JsonLd';
 
 import Breadcrumbs from '@/components/SEO/Breadcrumbs';
 import MepFlowShowcase from '@/components/MepFlowShowcase';
-import CinematicSlider from '@/components/showcases/CinematicSlider';
-import BuildTimelineShowcase from '@/components/showcases/BuildTimelineShowcase';
-import CinematicSpecGrid from '@/components/showcases/CinematicSpecGrid';
-import AlternatingAsymmetricGrid from '@/components/showcases/AlternatingAsymmetricGrid';
 
 export const metadata: Metadata = {
   title: 'MEP & Specialized Works Contractors Abu Dhabi | ArrowHead',
@@ -166,17 +162,6 @@ export default function MepSpecializedPage() {
         </div>
       </section>
 
-      <section className="py-24 border-b border-app-border relative bg-app-bg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE H</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Progressive Build Timeline Phase Switcher</h3>
-            </div>
-            <BuildTimelineShowcase />
-          </div>
-        </div>
-      </section>
 
       {/* 2. SPECIFICATION OVERVIEW */}
       <section className="py-20">
@@ -225,41 +210,87 @@ export default function MepSpecializedPage() {
         </div>
       </section>
 
-      <section className="py-24 border-b border-app-border relative bg-app-bg">
+      {/* 2.5 SPECIALIZED MEP ENGINEERING & PLANT INSTALLATION */}
+      <section className="py-20 bg-app-secondary border-b border-app-border relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-6">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE U</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Alternating Asymmetric Grid (Brochure Layout)</h3>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left Column: Visual Showcase */}
+            <div className="lg:col-span-7 relative group">
+              <div className="relative rounded-2xl overflow-hidden border border-app-border shadow-2xl bg-app-card aspect-[16/10]">
+                <img
+                  src="/images/MEPspecialized.png"
+                  alt="Specialized Industrial MEP Engineering & Plant Execution"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                
+                {/* Floating Badges */}
+                <div className="absolute top-4 left-4 flex flex-wrap gap-2">
+                  <span className="bg-brand-teal text-primary-dark text-[10px] font-mono font-bold uppercase tracking-wider px-3 py-1 rounded shadow-md">
+                    Civil Defense &amp; DoE Approved
+                  </span>
+                  <span className="bg-primary-dark/80 backdrop-blur-md text-brand-gold border border-brand-gold/30 text-[10px] font-mono font-bold uppercase tracking-wider px-3 py-1 rounded shadow-md">
+                    Industrial Grade
+                  </span>
+                </div>
+
+                <div className="absolute bottom-6 left-6 right-6 text-white">
+                  <span className="text-[9px] font-mono text-brand-gold uppercase tracking-widest block font-bold">
+                    PLANT EXECUTION &amp; COMMISSIONING
+                  </span>
+                  <h3 className="text-xl sm:text-2xl font-heading font-extrabold text-white mt-1">
+                    Integrated Mechanical, Electrical &amp; Pumping Infrastructure
+                  </h3>
+                </div>
+              </div>
             </div>
-            <AlternatingAsymmetricGrid />
+
+            {/* Right Column: Key Technical Highlights */}
+            <div className="lg:col-span-5 space-y-6">
+              <div>
+                <span className="text-brand-teal text-xs font-bold uppercase tracking-widest font-mono">
+                  Full-Lifecycle Engineering
+                </span>
+                <h2 className="mt-2 text-2xl sm:text-3xl font-heading font-extrabold text-app-fg tracking-tight">
+                  Advanced MEP Infrastructure &amp; Automation
+                </h2>
+                <p className="mt-4 text-xs sm:text-sm text-app-muted font-light leading-relaxed">
+                  ArrowHead delivers end-to-end specialized MEP contracting across Abu Dhabi. From main switchgear installations and automated PLC control panels to booster pump skids, chilled water distribution loops, and Civil Defense firefighting systems.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4 pt-2">
+                <div className="p-4 bg-app-card border border-app-border rounded-xl">
+                  <span className="text-xl font-heading font-extrabold text-brand-gold block">100%</span>
+                  <span className="text-[11px] text-app-muted font-light mt-1 block">DoE &amp; ADDC Code Compliance</span>
+                </div>
+                <div className="p-4 bg-app-card border border-app-border rounded-xl">
+                  <span className="text-xl font-heading font-extrabold text-brand-teal block">TR34 / BS</span>
+                  <span className="text-[11px] text-app-muted font-light mt-1 block">Precision Piping &amp; Cable Routing</span>
+                </div>
+              </div>
+
+              <ul className="space-y-2.5 pt-2 border-t border-app-border">
+                {[
+                  'Main switchboard & distribution panel dressing',
+                  'High-pressure booster pumping stations & headers',
+                  'Industrial HVAC duct fabrication & air balancing',
+                  'FM200 clean agent & automatic sprinkler integration'
+                ].map((item, idx) => (
+                  <li key={idx} className="flex items-start text-xs text-app-fg font-light">
+                    <span className="text-brand-teal font-bold mr-2 text-sm leading-none">✓</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
           </div>
         </div>
       </section>
 
-      <section className="py-24 border-b border-app-border relative bg-app-bg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded">STYLE J</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Cinematic Spec Card Grid</h3>
-            </div>
-            <CinematicSpecGrid />
-          </div>
-        </div>
-      </section>
 
-      <section className="py-24 border-b border-app-border relative bg-app-bg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-6">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE E</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Cinematic Widescreen Progress Bar Slideshow</h3>
-            </div>
-            <CinematicSlider />
-          </div>
-        </div>
-      </section>
 
       {/* 3. SUB-SERVICES GRID */}
       <section className="py-20 bg-app-secondary border-y border-app-border">

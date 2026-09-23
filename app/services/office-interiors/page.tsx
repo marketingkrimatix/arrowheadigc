@@ -3,9 +3,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import JsonLd from '@/components/SEO/JsonLd';
 import Breadcrumbs from '@/components/SEO/Breadcrumbs';
-import CinematicSpecGrid from '@/components/showcases/CinematicSpecGrid';
-import SpotlightRevealGrid from '@/components/showcases/SpotlightRevealGrid';
-import ProjectControlCenter from '@/components/showcases/ProjectControlCenter';
 
 export const metadata: Metadata = {
   title: 'Commercial Office Interiors & Fit-Out Contractors Abu Dhabi | ArrowHead',
@@ -143,18 +140,11 @@ export default function OfficeInteriorsPage() {
       link: '/projects/jack-wills-fitout'
     },
     {
-      name: 'Corporate Office Fit-Out & MEP',
-      location: 'Capital Tower, Abu Dhabi',
-      desc: 'Multi-floor executive headquarters fit-out with glass acoustic partitions, executive boardrooms, and chilled water balancing.',
-      image: '/images/wills-store.jpeg',
-      link: '/projects'
-    },
-    {
-      name: 'Matrix Commercial Facility Interior',
-      location: 'Mussafah / ICAD',
-      desc: 'Turnkey administrative and technical office interior fit-out executed with Matrix Engineering Consultants.',
-      image: '/images/Matrix_project.jpeg',
-      link: '/projects/matrix-commercial-civils'
+      name: 'Foot Locker Retail Flagship Store Fit-Out',
+      location: 'Abu Dhabi Retail Centers',
+      desc: 'Turnkey architectural store fit-out and MEP installation featuring commercial display casework, perimeter track lighting, acoustic ceilings, and Civil Defense sign-off.',
+      image: '/images/foot_locker.jpeg',
+      link: '/projects/foot-locker-fitout'
     }
   ];
 
@@ -357,19 +347,30 @@ export default function OfficeInteriorsPage() {
             </h2>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-4">
             {faqs.map((faq, idx) => (
-              <div
+              <details
                 key={idx}
-                className="bg-app-card p-6 rounded-xl border border-app-border shadow-sm space-y-2"
+                className="group bg-app-secondary border border-app-border rounded-lg overflow-hidden"
               >
-                <h3 className="text-sm sm:text-base font-heading font-bold text-app-fg">
-                  {faq.q}
-                </h3>
-                <p className="text-app-muted text-xs sm:text-sm font-light leading-relaxed">
-                  {faq.a}
-                </p>
-              </div>
+                <summary className="w-full text-left px-6 py-5 flex items-center justify-between font-bold text-app-fg hover:text-brand-teal focus:outline-none transition-colors cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                  <span className="text-sm sm:text-base">{faq.q}</span>
+                  <svg
+                    className="w-4 h-4 text-app-muted/60 transition-transform duration-300 shrink-0 group-open:rotate-180 group-open:text-brand-teal"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <div className="border-t border-app-border">
+                  <p className="p-6 text-app-muted text-xs sm:text-sm leading-relaxed font-light bg-app-bg">
+                    {faq.a}
+                  </p>
+                </div>
+              </details>
             ))}
           </div>
         </div>

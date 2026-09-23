@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-interface SpecCard {
+export interface SpecCard {
   title: string;
   category: string;
   image: string;
@@ -13,7 +13,11 @@ interface SpecCard {
   specs: string[];
 }
 
-export default function CinematicSpecGrid() {
+interface CinematicSpecGridProps {
+  cards?: SpecCard[];
+}
+
+export default function CinematicSpecGrid({ cards: propCards }: CinematicSpecGridProps = {}) {
   const [activeCard, setActiveCard] = React.useState<number | null>(null);
   const containerRef = React.useRef<HTMLDivElement>(null);
 
@@ -29,50 +33,52 @@ export default function CinematicSpecGrid() {
     };
   }, []);
 
-  const cards: SpecCard[] = [
+  const defaultCards: SpecCard[] = [
     {
-      title: 'Infrastructure Networks',
-      category: 'HDPE & Sewerage Systems',
-      image: '/images/123.jpeg',
-      client: 'Abu Dhabi Municipal Utilities',
-      authorityApproval: 'Municipal DN1200 Standards Compliant',
-      certCode: 'MUNI-INFRA-2025-992',
-      summary: 'High-pressure trunk line welding and directional drilling for primary water distribution systems.',
+      title: 'Jack Wills Retail Fit-Out',
+      category: 'Commercial Retail Interior',
+      image: '/images/jack-wills.jpeg',
+      client: 'Jack Wills / Alshaya Group',
+      authorityApproval: 'Civil Defense & Mall Management Approved',
+      certCode: 'RET-FITOUT-JW-01',
+      summary: 'High-end retail boutique fit-out featuring bespoke architectural joinery, custom display casework, and specialized LED track lighting.',
       specs: [
-        'Butt-fusion computerized log outputs',
-        'Hydrostatic PN16 testing clearances',
-        'Trenchless micro-tunneling approvals'
+        'Hardwood display joinery & glass showcases',
+        'Civil Defense compliant sprinkler & fire alarms',
+        'Chilled water FCU air balancing & MEP tie-ins'
       ]
     },
     {
-      title: 'Structural & Concrete',
-      category: 'Civil Engineering & Villas',
-      image: '/images/Matrix_project.jpeg',
-      client: 'Katheri Family / Private Clients',
-      authorityApproval: 'Abu Dhabi Municipality Permits',
-      certCode: 'MUNI-CIVIL-BUILD-414',
-      summary: 'Heavy-duty raft foundations, concrete casting, and structural framing matching Estidama green codes.',
+      title: 'Foot Locker Flagship Store',
+      category: 'Turnkey Retail Fit-Out',
+      image: '/images/foot_locker.jpeg',
+      client: 'Foot Locker Middle East',
+      authorityApproval: 'Abu Dhabi Mall Standards Compliant',
+      certCode: 'RET-FITOUT-FL-02',
+      summary: 'Full turnkey retail store execution including high-traffic porcelain tiling, acoustic ceiling systems, and power distribution boards.',
       specs: [
-        'C50/60 Microsilica cement compounds',
-        'Estidama 2-Pearl certification logs',
-        'Core cylinder compression verifications'
+        'Heavy-duty commercial floor finishes',
+        'Dedicated low-voltage POS & data cabling',
+        'Architectural drywall partitions & metal fixtures'
       ]
     },
     {
-      title: 'Specialized MEP Loops',
-      category: 'HVAC & Fire Safety Services',
-      image: '/images/Matrix_project3.jpeg',
-      client: 'Commercial & Government Facilities',
-      authorityApproval: 'Abu Dhabi Civil Defense Approved',
-      certCode: 'MEP-SAFETY-883',
-      summary: 'Duct fabrication, chiller plant integrations, and automated wet sprinkler systems sizing.',
+      title: 'RAK Ceramics Showroom',
+      category: 'Commercial Showroom Fit-Out',
+      image: '/images/rak-ceramics-store.jpeg',
+      client: 'RAK Ceramics LLC',
+      authorityApproval: 'Municipal Commercial Space Approved',
+      certCode: 'RET-SHOWROOM-RC-03',
+      summary: 'Expansive luxury commercial showroom fit-out with bespoke tile display mockups, ambient track lighting, and executive sales lounges.',
       specs: [
-        'Double-skin GI routing balanced',
-        'FM200 clean gas suppression signoff',
-        'DoE load compliance certificates'
+        'Custom modular display panel engineering',
+        'High-CRI showroom illumination systems',
+        'Emergency exit & smoke evacuation integration'
       ]
     }
   ];
+
+  const cards = propCards || defaultCards;
 
   return (
     <div ref={containerRef} className="w-full bg-app-bg text-app-fg py-12 max-w-6xl mx-auto">

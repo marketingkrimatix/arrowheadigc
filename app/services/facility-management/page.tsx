@@ -4,12 +4,7 @@ import Link from 'next/link';
 import JsonLd from '@/components/SEO/JsonLd';
 
 import Breadcrumbs from '@/components/SEO/Breadcrumbs';
-import SmartFmDashboard from '@/components/SmartFmDashboard';
-import HorizontalFilmstrip from '@/components/showcases/HorizontalFilmstrip';
 import SplitActiveShowcase from '@/components/showcases/SplitActiveShowcase';
-import BuildTimelineShowcase from '@/components/showcases/BuildTimelineShowcase';
-import FactsheetGrid from '@/components/showcases/FactsheetGrid';
-import CinematicSpecGrid from '@/components/showcases/CinematicSpecGrid';
 
 export const metadata: Metadata = {
   title: 'Facility Management Services Abu Dhabi & UAE | ArrowHead',
@@ -178,17 +173,6 @@ export default function FacilityManagementPage() {
         </div>
       </section>
 
-      <section className="py-24 border-b border-app-border relative bg-app-bg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE I</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Tabular Factsheet Grid Row Hover</h3>
-            </div>
-            <FactsheetGrid />
-          </div>
-        </div>
-      </section>
 
       {/* 2. SERVICES METHODOLOGY */}
       <section className="py-20">
@@ -245,64 +229,6 @@ export default function FacilityManagementPage() {
       <section className="py-24 border-b border-app-border relative bg-app-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded">STYLE J</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Cinematic Spec Card Grid</h3>
-            </div>
-            <CinematicSpecGrid />
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24 border-b border-app-border relative bg-app-bg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE B</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Smooth Horizontal Filmstrip Carousel</h3>
-            </div>
-            <HorizontalFilmstrip />
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24 border-b border-app-border relative bg-app-bg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE H</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Progressive Build Timeline Phase Switcher</h3>
-            </div>
-            <BuildTimelineShowcase />
-          </div>
-        </div>
-      </section>
-
-      {/* 2.5 INTERACTIVE OPERATIONS COMMAND CENTER */}
-      <section className="py-20 bg-app-bg border-t border-app-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-brand-teal text-xs font-bold uppercase tracking-widest font-mono">Operations Control</span>
-            <h2 className="mt-3 text-3xl font-heading font-extrabold text-app-fg tracking-tight">
-              B2B Asset Diagnostic Control Center
-            </h2>
-            <p className="mt-4 text-app-muted text-xs sm:text-sm font-light leading-relaxed">
-              Experience a live simulation of our remote engineering dashboard. Try triggering an active diagnostic scan on key building systems to review telemetry status and local compliance tags.
-            </p>
-          </div>
-          <div className="max-w-4xl mx-auto">
-            <SmartFmDashboard />
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24 border-b border-app-border relative bg-app-bg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded">STYLE C</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Split Screen Category Hover Active Tabs</h3>
-            </div>
             <SplitActiveShowcase />
           </div>
         </div>

@@ -70,7 +70,7 @@ export default function CollageBoxShowcase() {
         {items.map((item, idx) => (
           <div
             key={idx}
-            className={`group relative rounded-xl overflow-hidden border border-app-border bg-app-secondary shadow-lg cursor-pointer flex flex-col justify-end p-6 ${item.gridClass}`}
+            className={`group relative rounded-xl overflow-hidden border border-app-border bg-app-secondary shadow-lg flex flex-col justify-end p-6 ${item.gridClass}`}
           >
             {/* Background Image with Zoom on Hover */}
             <img
@@ -92,11 +92,8 @@ export default function CollageBoxShowcase() {
                 {item.title}
               </h3>
 
-              <div className="flex justify-between items-center border-t border-white/10 pt-2 text-[9px] font-mono text-gray-300 uppercase tracking-wider">
+              <div className="border-t border-white/10 pt-2 text-[9px] font-mono text-gray-300 uppercase tracking-wider">
                 <span>Scope: {item.stats}</span>
-                <span className="text-brand-teal opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Review Details →
-                </span>
               </div>
             </div>
           </div>

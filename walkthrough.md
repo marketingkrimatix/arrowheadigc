@@ -1,3 +1,4 @@
+
 # Walkthrough - Redesigned arrowheadigc.com
 
 We have completed the redesign, copywriting, and technical development of the new website for **ArrowHead International General Contracting LLC (AHIGC)**. The codebase is implemented in Next.js (using App Router, TypeScript, and Tailwind CSS v4) and compiles into fully optimized static HTML pages.

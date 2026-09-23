@@ -342,35 +342,6 @@ export const projects: Project[] = [
     ]
   },
   {
-    slug: 'mussafah-warehouse-civils',
-    title: 'Mussafah Industrial Logistics Warehouse Construction',
-    category: 'Industrial Warehouses',
-    categoryKey: 'warehouses',
-    location: 'Mussafah Industrial Zone M9, Abu Dhabi',
-    desc: 'Turnkey engineering and construction of an industrial logistics warehouse facility, featuring pre-engineered structural steel portal frames, high-flatness TR34 reinforced concrete floor slabs, overhead crane gantry beams, and fire protection sprinkler networks.',
-    stats: '35,000 sqm Facility | TR34 Free-Movement Floor | 10-Ton Crane Gantry',
-    image: '/images/civil-infrastructure.webp',
-    challenges: 'Achieving superflat floor tolerances required for narrow-aisle high-reach forklifts while maintaining high pour productivity.',
-    solutions: 'Utilized laser screed concrete placement technology, high-dosage synthetic fiber reinforcement, and dry-shake quartz surface hardeners.',
-    scope: [
-      'Substructure heavy pile caps, grade beams, and TR34 slab casting',
-      'Structural steel portal frame fabrication, corrosion protection & erection',
-      'Insulated sandwich roof and wall cladding installation',
-      'Civil Defense approved wet sprinkler riser systems and high-bay LED lighting',
-    ],
-    keyServices: ['Industrial Warehouse Construction', 'Structural Steel Portal Framing', 'TR34 High-Flatness Flooring', 'Civil Defense Fire Systems'],
-    clientTestimonial: {
-      quote: 'The warehouse facility was delivered with immaculate concrete slab flatness and robust structural steel assembly.',
-      author: 'Operations Director',
-      company: 'Logistics Distribution Hub'
-    },
-    gallery: [
-      '/images/civil-infrastructure.webp',
-      '/images/store.jpeg',
-      '/images/facility.png',
-    ]
-  },
-  {
     slug: 'yas-island-sewerage',
     title: 'Yas Island Trunk Sewerage Network',
     category: 'HDPE Pipelines',

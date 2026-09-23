@@ -5,10 +5,6 @@ import Link from 'next/link';
 import JsonLd from '@/components/SEO/JsonLd';
 import Breadcrumbs from '@/components/SEO/Breadcrumbs';
 import PipelineWeldingShowcase from '@/components/PipelineWeldingShowcase';
-import HorizontalFilmstrip from '@/components/showcases/HorizontalFilmstrip';
-import BuildTimelineShowcase from '@/components/showcases/BuildTimelineShowcase';
-import FactsheetGrid from '@/components/showcases/FactsheetGrid';
-import CinematicSpecGrid from '@/components/showcases/CinematicSpecGrid';
 
 export const metadata: Metadata = {
   title: 'HDPE Pipeline Supply & Installation Abu Dhabi | ArrowHead',
@@ -49,7 +45,7 @@ export default function HdpePipelinesPage() {
       subtitle: 'EPC Utility Networks',
       badge: 'Potable & Wastewater EPC',
       desc: 'EPC pipeline services covering engineering, procurement, construction, testing and commissioning of utility networks. Specialized in HDPE and Ductile Iron (DI) pipeline networks for potable water, irrigation, wastewater, drainage, firefighting, district cooling and utility ducting systems.',
-      image: '/images/123.jpeg',
+      image: '/images/Construction of Pipeline.png',
       highlights: ['Potable Water & Irrigation Networks', 'Wastewater, Drainage & Firefighting', 'District Cooling & Utility Ducts', 'Full EPC Testing & Commissioning'],
     },
     {
@@ -58,7 +54,7 @@ export default function HdpePipelinesPage() {
       subtitle: 'TAQA & Municipal Certified Authority Scope',
       badge: 'TAQA & Municipal Authorized',
       desc: 'AHIGC has the HSEQ competency certifications for engineers in-charge as an authorization to carryout shutdown, relocation & modification works from TAQA & Municipal authorities on DI & HDPE pipelines up to DN 1000 pipe sizes, for potable & recycled water networks.',
-      image: '/images/456.jpeg',
+      image: '/images/Pipeline Relocations  Modifications.png',
       highlights: ['Pipelines up to DN 1000', 'Live Network Shutdowns & Tie-Ins', 'Potable & Recycled Water Lines', 'HSEQ Certified In-Charge Engineers'],
     },
     {
@@ -67,7 +63,7 @@ export default function HdpePipelinesPage() {
       subtitle: 'Trenchless Urban Technology',
       badge: 'Trenchless Directional Drilling',
       desc: 'We specialize in trenchless pipeline and duct crossings using Horizontal Directional Drilling (HDD) technology for safe, precise and efficient pipeline installation across roads, waterways and congested urban corridors with minimal surface disruption.',
-      image: '/images/789.jpeg',
+      image: '/images/Duct  Pipeline Crossing by HDD Methods.png',
       highlights: ['Highway & Waterway Trenchless Crossing', 'Zero Road & Traffic Disruption', 'High-Accuracy Guidance Profiling', 'Deep Underground Ducting Bundles'],
     },
     {
@@ -85,7 +81,7 @@ export default function HdpePipelinesPage() {
       subtitle: 'In-House Precision Welding',
       badge: 'In-House Fabrication',
       desc: 'We offer in-house fabrication of piping spools and headers with precise welding and quality control. This ensures faster site installation, improved accuracy, and reduced project timelines.',
-      image: '/images/123.jpeg',
+      image: '/images/Fabrication of Spools  Headers.png',
       highlights: ['Custom Manifolds & Pipe Headers', 'Rigorous Shop QA/QC Inspection', 'DVS 2207 Certified Butt-Welding', 'Accelerated Site Installation Handover'],
     },
     {
@@ -94,7 +90,7 @@ export default function HdpePipelinesPage() {
       subtitle: 'Hydraulic Verification & Telemetry',
       badge: 'Hydraulic Testing & Surveys',
       desc: 'ArrowHead conducts pressure surveys across water transmission and distribution networks to verify hydraulic performance, identify anomalies, and support leakage control, ensuring compliance with utility standards and reliable network operation.',
-      image: '/images/456.jpeg',
+      image: '/images/Water Pressure Surveys.png',
       highlights: ['Digital Calibrated Data Loggers', 'Hydraulic Surge & Leak Detection', 'Transmission Performance Audits', 'Full Utility Authority Compliance'],
     },
   ];
@@ -223,17 +219,6 @@ export default function HdpePipelinesPage() {
         </div>
       </section>
 
-      <section className="py-24 border-b border-app-border relative bg-app-bg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE I</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Tabular Factsheet Grid Row Hover</h3>
-            </div>
-            <FactsheetGrid />
-          </div>
-        </div>
-      </section>
 
       {/* 2. SPECIFICATION OVERVIEW */}
       <section className="py-20">
@@ -371,29 +356,7 @@ export default function HdpePipelinesPage() {
         </div>
       </section>
 
-      <section className="py-24 border-b border-app-border relative bg-app-bg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE H</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Progressive Build Timeline Phase Switcher</h3>
-            </div>
-            <BuildTimelineShowcase />
-          </div>
-        </div>
-      </section>
 
-      <section className="py-24 border-b border-app-border relative bg-app-bg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded">STYLE J</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Cinematic Spec Card Grid</h3>
-            </div>
-            <CinematicSpecGrid />
-          </div>
-        </div>
-      </section>
 
       {/* 3. SUB-SERVICES GRID */}
       <section className="py-20 bg-app-secondary border-y border-app-border">
@@ -434,17 +397,6 @@ export default function HdpePipelinesPage() {
         </div>
       </section>
 
-      <section className="py-24 border-b border-app-border relative bg-app-bg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE B</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Smooth Horizontal Filmstrip Carousel</h3>
-            </div>
-            <HorizontalFilmstrip />
-          </div>
-        </div>
-      </section>
 
       {/* 5. FAQ SECTION */}
       <section className="py-20 bg-app-bg">

@@ -3,8 +3,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import JsonLd from '@/components/SEO/JsonLd';
 import Breadcrumbs from '@/components/SEO/Breadcrumbs';
-import CinematicSpecGrid from '@/components/showcases/CinematicSpecGrid';
-import ProjectControlCenter from '@/components/showcases/ProjectControlCenter';
 
 export const metadata: Metadata = {
   title: 'Industrial Warehouses Construction & Maintenance Abu Dhabi | ArrowHead',
@@ -135,20 +133,6 @@ export default function IndustrialWarehousesPage() {
   };
 
   const projectReferences = [
-    {
-      name: 'Mussafah Logistics Warehouse Facility',
-      location: 'Mussafah M9 Industrial Zone',
-      desc: 'Turnkey pre-engineered steel warehouse featuring TR34 laser-screed floor slabs, 10-ton crane gantry beams, and Civil Defense wet risers.',
-      image: '/images/Matrix_project2.jpeg',
-      link: '/projects/mussafah-warehouse-civils'
-    },
-    {
-      name: 'Katheri Family Logistics & Commercial Facility',
-      location: 'Mussafah / ICAD',
-      desc: 'Structural steel framing, foundation pile caps, and exterior utility tie-ins executed for commercial and logistics operations.',
-      image: '/images/Matrix_project.jpeg',
-      link: '/projects/katheri-family-villas'
-    },
     {
       name: 'Mussafah Industrial Factory Hard FM AMC',
       location: 'Mussafah Industrial Area',

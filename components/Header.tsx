@@ -63,10 +63,8 @@ export default function Header() {
 
   const sectorLinks = [
     { name: 'Residential & Villas', href: '/sectors/residential-villas', desc: 'Private estates & Estidama' },
-    { name: 'Industrial & Manufacturing', href: '/sectors/industrial-manufacturing', desc: 'Mussafah & ICAD zones' },
     { name: 'Commercial & Retail', href: '/sectors/commercial-retail', desc: 'Tenant fit-outs & building AMC' },
     { name: 'Infrastructure & Utilities', href: '/sectors/infrastructure-utilities', desc: 'Utility transmission grids' },
-    { name: 'Hospitality & Leisure', href: '/sectors/hospitality-leisure', desc: 'Resort FM & luxury fit-outs' },
   ];
 
   const allServiceLinks = [...buildingLinks, ...infrastructureLinks];

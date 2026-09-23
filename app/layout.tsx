@@ -25,6 +25,9 @@ export const metadata: Metadata = {
     template: '%s | ArrowHead Abu Dhabi',
   },
   description: 'ArrowHead is a leading general contracting and facilities management company based in Mussafah, Abu Dhabi. Specializing in HDPE pipelines, villa construction, renovations, and MEP works.',
+  icons: {
+    icon: '/logo-blue.png',
+  },
   keywords: [
     'general contracting company in Abu Dhabi',
     'HDPE pipeline contractors Abu Dhabi',
@@ -91,4 +94,4 @@ export default function RootLayout({
     </html>
   );
 }
-
+

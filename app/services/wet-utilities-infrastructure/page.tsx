@@ -3,9 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import JsonLd from '@/components/SEO/JsonLd';
 import Breadcrumbs from '@/components/SEO/Breadcrumbs';
-import BuildTimelineShowcase from '@/components/showcases/BuildTimelineShowcase';
-import FactsheetGrid from '@/components/showcases/FactsheetGrid';
-import CinematicSpecGrid from '@/components/showcases/CinematicSpecGrid';
+
 
 export const metadata: Metadata = {
   title: 'Wet Utilities & Drainage Infrastructure Abu Dhabi | ArrowHead',
@@ -163,29 +161,7 @@ export default function WetUtilitiesInfrastructurePage() {
         </div>
       </section>
 
-      <section className="py-24 border-b border-app-border relative bg-app-bg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-3 py-1 rounded">STYLE I</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Tabular Factsheet Grid Row Hover</h3>
-            </div>
-            <FactsheetGrid />
-          </div>
-        </div>
-      </section>
 
-      <section className="py-24 border-b border-app-border relative bg-app-bg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded">STYLE J</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Cinematic Spec Card Grid</h3>
-            </div>
-            <CinematicSpecGrid />
-          </div>
-        </div>
-      </section>
 
       {/* 2. SPECIFICATION OVERVIEW */}
       <section className="py-20">
@@ -212,7 +188,7 @@ export default function WetUtilitiesInfrastructurePage() {
             </div>
 
             {/* Right Specification Table */}
-            <div className="lg:col-span-5 bg-app-card border border-app-border offset-border-frame shadow-sm border border-app-border rounded-xl p-8 shadow-2xl">
+            <div className="lg:col-span-5 bg-app-card border border-app-border offset-border-frame shadow-sm rounded-xl p-8 shadow-2xl">
               <h3 className="text-base font-bold text-app-fg border-b border-app-border pb-4 uppercase tracking-wider font-heading">
                 Wet Utilities Standards
               </h3>
@@ -230,17 +206,86 @@ export default function WetUtilitiesInfrastructurePage() {
         </div>
       </section>
 
-      <section className="py-24 border-b border-app-border relative bg-app-bg">
+      {/* 2.5 WET UTILITIES & DRAINAGE INFRASTRUCTURE SHOWCASE */}
+      <section className="py-20 bg-app-secondary border-b border-app-border relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-6 mb-24">
-            <div className="flex items-center gap-4 border-b border-app-border pb-4">
-              <span className="text-xs font-mono font-bold text-brand-teal bg-brand-teal/10 px-3 py-1 rounded">STYLE H</span>
-              <h3 className="text-lg font-heading font-extrabold tracking-tight">Progressive Build Timeline Phase Switcher</h3>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left Column: Visual Showcase */}
+            <div className="lg:col-span-7 relative group">
+              <div className="relative rounded-2xl overflow-hidden border border-app-border shadow-2xl bg-app-card aspect-[16/10]">
+                <img
+                  src="/images/Wet Utilities & Drainage.png"
+                  alt="Municipal Wet Utilities and Underground Drainage Infrastructure"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                
+                {/* Floating Badges */}
+                <div className="absolute top-4 left-4 flex flex-wrap gap-2">
+                  <span className="bg-brand-teal text-primary-dark text-[10px] font-mono font-bold uppercase tracking-wider px-3 py-1 rounded shadow-md">
+                    Municipal Authority Approved
+                  </span>
+                  <span className="bg-primary-dark/80 backdrop-blur-md text-brand-gold border border-brand-gold/30 text-[10px] font-mono font-bold uppercase tracking-wider px-3 py-1 rounded shadow-md">
+                    High-Pressure &amp; Gravity Networks
+                  </span>
+                </div>
+
+                <div className="absolute bottom-6 left-6 right-6 text-white">
+                  <span className="text-[9px] font-mono text-brand-gold uppercase tracking-widest block font-bold">
+                    CIVIL INFRASTRUCTURE &amp; NETWORK COMMISSIONING
+                  </span>
+                  <h3 className="text-xl sm:text-2xl font-heading font-extrabold text-white mt-1">
+                    Underground Sewerage, Storm Water &amp; Potable Mains
+                  </h3>
+                </div>
+              </div>
             </div>
-            <BuildTimelineShowcase />
+
+            {/* Right Column: Key Technical Highlights */}
+            <div className="lg:col-span-5 space-y-6">
+              <div>
+                <span className="text-brand-teal text-xs font-bold uppercase tracking-widest font-mono">
+                  End-to-End Infrastructure EPC
+                </span>
+                <h2 className="mt-2 text-2xl sm:text-3xl font-heading font-extrabold text-app-fg tracking-tight">
+                  Municipal-Standard Drainage &amp; Pipeline Execution
+                </h2>
+                <p className="mt-4 text-xs sm:text-sm text-app-muted font-light leading-relaxed">
+                  ArrowHead executes comprehensive underground wet utility networks across Abu Dhabi. From deep gravity sewer trunk lines and precast manhole integration to storm water attenuation basins, high-pressure potable distribution mains, and pump stations.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4 pt-2">
+                <div className="p-4 bg-app-card border border-app-border rounded-xl">
+                  <span className="text-xl font-heading font-extrabold text-brand-gold block">PN10 - PN25</span>
+                  <span className="text-[11px] text-app-muted font-light mt-1 block">Hydrostatic Pressure Rating</span>
+                </div>
+                <div className="p-4 bg-app-card border border-app-border rounded-xl">
+                  <span className="text-xl font-heading font-extrabold text-brand-teal block">100%</span>
+                  <span className="text-[11px] text-app-muted font-light mt-1 block">Municipal &amp; DMT NOC Compliance</span>
+                </div>
+              </div>
+
+              <ul className="space-y-2.5 pt-2 border-t border-app-border">
+                {[
+                  'DVS 2207 calibrated butt-fusion & electrofusion HDPE jointing',
+                  'Precast concrete manholes with high-grade internal GRP liners',
+                  'Trenchless HDD road crossings & deep dewatering management',
+                  'Pressure surge testing, CCTV pipeline survey & chlorination'
+                ].map((item, idx) => (
+                  <li key={idx} className="flex items-start text-xs text-app-fg font-light">
+                    <span className="text-brand-teal font-bold mr-2 text-sm leading-none">✓</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
           </div>
         </div>
       </section>
+
 
       {/* 3. SUB-SERVICES GRID */}
       <section className="py-20 bg-app-secondary border-y border-app-border">
